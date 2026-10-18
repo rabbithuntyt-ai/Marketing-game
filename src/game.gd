@@ -18,7 +18,7 @@ var cuts: Dictionary = {}
 var cast: Dictionary = {}
 
 var save := {
-	"unlocked": 0, "xp": 0, "checkpoint": null, "intel": {}, "missed": {}, "seen": {}, "medals": {}, "best": {},
+	"unlocked": 0, "xp": 0, "checkpoint": null, "intel": {}, "missed": {}, "seen": {}, "medals": {}, "best": {}, "boards": {},
 	"settings": {
 		"difficulty": 1, "quality": 2, "render_scale": 0.85, "fsr": true, "fullscreen": true, "vsync": true, "fov": 80.0,
 		"sens": 1.0, "invert_y": false, "vol_master": 0.9, "vol_music": 0.55, "vol_sfx": 0.9, "vol_voice": 1.0,
@@ -189,6 +189,16 @@ func recall_items(n: int, exclude: Array, upto_mission: int) -> Array:
 
 func mi_of(key: String) -> int:
 	return int(key.split("-")[0])
+
+## Index of the case board played after mission mi, or -1.
+func board_after(mi: int) -> int:
+	var bs: Array = content.get("boards", [])
+	for i in bs.size():
+		if int(bs[i]["after"]) == mi: return i
+	return -1
+
+func board_done(bi: int) -> bool:
+	return save.get("boards", {}).has(str(bi))
 
 func skip_cuts() -> bool:
 	return autotest != "" and not autotest.begins_with("flow")

@@ -5611,6 +5611,700 @@
    ]
   }
  ],
+ "boards": [
+  {
+   "after": 0,
+   "ch": 1,
+   "title": "WHO IS MERIDIAN FOR?",
+   "lead": "Ostrowski talked for six hours. Somebody inside Castellan is funding Meridian, and Voss knows Major Hale's name.",
+   "intro": [
+    {
+     "spk": "MARR",
+     "text": "Board's up. Everything Ostrowski gave us is pinned on the left. Run a string from each piece of evidence to the idea that explains it. If we understand how they think, we know where they'll go next.",
+     "vo": "b0_intro_0"
+    }
+   ],
+   "threads": [
+    {
+     "kind": "memo",
+     "t": "Ostrowski's handbook, p. 4",
+     "ev": "\"Insulin isn't a want. A town that needs it will find the money somewhere. Price accordingly.\"",
+     "a": "Demands",
+     "reveal": "Ostrowski prices on demand: wants backed by buying power. Meridian targets towns where people must find the money.",
+     "vo": "b0_r0"
+    },
+    {
+     "kind": "note",
+     "t": "Voss, quarterly target",
+     "ev": "Move the average household from 30% to 60% of its grocery and pharmacy spending at Castellan stores.",
+     "a": "Share of customer",
+     "reveal": "Voss doesn't want more customers. He wants a bigger share of each one's spending, and Meridian takes the alternatives away.",
+     "vo": "b0_r1"
+    },
+    {
+     "kind": "clipping",
+     "t": "Analyst note, Castellan Q3",
+     "ev": "Castellan values every Phase 1 town by the combined lifetime value of all its households. Total: $11.8 billion.",
+     "a": "Customer equity",
+     "reveal": "Customer equity: the total of every customer's lifetime value. That's the number Meridian is built to lock in.",
+     "vo": "b0_r2"
+    },
+    {
+     "kind": "photo",
+     "t": "Overheard at the fulfilment centre",
+     "ev": "Ostrowski: \"We're a logistics company. We move boxes. What's in them doesn't matter.\"",
+     "a": "Marketing myopia",
+     "reveal": "Classic marketing myopia: he sees the product and the trucks, not the needs of the people at the end of the route.",
+     "vo": "b0_r3"
+    },
+    {
+     "kind": "memo",
+     "t": "Board minutes, 2029",
+     "ev": "\"Make everything cheaper and available everywhere. Efficiency first. Customer feedback can wait.\"",
+     "a": "Production concept",
+     "reveal": "The production concept: available and affordable, run for efficiency. The board stopped asking what customers actually needed.",
+     "vo": "b0_r4"
+    }
+   ],
+   "concepts": {
+    "Demands": "Human wants that are backed by buying power.",
+    "Share of customer": "The portion of the customer's purchasing that a company gets in its product categories.",
+    "Customer equity": "The total combined customer lifetime values of all of the company's customers.",
+    "Marketing myopia": "Paying more attention to the specific products a company offers than to the benefits and experiences those products produce.",
+    "Production concept": "The idea that consumers favour products that are available and highly affordable, so the organization should improve production and distribution efficiency.",
+    "Needs": "States of felt deprivation: physical, social and individual.",
+    "Selling concept": "The idea that consumers won't buy enough unless the firm undertakes a large-scale selling and promotion effort.",
+    "Customer-perceived value": "The customer's evaluation of the difference between all the benefits and all the costs of a market offering relative to competitors'."
+   },
+   "framework": {
+    "title": "THE MARKETING PROCESS",
+    "kind": "order",
+    "note": "Five steps. The first four create value for customers. The last captures value in return.",
+    "slots": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "tokens": [
+     "Understand the marketplace and customer needs and wants",
+     "Design a customer value-driven marketing strategy",
+     "Construct an integrated marketing program that delivers superior value",
+     "Engage customers, build profitable relationships and create customer delight",
+     "Capture value from customers to create profits and customer equity"
+    ]
+   },
+   "summary": {
+    "t": "CASE NOTES 1 · CREATING CUSTOMER VALUE AND ENGAGEMENT",
+    "paras": [
+     "Marketing is the process by which companies engage customers, build strong customer relationships, and create customer value in order to capture value from customers in return. It starts with the marketplace: needs are states of felt deprivation, wants are the form needs take as they are shaped by culture and personality, and demands are wants backed by buying power.",
+     "Companies meet those needs with market offerings: some combination of products, services, information or experiences. Sellers who focus only on the product suffer from marketing myopia. Customers choose among offerings based on the value and satisfaction they expect, and marketing happens when people satisfy needs through exchange. A market is the set of all actual and potential buyers.",
+     "Marketing management is the art and science of choosing target markets and building profitable relationships with them. Five philosophies compete: the production, product, selling, marketing and societal marketing concepts. The selling concept is inside-out. The marketing concept is outside-in, and the societal concept adds consumers' and society's long-run interests.",
+     "Customer relationship management builds relationships by delivering superior customer value and satisfaction. Customer-perceived value weighs all the benefits against all the costs. Engagement marketing makes the brand a part of customers' conversations and lives, and customers increasingly shape the brand through consumer-generated marketing.",
+     "In return, companies capture value: customer lifetime value, share of customer, and customer equity, the total lifetime value of all customers. The landscape keeps shifting with the digital age, growth of not-for-profit marketing, rapid globalization, and the call for sustainable marketing."
+    ],
+    "vo": "b0_sum"
+   },
+   "outro": "Follow the money. Ostrowski's ledger points at a division in Ottawa that's quietly paying for all of this. Kingsway.",
+   "outro_vo": "b0_out"
+  },
+  {
+   "after": 1,
+   "ch": 2,
+   "title": "WHO'S PAYING?",
+   "lead": "The Kingsway vault held Castellan's portfolio review. One division pays for everything. And Kessler thanked a 'Major' for our thoroughness.",
+   "intro": [
+    {
+     "spk": "MARR",
+     "text": "This is Castellan's own strategy, laid out like a textbook. Connect it. Once you see how they plan, you can see who's helping them plan around us.",
+     "vo": "b1_intro_0"
+    }
+   ],
+   "threads": [
+    {
+     "kind": "memo",
+     "t": "Portfolio review · Castellan Pharmacy",
+     "ev": "Market growth 3%. Relative market share 2.4×. \"Milk it. Fund Meridian from its cash.\"",
+     "a": "Cash cow",
+     "reveal": "The pharmacy chain is a cash cow: low growth, high share. Its profits are Meridian's war chest.",
+     "vo": "b1_r0"
+    },
+    {
+     "kind": "memo",
+     "t": "Portfolio review · Meridian Logistics",
+     "ev": "Market growth 22%. Relative market share 0.3×. \"Needs heavy investment to win share.\"",
+     "a": "Question mark",
+     "reveal": "Meridian is a question mark: high growth, low share, and it eats cash. Voss is betting the company on it.",
+     "vo": "b1_r1"
+    },
+    {
+     "kind": "clipping",
+     "t": "Growth options FY31",
+     "ev": "Phase 1: buy the bakeries, dairies and drug wholesalers that Phase 1 towns depend on. None of them is a Castellan business today.",
+     "a": "Diversification",
+     "reveal": "Buying businesses outside your current products and markets is diversification. Here it's being used to corner the supply chain.",
+     "vo": "b1_r2"
+    },
+    {
+     "kind": "note",
+     "t": "Sticky notes on Voss's wall",
+     "ev": "Strength: data. Weakness: public trust. Opportunity: rural towns. Threat: the Competition Bureau.",
+     "a": "SWOT analysis",
+     "reveal": "A SWOT analysis. Voss listed the Competition Bureau as his biggest threat, so someone inside it is worth paying.",
+     "vo": "b1_r3"
+    },
+    {
+     "kind": "photo",
+     "t": "Kingsway org chart",
+     "ev": "R&D, purchasing, operations, marketing and sales each carry a Meridian target. Every department adds value to the same plan.",
+     "a": "Value chain",
+     "reveal": "The value chain: every internal department doing its part. Meridian isn't a rogue team. It's the whole company.",
+     "vo": "b1_r4"
+    }
+   ],
+   "concepts": {
+    "Cash cow": "Low-growth, high-share business. Established and successful, it produces cash to fund other SBUs.",
+    "Question mark": "Low-share business in a high-growth market. Needs a lot of cash to hold, let alone build, share.",
+    "Diversification": "Company growth through starting up or acquiring businesses outside the company's current products and markets.",
+    "SWOT analysis": "An overall evaluation of the company's strengths, weaknesses, opportunities and threats.",
+    "Value chain": "The series of internal departments that carry out value-creating activities to design, produce, market, deliver and support a firm's products.",
+    "Star": "High-growth, high-share business. Often needs heavy investment to finance rapid growth.",
+    "Value delivery network": "The company, suppliers, distributors and ultimately customers who partner to improve the performance of the entire system.",
+    "Market penetration": "Growth by increasing sales of current products to current market segments without changing the product."
+   },
+   "framework": {
+    "title": "PRODUCT/MARKET EXPANSION GRID",
+    "kind": "grid",
+    "note": "Columns: existing products, new products. Rows: existing markets, new markets. Place each Castellan initiative in its cell.",
+    "slots": [
+     "Market penetration\n(existing product · existing market)",
+     "Product development\n(new product · existing market)",
+     "Market development\n(existing product · new market)",
+     "Diversification\n(new product · new market)"
+    ],
+    "tokens": [
+     "Double loyalty points for current shoppers",
+     "Castellan-brand insulin pens for current pharmacy customers",
+     "Open Castellan grocery stores in the Yukon",
+     "Buy a regional trucking company"
+    ]
+   },
+   "summary": {
+    "t": "CASE NOTES 2 · COMPANY AND MARKETING STRATEGY",
+    "paras": [
+     "Strategic planning is the process of developing and maintaining a strategic fit between the organization's goals and capabilities and its changing marketing opportunities. It starts with a market-oriented mission statement, then supporting objectives, a business portfolio, and functional plans.",
+     "The business portfolio is the collection of businesses and products that make up the company. Portfolio analysis evaluates them. The BCG growth-share matrix classifies strategic business units by market growth rate and relative market share: stars, cash cows, question marks and dogs. Management then decides which to build, hold, harvest or divest.",
+     "The product/market expansion grid identifies growth: market penetration, market development, product development and diversification. Companies also downsize, cutting units that are unprofitable or no longer fit.",
+     "Marketing partners with other departments in the company's value chain, and with suppliers and distributors in the value delivery network. Marketing strategy is the logic for creating customer value and profitable relationships: segmentation, targeting, differentiation and positioning, carried out through the marketing mix of product, price, place and promotion. The four As restate them from the buyer's side.",
+     "Managing marketing means analysis, including SWOT analysis; planning; implementation, turning plans into actions; and control, measuring results and correcting course. Marketers increasingly measure return on marketing investment."
+    ],
+    "vo": "b1_sum"
+   },
+   "outro": "Someone told Kessler where we'd be. The Halifax crane schedule just leaked too. Marr's going to trace it, but first we have to stop the shipment.",
+   "outro_vo": "b1_out"
+  },
+  {
+   "after": 2,
+   "ch": 3,
+   "title": "WHO KNEW ABOUT PIER 9?",
+   "lead": "Kessler was waiting at Pier 9. He escaped by boat and left a message: 'Tell your major I said thank you.'",
+   "intro": [
+    {
+     "spk": "MARR",
+     "text": "Castellan reads its environment better than we do. Everything they planned around is on this board. Sort it out and we'll see what they expect next.",
+     "vo": "b2_intro_0"
+    }
+   ],
+   "threads": [
+    {
+     "kind": "clipping",
+     "t": "Chronicle Herald, page 3",
+     "ev": "Atlantic towns are ageing fast. Prescriptions per household are up 40% in a decade.",
+     "a": "Demographic environment",
+     "reveal": "Demography: age, location, household make-up. Meridian picked towns that get older and need more every year.",
+     "vo": "b2_r0"
+    },
+    {
+     "kind": "memo",
+     "t": "Castellan finance memo",
+     "ev": "\"Rates up, wages flat. Households trading down to private label. Raise margins on essentials only.\"",
+     "a": "Economic environment",
+     "reveal": "The economic environment: purchasing power and spending patterns. When budgets tighten, essentials are where Castellan squeezes.",
+     "vo": "b2_r1"
+    },
+    {
+     "kind": "photo",
+     "t": "Competition Bureau letter",
+     "ev": "Inquiry opened into Castellan's acquisition of 41 regional suppliers. Hearing set for spring.",
+     "a": "Political environment",
+     "reveal": "The political and social environment: laws, government agencies, pressure groups. That's the hearing Voss needs to kill.",
+     "vo": "b2_r2"
+    },
+    {
+     "kind": "note",
+     "t": "Dockworkers' union flyer",
+     "ev": "ILA Local 269 votes to refuse Castellan containers until wages are settled.",
+     "a": "Publics",
+     "reveal": "A public is any group with an interest in or impact on the company. The dockworkers can stop Meridian cold.",
+     "vo": "b2_r3"
+    },
+    {
+     "kind": "clipping",
+     "t": "Social media screenshot",
+     "ev": "#KeepItLocal is trending in Nova Scotia. Shoppers say they don't trust big chains anymore.",
+     "a": "Cultural environment",
+     "reveal": "Cultural forces shape values and preferences. Castellan's own research says the public is turning on them.",
+     "vo": "b2_r4"
+    }
+   ],
+   "concepts": {
+    "Demographic environment": "Forces of human population: size, density, location, age, gender, race, occupation.",
+    "Economic environment": "Economic factors that affect consumer purchasing power and spending patterns.",
+    "Political environment": "Laws, government agencies and pressure groups that influence and limit organizations and individuals.",
+    "Publics": "Any group that has an actual or potential interest in or impact on an organization's ability to achieve its objectives.",
+    "Cultural environment": "Institutions and other forces that affect a society's basic values, perceptions, preferences and behaviours.",
+    "Natural environment": "The physical environment and natural resources needed as inputs or affected by marketing activities.",
+    "Technological environment": "Forces that create new technologies, creating new product and market opportunities.",
+    "Marketing intermediaries": "Firms that help the company promote, sell and distribute its goods to final buyers."
+   },
+   "framework": {
+    "title": "MICRO OR MACRO?",
+    "kind": "columns",
+    "note": "Microenvironment: actors close to the company. Macroenvironment: larger societal forces. Sort them.",
+    "slots": [
+     "MICROENVIRONMENT",
+     "MACROENVIRONMENT"
+    ],
+    "tokens": [
+     "Suppliers",
+     "Marketing intermediaries",
+     "Competitors",
+     "Customers",
+     "Demographic forces",
+     "Natural forces",
+     "Technological forces",
+     "Cultural forces"
+    ],
+    "answers": [
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1
+    ]
+   },
+   "summary": {
+    "t": "CASE NOTES 3 · THE MARKETING ENVIRONMENT",
+    "paras": [
+     "The marketing environment is the set of actors and forces outside marketing that affect management's ability to build and maintain successful customer relationships.",
+     "The microenvironment is the actors close to the company: the company itself and its departments, suppliers, marketing intermediaries (resellers, physical distribution firms, marketing services agencies and financial intermediaries), competitors, publics, and customers in consumer, business, reseller, government and international markets.",
+     "The macroenvironment is the larger societal forces. Demographic: Canada's population is ageing and diverse, with baby boomers, Generation X, Millennials and Generation Z behaving differently. Economic: income distribution and spending patterns. Natural: resource shortages, pollution and the push for environmental sustainability. Technological: the fastest-changing force. Political and social: laws, agencies and socially responsible behaviour. Cultural: persistent core values and shifting secondary values.",
+     "Companies can respond reactively or proactively. Smart marketers take a proactive stance, trying to shape the environment rather than simply react to it."
+    ],
+    "vo": "b2_sum"
+   },
+   "outro": "Kessler knew the gate code. Only five people had it. Marr's canary trap will tell us which one. The answer is in Castellan's own data centre, in Mirabel.",
+   "outro_vo": "b2_out"
+  },
+  {
+   "after": 3,
+   "ch": 4,
+   "title": "HOW DID WE FIND THE MOLE?",
+   "lead": "The canary trap worked. Only Major Hale's version of the plan reached Castellan. Hale is the mole.",
+   "intro": [
+    {
+     "spk": "MARR",
+     "text": "I want to be sure before anyone acts on this. Walk me back through how we know. Every step is a research method. If the method's wrong, the conclusion's wrong.",
+     "vo": "b3_intro_0"
+    }
+   ],
+   "threads": [
+    {
+     "kind": "memo",
+     "t": "Castellan loyalty archive",
+     "ev": "Fourteen years of every purchase made with a Castellan card, by household, by store.",
+     "a": "Internal databases",
+     "reveal": "Internal databases: information from within the company's own network. Castellan knows every family's medicine cabinet.",
+     "vo": "b3_r0"
+    },
+    {
+     "kind": "clipping",
+     "t": "Statistics Canada tables",
+     "ev": "Marr's first pull: census data on every Phase 1 town, gathered years ago for other purposes.",
+     "a": "Secondary data",
+     "reveal": "Secondary data already exists, collected for another purpose. Fast and cheap, so it's where we started.",
+     "vo": "b3_r1"
+    },
+    {
+     "kind": "note",
+     "t": "The canary trap",
+     "ev": "Five people, five versions of the plan, everything else identical. Watch which version Castellan acts on.",
+     "a": "Experimental research",
+     "reveal": "Matched groups, different treatments, everything else controlled: an experiment. It's how we know cause, not coincidence.",
+     "vo": "b3_r2"
+    },
+    {
+     "kind": "photo",
+     "t": "CSS camera stills",
+     "ev": "Cameras tracking how shoppers move through the store, where they stop, what they pick up.",
+     "a": "Observational research",
+     "reveal": "Observational research: watching people, actions and situations. Castellan never has to ask anyone anything.",
+     "vo": "b3_r3"
+    },
+    {
+     "kind": "memo",
+     "t": "Kessler's watch list",
+     "ev": "Monitoring rivals' job postings, patents, websites and supplier contracts.",
+     "a": "Competitive marketing intelligence",
+     "reveal": "Competitive intelligence: public information about competitors, gathered systematically. Kessler's whole operation runs on it.",
+     "vo": "b3_r4"
+    }
+   ],
+   "concepts": {
+    "Internal databases": "Collections of consumer and market information obtained from data sources within the company network.",
+    "Secondary data": "Information that already exists somewhere, having been collected for another purpose.",
+    "Experimental research": "Gathering primary data by selecting matched groups, giving them different treatments, controlling unrelated factors and checking differences.",
+    "Observational research": "Gathering primary data by observing relevant people, actions and situations.",
+    "Competitive marketing intelligence": "The systematic monitoring, collection and analysis of publicly available information about consumers, competitors and developments in the marketing environment.",
+    "Survey research": "Gathering primary data by asking people about their knowledge, attitudes, preferences and buying behaviour.",
+    "Focus group interviewing": "Inviting small groups to talk with a trained moderator about a product, service or organization.",
+    "Causal research": "Marketing research to test hypotheses about cause-and-effect relationships."
+   },
+   "framework": {
+    "title": "THE MARKETING RESEARCH PROCESS",
+    "kind": "order",
+    "note": "Four steps. Marr ran the mole hunt exactly this way.",
+    "slots": [
+     "1",
+     "2",
+     "3",
+     "4"
+    ],
+    "tokens": [
+     "Define the problem and research objectives",
+     "Develop the research plan for collecting information",
+     "Implement the plan: collect and analyze the data",
+     "Interpret and report the findings"
+    ]
+   },
+   "summary": {
+    "t": "CASE NOTES 4 · MANAGING MARKETING INFORMATION",
+    "paras": [
+     "Companies need information to create customer value, and big data makes the challenge less about volume than about turning it into customer insights: fresh understandings of customers and the marketplace that become the basis for value and engagement.",
+     "A marketing information system assesses information needs, develops the information, and helps decision makers use it. Information comes from internal databases, competitive marketing intelligence, and marketing research.",
+     "Marketing research is the systematic design, collection, analysis and reporting of data relevant to a specific situation. The process: define the problem and objectives (exploratory, descriptive or causal), develop the plan, implement it, and interpret and report findings.",
+     "Secondary data is quick and cheap but may not fit the need. Primary data comes from observational research, including ethnographic research; survey research; and experimental research. Contact methods include mail, telephone, personal and online, including online focus groups. A sample represents the population; probability samples allow sampling error to be measured, nonprobability samples like judgment samples do not.",
+     "Marketing analytics digs meaningful patterns out of big data, and artificial intelligence increasingly powers it. Customer relationship management captures every customer touch point. Researchers also face public policy and ethics issues: consumer privacy and the misuse of research findings."
+    ],
+    "vo": "b3_sum"
+   },
+   "outro": "Hale doesn't know we know. He's sent us to Toronto to tail a courier. We go anyway, and we watch our backs.",
+   "outro_vo": "b3_out"
+  },
+  {
+   "after": 4,
+   "ch": 5,
+   "title": "HOW DID HALE PLAY US?",
+   "lead": "Hale walked into the loading bay with Castellan Security. Ruiz is gone. Before the trap closed we grabbed the Psych Lab's files.",
+   "intro": [
+    {
+     "spk": "MARR",
+     "text": "Castellan studied buyers the way Hale studied us. Same playbook. Match their tactics to the behaviour they exploit, then we go get Ruiz.",
+     "vo": "b4_intro_0"
+    }
+   ],
+   "threads": [
+    {
+     "kind": "clipping",
+     "t": "Castellan Assure ad",
+     "ev": "\"Never run out of formula again.\" Targets new parents' fear of not being able to protect their children.",
+     "a": "Safety needs",
+     "reveal": "Maslow's safety needs: security and protection. Assure sells relief from fear, not a product.",
+     "vo": "b4_r0"
+    },
+    {
+     "kind": "photo",
+     "t": "Influencer contracts",
+     "ev": "Twelve local parents paid to unbox Castellan baby boxes. Followers trust them more than any ad.",
+     "a": "Opinion leader",
+     "reveal": "Opinion leaders: people whose knowledge or personality gives them influence over others. Castellan bought them.",
+     "vo": "b4_r1"
+    },
+    {
+     "kind": "memo",
+     "t": "Post-purchase email",
+     "ev": "Sent within an hour of any purchase over $500: \"You made the smart choice. Here's why.\"",
+     "a": "Cognitive dissonance",
+     "reveal": "Postpurchase conflict is cognitive dissonance. Castellan soothes it before buyers can regret anything.",
+     "vo": "b4_r2"
+    },
+    {
+     "kind": "note",
+     "t": "Hospital sales map",
+     "ev": "For each hospital: who uses the supplies, who influences, who signs, who decides, and who controls the paperwork.",
+     "a": "Buying centre",
+     "reveal": "The buying centre: users, influencers, buyers, deciders and gatekeepers. Hale used the same map on LEDGER.",
+     "vo": "b4_r3"
+    },
+    {
+     "kind": "memo",
+     "t": "Hospital reorder log",
+     "ev": "Saline, gloves, syringes: reordered every month, same supplier, same terms, no review.",
+     "a": "Straight rebuy",
+     "reveal": "A straight rebuy: routine reordering with no changes. Once Castellan is in, nobody looks again.",
+     "vo": "b4_r4"
+    }
+   ],
+   "concepts": {
+    "Safety needs": "Maslow's second level: security and protection, after physiological needs.",
+    "Opinion leader": "A person in a reference group who exerts social influence on others because of special skills, knowledge or personality.",
+    "Cognitive dissonance": "Buyer discomfort caused by postpurchase conflict.",
+    "Buying centre": "All the individuals and units that play a role in the business purchase decision-making process.",
+    "Straight rebuy": "A business buying situation in which the buyer routinely reorders something without modifications.",
+    "Modified rebuy": "A business buying situation in which the buyer wants to modify specifications, prices, terms or suppliers.",
+    "Selective perception": "People select, distort and retain information in ways that fit what they already believe.",
+    "Derived demand": "Business demand that ultimately comes from the demand for consumer goods."
+   },
+   "framework": {
+    "title": "THE BUYER DECISION PROCESS",
+    "kind": "order",
+    "note": "Five stages. The courier walked every visitor through all five.",
+    "slots": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "tokens": [
+     "Need recognition",
+     "Information search",
+     "Evaluation of alternatives",
+     "Purchase decision",
+     "Postpurchase behaviour"
+    ]
+   },
+   "summary": {
+    "t": "CASE NOTES 5 · CONSUMER AND BUSINESS BUYER BEHAVIOUR",
+    "paras": [
+     "Consumer buyer behaviour is the buying behaviour of final consumers. The consumer market is all individuals and households that buy for personal consumption. Marketing stimuli and other forces enter the buyer's black box and produce responses.",
+     "Four sets of characteristics shape buying. Cultural: culture, subculture and social class. Social: reference groups, opinion leaders, word-of-mouth and influencer marketing, online social networks, family, roles and status. Personal: age and life-cycle stage, occupation, economic situation, lifestyle, personality and self-concept. Psychological: motivation (including Maslow's hierarchy), perception, learning, and beliefs and attitudes.",
+     "The buyer decision process runs from need recognition through information search, evaluation of alternatives and the purchase decision to postpurchase behaviour, where cognitive dissonance can set in. For new products, the adoption process runs from awareness to interest, evaluation, trial and adoption.",
+     "Business markets have fewer, larger buyers and derived demand. Buying situations are straight rebuys, modified rebuys and new tasks. The buying centre includes users, influencers, buyers, deciders and gatekeepers, shaped by environmental, organizational, interpersonal and individual factors. The business buying process runs from problem recognition to performance review, and e-procurement and digital marketing are reshaping it."
+    ],
+    "vo": "b4_sum"
+   },
+   "outro": "Ruiz is alive. Kessler's holding him at Northgate, where Castellan aims every campaign. We go in tonight.",
+   "outro_vo": "b4_out"
+  },
+  {
+   "after": 5,
+   "ch": 6,
+   "title": "WHO IS CASTELLAN ASSURE AIMED AT?",
+   "lead": "Ruiz is back, bruised and talking. Northgate's targeting array tells us exactly who Assure is built to capture, and the launch is in forty-eight hours.",
+   "intro": [
+    {
+     "spk": "MARR",
+     "text": "Northgate is where Castellan decides who matters. Read their targeting files with me. If we know who they're aiming at, we know what the board will vote on.",
+     "vo": "b5_intro_0"
+    }
+   ],
+   "threads": [
+    {
+     "kind": "memo",
+     "t": "Array file 01",
+     "ev": "Canada split by province, then by towns under 20,000 people. Rural zones get Assure first.",
+     "a": "Geographic segmentation",
+     "reveal": "Geographic segmentation: dividing the market by nations, regions, provinces, cities or neighbourhoods.",
+     "vo": "b5_r0"
+    },
+    {
+     "kind": "memo",
+     "t": "Array file 02",
+     "ev": "Segment 'Anxious Providers': values security, plans ahead, distrusts change, lives for family.",
+     "a": "Psychographic segmentation",
+     "reveal": "Psychographic segmentation divides by lifestyle and personality. They're targeting a mindset, not an address.",
+     "vo": "b5_r1"
+    },
+    {
+     "kind": "note",
+     "t": "Array file 03",
+     "ev": "Push alerts timed for flu season, school starts and the first snowstorm.",
+     "a": "Occasion segmentation",
+     "reveal": "Occasion segmentation groups buyers by when they get the idea to buy or use a product. Panic sells.",
+     "vo": "b5_r2"
+    },
+    {
+     "kind": "clipping",
+     "t": "Assure creative brief",
+     "ev": "One message for every target town: same price, same box, same promise. No variations.",
+     "a": "Undifferentiated marketing",
+     "reveal": "Undifferentiated, or mass, marketing: one offer for the whole market. Easy when you've removed the competition.",
+     "vo": "b5_r3"
+    },
+    {
+     "kind": "photo",
+     "t": "Castellan Kitchen label",
+     "ev": "\"National-brand quality. Castellan price.\" Same products, 20% cheaper.",
+     "a": "The same for less",
+     "reveal": "The same for less: a value proposition that undercuts competitors on price while matching quality.",
+     "vo": "b5_r4"
+    }
+   ],
+   "concepts": {
+    "Geographic segmentation": "Dividing a market into geographical units such as nations, regions, provinces, cities or neighbourhoods.",
+    "Psychographic segmentation": "Dividing a market into segments based on lifestyle or personality characteristics.",
+    "Occasion segmentation": "Dividing the market by the occasions when buyers get the idea to buy, make their purchase or use the product.",
+    "Undifferentiated marketing": "A market-coverage strategy that ignores segment differences and goes after the whole market with one offer.",
+    "The same for less": "A value proposition offering the same benefits as competitors at a lower price.",
+    "Benefit segmentation": "Dividing the market by the different benefits that consumers seek from the product.",
+    "Concentrated marketing": "Going after a large share of one or a few segments or niches.",
+    "More for more": "Providing the most upscale product or service and charging a higher price to cover the higher costs."
+   },
+   "framework": {
+    "title": "DESIGNING A CUSTOMER VALUE-DRIVEN STRATEGY",
+    "kind": "order",
+    "note": "Choose customers to serve, then decide on a value proposition. Four steps, in order.",
+    "slots": [
+     "1",
+     "2",
+     "3",
+     "4"
+    ],
+    "tokens": [
+     "Segmentation: divide the market into smaller segments",
+     "Targeting: select the segment or segments to enter",
+     "Differentiation: differentiate the offering to create superior value",
+     "Positioning: occupy a clear, distinctive place in consumers' minds"
+    ]
+   },
+   "summary": {
+    "t": "CASE NOTES 6 · CUSTOMER VALUE-DRIVEN STRATEGY",
+    "paras": [
+     "A customer value-driven marketing strategy has four steps: market segmentation, market targeting, differentiation and positioning.",
+     "Consumer markets can be segmented geographically; demographically by age and life cycle, gender and income; psychographically by lifestyle or personality; and behaviourally by occasion, benefits sought, user status, usage rate and loyalty. Business and international markets use similar variables. Useful segments are measurable, accessible, substantial, differentiable and actionable.",
+     "Targeting evaluates each segment's size and growth, structural attractiveness, and fit with company objectives and resources. Coverage strategies run from undifferentiated (mass) marketing, through differentiated and concentrated (niche) marketing, to micromarketing: local and individual marketing. Socially responsible targeting avoids exploiting vulnerable segments.",
+     "Differentiation creates superior value through product, service, channel, people or image. Positioning gives a product a clear, distinctive and desirable place in target consumers' minds. The full positioning is the value proposition: more for more, more for the same, the same for less, less for much less, or more for less. A positioning statement summarizes it, and the company must then deliver and communicate it."
+    ],
+    "vo": "b5_sum"
+   },
+   "outro": "Assure launches from Castellan Tower. Kessler is guarding the brand vault. Everything Voss built is about to go public.",
+   "outro_vo": "b5_out"
+  },
+  {
+   "after": 6,
+   "ch": 7,
+   "title": "WHAT IS VOSS REALLY SELLING?",
+   "lead": "Kessler is down. The brand vault is ours. Sixty floors up, the board meets at dawn to approve Assure.",
+   "intro": [
+    {
+     "spk": "MARR",
+     "text": "The board votes on a product. So let's take the product apart, layer by layer, and give every director a reason to vote no.",
+     "vo": "b6_intro_0"
+    }
+   ],
+   "threads": [
+    {
+     "kind": "clipping",
+     "t": "Assure launch deck, slide 2",
+     "ev": "\"We don't sell boxes. We sell the feeling that your family will never go without.\"",
+     "a": "Core customer value",
+     "reveal": "Core customer value: what the buyer is really buying. Assure's core is security, and Meridian manufactures the fear.",
+     "vo": "b6_r0"
+    },
+    {
+     "kind": "note",
+     "t": "Pharmacy complaints log",
+     "ev": "\"My pharmacist in Truro explained everything. The one in Digby didn't even look up.\"",
+     "a": "Service variability",
+     "reveal": "Service variability: quality depends on who provides it and when, where and how. Assure promises consistency it can't deliver.",
+     "vo": "b6_r1"
+    },
+    {
+     "kind": "memo",
+     "t": "Delivery operations memo",
+     "ev": "Unused Tuesday delivery slots can't be saved for Saturday. Push customers to weekdays.",
+     "a": "Service perishability",
+     "reveal": "Services can't be stored for later sale or use. That's perishability, and it's why Assure forces delivery windows.",
+     "vo": "b6_r2"
+    },
+    {
+     "kind": "photo",
+     "t": "Brand vault valuation",
+     "ev": "Shoppers pay 15% more for identical pills in a Castellan bottle.",
+     "a": "Brand equity",
+     "reveal": "Brand equity: the differential effect knowing the brand has on customer response. That trust is what Voss is spending.",
+     "vo": "b6_r3"
+    },
+    {
+     "kind": "clipping",
+     "t": "Shelf photo, Store 112",
+     "ev": "Castellan Kitchen and Castellan Care: sold only in Castellan stores, beside the national brands.",
+     "a": "Store brand",
+     "reveal": "A store brand, or private brand, is created and owned by the reseller. Castellan controls the shelf and the label.",
+     "vo": "b6_r4"
+    }
+   ],
+   "concepts": {
+    "Core customer value": "The most basic product level: what the buyer is really buying, the core problem-solving benefit.",
+    "Service variability": "The quality of services may vary greatly depending on who provides them and when, where and how.",
+    "Service perishability": "Services cannot be stored for later sale or use.",
+    "Brand equity": "The differential effect that knowing the brand name has on customer response to the product and its marketing.",
+    "Store brand": "A brand created and owned by a reseller of a product or service (a private brand).",
+    "Service inseparability": "Services are produced and consumed at the same time and cannot be separated from their providers.",
+    "Co-branding": "Using the established brand names of two different companies on the same product.",
+    "Licensing": "Using names or symbols previously created by other manufacturers, for a fee."
+   },
+   "framework": {
+    "title": "TYPES OF CONSUMER PRODUCTS",
+    "kind": "columns",
+    "note": "How consumers buy them decides how they're marketed. Sort Castellan's shelves.",
+    "slots": [
+     "CONVENIENCE",
+     "SHOPPING",
+     "SPECIALTY",
+     "UNSOUGHT"
+    ],
+    "tokens": [
+     "Milk and bread",
+     "Batteries at the checkout",
+     "A new refrigerator",
+     "A winter coat",
+     "Castellan Reserve single-estate coffee",
+     "A designer watch",
+     "Prepaid funeral plan",
+     "Life insurance"
+    ],
+    "answers": [
+     0,
+     0,
+     1,
+     1,
+     2,
+     2,
+     3,
+     3
+    ]
+   },
+   "summary": {
+    "t": "CASE NOTES 7 · PRODUCTS, SERVICES AND BRANDS",
+    "paras": [
+     "A product is anything offered to a market for attention, acquisition, use or consumption that might satisfy a want or need. A service is an activity, benefit or satisfaction that is essentially intangible. Products have three levels: core customer value, the actual product, and the augmented product. Customer experiences increasingly matter as much as the product itself.",
+     "Consumer products are convenience, shopping, specialty and unsought products. Industrial products include materials and parts, capital items, and supplies and services. Organizations, persons, places and ideas can also be marketed, and social marketing applies marketing to encourage behaviour that benefits individuals and society.",
+     "Individual product decisions cover attributes (quality, features, style and design), branding, packaging, labelling and logos, and support services. Product line decisions set line length, through stretching and filling. The product mix has width, length, depth and consistency.",
+     "Services are intangible, inseparable, variable and perishable. The service profit chain links firm profits with employee and customer satisfaction, and relies on internal marketing, interactive marketing, differentiation, quality and productivity.",
+     "Brands are among a company's most valuable assets. Brand equity, the differential effect of knowing the brand, builds brand value. Branding strategy covers positioning, name selection, sponsorship (manufacturer's brands, store brands, licensing, co-branding) and development: line extensions, brand extensions, multibrands and new brands."
+    ],
+    "vo": "b6_sum"
+   },
+   "outro": "The board meets in an hour. Voss has the votes, unless they hear the truth from someone who can prove it. Up we go.",
+   "outro_vo": "b6_out"
+  }
+ ],
  "cuts": {
   "m1_intro": [
    {

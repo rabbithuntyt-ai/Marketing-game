@@ -291,6 +291,25 @@ func _show_debrief(mi: int) -> void:
 		var d := Debrief.new(); d.main = self; d.mi = mi; d.stats = stats; set_screen(d)
 		fade(0.0, 0.8))
 
+## Case board between missions (or replayed from the archive).
+func open_case_board(bi: int, replay := false) -> void:
+	fade(1.0, 0.5).tween_callback(func():
+		clear_world()
+		state = "board"
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		var b := CaseBoard.new(); b.main = self; b.bi = bi; b.replay = replay; set_screen(b)
+		var after := int(Game.content["boards"][bi]["after"])
+		b.finished.connect(func():
+			if replay: show_menu("archive")
+			else: start_mission(after + 1))
+		fade(0.0, 0.8))
+
+## After a mission: its case board if there is one, else straight to the next briefing.
+func next_after(mi: int) -> void:
+	var bi := Game.board_after(mi)
+	if bi >= 0: open_case_board(bi)
+	else: start_mission(mi + 1)
+
 func roll_credits() -> void:
 	fade(1.0, 0.8).tween_callback(func():
 		clear_world()

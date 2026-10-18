@@ -15,6 +15,8 @@ You play Sgt. Wren of LEDGER, a joint task force taking apart Project Meridian, 
 | 7 · Brand | 7 · Products, services and brands | Hold the brand vault, take down Kessler |
 | 8 · The Board | Recall across 1–7 | The final boardroom |
 
+Between missions, a **case board** pieces the story together: string each piece of evidence to the concept that explains it, sort the chapter's framework, and unlock Dr. Marr's case notes, which are the chapter summary, read aloud. Every board can be replayed from **Intel archive → Case boards**.
+
 ## Playing
 
 Grab the seven parts in [`download/`](download/) (each under 30 MB), extract `.001` with 7-Zip, and run `OperationValueChain.exe`. It's a native Godot 4 executable (no installer, no browser runtime). Requires a GPU with Vulkan support (any card from roughly 2016 onward). If it fails to start on an older machine, run it with `--rendering-driver d3d12`.

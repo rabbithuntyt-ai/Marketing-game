@@ -3424,5 +3424,341 @@
   "mission": "cuts",
   "spk": "MARR",
   "text": "Thank you. Both of you."
+ },
+ {
+  "id": "b0_intro_0",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Board's up. Everything Ostrowski gave us is pinned on the left. Run a string from each piece of evidence to the idea that explains it. If we understand how they think, we know where they'll go next."
+ },
+ {
+  "id": "b0_r0",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Ostrowski prices on demand: wants backed by buying power. Meridian targets towns where people must find the money."
+ },
+ {
+  "id": "b0_r1",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Voss doesn't want more customers. He wants a bigger share of each one's spending, and Meridian takes the alternatives away."
+ },
+ {
+  "id": "b0_r2",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Customer equity: the total of every customer's lifetime value. That's the number Meridian is built to lock in."
+ },
+ {
+  "id": "b0_r3",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Classic marketing myopia: he sees the product and the trucks, not the needs of the people at the end of the route."
+ },
+ {
+  "id": "b0_r4",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "The production concept: available and affordable, run for efficiency. The board stopped asking what customers actually needed."
+ },
+ {
+  "id": "b0_sum",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Marketing is the process by which companies engage customers, build strong customer relationships, and create customer value in order to capture value from customers in return. It starts with the marketplace: needs are states of felt deprivation, wants are the form needs take as they are shaped by culture and personality, and demands are wants backed by buying power. Companies meet those needs with market offerings: some combination of products, services, information or experiences. Sellers who focus only on the product suffer from marketing myopia. Customers choose among offerings based on the value and satisfaction they expect, and marketing happens when people satisfy needs through exchange. A market is the set of all actual and potential buyers. Marketing management is the art and science of choosing target markets and building profitable relationships with them. Five philosophies compete: the production, product, selling, marketing and societal marketing concepts. The selling concept is inside-out. The marketing concept is outside-in, and the societal concept adds consumers' and society's long-run interests. Customer relationship management builds relationships by delivering superior customer value and satisfaction. Customer-perceived value weighs all the benefits against all the costs. Engagement marketing makes the brand a part of customers' conversations and lives, and customers increasingly shape the brand through consumer-generated marketing. In return, companies capture value: customer lifetime value, share of customer, and customer equity, the total lifetime value of all customers. The landscape keeps shifting with the digital age, growth of not-for-profit marketing, rapid globalization, and the call for sustainable marketing."
+ },
+ {
+  "id": "b0_out",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Follow the money. Ostrowski's ledger points at a division in Ottawa that's quietly paying for all of this. Kingsway."
+ },
+ {
+  "id": "b1_intro_0",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "This is Castellan's own strategy, laid out like a textbook. Connect it. Once you see how they plan, you can see who's helping them plan around us."
+ },
+ {
+  "id": "b1_r0",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "The pharmacy chain is a cash cow: low growth, high share. Its profits are Meridian's war chest."
+ },
+ {
+  "id": "b1_r1",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Meridian is a question mark: high growth, low share, and it eats cash. Voss is betting the company on it."
+ },
+ {
+  "id": "b1_r2",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Buying businesses outside your current products and markets is diversification. Here it's being used to corner the supply chain."
+ },
+ {
+  "id": "b1_r3",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "A SWOT analysis. Voss listed the Competition Bureau as his biggest threat, so someone inside it is worth paying."
+ },
+ {
+  "id": "b1_r4",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "The value chain: every internal department doing its part. Meridian isn't a rogue team. It's the whole company."
+ },
+ {
+  "id": "b1_sum",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Strategic planning is the process of developing and maintaining a strategic fit between the organization's goals and capabilities and its changing marketing opportunities. It starts with a market-oriented mission statement, then supporting objectives, a business portfolio, and functional plans. The business portfolio is the collection of businesses and products that make up the company. Portfolio analysis evaluates them. The BCG growth-share matrix classifies strategic business units by market growth rate and relative market share: stars, cash cows, question marks and dogs. Management then decides which to build, hold, harvest or divest. The product/market expansion grid identifies growth: market penetration, market development, product development and diversification. Companies also downsize, cutting units that are unprofitable or no longer fit. Marketing partners with other departments in the company's value chain, and with suppliers and distributors in the value delivery network. Marketing strategy is the logic for creating customer value and profitable relationships: segmentation, targeting, differentiation and positioning, carried out through the marketing mix of product, price, place and promotion. The four As restate them from the buyer's side. Managing marketing means analysis, including SWOT analysis; planning; implementation, turning plans into actions; and control, measuring results and correcting course. Marketers increasingly measure return on marketing investment."
+ },
+ {
+  "id": "b1_out",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Someone told Kessler where we'd be. The Halifax crane schedule just leaked too. Marr's going to trace it, but first we have to stop the shipment."
+ },
+ {
+  "id": "b2_intro_0",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Castellan reads its environment better than we do. Everything they planned around is on this board. Sort it out and we'll see what they expect next."
+ },
+ {
+  "id": "b2_r0",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Demography: age, location, household make-up. Meridian picked towns that get older and need more every year."
+ },
+ {
+  "id": "b2_r1",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "The economic environment: purchasing power and spending patterns. When budgets tighten, essentials are where Castellan squeezes."
+ },
+ {
+  "id": "b2_r2",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "The political and social environment: laws, government agencies, pressure groups. That's the hearing Voss needs to kill."
+ },
+ {
+  "id": "b2_r3",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "A public is any group with an interest in or impact on the company. The dockworkers can stop Meridian cold."
+ },
+ {
+  "id": "b2_r4",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Cultural forces shape values and preferences. Castellan's own research says the public is turning on them."
+ },
+ {
+  "id": "b2_sum",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "The marketing environment is the set of actors and forces outside marketing that affect management's ability to build and maintain successful customer relationships. The microenvironment is the actors close to the company: the company itself and its departments, suppliers, marketing intermediaries (resellers, physical distribution firms, marketing services agencies and financial intermediaries), competitors, publics, and customers in consumer, business, reseller, government and international markets. The macroenvironment is the larger societal forces. Demographic: Canada's population is ageing and diverse, with baby boomers, Generation X, Millennials and Generation Z behaving differently. Economic: income distribution and spending patterns. Natural: resource shortages, pollution and the push for environmental sustainability. Technological: the fastest-changing force. Political and social: laws, agencies and socially responsible behaviour. Cultural: persistent core values and shifting secondary values. Companies can respond reactively or proactively. Smart marketers take a proactive stance, trying to shape the environment rather than simply react to it."
+ },
+ {
+  "id": "b2_out",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Kessler knew the gate code. Only five people had it. Marr's canary trap will tell us which one. The answer is in Castellan's own data centre, in Mirabel."
+ },
+ {
+  "id": "b3_intro_0",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "I want to be sure before anyone acts on this. Walk me back through how we know. Every step is a research method. If the method's wrong, the conclusion's wrong."
+ },
+ {
+  "id": "b3_r0",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Internal databases: information from within the company's own network. Castellan knows every family's medicine cabinet."
+ },
+ {
+  "id": "b3_r1",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Secondary data already exists, collected for another purpose. Fast and cheap, so it's where we started."
+ },
+ {
+  "id": "b3_r2",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Matched groups, different treatments, everything else controlled: an experiment. It's how we know cause, not coincidence."
+ },
+ {
+  "id": "b3_r3",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Observational research: watching people, actions and situations. Castellan never has to ask anyone anything."
+ },
+ {
+  "id": "b3_r4",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Competitive intelligence: public information about competitors, gathered systematically. Kessler's whole operation runs on it."
+ },
+ {
+  "id": "b3_sum",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Companies need information to create customer value, and big data makes the challenge less about volume than about turning it into customer insights: fresh understandings of customers and the marketplace that become the basis for value and engagement. A marketing information system assesses information needs, develops the information, and helps decision makers use it. Information comes from internal databases, competitive marketing intelligence, and marketing research. Marketing research is the systematic design, collection, analysis and reporting of data relevant to a specific situation. The process: define the problem and objectives (exploratory, descriptive or causal), develop the plan, implement it, and interpret and report findings. Secondary data is quick and cheap but may not fit the need. Primary data comes from observational research, including ethnographic research; survey research; and experimental research. Contact methods include mail, telephone, personal and online, including online focus groups. A sample represents the population; probability samples allow sampling error to be measured, nonprobability samples like judgment samples do not. Marketing analytics digs meaningful patterns out of big data, and artificial intelligence increasingly powers it. Customer relationship management captures every customer touch point. Researchers also face public policy and ethics issues: consumer privacy and the misuse of research findings."
+ },
+ {
+  "id": "b3_out",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Hale doesn't know we know. He's sent us to Toronto to tail a courier. We go anyway, and we watch our backs."
+ },
+ {
+  "id": "b4_intro_0",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Castellan studied buyers the way Hale studied us. Same playbook. Match their tactics to the behaviour they exploit, then we go get Ruiz."
+ },
+ {
+  "id": "b4_r0",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Maslow's safety needs: security and protection. Assure sells relief from fear, not a product."
+ },
+ {
+  "id": "b4_r1",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Opinion leaders: people whose knowledge or personality gives them influence over others. Castellan bought them."
+ },
+ {
+  "id": "b4_r2",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Postpurchase conflict is cognitive dissonance. Castellan soothes it before buyers can regret anything."
+ },
+ {
+  "id": "b4_r3",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "The buying centre: users, influencers, buyers, deciders and gatekeepers. Hale used the same map on LEDGER."
+ },
+ {
+  "id": "b4_r4",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "A straight rebuy: routine reordering with no changes. Once Castellan is in, nobody looks again."
+ },
+ {
+  "id": "b4_sum",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Consumer buyer behaviour is the buying behaviour of final consumers. The consumer market is all individuals and households that buy for personal consumption. Marketing stimuli and other forces enter the buyer's black box and produce responses. Four sets of characteristics shape buying. Cultural: culture, subculture and social class. Social: reference groups, opinion leaders, word-of-mouth and influencer marketing, online social networks, family, roles and status. Personal: age and life-cycle stage, occupation, economic situation, lifestyle, personality and self-concept. Psychological: motivation (including Maslow's hierarchy), perception, learning, and beliefs and attitudes. The buyer decision process runs from need recognition through information search, evaluation of alternatives and the purchase decision to postpurchase behaviour, where cognitive dissonance can set in. For new products, the adoption process runs from awareness to interest, evaluation, trial and adoption. Business markets have fewer, larger buyers and derived demand. Buying situations are straight rebuys, modified rebuys and new tasks. The buying centre includes users, influencers, buyers, deciders and gatekeepers, shaped by environmental, organizational, interpersonal and individual factors. The business buying process runs from problem recognition to performance review, and e-procurement and digital marketing are reshaping it."
+ },
+ {
+  "id": "b4_out",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Ruiz is alive. Kessler's holding him at Northgate, where Castellan aims every campaign. We go in tonight."
+ },
+ {
+  "id": "b5_intro_0",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Northgate is where Castellan decides who matters. Read their targeting files with me. If we know who they're aiming at, we know what the board will vote on."
+ },
+ {
+  "id": "b5_r0",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Geographic segmentation: dividing the market by nations, regions, provinces, cities or neighbourhoods."
+ },
+ {
+  "id": "b5_r1",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Psychographic segmentation divides by lifestyle and personality. They're targeting a mindset, not an address."
+ },
+ {
+  "id": "b5_r2",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Occasion segmentation groups buyers by when they get the idea to buy or use a product. Panic sells."
+ },
+ {
+  "id": "b5_r3",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Undifferentiated, or mass, marketing: one offer for the whole market. Easy when you've removed the competition."
+ },
+ {
+  "id": "b5_r4",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "The same for less: a value proposition that undercuts competitors on price while matching quality."
+ },
+ {
+  "id": "b5_sum",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "A customer value-driven marketing strategy has four steps: market segmentation, market targeting, differentiation and positioning. Consumer markets can be segmented geographically; demographically by age and life cycle, gender and income; psychographically by lifestyle or personality; and behaviourally by occasion, benefits sought, user status, usage rate and loyalty. Business and international markets use similar variables. Useful segments are measurable, accessible, substantial, differentiable and actionable. Targeting evaluates each segment's size and growth, structural attractiveness, and fit with company objectives and resources. Coverage strategies run from undifferentiated (mass) marketing, through differentiated and concentrated (niche) marketing, to micromarketing: local and individual marketing. Socially responsible targeting avoids exploiting vulnerable segments. Differentiation creates superior value through product, service, channel, people or image. Positioning gives a product a clear, distinctive and desirable place in target consumers' minds. The full positioning is the value proposition: more for more, more for the same, the same for less, less for much less, or more for less. A positioning statement summarizes it, and the company must then deliver and communicate it."
+ },
+ {
+  "id": "b5_out",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Assure launches from Castellan Tower. Kessler is guarding the brand vault. Everything Voss built is about to go public."
+ },
+ {
+  "id": "b6_intro_0",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "The board votes on a product. So let's take the product apart, layer by layer, and give every director a reason to vote no."
+ },
+ {
+  "id": "b6_r0",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Core customer value: what the buyer is really buying. Assure's core is security, and Meridian manufactures the fear."
+ },
+ {
+  "id": "b6_r1",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Service variability: quality depends on who provides it and when, where and how. Assure promises consistency it can't deliver."
+ },
+ {
+  "id": "b6_r2",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Services can't be stored for later sale or use. That's perishability, and it's why Assure forces delivery windows."
+ },
+ {
+  "id": "b6_r3",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "Brand equity: the differential effect knowing the brand has on customer response. That trust is what Voss is spending."
+ },
+ {
+  "id": "b6_r4",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "A store brand, or private brand, is created and owned by the reseller. Castellan controls the shelf and the label."
+ },
+ {
+  "id": "b6_sum",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "A product is anything offered to a market for attention, acquisition, use or consumption that might satisfy a want or need. A service is an activity, benefit or satisfaction that is essentially intangible. Products have three levels: core customer value, the actual product, and the augmented product. Customer experiences increasingly matter as much as the product itself. Consumer products are convenience, shopping, specialty and unsought products. Industrial products include materials and parts, capital items, and supplies and services. Organizations, persons, places and ideas can also be marketed, and social marketing applies marketing to encourage behaviour that benefits individuals and society. Individual product decisions cover attributes (quality, features, style and design), branding, packaging, labelling and logos, and support services. Product line decisions set line length, through stretching and filling. The product mix has width, length, depth and consistency. Services are intangible, inseparable, variable and perishable. The service profit chain links firm profits with employee and customer satisfaction, and relies on internal marketing, interactive marketing, differentiation, quality and productivity. Brands are among a company's most valuable assets. Brand equity, the differential effect of knowing the brand, builds brand value. Branding strategy covers positioning, name selection, sponsorship (manufacturer's brands, store brands, licensing, co-branding) and development: line extensions, brand extensions, multibrands and new brands."
+ },
+ {
+  "id": "b6_out",
+  "mission": "boards",
+  "spk": "MARR",
+  "text": "The board meets in an hour. Voss has the votes, unless they hear the truth from someone who can prove it. Up we go."
  }
 ]

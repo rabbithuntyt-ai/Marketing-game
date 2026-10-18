@@ -56,8 +56,13 @@ func _process(_dt: float) -> void:
 
 func _continue() -> void:
 	var cp = Game.save.get("checkpoint")
-	if cp != null: main.start_mission(int(cp["m"]), int(cp["r"]))
-	else: main.start_mission(mini(int(Game.save["unlocked"]), Game.missions.size() - 1))
+	if cp != null:
+		main.start_mission(int(cp["m"]), int(cp["r"]))
+		return
+	var nxt := mini(int(Game.save["unlocked"]), Game.missions.size() - 1)
+	var bi := Game.board_after(nxt - 1)
+	if bi >= 0 and not Game.board_done(bi): main.open_case_board(bi)
+	else: main.start_mission(nxt)
 
 func open_page(n: String) -> void:
 	for c in page.get_children(): c.queue_free()
@@ -134,6 +139,8 @@ func _archive(v: VBoxContainer) -> void:
 	var body := Control.new(); body.size_flags_vertical = Control.SIZE_EXPAND_FILL; v.add_child(body)
 	var intel_b := UIKit.small_button("Intel files", accent); tabs.add_child(intel_b)
 	var weak_b := UIKit.small_button("Weak spots", accent); tabs.add_child(weak_b)
+	var board_b := UIKit.small_button("Case boards", accent); tabs.add_child(board_b)
+	board_b.pressed.connect(func(): _boards_tab(body))
 	intel_b.pressed.connect(func(): _intel_tab(body))
 	weak_b.pressed.connect(func(): _weak_tab(body))
 	_intel_tab(body)
@@ -194,6 +201,20 @@ func _weak_tab(body: Control) -> void:
 		var pv := UIKit.vbox(4); p.add_child(pv)
 		pv.add_child(UIKit.label("MISSION %d  ·  %s  ·  missed %d×" % [mi + 1, Game.chapter_tag(Game.missions[mi], false), int(Game.save["missed"][k])], UIKit.mono(13), UIKit.DIM))
 		var ql := UIKit.label(String(q["q"]), UIKit.body(19)); ql.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; ql.custom_minimum_size = Vector2(900, 0); pv.add_child(ql)
+
+func _boards_tab(body: Control) -> void:
+	for c in body.get_children(): c.queue_free()
+	var v := UIKit.vbox(10); body.add_child(v); v.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	v.add_child(UIKit.label("Case boards", UIKit.head(40)))
+	v.add_child(UIKit.label("One per chapter. String the evidence to the concepts, sort the framework, then read Marr's case notes: the chapter summary. Replay any board you've reached.", UIKit.body(19), UIKit.DIM))
+	var bs: Array = Game.content.get("boards", [])
+	for i in bs.size():
+		var bd: Dictionary = bs[i]
+		var open: bool = int(Game.save["unlocked"]) > int(bd["after"])
+		var label := "CH %d  ·  %s" % [int(bd["ch"]), String(bd["title"])] if open else "CH %d  ·  locked (finish mission %d)" % [int(bd["ch"]), int(bd["after"]) + 1]
+		if Game.board_done(i): label += "   ✓"
+		var b := UIKit.button(label, accent, 24); b.disabled = not open; v.add_child(b)
+		b.pressed.connect(main.open_case_board.bind(i, true))
 
 # ---------------------------------------------------------------- credits
 func _credits(v: VBoxContainer) -> void:

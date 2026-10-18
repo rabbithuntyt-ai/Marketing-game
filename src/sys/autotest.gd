@@ -157,6 +157,32 @@ func _do(spec: String) -> void:
 			await shot("flow_pause")
 			_key(KEY_ESCAPE); await _wait(1.0)
 			print("[autotest] flow resumed state=", main.state, " tree paused=", tree.paused)
+		"board":
+			main.clear_world()
+			var cb := CaseBoard.new(); cb.main = main; cb.bi = int(arg); main.state = "board"; main.set_screen(cb)
+			await _wait(1.5); await shot("board%s_a" % arg)
+			var th: Array = cb.B["threads"]
+			var wrong := ""
+			for t in cb.B["concepts"].keys():
+				if t != th[0]["a"]: wrong = t; break
+			cb._try_link(0, wrong)
+			cb._try_link(0, th[0]["a"]); cb._try_link(1, th[1]["a"])
+			cb.selected_ev = 2
+			await _wait(1.0); await shot("board%s_b" % arg)
+			cb.selected_ev = -1
+			for i in range(2, th.size()): cb._try_link(i, th[i]["a"])
+			for kk in cb.tokens.size():
+				cb._try_place(kk, cb._token_answer(cb.tokens[kk]["i"]))
+			await _wait(1.0); await shot("board%s_c" % arg)
+			cb._open_summary()
+			await _wait(1.5); await shot("board%s_d" % arg)
+			Audio.clear_dialogue()
+		"boardflow":
+			main.next_after(0); await _wait(3.0)
+			print("[autotest] boardflow state=", main.state, " screen=", main.screen)
+			(main.screen as CaseBoard)._close(); await _wait(3.0)
+			print("[autotest] boardflow after close state=", main.state)
+			Audio.clear_dialogue()
 		"combat":
 			await _build(int(arg))
 			var mc: Mission = main.mission
