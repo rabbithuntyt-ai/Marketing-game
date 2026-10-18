@@ -98,7 +98,7 @@ func _next() -> void:
 				Audio.say_generic("g_recall_missed" if missed else "g_recall", true)
 		else:
 			var ch: String = String(Game.missions[Game.mission_index].get("chname", ""))
-			tag_l.text = "CHAPTER %s  ·  %s" % [str(Game.missions[Game.mission_index].get("ch", "")), ch.to_upper()]
+			tag_l.text = Game.chapter_tag(Game.missions[Game.mission_index])
 			tag_l.add_theme_color_override("font_color", UIKit.DIM)
 	else:
 		cur_q = single

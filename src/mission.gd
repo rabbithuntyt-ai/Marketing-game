@@ -124,6 +124,7 @@ func _process(dt: float) -> void:
 	for r in rooms:
 		if r.contains(player.global_position) and r != cur_room:
 			cur_room = r; _update_visibility(); _ambience(); player.set_room_settings(r)
+			if r.kind != "range": main.hud.drill_show(false)
 	if not cur_room.entered and pz < cur_room.z0 - 1.0:
 		_enter(cur_room)
 	cur_room.mode.tick(dt)
@@ -178,9 +179,42 @@ func _enter(r: Room) -> void:
 	if ally and r.data.get("ally", false):
 		ally.stealth = r.kind == "stealth"
 	r.mode.enter()
+	_tips_for(r)
 	if marked_t > 0.0:
 		for e in r.enemies: main.hud.mark_enemy(e, 25.0)
 		marked_t = 0.0
+
+func _tips_for(r: Room) -> void:
+	var seen: Dictionary = Game.save.get("tips", {})
+	var want: Array = []
+	if mi == 0 and r.ri == 0: want = ["move", "fire", "intel"]
+	match r.kind:
+		"range": want.append("range")
+		"stealth": want.append("stealth")
+		"hvt": want.append("hvt")
+		"tail": want.append("tail")
+		"sniper": want.append("sniper")
+		"defend": want.append("defend")
+	if mi == 0 and r.ri == 1: want.append_array(["grenade", "takedown"])
+	const T := {
+		"move": [["W A S D", "Move"], ["Shift", "Sprint"], ["Ctrl", "Crouch"]],
+		"fire": [["LMB", "Fire"], ["RMB", "Aim down sights"], ["R", "Reload"]],
+		"intel": [["E", "Read glowing intel. It's what the uplink questions are about."]],
+		"grenade": [["G", "Throw grenade"]], "takedown": [["F", "Silent takedown from behind"]],
+		"range": [["LMB", "Shoot the targets Marr calls, in order when she says so"]],
+		"stealth": [["Ctrl", "Stay crouched and out of sight. The meter above your sights is their suspicion."], ["F", "Takedowns are silent"]],
+		"hvt": [["RMB", "Aim at a director to listen in"], ["E", "Mark the one whose philosophy matches Marr's profile"]],
+		"tail": [["Shift", "Keep your distance. Too close and he'll make you; too far and you lose him."]],
+		"sniper": [["RMB", "Scope in. Five rounds per magazine; make them count."]],
+		"defend": [["1 2 3", "Classify intercepted radio chatter while you hold the position"]],
+	}
+	var out: Array = []
+	for k in want:
+		if seen.has(k): continue
+		seen[k] = true
+		out.append_array(T[k])
+	Game.save["tips"] = seen
+	if not out.is_empty(): main.hud.tips(out)
 
 func breach() -> void:
 	_slow_t = 1.05

@@ -14,9 +14,9 @@ var head_mesh: Node3D
 var cur_variant := ""
 
 const CITIES := {
-	"hamilton": ["HAMILTON, ON", 43.26, -79.87], "kingsway": ["KINGSWAY FACILITY · OTTAWA VALLEY", 45.35, -76.1], "ottawa": ["OTTAWA, ON", 45.42, -75.69],
-	"halifax": ["HALIFAX, NS", 44.65, -63.57], "port": ["PORT OF HALIFAX · PIER 9", 44.64, -63.56], "storm": ["ATLANTIC STORM CELL", 44.2, -62.4],
-	"datacentre": ["NORTHGATE DATA CENTRE · CALGARY", 51.12, -114.02], "calgary": ["CALGARY, AB", 51.05, -114.07], "northgate": ["NORTHGATE DATA CENTRE", 51.12, -114.02],
+	"hamilton": ["HAMILTON, ON", 43.26, -79.87], "kingsway": ["KINGSWAY BUNKER · OTTAWA", 45.35, -75.75], "ottawa": ["OTTAWA, ON", 45.42, -75.69],
+	"halifax": ["HALIFAX, NS", 44.65, -63.57], "port": ["SOUTH END CONTAINER TERMINAL · HALIFAX", 44.63, -63.56], "storm": ["ATLANTIC STORM CELL", 44.2, -62.4],
+	"datacentre": ["CASTELLAN INSIGHT DATA CENTRE · MIRABEL", 45.67, -74.04], "calgary": ["CALGARY, AB", 51.05, -114.07], "northgate": ["NORTHGATE CAMPUS · ROCKY VIEW COUNTY, AB", 51.25, -114.0],
 	"toronto": ["TORONTO, ON", 43.65, -79.38], "lobby": ["CASTELLAN TOWER · LOBBY", 43.648, -79.38], "tower": ["CASTELLAN TOWER · TORONTO", 43.648, -79.381],
 	"tower_top": ["CASTELLAN TOWER · FLOOR 60", 43.648, -79.381], "mirabel": ["MIRABEL ARRAY, QC", 45.68, -74.03],
 }
@@ -112,7 +112,7 @@ func _draw_map(place: String) -> void:
 		var sc := size.x / 70.0
 		for lat in range(40, 62, 2): var p1 := _project(lat, -125, 49, -95, sc); draw_line(Vector2(0, p1.y), Vector2(size.x, p1.y), grid, 1.0)
 		for lon in range(-130, -55, 5): var p2 := _project(49, lon, 49, -95, sc); draw_line(Vector2(p2.x, 0), Vector2(p2.x, size.y), grid, 1.0)
-		var route := ["hamilton", "kingsway", "halifax", "calgary", "toronto", "mirabel", "tower"]
+		var route := ["hamilton", "ottawa", "halifax", "mirabel", "toronto", "calgary"]
 		var pts: Array = []
 		for k in route:
 			var cd: Array = CITIES[k]; pts.append(_project(cd[1], cd[2], 49, -95, sc))

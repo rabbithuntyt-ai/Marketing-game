@@ -33,7 +33,7 @@ func tick(dt: float) -> void:
 	if not running or r.done: return
 	timer -= dt
 	m.main.hud.timer_set(timer)
-	for l in r.lights: (l as Light3D).light_energy = 1.6 + sin(Time.get_ticks_msec() * 0.008) * 1.2
+	for l in r.lights: (l as Light3D).light_energy = 4.0 + sin(Time.get_ticks_msec() * 0.008) * 2.5
 	boom_t -= dt
 	if boom_t <= 0.0:
 		boom_t = randf_range(2.5, 5.0)

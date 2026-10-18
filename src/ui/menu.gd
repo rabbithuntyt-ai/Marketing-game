@@ -110,7 +110,7 @@ func _detail(d: VBoxContainer, mi: int) -> void:
 	d.add_child(UIKit.label(String(M["code"]), UIKit.head(76)))
 	var ll := UIKit.label("%s  ·  %s" % [String(M["loc"]), String(M["time"])], UIKit.body(22), UIKit.DIM); ll.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; ll.custom_minimum_size = Vector2(420, 0); d.add_child(ll)
 	d.add_child(UIKit.rule(col, 2))
-	d.add_child(UIKit.label("CHAPTER %s" % str(M["ch"]), UIKit.mono(14), UIKit.DIM))
+	d.add_child(UIKit.label(Game.chapter_tag(M, false), UIKit.mono(14), UIKit.DIM))
 	var cl := UIKit.label(String(M["chname"]), UIKit.head(34)); cl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; cl.custom_minimum_size = Vector2(420, 0); d.add_child(cl)
 	var topics: Array = []
 	for R in M["rooms"]:
@@ -152,7 +152,7 @@ func _intel_tab(body: Control) -> void:
 	var total := 0; var got := 0
 	for mi in Game.missions.size():
 		var M: Dictionary = Game.missions[mi]
-		list.add_child(UIKit.label("%02d  %s  ·  CH %s" % [mi + 1, String(M["code"]), str(M["ch"])], UIKit.mono(14), Color(M["color"])))
+		list.add_child(UIKit.label("%02d  %s  ·  %s" % [mi + 1, String(M["code"]), "CH %d" % int(M["ch"]) if int(M["ch"]) > 0 else "FINAL"], UIKit.mono(14), Color(M["color"])))
 		for ri in M["rooms"].size():
 			var intel: Array = M["rooms"][ri].get("intel", [])
 			for k in intel.size():
@@ -192,7 +192,7 @@ func _weak_tab(body: Control) -> void:
 		var mi := Game.mi_of(k)
 		var p := UIKit.panel(Color(1, 1, 1, 0.03), Color(Game.missions[mi]["color"])); list.add_child(p)
 		var pv := UIKit.vbox(4); p.add_child(pv)
-		pv.add_child(UIKit.label("MISSION %d  ·  CH %s  ·  missed %d×" % [mi + 1, str(Game.missions[mi]["ch"]), int(Game.save["missed"][k])], UIKit.mono(13), UIKit.DIM))
+		pv.add_child(UIKit.label("MISSION %d  ·  %s  ·  missed %d×" % [mi + 1, Game.chapter_tag(Game.missions[mi], false), int(Game.save["missed"][k])], UIKit.mono(13), UIKit.DIM))
 		var ql := UIKit.label(String(q["q"]), UIKit.body(19)); ql.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; ql.custom_minimum_size = Vector2(900, 0); pv.add_child(ql)
 
 # ---------------------------------------------------------------- credits

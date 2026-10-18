@@ -132,16 +132,20 @@ func target_hit(col: Node, _pos: Vector3) -> void:
 		Audio.play2d("empty", -2.0)
 		var nxt: String = d["items"][next_i] if d["ordered"] else ""
 		m.main.hud.toast("✖  OUT OF ORDER" if tg["ok"] else "✖  DECOY: %s" % tg["label"], ("Next is: %s" % nxt) if d["ordered"] else ("“%s” isn't one of them" % tg["label"]), Color(1.0, 0.35, 0.3))
-		Game.stats["missed"].append("drill:%s|%s" % [d["t"], " → ".join(d["items"]) if d["ordered"] else " · ".join(d["items"])])
+		var mk := "drill:%s|%s" % [d["t"], " → ".join(d["items"]) if d["ordered"] else " · ".join(d["items"])]
+		if not Game.stats["missed"].has(mk): Game.stats["missed"].append(mk)
 		if randf() < 0.4: Audio.say_generic("g_wrongtarget")
 	_board()
 
 func _complete() -> void:
 	state = "done"
 	var medal := "gold" if mistakes == 0 else ("silver" if mistakes <= 2 else "bronze")
-	var prev = Game.save["medals"].get(str(m.mi), "")
+	var key := "range%d" % m.mi
+	var prev = String(Game.save["medals"].get(key, ""))
 	var order := {"": 0, "bronze": 1, "silver": 2, "gold": 3}
-	if order[medal] > order.get(prev, 0): Game.save["medals"][str(m.mi)] = medal; Game.persist()
+	if order[medal] > order.get(prev, 0):
+		Game.save["medals"][key] = medal
+		Game.persist()
 	Game.add_xp({"gold": 250, "silver": 150, "bronze": 75}[medal], medal.to_upper() + " MEDAL")
 	m.main.hud.toast("%s MEDAL" % medal.to_upper(), "%d mistake%s · %.1fs" % [mistakes, "" if mistakes == 1 else "s", t], {"gold": Color(1, 0.83, 0.42), "silver": Color(0.85, 0.87, 0.88), "bronze": Color(0.85, 0.6, 0.36)}[medal])
 	Audio.say_generic("g_" + medal)

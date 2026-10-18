@@ -86,7 +86,7 @@ func fade(to: float, secs := 0.6) -> Tween:
 
 func _on_line(spk: String, text: String, _d: float) -> void:
 	var cv: Control = top_layer.get_node("CineSub")
-	if not (state in ["cutscene", "debrief_vo"]) or not Game.settings["subtitles"]:
+	if not (state in ["cutscene", "debrief"]) or not Game.settings["subtitles"]:
 		cv.visible = false; return
 	var sp := Game.speaker(spk)
 	cine_who.text = String(sp.get("name", spk)).to_upper()

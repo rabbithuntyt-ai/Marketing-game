@@ -54,7 +54,7 @@ func _ready() -> void:
 	title_box.add_child(UIKit.label(String(M["code"]), UIKit.head(150), UIKit.TEXT, HORIZONTAL_ALIGNMENT_CENTER))
 	title_box.add_child(UIKit.label("%s   ·   %s" % [String(M["loc"]), String(M["time"])], UIKit.body(26), UIKit.DIM, HORIZONTAL_ALIGNMENT_CENTER))
 	title_box.add_child(UIKit.spacer(10))
-	title_box.add_child(UIKit.label("CHAPTER %s  ·  %s" % [str(M["ch"]), String(M["chname"]).to_upper()], UIKit.mono(16), UIKit.DIM, HORIZONTAL_ALIGNMENT_CENTER))
+	title_box.add_child(UIKit.label(Game.chapter_tag(M), UIKit.mono(16), UIKit.DIM, HORIZONTAL_ALIGNMENT_CENTER))
 	title_box.modulate.a = 0.0
 	Audio.music(M["music"].get("tension", "ominosity"), 2.0, -4.0)
 	Audio.ambience("", -40.0)

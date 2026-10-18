@@ -84,7 +84,7 @@ func _ready() -> void:
 	nb.call_deferred("grab_focus")
 	# ---- right column: concept review
 	var R := UIKit.vbox(10); root.add_child(R); R.custom_minimum_size = Vector2(900, 0)
-	R.add_child(UIKit.label("CONCEPT REVIEW  ·  CHAPTER %s  ·  %s" % [str(M["ch"]), String(M["chname"]).to_upper()], UIKit.mono(16), accent))
+	R.add_child(UIKit.label("CONCEPT REVIEW  ·  " + Game.chapter_tag(M), UIKit.mono(16), accent))
 	var sc := ScrollContainer.new(); sc.custom_minimum_size = Vector2(900, 780); sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED; R.add_child(sc)
 	review = UIKit.vbox(14); review.custom_minimum_size = Vector2(880, 0); sc.add_child(review)
 	_fill_review()
@@ -98,7 +98,7 @@ func _ready() -> void:
 func _fill_review() -> void:
 	for c in review.get_children(): c.queue_free()
 	var missed: Array = stats.get("missed", [])
-	var still: Array = missed.filter(func(k): return Game.save["missed"].has(k))
+	var still: Array = missed.filter(func(k): return Game.save["missed"].has(k) and not Game.q_data(k).is_empty())
 	if missed.is_empty():
 		review.add_child(UIKit.label("Clean sheet. Every analysis call right first time.", UIKit.head(30), UIKit.GREEN))
 	else:
@@ -110,6 +110,16 @@ func _fill_review() -> void:
 				var q: Array = still.duplicate()
 				main.open_terminal(null, q, func(_ok): _fill_review()))
 		for k in missed:
+			var ks := String(k)
+			if ks.contains(":") and Game.q_data(ks).is_empty():
+				var tag := ks.substr(0, ks.find(":"))
+				var parts := ks.substr(ks.find(":") + 1).split("|")
+				var pi := UIKit.panel(Color(1, 1, 1, 0.03), Color(0.4, 0.9, 1.0)); review.add_child(pi)
+				var vi := UIKit.vbox(6); pi.add_child(vi)
+				vi.add_child(UIKit.label({"icpt": "INTERCEPT", "hvt": "TARGET IDENTIFICATION", "bcg": "BCG CLASSIFICATION", "drill": "RANGE DRILL", "predict": "BEHAVIOUR PREDICTION"}.get(tag, tag.to_upper()), UIKit.mono(13), Color(0.4, 0.9, 1.0)))
+				var il := UIKit.label(parts[0], UIKit.body(20), UIKit.DIM); il.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; il.custom_minimum_size = Vector2(820, 0); vi.add_child(il)
+				vi.add_child(UIKit.label("→  " + (parts[1] if parts.size() > 1 else ""), UIKit.head(26), UIKit.TEXT))
+				continue
 			var q := Game.q_data(k)
 			if q.is_empty(): continue
 			var p := UIKit.panel(Color(1, 1, 1, 0.03), UIKit.RED if Game.save["missed"].has(k) else UIKit.GREEN)

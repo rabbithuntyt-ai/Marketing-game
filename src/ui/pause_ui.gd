@@ -36,7 +36,7 @@ func _clear() -> void:
 func _notes() -> void:
 	_clear()
 	var M: Dictionary = Game.missions[Game.mission_index]
-	right.add_child(UIKit.label("FIELD NOTES  ·  CHAPTER %s  ·  %s" % [str(M["ch"]), String(M["chname"]).to_upper()], UIKit.mono(15), accent))
+	right.add_child(UIKit.label("FIELD NOTES  ·  " + Game.chapter_tag(M), UIKit.mono(15), accent))
 	var docs: Array = []
 	for ri in M["rooms"].size():
 		var R: Dictionary = M["rooms"][ri]

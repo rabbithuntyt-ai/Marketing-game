@@ -28,7 +28,7 @@ func _ready() -> void:
 	v.add_child(UIKit.label(("FINAL MISSION" if M.get("final", false) else "MISSION %d" % (mi + 1)), UIKit.mono(18), acc))
 	v.add_child(UIKit.label(String(M["code"]), UIKit.head(120)))
 	v.add_child(UIKit.label("%s   ·   %s" % [String(M["loc"]), String(M["time"])], UIKit.body(24), UIKit.DIM))
-	v.add_child(UIKit.label("CHAPTER %s  ·  %s" % [str(M["ch"]), String(M["chname"]).to_upper()], UIKit.mono(16), UIKit.DIM))
+	v.add_child(UIKit.label(Game.chapter_tag(M), UIKit.mono(16), UIKit.DIM))
 	v.add_child(UIKit.spacer(50))
 	var tip := UIKit.rich("[color=#8d969b]CONCEPT[/color]\n" + tip_for(mi), 22); tip.custom_minimum_size = Vector2(900, 0); v.add_child(tip)
 	v.name = "V"

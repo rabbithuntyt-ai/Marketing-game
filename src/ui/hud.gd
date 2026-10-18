@@ -222,6 +222,7 @@ func _layout() -> void:
 func _process(dt: float) -> void:
 	_layout()
 	if mission == null or player == null: return
+	_tick_tips(dt)
 	# toasts / card
 	toast_t -= dt; toast_box.modulate.a = clampf(toast_t / 0.4, 0.0, 1.0)
 	card_t -= dt; card.modulate.a = clampf(card_t / 0.6, 0.0, 1.0) * clampf((3.6 - card_t) / 0.4 + 0.0, 0.0, 1.0)
@@ -237,7 +238,7 @@ func _process(dt: float) -> void:
 	rank_lbl.text = "%s  ·  %d XP" % [Game.rank_of(int(Game.save["xp"]))[1].to_upper(), int(Game.save["xp"])]
 	if mission.cur_room: obj_sector.text = "Sector %d/%d  ·  %s" % [mission.cur_room.ri + 1, mission.rooms.size(), mission.cur_room.data["n"]]
 	# scope / crosshair
-	scope.visible = player.sniper and player.ads > 0.85
+	scope.visible = player.ads > 0.85
 	cross.visible = not scope.visible and player.ads < 0.6 and not player.sprint
 	cross.queue_redraw(); scope.queue_redraw(); compass.queue_redraw(); marker.queue_redraw(); nade_warn.queue_redraw()
 	hitm_t -= dt; hitm.queue_redraw()
@@ -366,6 +367,8 @@ func _draw_nade() -> void:
 	nade_warn.draw_string(UIKit.font("Rajdhani-Bold"), dir + Vector2(-6, 8), "!", HORIZONTAL_ALIGNMENT_LEFT, -1, 26, UIKit.RED)
 
 func _draw_scope() -> void:
+	if player and not player.sniper:
+		_draw_optic(); return
 	var vs := get_viewport_rect().size
 	var c := vs * 0.5; var r := vs.y * 0.46
 	var black := Color(0, 0, 0, 1)
@@ -383,6 +386,55 @@ func _draw_scope() -> void:
 	scope.draw_line(c - Vector2(0, r), c - Vector2(0, 14), Color(0, 0, 0, 0.9), 2.0); scope.draw_line(c + Vector2(0, 14), c + Vector2(0, r), Color(0, 0, 0, 0.9), 2.0)
 	for k in range(1, 5): scope.draw_line(c + Vector2(-6, k * 22), c + Vector2(6, k * 22), Color(0, 0, 0, 0.9), 1.5)
 	scope.draw_circle(c, 1.6, Color(1, 0.2, 0.15))
+
+# ---------------------------------------------------------------- tips
+var tip_box: PanelContainer
+var _tips: Array = []
+var _tip_t := 0.0
+
+## Queue a control hint: [[keys, text], ...] shown one after another in the lower left.
+func tips(list: Array) -> void:
+	_tips.append_array(list)
+	if _tip_t <= 0.0: _next_tip()
+
+func _next_tip() -> void:
+	if tip_box and is_instance_valid(tip_box): tip_box.queue_free()
+	if _tips.is_empty(): _tip_t = 0.0; return
+	var t: Array = _tips.pop_front()
+	tip_box = UIKit.panel(Color(0, 0, 0, 0.55), accent); add_child(tip_box)
+	var h := UIKit.hbox(12); tip_box.add_child(h)
+	for k in String(t[0]).split(" "): h.add_child(UIKit.kbd(k))
+	h.add_child(_lbl(String(t[1]), UIKit.body(20)))
+	tip_box.modulate.a = 0.0; create_tween().tween_property(tip_box, "modulate:a", 1.0, 0.3)
+	_tip_t = 5.0
+
+func _tick_tips(dt: float) -> void:
+	if _tip_t > 0.0:
+		_tip_t -= dt
+		if tip_box and is_instance_valid(tip_box):
+			var vs := get_viewport_rect().size
+			tip_box.reset_size(); tip_box.position = Vector2(46, vs.y - 150 - tip_box.size.y)
+		if _tip_t <= 0.0: _next_tip()
+
+## Carbine optic: 4x prism sight, soft tube vignette, illuminated chevron.
+func _draw_optic() -> void:
+	var vs := get_viewport_rect().size
+	var c := vs * 0.5; var r := vs.y * 0.43
+	var black := Color(0, 0, 0, 1)
+	scope.draw_rect(Rect2(0, 0, c.x - r, vs.y), black); scope.draw_rect(Rect2(c.x + r, 0, vs.x - c.x - r, vs.y), black)
+	for i in 64:
+		var a1 := i * TAU / 64.0; var a2 := (i + 1) * TAU / 64.0
+		for ring in [[1.0, 1.7, 1.0], [0.9, 1.0, 0.55], [0.82, 0.9, 0.25]]:
+			var r0: float = r * float(ring[0]); var r1: float = r * float(ring[1])
+			var p1: Vector2 = c + Vector2(cos(a1), sin(a1)) * r0; var p2: Vector2 = c + Vector2(cos(a2), sin(a2)) * r0
+			var q1: Vector2 = c + Vector2(cos(a1), sin(a1)) * r1; var q2: Vector2 = c + Vector2(cos(a2), sin(a2)) * r1
+			scope.draw_colored_polygon(PackedVector2Array([p1, p2, q2, q1]), Color(0, 0, 0, ring[2]))
+	var red := Color(1.0, 0.25, 0.15)
+	scope.draw_polyline(PackedVector2Array([c + Vector2(-9, 9), c, c + Vector2(9, 9)]), red, 2.5)
+	scope.draw_line(c + Vector2(0, 14), c + Vector2(0, r * 0.55), Color(0, 0, 0, 0.85), 2.0)
+	for k in range(1, 4): scope.draw_line(c + Vector2(-5 - k, 14 + k * 26), c + Vector2(5 + k, 14 + k * 26), Color(0, 0, 0, 0.8), 1.5)
+	scope.draw_line(c - Vector2(r * 0.8, 0), c - Vector2(r * 0.25, 0), Color(0, 0, 0, 0.6), 1.5)
+	scope.draw_line(c + Vector2(r * 0.25, 0), c + Vector2(r * 0.8, 0), Color(0, 0, 0, 0.6), 1.5)
 
 # ---------------------------------------------------------------- API
 func set_prompt(text: String, actionable: bool) -> void:

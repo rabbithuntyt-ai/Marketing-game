@@ -12,10 +12,11 @@ var seen := 0.0
 var lost_t := 0.0
 var predicted := false
 var resetting := false
+var grace := 3.0
 
 func setup() -> void:
 	var hw := r.W * 0.5
-	path = [Vector3(0, 0, r.z0 - 4), Vector3(-hw * 0.4, 0, r.z0 - r.D * 0.3), Vector3(hw * 0.35, 0, r.z0 - r.D * 0.55), Vector3(-hw * 0.2, 0, r.z1 + 7), Vector3(0, 0, r.z1 + 3.5), Vector3(0, 0, r.z1 - 3.0), Vector3(0, 0, r.cz1 + 1.0)]
+	path = [Vector3(0, 0, r.z0 - 10), Vector3(-hw * 0.4, 0, r.z0 - r.D * 0.3), Vector3(hw * 0.35, 0, r.z0 - r.D * 0.55), Vector3(-hw * 0.2, 0, r.z1 + 7), Vector3(0, 0, r.z1 + 3.5), Vector3(0, 0, r.z1 - 3.0), Vector3(0, 0, r.cz1 + 1.0)]
 	# a few passive security staff for atmosphere
 	for i in maxi(0, int(r.data.get("e", 2))):
 		var e := m.spawn_enemy(r, Vector3(randf_range(-hw + 3, hw - 3), 0, randf_range(r.z1 + 6, r.z0 - 8)), "css", false)
@@ -34,7 +35,7 @@ func terminal_ready() -> bool: return predicted
 func terminal_locked_text() -> String: return "Uplink locked  ·  stay on the courier"
 
 func enter() -> void:
-	state = "walk"; wi = 0
+	state = "walk"; wi = 0; grace = 3.0
 	courier.global_position = path[0]; courier.visible = true
 	courier.room = r
 	m.main.hud.tail_show(true)
@@ -72,8 +73,9 @@ func tick(dt: float) -> void:
 		if state == "walk" or state == "exit": courier.forced_anim = ""
 	courier.locomotion(dt)
 	# distance discipline
-	if dist < 6.0 and state != "stop":
-		seen += dt * 0.6
+	grace -= dt
+	if dist < 6.0 and state != "stop" and grace <= 0.0:
+		seen += dt * 0.4
 		m.main.hud.tail_status("TOO CLOSE", seen)
 	elif dist > 26.0:
 		lost_t += dt
@@ -136,6 +138,6 @@ func _fail(gid: String) -> void:
 	resetting = true
 	Audio.say_generic(gid, true)
 	m.main.fade_reset(func():
-		courier.global_position = path[0]; wi = 0; state = "walk"; seen = 0.0; lost_t = 0.0; checking = 0.0
+		courier.global_position = path[0]; wi = 0; state = "walk"; seen = 0.0; lost_t = 0.0; checking = 0.0; grace = 3.0
 		m.player.global_position = Vector3(0, 0.1, r.z0 + 1.5); m.player.yaw = 0.0
 		resetting = false)

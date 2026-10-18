@@ -95,23 +95,23 @@ func _viewmodel_materials(root: Node) -> void:
 				var b := m.get_active_material(s)
 				if b is BaseMaterial3D:
 					var d: BaseMaterial3D = b.duplicate()
-					d.use_z_clip_scale = true; d.z_clip_scale = 0.3; d.use_fov_override = true; d.fov_override = 62.0
+					d.use_z_clip_scale = true; d.z_clip_scale = 0.3; d.use_fov_override = true; d.fov_override = 70.0
 					m.set_surface_override_material(s, d)
 			if m.material_override is BaseMaterial3D:
 				var d2: BaseMaterial3D = m.material_override.duplicate()
-				d2.use_z_clip_scale = true; d2.z_clip_scale = 0.3; d2.use_fov_override = true; d2.fov_override = 62.0
+				d2.use_z_clip_scale = true; d2.z_clip_scale = 0.3; d2.use_fov_override = true; d2.fov_override = 70.0
 				m.material_override = d2
 		elif g is SpriteBase3D or g.material_override is BaseMaterial3D:
 			if g.material_override is BaseMaterial3D:
 				var d3: BaseMaterial3D = g.material_override.duplicate()
-				d3.use_z_clip_scale = true; d3.z_clip_scale = 0.3; d3.use_fov_override = true; d3.fov_override = 62.0
+				d3.use_z_clip_scale = true; d3.z_clip_scale = 0.3; d3.use_fov_override = true; d3.fov_override = 70.0
 				g.material_override = d3
 
 func set_room_settings(r: Room) -> void:
 	suppressed = r.kind == "stealth" or r.data.get("suppressed", false)
 	surface = "metal" if r.data.get("set", "") in ["servers", "analytics", "cooling", "crane", "array"] or Game.mission()["theme"] in ["data", "array"] else ("gravel" if r.outdoor else "concrete")
 
-func hip_pos() -> Vector3: return Vector3(0.2, -0.22, -0.42) if not sniper else Vector3(0.18, -0.2, -0.36)
+func hip_pos() -> Vector3: return Vector3(0.19, -0.2, -0.5) if not sniper else Vector3(0.18, -0.2, -0.46)
 func ads_pos() -> Vector3: return Vector3(0.0, -0.152, -0.3)
 
 func _unhandled_input(e: InputEvent) -> void:
@@ -173,7 +173,7 @@ func _camera(dt: float, hs: float) -> void:
 	head.position = Vector3(0, lerpf(1.62, 1.05, crouch_k) + sin(bob) * 0.035 * bob_a, 0)
 	head.rotation = Vector3(pitch + kick * 0.3 + randf_range(-shake, shake), yaw + randf_range(-shake, shake), sin(bob * 0.5) * 0.004 * bob_a)
 	var base_fov: float = Game.settings["fov"]
-	var tgt_fov := lerpf(base_fov, (14.0 if sniper else 52.0), ads) + (5.0 if sprint else 0.0)
+	var tgt_fov := lerpf(base_fov, (14.0 if sniper else 34.0), ads) + (5.0 if sprint else 0.0)
 	cam.fov = lerpf(cam.fov, tgt_fov, 1.0 - exp(-12.0 * dt))
 
 func _weapon(dt: float) -> void:
@@ -201,7 +201,7 @@ func _weapon(dt: float) -> void:
 	var ak := 1.0 - ads * 0.85
 	vm_root.position = target + Vector3(cos(bob * 0.5) * 0.012 * bob_a + sway.x * 0.4 * ak, -absf(sin(bob * 0.5)) * 0.011 * bob_a - rl * 0.16 - eq * 0.4 + (-0.04 if sprint else 0.0) + sway.y * 0.3 * ak, kick * 0.35)
 	vm_root.rotation = Vector3(sway.y * ak + (-0.22 if sprint else 0.0) + eq * 0.6 + kick * 0.8 - rl * 0.5, sway.x * ak + (0.5 if sprint else 0.0), (0.15 if sprint else 0.0) + sway.x * 0.6 * ak + rl * 0.4)
-	vm_root.visible = not (sniper and ads > 0.85)
+	vm_root.visible = ads <= 0.85
 
 func start_reload() -> void:
 	if reload_t > 0.0 or ammo == mag: return

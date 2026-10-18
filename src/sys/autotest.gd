@@ -113,6 +113,38 @@ func _do(spec: String) -> void:
 			main.close_overlay(); Audio.clear_dialogue()
 		"sim":
 			await _sim(int(arg))
+		"vm":
+			await _build(int(arg))
+			var mv: Mission = main.mission
+			_teleport(mv, mv.rooms[1])
+			mv.player.input_enabled = true
+			await _wait(1.0); await shot("vm_hip")
+			Input.action_press("aim"); await _wait(1.0); await shot("vm_ads"); Input.action_release("aim")
+			await _wait(0.5)
+		"look":
+			var parts2 := arg.split("/")
+			await _build(int(parts2[0]))
+			var ml: Mission = main.mission
+			for rs in parts2.slice(1):
+				var rr: Room = ml.rooms[int(rs)]
+				_teleport(ml, rr)
+				await _wait(1.5)
+				await shot("look_m%s_r%s_%s" % [parts2[0], rs, rr.kind])
+		"combat":
+			await _build(int(arg))
+			var mc: Mission = main.mission
+			var rc: Room = mc.rooms[1]
+			mc.player.global_position = Vector3(0, 0.1, rc.z0 - 3.0)
+			mc.player.input_enabled = false
+			await _wait(0.5)
+			for e in rc.alive_enemies(): e.alert(false)
+			for i in 8:
+				mc.player.hp = 100.0
+				if i == 3:
+					mc.player.fire()
+				await _wait(0.7)
+				await shot("combat%s_%d" % [arg, i])
+			print("[autotest] combat alive=", rc.alive_enemies().size(), " player hp=", mc.player.hp)
 		"play":
 			await _build(int(arg))
 			await _wait(3.0); await shot("play%s_a" % arg)

@@ -42,6 +42,8 @@ func _ready() -> void:
 	for a in OS.get_cmdline_user_args():
 		if a.begins_with("--autotest="): autotest = a.substr(11)
 		if a.begins_with("--room="): debug_start_room = int(a.substr(7))
+		if a == "--lowq":
+			save["settings"]["quality"] = 0; save["settings"]["render_scale"] = 0.5; save["settings"]["fsr"] = false
 	apply_settings()
 
 func _setup_input() -> void:
@@ -87,6 +89,7 @@ func _load_save() -> void:
 	save["settings"] = s
 
 func persist() -> void:
+	if autotest != "": return
 	var f := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if f: f.store_string(JSON.stringify(save))
 
@@ -133,7 +136,7 @@ func q_key(mi: int, ri: int, qi: int) -> String:
 
 func q_data(key: String) -> Dictionary:
 	var p := key.split("-")
-	if p.size() < 3: return {}
+	if p.size() != 3 or not p[0].is_valid_int() or not p[1].is_valid_int() or not p[2].is_valid_int(): return {}
 	var m: Dictionary = missions[int(p[0])]
 	var r: Dictionary = m["rooms"][int(p[1])]
 	var calls: Array = r.get("calls", [])
@@ -186,6 +189,11 @@ func recall_items(n: int, exclude: Array, upto_mission: int) -> Array:
 
 func mi_of(key: String) -> int:
 	return int(key.split("-")[0])
+
+func chapter_tag(M: Dictionary, with_name := true) -> String:
+	var ch := int(M.get("ch", 0))
+	var head := "CHAPTERS 1–7" if ch == 0 else "CHAPTER %d" % ch
+	return head + ("  ·  " + String(M.get("chname", "")).to_upper() if with_name and ch != 0 else "")
 
 func speaker(spk: String) -> Dictionary:
 	return cast.get(spk, {"name": spk, "role": "", "fx": "near"})
