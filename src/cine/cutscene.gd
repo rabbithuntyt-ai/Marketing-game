@@ -296,8 +296,8 @@ func _shot(shot: Array, dur: float) -> void:
 			var dir := (tgt - h3.global_position); dir.y = 0; dir = dir.normalized() if dir.length() > 0.01 else Vector3(0, 0, -1)
 			var rt := dir.cross(Vector3.UP).normalized()
 			var hd3 := _head(h3)
-			from = hd3 - dir * 0.95 + rt * 0.42 + Vector3(0, 0.12, 0)
-			to = hd3 - dir * 0.75 + rt * 0.38 + Vector3(0, 0.1, 0)
+			from = hd3 - dir * 1.45 + rt * 0.6 + Vector3(0, 0.2, 0)
+			to = hd3 - dir * 1.2 + rt * 0.55 + Vector3(0, 0.16, 0)
 			look_a = tgt; look_b = tgt
 			cam.fov = 38.0; focus = maxf(1.5, hd3.distance_to(tgt))
 		"wide":

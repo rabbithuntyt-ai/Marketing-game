@@ -46,8 +46,11 @@ func _do(spec: String) -> void:
 			print("[autotest] t=", Time.get_ticks_msec())
 			main.show_menu()
 			print("[autotest] menu built t=", Time.get_ticks_msec())
+			for i in 8:
+				await tree.process_frame
+				print("[autotest] f", i, " ts=", Engine.time_scale, " paused=", tree.paused, " dt=", main.get_process_delta_time(), " mod=", main.screen.left.modulate.a)
 			await _wait(2.5)
-			print("[autotest] waited t=", Time.get_ticks_msec())
+			print("[autotest] waited t=", Time.get_ticks_msec(), " left mod=", main.screen.left.modulate, " fade=", main.fade_rect.color)
 			await shot("menu")
 		"page":
 			main.show_menu(arg); await _wait(1.5); await shot("page_" + arg)
@@ -130,6 +133,30 @@ func _do(spec: String) -> void:
 				_teleport(ml, rr)
 				await _wait(1.5)
 				await shot("look_m%s_r%s_%s" % [parts2[0], rs, rr.kind])
+		"flow":
+			main.show_menu(); await _wait(1.0)
+			main.start_mission(int(arg)); await _wait(3.0)
+			await shot("flow_brief")
+			print("[autotest] flow state=", main.state)
+			_key(KEY_ESCAPE); await _wait(2.0)
+			print("[autotest] flow after esc state=", main.state)
+			for i in 40:
+				await _wait(1.0)
+				if main.state == "cutscene": break
+			await shot("flow_cut")
+			print("[autotest] flow state=", main.state)
+			_key(KEY_ESCAPE)
+			for i in 20:
+				await _wait(1.0)
+				if main.state == "play": break
+			await _wait(1.5)
+			await shot("flow_play")
+			print("[autotest] flow state=", main.state, " input=", main.mission.player.input_enabled, " cut_active=", main.mission.cut_active, " entered0=", main.mission.rooms[0].entered)
+			_key(KEY_ESCAPE); await _wait(1.0)
+			print("[autotest] flow paused state=", main.state, " tree paused=", tree.paused)
+			await shot("flow_pause")
+			_key(KEY_ESCAPE); await _wait(1.0)
+			print("[autotest] flow resumed state=", main.state, " tree paused=", tree.paused)
 		"combat":
 			await _build(int(arg))
 			var mc: Mission = main.mission
@@ -232,3 +259,11 @@ func _sim(mi: int) -> void:
 	await _wait(1.0)
 	print("[autotest] sim ", mi, " forced: ", flog)
 	print("[autotest] sim ", mi, " state=", main.state, " completing=", main._completing, " stats=", Game.stats)
+
+
+func _key(k: Key) -> void:
+	var e := InputEventKey.new(); e.keycode = k; e.physical_keycode = k; e.pressed = true
+	Input.parse_input_event(e)
+	await tree.process_frame
+	var e2 := InputEventKey.new(); e2.keycode = k; e2.physical_keycode = k; e2.pressed = false
+	Input.parse_input_event(e2)

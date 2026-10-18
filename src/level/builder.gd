@@ -419,7 +419,7 @@ func _outdoor(r: Room, geo: Node3D) -> void:
 			cyl(geo, 0.12, 9.0, Vector3(x, 4.5, z), mat("steel", 1.0), Vector3.ZERO, true)
 			box(geo, Vector3(0.9, 0.3, 0.5), Vector3(x - s * 0.4, 9.0, z), mat("gunmetal", 1.0), false)
 			box(geo, Vector3(0.7, 0.05, 0.35), Vector3(x - s * 0.4, 8.84, z), Mats.glow(Color(1.0, 0.92, 0.75), 6.0), false, false)
-			var sp := spot(r, Vector3(x - s * 0.4, 8.7, z), th["light"].lerp(Color(1.0, 0.85, 0.6), 0.4), 5.0, 26.0, 48.0, i == n / 2 and quality >= 1, Vector3(-s * 0.55, -1, 0))
+			var sp := spot(r, Vector3(x - s * 0.4, 8.7, z), th["light"].lerp(Color(1.0, 0.85, 0.6), 0.4), 11.0, 30.0, 62.0, i == n / 2 and quality >= 1, Vector3(-s * 0.55, -1, 0))
 			r.lights.append(sp)
 	# perimeter: container stacks / fence beyond walls
 	for s in [-1, 1]:
@@ -433,8 +433,20 @@ func _outdoor(r: Room, geo: Node3D) -> void:
 	for k in 6:
 		var pz := rng.randf_range(r.z1 + 3, r.z0 - 3); var px := rng.randf_range(-hw + 2, hw - 2)
 		var pm := MeshInstance3D.new(); var pl := PlaneMesh.new(); pl.size = Vector2(rng.randf_range(1.5, 4), rng.randf_range(1, 3)); pm.mesh = pl
-		var wm := StandardMaterial3D.new(); wm.albedo_color = Color(0.02, 0.025, 0.03); wm.roughness = 0.04; wm.metallic = 0.3
-		pm.material_override = wm; pm.position = Vector3(px, 0.012, pz); geo.add_child(pm)
+		pm.material_override = _puddle_mat(); pm.position = Vector3(px, 0.012, pz); pm.rotation.y = rng.randf() * TAU; geo.add_child(pm)
+		pm.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+
+static var _puddle: StandardMaterial3D
+## Soft-edged wet patch: darkens the ground and picks up specular highlights from the floodlights.
+func _puddle_mat() -> StandardMaterial3D:
+	if _puddle: return _puddle
+	var g := Gradient.new(); g.set_color(0, Color(1, 1, 1, 0.75)); g.add_point(0.55, Color(1, 1, 1, 0.55)); g.set_color(g.get_point_count() - 1, Color(1, 1, 1, 0.0))
+	var gt := GradientTexture2D.new(); gt.gradient = g; gt.fill = GradientTexture2D.FILL_RADIAL; gt.fill_from = Vector2(0.5, 0.5); gt.fill_to = Vector2(1.0, 0.5); gt.width = 128; gt.height = 128
+	_puddle = StandardMaterial3D.new()
+	_puddle.albedo_texture = gt; _puddle.albedo_color = Color(0.03, 0.035, 0.04, 1.0)
+	_puddle.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	_puddle.roughness = 0.03; _puddle.metallic = 0.85; _puddle.specular_mode = BaseMaterial3D.SPECULAR_SCHLICK_GGX
+	return _puddle
 
 # ---------------------------------------------------------------- set pieces
 func _set_piece(r: Room, geo: Node3D) -> void:

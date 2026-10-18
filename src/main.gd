@@ -176,11 +176,11 @@ func _build_mission(mi: int, from_room: int) -> void:
 	mission.build(self, mi, from_room)
 	hud.bind(mission)
 	var cid: String = mission.M.get("intro_cut", "")
-	mission.cut_active = from_room == 0 and cid != "" and Game.cuts.has(cid) and Game.autotest == ""
+	mission.cut_active = from_room == 0 and cid != "" and Game.cuts.has(cid) and not Game.skip_cuts()
 
 func _begin_mission(from_room: int) -> void:
 	var cid: String = mission.M.get("intro_cut", "")
-	if from_room == 0 and cid != "" and Game.cuts.has(cid) and Game.autotest == "":
+	if from_room == 0 and cid != "" and Game.cuts.has(cid) and not Game.skip_cuts():
 		play_cut(cid, func(): _enter_play(true))
 	else:
 		_enter_play(true)
@@ -276,7 +276,7 @@ func mission_complete() -> void:
 	Game.add_xp(500, "MISSION COMPLETE")
 	Game.persist()
 	var cid: String = mission.M.get("outro_cut", "")
-	if cid != "" and Game.cuts.has(cid) and Game.autotest == "":
+	if cid != "" and Game.cuts.has(cid) and not Game.skip_cuts():
 		hud.set_prompt("", false)
 		play_cut(cid, func(): _show_debrief(mi))
 	else:
@@ -290,6 +290,14 @@ func _show_debrief(mi: int) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		var d := Debrief.new(); d.main = self; d.mi = mi; d.stats = stats; set_screen(d)
 		fade(0.0, 0.8))
+
+func roll_credits() -> void:
+	fade(1.0, 0.8).tween_callback(func():
+		clear_world()
+		state = "credits"
+		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+		var c := CreditsRoll.new(); c.main = self; set_screen(c)
+		fade(0.0, 1.5))
 
 func player_died() -> void:
 	if state != "play": return

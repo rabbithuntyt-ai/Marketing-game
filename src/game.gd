@@ -190,6 +190,9 @@ func recall_items(n: int, exclude: Array, upto_mission: int) -> Array:
 func mi_of(key: String) -> int:
 	return int(key.split("-")[0])
 
+func skip_cuts() -> bool:
+	return autotest != "" and not autotest.begins_with("flow")
+
 func chapter_tag(M: Dictionary, with_name := true) -> String:
 	var ch := int(M.get("ch", 0))
 	var head := "CHAPTERS 1–7" if ch == 0 else "CHAPTER %d" % ch

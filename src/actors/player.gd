@@ -73,7 +73,7 @@ func _build_viewmodel() -> void:
 			if b is BaseMaterial3D:
 				var d: BaseMaterial3D = b.duplicate(); d.albedo_color = Color(0.5, 0.5, 0.53); d.roughness = 0.55; d.metallic = 0.35; m.set_surface_override_material(s, d)
 	# gloved hands and sleeves so the rifle isn't floating
-	var sleeve := Mats.flat(Color(0.2, 0.22, 0.17), 0.85); var glove := Mats.flat(Color(0.05, 0.05, 0.055), 0.7)
+	var sleeve := Mats.flat(Color(0.09, 0.1, 0.085), 0.9); var glove := Mats.flat(Color(0.05, 0.05, 0.055), 0.7)
 	for spec in [[Vector3(0.02, -0.07, 0.12), Vector3(0.25, 0.0, 0.55)], [Vector3(-0.07, -0.05, -0.2), Vector3(-0.2, 0.0, 0.3)]]:
 		var hand := MeshInstance3D.new(); var hb := BoxMesh.new(); hb.size = Vector3(0.07, 0.085, 0.11); hand.mesh = hb; hand.material_override = glove; hand.layers = 2
 		hand.position = spec[0]; rifle.add_child(hand)

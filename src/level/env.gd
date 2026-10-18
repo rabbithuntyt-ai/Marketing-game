@@ -52,7 +52,7 @@ func setup(mission: Dictionary) -> void:
 	we.camera_attributes = ca
 	moon = DirectionalLight3D.new(); moon.rotation_degrees = Vector3(-38, -35, 0)
 	moon.light_color = Color(0.6, 0.7, 0.9) if theme != "array" else Color(1.0, 0.85, 0.7)
-	base_moon = 0.22 if theme != "array" else 0.9
+	base_moon = 0.5 if theme != "array" else 0.9
 	moon.light_energy = base_moon; moon.shadow_enabled = q >= 1; moon.directional_shadow_max_distance = 55.0
 	moon.light_volumetric_fog_energy = 0.4
 	add_child(moon)

@@ -77,7 +77,7 @@ func _ready() -> void:
 	var last := mi >= Game.missions.size() - 1
 	var nb := UIKit.button("Roll credits" if last else "Next mission", accent, 34); btns.add_child(nb)
 	nb.pressed.connect(func():
-		if last: main.show_menu("credits")
+		if last: main.roll_credits()
 		else: main.start_mission(mi + 1))
 	var rb := UIKit.button("Replay mission", accent, 26); btns.add_child(rb); rb.pressed.connect(func(): main.start_mission(mi))
 	var qb := UIKit.button("Main menu", accent, 26); btns.add_child(qb); qb.pressed.connect(func(): main.show_menu())

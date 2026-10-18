@@ -202,8 +202,8 @@ func _layout() -> void:
 	sub_box.size = Vector2.ZERO; sub_box.reset_size()
 	sub_box.position = Vector2(vs.x * 0.5 - sub_box.size.x * 0.5, vs.y - 150 - sub_box.size.y * 0.5)
 	prompt_box.reset_size(); prompt_box.position = Vector2(vs.x * 0.5 - prompt_box.size.x * 0.5, vs.y * 0.66)
-	toast_box.reset_size(); toast_box.position = Vector2(vs.x * 0.5 - toast_box.size.x * 0.5, vs.y * 0.24)
-	card.reset_size(); card.position = Vector2(vs.x * 0.5 - card.size.x * 0.5, vs.y * 0.34)
+	toast_box.reset_size(); toast_box.position = Vector2(vs.x * 0.5 - toast_box.size.x * 0.5, vs.y * 0.17)
+	card.reset_size(); card.position = Vector2(vs.x * 0.5 - card.size.x * 0.5, vs.y * 0.36)
 	var ab: Control = get_node("Ammo"); ab.reset_size(); ab.position = Vector2(vs.x - ab.size.x - 46, vs.y - ab.size.y - 34)
 	var hb: Control = get_node("Health"); hb.position = Vector2(46, vs.y - 64)
 	xp_feed.position = Vector2(vs.x - 300, vs.y * 0.42)
@@ -413,7 +413,7 @@ func _tick_tips(dt: float) -> void:
 		_tip_t -= dt
 		if tip_box and is_instance_valid(tip_box):
 			var vs := get_viewport_rect().size
-			tip_box.reset_size(); tip_box.position = Vector2(46, vs.y - 150 - tip_box.size.y)
+			tip_box.reset_size(); tip_box.position = Vector2(42, vs.y * 0.56)
 		if _tip_t <= 0.0: _next_tip()
 
 ## Carbine optic: 4x prism sight, soft tube vignette, illuminated chevron.

@@ -102,7 +102,8 @@ func _tint_for(v: String, base: Color, surf: int) -> Color:
 		"heavy": return base * Color(0.25, 0.25, 0.27)
 		"kessler": return base * Color(0.18, 0.17, 0.17) + Color(0.08, 0.0, 0.0)
 		"hale": return base * Color(0.3, 0.34, 0.42)
-		"ally", "wren": return base * Color(0.62, 0.66, 0.5)            # LEDGER olive
+		"ally": return base * Color(0.62, 0.66, 0.5)                    # LEDGER olive
+		"wren": return base * Color(0.38, 0.42, 0.4)                    # Wren: darker field grey
 		"director", "civilian": return base * Color(0.2, 0.2, 0.22)
 	return base
 

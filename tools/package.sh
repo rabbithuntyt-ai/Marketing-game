@@ -35,5 +35,5 @@ TXT
 cd build/pkg
 rm -f ../OperationValueChain-win64.zip ../OperationValueChain-win64.7z.*
 zip -q -r -9 ../OperationValueChain-win64.zip OperationValueChain
-7z a -v29m -mx=7 ../OperationValueChain-win64.7z OperationValueChain > /dev/null
+7z a -v28m -mx=7 ../OperationValueChain-win64.7z OperationValueChain > /dev/null
 ls -la ..
