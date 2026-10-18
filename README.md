@@ -17,7 +17,7 @@ You play Sgt. Wren of LEDGER, a joint task force taking apart Project Meridian, 
 
 ## Playing
 
-Download `OperationValueChain-win64.zip` from the [Releases](../../releases) page, unzip, and run `OperationValueChain.exe`. It's a native Godot 4 executable (no installer, no browser runtime). Requires a GPU with Vulkan support (any card from roughly 2016 onward). If it fails to start on an older machine, run it with `--rendering-driver d3d12`.
+Grab the seven parts in [`download/`](download/) (each under 30 MB), extract `.001` with 7-Zip, and run `OperationValueChain.exe`. It's a native Godot 4 executable (no installer, no browser runtime). Requires a GPU with Vulkan support (any card from roughly 2016 onward). If it fails to start on an older machine, run it with `--rendering-driver d3d12`.
 
 Controls: WASD, mouse, Shift sprint, Ctrl crouch, Space jump, R reload, G grenade, F takedown, E interact, 1–4 answer, Esc pause. Gamepads work too.
 
