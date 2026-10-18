@@ -14,3 +14,13 @@ This is a native Godot 4.5 executable. There's no installer and no browser runti
 - 7 case boards between missions: string evidence to concepts, sort each chapter's framework, and unlock Dr. Marr's voiced case notes (the chapter summary).
 
 All third-party assets are credited in-game (Main menu → Credits) and in `CREDITS-audio.txt`.
+
+### What's new in this build
+- Soldiers now hold their rifles correctly. The rifle used to be upside down and sideways in their hands.
+- Closing an intel file or the uplink with E (or a click) no longer reopens it or fires a shot.
+- The analysis questions in the final rooms (Mission 1's rooftop and the Mission 3 and Mission 7 boss rooms) can now be answered. Before, the mission ended before you could reach them.
+- Intel desks and enemy spawn points no longer end up inside crates or set pieces.
+- Indoor lighting no longer resets to its darker level every frame.
+- Enemies stay put during loading and fades, so you can't be shot before you have control.
+- Rifles are hidden in cutscene poses that don't hold a weapon.
+- Waypoints now point the right way in escape and final rooms. Numpad 1–4 answers questions. The landing sound plays again.
