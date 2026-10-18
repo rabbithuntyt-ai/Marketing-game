@@ -1,0 +1,87 @@
+Operation Value Chain · audio credits
+
+music/deeper.ogg  <-  Deeper.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/retribution.ogg  <-  Retribution.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/ominosity.ogg  <-  Ominosity.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/surreptitious.ogg  <-  Surreptitious.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/dark_knight.ogg  <-  Dark Knight.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/reign_of_anarchy.ogg  <-  Reign of Anarchy.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/the_haunting.ogg  <-  The Haunting.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/syntheticity.ogg  <-  Syntheticity.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/destiny.ogg  <-  Destiny.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/halls_of_despair.ogg  <-  Halls of Despair.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/thugs.ogg  <-  Thugs.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/now_or_never.ogg  <-  Now or Never.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/fate.ogg  <-  Fate.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/crossroads.ogg  <-  Crossroads.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/remember.ogg  <-  Remember.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/home.ogg  <-  Home.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/from_here.ogg  <-  From Here.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/daybreak.ogg  <-  Daybreak.mp3  ·  Tanner Helland, github.com/tannerhelland/free-music, CC BY 4.0
+music/northern_lights.ogg  <-  northern-lights.ogg  ·  Xonotic team, xonotic-music, GPLv2+
+music/neon.ogg  <-  neon.ogg  ·  Xonotic team, xonotic-music, GPLv2+
+music/taiko_1.ogg  <-  Taiko_1.ogg  ·  Omri Lahav, 0 A.D. (Wildfire Games), CC BY-SA 3.0
+music/taiko_2.ogg  <-  Taiko_2.ogg  ·  Omri Lahav, 0 A.D. (Wildfire Games), CC BY-SA 3.0
+music/calm_before.ogg  <-  Calm_Before_the_Storm.ogg  ·  Omri Lahav, 0 A.D. (Wildfire Games), CC BY-SA 3.0
+music/tps_level.ogg  <-  level_music.ogg  ·  Christian Fernando Perucchi, Godot TPS demo, CC BY 3.0
+music/tps_menu.ogg  <-  menu_intro_music.ogg  ·  Christian Fernando Perucchi, Godot TPS demo, CC BY 3.0
+sfx/rifle_in_1.ogg  <-  CC-Sounds fire_gun/rifles/automatic_rifle/indoor_gunfire/556_auto_rifle_shot_01.ogg  ·  DoctorBoomstick, CC BY 4.0
+sfx/rifle_in_2.ogg  <-  CC-Sounds fire_gun/rifles/automatic_rifle/indoor_gunfire/556_auto_rifle_shot_02.ogg  ·  DoctorBoomstick, CC BY 4.0
+sfx/rifle_in_3.ogg  <-  CC-Sounds fire_gun/rifles/automatic_rifle/indoor_gunfire/556_auto_rifle_shot_03.ogg  ·  DoctorBoomstick, CC BY 4.0
+sfx/rifle_out_1.ogg  <-  CC-Sounds fire_gun/rifles/automatic_rifle/outdoor_gunfire/556_auto_rifle_shot_01.ogg  ·  DoctorBoomstick, CC BY 4.0
+sfx/rifle_out_2.ogg  <-  CC-Sounds fire_gun/rifles/automatic_rifle/outdoor_gunfire/556_auto_rifle_shot_02.ogg  ·  DoctorBoomstick, CC BY 4.0
+sfx/rifle_out_3.ogg  <-  CC-Sounds fire_gun/rifles/automatic_rifle/outdoor_gunfire/556_auto_rifle_shot_03.ogg  ·  DoctorBoomstick, CC BY 4.0
+sfx/sniper.ogg  <-  CC-Sounds fire_gun/rifles/rifle_1.ogg  ·  Mike Koenig, CC-BY-3.0, https://soundbible.com/1998-Gun-Fire.html
+sfx/pistol.ogg  <-  CC-Sounds fire_gun/handguns/handgun_1.ogg  ·  GoodSoundForYou, CC-BY-3.0, https://soundbible.com/2120-9mm-Gunshot.html#
+sfx/lmg.ogg  <-  CC-Sounds fire_gun/machineguns/machinegun_1.ogg  ·  WEL, CC-BY-3.0, https://soundbible.com/1575-High-Definition-Machine-Gun.html
+sfx/brass.ogg  <-  CC-Sounds fire_gun/brass_eject.ogg  ·  FST180081, CC BY 4.0, https://freesound.org/people/FST180081/sounds/441806/
+sfx/brass2.ogg  <-  CC-Sounds fire_gun/brass_eject_1.ogg  ·  FST180081, CC BY 4.0, https://freesound.org/people/FST180081/sounds/441809/
+sfx/empty.ogg  <-  CC-Sounds fire_gun/empty.ogg  ·  Sophia_C, CC BY 4.0, https://freesound.org/people/Sophia_C/sounds/467183/
+sfx/reload.ogg  <-  CC-Sounds reload/default.ogg  ·  magnuswaker, CC0 1.0, https://freesound.org/people/magnuswaker/sounds/530225/
+sfx/boom_1.ogg  <-  CC-Sounds explosion/default/explosion_default_1.ogg  ·  bmlake, CC BY 3.0, https://freesound.org/people/bmlake/sounds/251617/
+sfx/boom_2.ogg  <-  CC-Sounds explosion/default/explosion_default_2.ogg  ·  bmlake, CC BY 3.0, https://freesound.org/people/bmlake/sounds/251617/
+sfx/boom_big_1.ogg  <-  CC-Sounds explosion/huge/explosion_huge_1.ogg  ·  unfa, CC0 1.0, https://freesound.org/people/unfa/sounds/352143/
+sfx/boom_big_2.ogg  <-  CC-Sounds explosion/huge/explosion_huge_2.ogg  ·  unfa, CC0 1.0, https://freesound.org/people/unfa/sounds/352143/
+sfx/boom_small.ogg  <-  CC-Sounds explosion/small/explosion_small.ogg  ·  j1987, CC0 1.0, https://freesound.org/people/j1987/sounds/140727/
+sfx/rain_heavy.ogg  <-  CC-Sounds environment/weather/heavyrain.ogg  ·  Ali@k, CC0 1.0, https://freesound.org/people/Ali@k/sounds/128907/
+sfx/storm.ogg  <-  CC-Sounds environment/weather/thunderstorm.ogg  ·  bruno.auzet, CC0 1.0, https://freesound.org/people/bruno.auzet/sounds/531041/
+sfx/rain_inside.ogg  <-  CC-Sounds environment/weather/indoors_rain.ogg  ·  InspectorJ (mix by Peter Havran Raven 2236), CC-BY, https://freesound.org/people/InspectorJ/sounds/346641/
+sfx/thunder_near.ogg  <-  CC-Sounds environment/weather/thunder_near.ogg  ·  mrsorbias, CC BY 3.0, https://freesound.org/people/mrsorbias/sounds/574687/
+sfx/thunder_far.ogg  <-  CC-Sounds environment/weather/thunder_far.ogg  ·  chromakei, CC0 1.0, https://freesound.org/people/chromakei/sounds/398287/
+sfx/night.ogg  <-  CC-Sounds environment/weather/night/clear_night_1.ogg  ·  rsn267, CC0 1.0, https://freesound.org/people/rsn267/sounds/275595/
+sfx/snowstorm.ogg  <-  CC-Sounds environment/weather/WEATHER_SNOWSTORM.ogg  ·  guyburns, CC 0, https://freesound.org/people/guyburns/sounds/473815/
+sfx/alarm.ogg  <-  CC-Sounds environment/ambient/alarm.ogg  ·  kyles, CC0 1.0, https://freesound.org/people/kyles/sounds/452175/
+sfx/indoors.ogg  <-  CC-Sounds environment/ambient/indoors.ogg  ·  blouhond, CC BY 3.0, https://freesound.org/people/blouhond/sounds/163604/
+sfx/underground.ogg  <-  CC-Sounds environment/ambient/underground.ogg  ·  Kinoton, CC0 1.0, https://freesound.org/people/Kinoton/sounds/421826/
+sfx/siren.ogg  <-  CC-Sounds environment/ambient/police_siren.ogg  ·  conleec, CC0 1.0, https://freesound.org/people/conleec/sounds/159743/
+sfx/door_open.ogg  <-  CC-Sounds open_door/door_metal/open_door_metal.ogg  ·  Fabrizio84, CC0 1.0, https://freesound.org/people/Fabrizio84/sounds/457550/
+sfx/door_close.ogg  <-  CC-Sounds close_door/door_metal/close_door_metal.ogg  ·  Analog Bleep Ten, Sampling Plus 1.0, https://freesound.org/people/Analog%20Bleep%20Ten/sounds/75826/
+sfx/tps_door.ogg  <-  Godot TPS demo door/open_close.wav  ·  Juan Linietsky, Fernando Miguel Calabró, CC BY 3.0
+sfx/tps_boom.ogg  <-  Godot TPS demo enemies/red_robot/audio/explosion.wav  ·  Juan Linietsky, Fernando Miguel Calabró, CC BY 3.0
+sfx/tps_hit.ogg  <-  Godot TPS demo enemies/red_robot/audio/hit.wav  ·  Juan Linietsky, Fernando Miguel Calabró, CC BY 3.0
+sfx/hurt_1.ogg  <-  CC-Sounds deal_damage/hurt_m/hurt_m_1.ogg  ·  micahlg, CC0 1.0, https://freesound.org/people/micahlg/sounds/413181/
+sfx/hurt_2.ogg  <-  CC-Sounds deal_damage/hurt_m/hurt_m_2.ogg  ·  micahlg, CC0 1.0, https://freesound.org/people/micahlg/sounds/413183/
+sfx/hurt_3.ogg  <-  CC-Sounds deal_damage/hurt_m/hurt_m_3.ogg  ·  micahlg, CC0 1.0, https://freesound.org/people/micahlg/sounds/413184/
+sfx/hurt_4.ogg  <-  CC-Sounds deal_damage/hurt_m/hurt_m_4.ogg  ·  micahlg, CC0 1.0, https://freesound.org/people/micahlg/sounds/413185/
+sfx/step_concrete_1.ogg  <-  CC-Sounds plmove/walk_t_concrete_1.ogg  ·  InspectorJ, CC-BY, https://freesound.org/s/336598/
+sfx/step_concrete_2.ogg  <-  CC-Sounds plmove/walk_t_concrete_2.ogg  ·  InspectorJ, CC-BY, https://freesound.org/s/336598/
+sfx/step_concrete_3.ogg  <-  CC-Sounds plmove/walk_t_concrete_3.ogg  ·  InspectorJ, CC-BY, https://freesound.org/s/336598/
+sfx/step_concrete_4.ogg  <-  CC-Sounds plmove/walk_t_concrete_4.ogg  ·  InspectorJ, CC-BY, https://freesound.org/s/336598/
+sfx/step_concrete_5.ogg  <-  CC-Sounds plmove/walk_t_concrete_5.ogg  ·  InspectorJ, CC-BY, https://freesound.org/s/336598/
+sfx/step_concrete_6.ogg  <-  CC-Sounds plmove/walk_t_concrete_6.ogg  ·  InspectorJ, CC-BY, https://freesound.org/s/336598/
+sfx/step_concrete_7.ogg  <-  CC-Sounds plmove/walk_t_concrete_7.ogg  ·  InspectorJ, CC-BY, https://freesound.org/s/336598/
+sfx/step_concrete_8.ogg  <-  CC-Sounds plmove/walk_t_concrete_8.ogg  ·  InspectorJ, CC-BY, https://freesound.org/s/336598/
+sfx/step_metal_1.ogg  <-  CC-Sounds plmove/walk_metal/walk_metal_1.ogg  ·  GiocoSound, CC0 1.0, https://freesound.org/s/421137/
+sfx/step_metal_2.ogg  <-  CC-Sounds plmove/walk_metal/walk_metal_2.ogg  ·  GiocoSound, CC0 1.0, https://freesound.org/s/421136/
+sfx/step_metal_3.ogg  <-  CC-Sounds plmove/walk_metal/walk_metal_3.ogg  ·  GiocoSound, CC0 1.0, https://freesound.org/s/421134/
+sfx/step_metal_4.ogg  <-  CC-Sounds plmove/walk_metal/walk_metal_4.ogg  ·  GiocoSound, CC0 1.0, https://freesound.org/s/421133/
+sfx/step_metal_5.ogg  <-  CC-Sounds plmove/walk_metal/walk_metal_5.ogg  ·  GiocoSound, CC0 1.0, https://freesound.org/s/421132/
+sfx/step_gravel_1.ogg  <-  CC-Sounds plmove/walk_t_gravel_1.ogg  ·  ali-6868, CC0, https://freesound.org/s/384871/
+sfx/step_gravel_2.ogg  <-  CC-Sounds plmove/walk_t_gravel_2.ogg  ·  ali-6868, CC0, https://freesound.org/s/384872/
+sfx/step_gravel_3.ogg  <-  CC-Sounds plmove/walk_t_gravel_3.ogg  ·  ali-6868, CC0, https://freesound.org/s/384873/
+sfx/step_gravel_4.ogg  <-  CC-Sounds plmove/walk_t_gravel_4.ogg  ·  ali-6868, CC0, https://freesound.org/s/384874/
+sfx/step_gravel_5.ogg  <-  CC-Sounds plmove/walk_t_gravel_5.ogg  ·  ali-6868, CC0, https://freesound.org/s/384875/
+sfx/step_gravel_6.ogg  <-  CC-Sounds plmove/walk_t_gravel_6.ogg  ·  ali-6868, CC0, https://freesound.org/s/384876/
+sfx/kenney_weapon_change.ogg  <-  Kenney Starter Kit FPS · MIT / CC0
+sfx/kenney_land.ogg  <-  Kenney Starter Kit FPS · MIT / CC0
+sfx/kenney_jump_a.ogg  <-  Kenney Starter Kit FPS · MIT / CC0

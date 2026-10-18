@@ -1,0 +1,3428 @@
+[
+ {
+  "id": "brief_0",
+  "mission": "m1",
+  "spk": "HALE",
+  "text": "Nine days ago, a Castellan strategist named Nadia Marr walked into a federal building in Ottawa with a hard drive and a warning."
+ },
+ {
+  "id": "brief_1",
+  "mission": "m1",
+  "spk": "HALE",
+  "text": "Castellan Group runs a third of this country's groceries, half its pharmacies, and the data behind both. Their CEO, Adrian Voss, calls the next phase Meridian."
+ },
+ {
+  "id": "brief_2",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Meridian buys up the suppliers a town depends on, then uses everything Castellan knows about each household to decide who gets supplied, and at what price."
+ },
+ {
+  "id": "brief_3",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Marketing is supposed to be a trade. You create value for customers and you capture value in return. Meridian keeps the second half and throws away the first."
+ },
+ {
+  "id": "brief_4",
+  "mission": "m1",
+  "spk": "HALE",
+  "text": "Joint Task Force LEDGER exists to prove it before launch. Tonight, Castellan's regional directors meet at Fulfillment Centre 7 in Hamilton."
+ },
+ {
+  "id": "brief_5",
+  "mission": "m1",
+  "spk": "HALE",
+  "text": "Your target is Paul Ostrowski, the director who built Meridian's customer model. We take him alive, and we take their customer doctrine files with him."
+ },
+ {
+  "id": "brief_6",
+  "mission": "m1",
+  "spk": "HALE",
+  "text": "Sergeant Wren, Corporal Ruiz: you're on the ground. Dr. Marr is on comms. Castellan Security Services will be armed and they will not hesitate."
+ },
+ {
+  "id": "db_0",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Ostrowski talked for six hours. Meridian's money comes from inside Castellan: one division is quietly funding the whole thing."
+ },
+ {
+  "id": "db_1",
+  "mission": "m1",
+  "spk": "HALE",
+  "text": "Then we cut the money. Get some rest. Next stop is Ottawa."
+ },
+ {
+  "id": "r0_0",
+  "mission": "m1",
+  "spk": "HALE",
+  "text": "Wren, Ruiz, you're through the fence. Castellan Security patrols the yard in pairs."
+ },
+ {
+  "id": "r0_1",
+  "mission": "m1",
+  "spk": "RUIZ",
+  "text": "Rain's loud. Good. Means they won't hear us coming."
+ },
+ {
+  "id": "r0_2",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Every CSS guard you see is protecting a warehouse full of other people's groceries. Keep that in mind tonight."
+ },
+ {
+  "id": "p0_0",
+  "mission": "m1",
+  "spk": "RUIZ",
+  "text": "Yard's clear."
+ },
+ {
+  "id": "p0_1",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "There's a laptop in the guard post. Castellan onboards every employee with the same deck. Grab it."
+ },
+ {
+  "id": "i0_0",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "This is the deck every Castellan hire sees on day one. I used to present it. The Castellan Way. What is marketing?. Marketing is the process by which companies engage customers, build strong customer relationships, and create customer value in order to capture value from customers in return. It is not just selling and advertising. Selling is only the tip of the iceberg. The goal is to satisfy customer needs. The marketing process: five steps. 1. Understand the marketplace and customer needs and wants. 2. Design a customer value-driven marketing strategy. 3. Construct an integrated marketing program that delivers superior value. 4. Engage customers, build profitable relationships, and create customer delight. 5. Capture value from customers to create profits and customer equity. The first four steps create value FOR customers. The last step captures value FROM customers in return."
+ },
+ {
+  "id": "r1_0",
+  "mission": "m1",
+  "spk": "RUIZ",
+  "text": "Trucks are lined up. Castellan branding on every trailer."
+ },
+ {
+  "id": "r1_1",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Read the trailers. That's the whole business in one sentence: they sell people answers to needs."
+ },
+ {
+  "id": "r1_2",
+  "mission": "m1",
+  "spk": "HALE",
+  "text": "Contacts on the docks. Clear them."
+ },
+ {
+  "id": "p1_0",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Ostrowski's team left a field memo on the dispatch desk. It explains how they see the people on the other end of those trucks."
+ },
+ {
+  "id": "i1_0",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Ostrowski's own memo. Notice how he talks about need. Like it's leverage. Field Memo: Needs Are Not Optional. Needs, wants and demands. Needs are states of felt deprivation. They include basic physical needs for food, clothing, warmth and safety; social needs for belonging and affection; and individual needs for knowledge and self-expression. Marketers did not create these needs. They are a basic part of the human makeup. Wants are the form human needs take as they are shaped by culture and individual personality. A hungry person in Hamilton wants a sandwich and a coffee; a hungry person somewhere else wants something else. Demands are human wants that are backed by buying power. Given their wants and resources, people demand the products with the benefits that add up to the most value and satisfaction. Note from P.O.: A need cannot be declined. A town that needs insulin will find buying power somewhere. Meridian prices to that fact."
+ },
+ {
+  "id": "i1_1",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Same deck, slide four. Castellan taught this. Then forgot it. Offerings and Myopia. Market offerings. Consumers' needs and wants are fulfilled through market offerings: some combination of products, services, information, or experiences offered to a market to satisfy a need or want. Offerings are not limited to physical products. They also include services, events, persons, places, organizations, information and ideas. Marketing myopia. Marketing myopia is the mistake of paying more attention to the specific products a company offers than to the benefits and experiences produced by these products. A drill manufacturer may think the customer needs a drill. What the customer really needs is a hole. Myopic sellers are left in trouble when a new product serves the customer's need better or less expensively."
+ },
+ {
+  "id": "r2_0",
+  "mission": "m1",
+  "spk": "HALE",
+  "text": "Sorting hall. Heavy CSS presence. Expect them to fall back to the conveyors."
+ },
+ {
+  "id": "r2_1",
+  "mission": "m1",
+  "spk": "RUIZ",
+  "text": "Copy. Wren, take left, I've got right."
+ },
+ {
+  "id": "r2_2",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Look at the volume on those belts. Castellan understood value once. That's why customers came."
+ },
+ {
+  "id": "p2_0",
+  "mission": "m1",
+  "spk": "RUIZ",
+  "text": "Hall clear. Moving up."
+ },
+ {
+  "id": "p2_1",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Their customer value report is on the supervisor's terminal. That's the one I'd want if I were trying to understand why people stay."
+ },
+ {
+  "id": "i2_0",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "This is the report that shows what Castellan used to get right. Customer Value Report. Customer value and satisfaction. Customers form expectations about the value and satisfaction that various market offerings will deliver and buy accordingly. Satisfied customers buy again and tell others about their good experiences. Dissatisfied customers often switch to competitors and disparage the product to others. Marketers must set the right level of expectations. Set them too low and they may satisfy those who buy but fail to attract enough buyers. Set them too high and buyers will be disappointed. Exchanges and relationships. Exchange is the act of obtaining a desired object from someone by offering something in return. Marketing consists of actions taken to build and maintain desirable exchange relationships with target audiences involving a product, service, idea or other object. Beyond simply attracting new customers and creating transactions, the goal is to retain customers and grow their business."
+ },
+ {
+  "id": "i2_1",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Slide six. 'All actual and potential buyers.' Remember the word potential. Meridian decides which towns stop being potential. Who Counts as a Market. Markets. A market is the set of all actual and potential buyers of a product or service. These buyers share a particular need or want that can be satisfied through exchange relationships. Marketing means managing markets to bring about profitable customer relationships. Sellers search for buyers, identify their needs, design good market offerings, set prices for them, promote them, and store and deliver them. The modern marketing system. A company and its competitors research the market and interact with consumers to understand their needs. Then they create and exchange market offerings, messages and other marketing content with consumers, either directly or through marketing intermediaries. Each party in the system adds value for the next level. All of the arrows represent relationships that must be developed and managed. Major environmental forces (demographic, economic, natural, technological, political and cultural) shape the whole system."
+ },
+ {
+  "id": "r3_0",
+  "mission": "m1",
+  "spk": "RUIZ",
+  "text": "CSS training floor. Pop-up targets, scoreboard, the works."
+ },
+ {
+  "id": "r3_1",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Their target system is still networked. I can load my own labels onto it. Call it a refresher."
+ },
+ {
+  "id": "r3_2",
+  "mission": "m1",
+  "spk": "HALE",
+  "text": "Make it quick. Ostrowski's meeting started twenty minutes ago."
+ },
+ {
+  "id": "rc3_0",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Five steps of the marketing process. Shoot them in order."
+ },
+ {
+  "id": "rc3_1",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Now the five core marketplace concepts. Any order. Leave the decoys standing."
+ },
+ {
+  "id": "r4_0",
+  "mission": "m1",
+  "spk": "HALE",
+  "text": "Five directors in the glass room above you. One of them is Ostrowski. Castellan scrubbed their faces from every system, so we go by how they think."
+ },
+ {
+  "id": "r4_1",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "I'm feeding you their intercepted audio. Ostrowski believes customers won't buy enough unless you push them hard. That's the selling concept."
+ },
+ {
+  "id": "r4_2",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Scope each director, listen, and mark the one who thinks like a salesman. Mark the wrong man and this whole room goes loud early."
+ },
+ {
+  "id": "p4_0",
+  "mission": "m1",
+  "spk": "RUIZ",
+  "text": "Got him! Ostrowski's secured. Zip-tied and breathing."
+ },
+ {
+  "id": "p4_1",
+  "mission": "m1",
+  "spk": "OSTROWSKI",
+  "text": "You think this stops Meridian? Voss will have a new model by Monday."
+ },
+ {
+  "id": "p4_2",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "The others were never the problem. Grab the orientation brief from the boardroom table."
+ },
+ {
+  "id": "i4_0",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "The leadership pack. Five philosophies. Voss used to quiz executives on this. He knew the right answer. He chose the wrong one anyway. Five Ways to Run a Company. Marketing management. Marketing management is the art and science of choosing target markets and building profitable relationships with them. There are five alternative concepts under which organizations design and carry out marketing strategies. Production concept: consumers will favour products that are available and highly affordable, so the organization should focus on improving production and distribution efficiency. Risk: focusing too narrowly on operations and losing sight of satisfying customer needs. Product concept: consumers will favour products that offer the most quality, performance and innovative features, so the organization should devote its energy to continuous product improvement. Risk: marketing myopia. Selling concept: consumers will not buy enough of the firm's products unless it undertakes a large-scale selling and promotion effort. Typically practised with unsought goods. It focuses on creating sales transactions rather than long-term relationships. Marketing concept: achieving organizational goals depends on knowing the needs and wants of target markets and delivering the desired satisfactions better than competitors do. Selling takes an inside-out perspective; the marketing concept takes an outside-in perspective. Societal marketing concept: marketing decisions should consider consumers' wants, the company's requirements, consumers' long-run interests and society's long-run interests. Sustainable marketing calls for socially and environmentally responsible actions that meet present needs while preserving the ability of future generations to meet theirs."
+ },
+ {
+  "id": "hvt4_0",
+  "mission": "m1",
+  "spk": "D1",
+  "text": "Make it available everywhere and make it cheap. If we keep production efficient, customers will come to us."
+ },
+ {
+  "id": "hvt4_1",
+  "mission": "m1",
+  "spk": "D2",
+  "text": "The best product wins. Highest quality, most features, constant improvement. That's all the strategy we need."
+ },
+ {
+  "id": "hvt4_2",
+  "mission": "m1",
+  "spk": "D3",
+  "text": "People don't buy enough unless you make them. Big campaigns, aggressive selling. Push it, close it, move on."
+ },
+ {
+  "id": "hvt4_3",
+  "mission": "m1",
+  "spk": "D4",
+  "text": "Find out what customers need and want, then deliver it better than anyone else. Customer focus, not product focus."
+ },
+ {
+  "id": "hvt4_4",
+  "mission": "m1",
+  "spk": "D5",
+  "text": "Customers' wants, our profits, and their long-run well-being. And society's. If we ignore that, it catches up with us."
+ },
+ {
+  "id": "r5_0",
+  "mission": "m1",
+  "spk": "HALE",
+  "text": "CSS knows we're here. They'll try to purge the records office. Don't let them."
+ },
+ {
+  "id": "r5_1",
+  "mission": "m1",
+  "spk": "RUIZ",
+  "text": "Moving Ostrowski behind cover. Wren, push."
+ },
+ {
+  "id": "r5_2",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "The relationship files are in there. How Castellan builds loyalty, and how they decide who deserves it."
+ },
+ {
+  "id": "p5_0",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "They didn't wipe the CRM handbook. Read it. It's the reason people trusted Castellan in the first place."
+ },
+ {
+  "id": "i5_0",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Version nine of the handbook. I wrote version six. CRM Handbook. Customer relationship management. Customer relationship management (CRM) is the overall process of building and maintaining profitable customer relationships by delivering superior customer value and satisfaction. It deals with all aspects of acquiring, engaging and growing customers. The key to building lasting customer relationships is to create superior customer value and satisfaction. Relationship levels and tools. Companies can build customer relationships at many levels. With many low-margin customers, a company may seek basic relationships. With a few high-margin customers, it may want full partnerships. Beyond consistently high value and satisfaction, marketers use tools such as frequency marketing programs that reward customers who buy frequently or in large amounts, and club programs that offer members special benefits. Customer-perceived value. Customer-perceived value is the customer's evaluation of the difference between all the benefits and all the costs of a market offering relative to those of competing offers. Customers often do not judge values and costs accurately or objectively. They act on perceived value."
+ },
+ {
+  "id": "i5_1",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Digital brief. Castellan's own customers made half their ads for free once. Then the reviews turned. Engagement Strategy Brief. Customer engagement in a digital, mobile, social age. Today's marketers are using new tools for connecting with customers, and customers have more information and more power than ever. Customer-engagement marketing means making the brand a meaningful part of consumers' conversations and lives by fostering direct and continuous customer involvement in shaping brand conversations, experiences and community. The aim is brand advocacy: satisfied customers who tell others about the brand. Customer-managed relationships: in the digital era, customers increasingly control the relationship. Marketers must practise marketing by attraction, creating offerings and content that engage customers rather than interrupt them. Consumer-generated marketing is brand exchanges created by consumers themselves, both invited and uninvited, by which consumers play an increasing role in shaping their own brand experiences and those of other consumers: reviews, videos, posts. Partners. Partner relationship management means working closely with partners in other company departments and outside the company to jointly bring greater value to customers. Inside, every department can be customer-facing. Outside, supply chain partners and alliances matter."
+ },
+ {
+  "id": "r6_0",
+  "mission": "m1",
+  "spk": "HALE",
+  "text": "Data cage. This is where they keep the customer models."
+ },
+ {
+  "id": "r6_1",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Find a file called the Town Ledger. If Meridian has a target list, that's it."
+ },
+ {
+  "id": "r6_2",
+  "mission": "m1",
+  "spk": "RUIZ",
+  "text": "Contact! They've got a shooter on the racks."
+ },
+ {
+  "id": "p6_0",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "...There it is. The Town Ledger. They've scored every town in Southern Ontario by customer equity. Read it. Then tell me this isn't a target list."
+ },
+ {
+  "id": "i6_0",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "This is it. Every town scored like a customer segment. And look at the last line. The Town Ledger. Capturing value from customers. Customer lifetime value is the value of the entire stream of purchases a customer makes over a lifetime of patronage. Good CRM creates customer delight; delighted customers stay loyal and talk favourably about the company. Share of customer is the portion of the customer's purchasing that a company gets in its product categories. Firms grow it by offering greater variety, cross-selling and up-selling. Customer equity is the total combined customer lifetime values of all of the company's customers. It is a better measure of performance than current sales or market share, because sales reflect the past and customer equity suggests the future. Building the right relationships with the right customers. Customers can be grouped by potential profitability and projected loyalty: Strangers: low profitability, little projected loyalty. Don't invest anything in them; make money on every transaction. Butterflies: profitable but not loyal. Enjoy them while you can, then cease investing when they flutter away. True friends: profitable and loyal. Make continuous relationship investments to delight them and nurture, retain and grow them. Barnacles: highly loyal but not very profitable. Improve their profitability, or 'fire' them if that fails. MERIDIAN NOTE: Phase 1 towns classified 'Stranger' or 'Barnacle' are scheduled for supply withdrawal."
+ },
+ {
+  "id": "i6_1",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "A memo from Voss himself. Read his margin note. That's the man. Memo: The Changing Landscape. The changing marketing landscape. The digital age: online, mobile and social media marketing let companies engage customers anytime and anywhere. Social media marketing joins brands to conversations; mobile marketing reaches customers on the move with real-time, location-aware offers. The growth of not-for-profit marketing: universities, hospitals, museums, charities and governments increasingly use marketing too. Rapid globalization: almost every company, large or small, is touched by global competition and global supply chains. Sustainable marketing: the call for more environmental and social responsibility. Forward-looking companies view socially responsible actions as an opportunity to do well by doing good. Voss, margin note: 'Customers want responsibility. They will pay for the appearance of it.'"
+ },
+ {
+  "id": "r7_0",
+  "mission": "m1",
+  "spk": "HALE",
+  "text": "Bird is four minutes out. Get Ostrowski to the roof and hold the pad."
+ },
+ {
+  "id": "r7_1",
+  "mission": "m1",
+  "spk": "PILOT",
+  "text": "LEDGER, Reaper Two-One. Weather's ugly. Pop smoke when you hear us."
+ },
+ {
+  "id": "r7_2",
+  "mission": "m1",
+  "spk": "RUIZ",
+  "text": "They're coming up the stairwells. All of them."
+ },
+ {
+  "id": "p7_0",
+  "mission": "m1",
+  "spk": "PILOT",
+  "text": "Reaper Two-One on the pad. Get aboard!"
+ },
+ {
+  "id": "p7_1",
+  "mission": "m1",
+  "spk": "HALE",
+  "text": "Package secured. Good work, both of you."
+ },
+ {
+  "id": "mid7_0",
+  "mission": "m1",
+  "spk": "VOSS",
+  "text": "Sergeant. I assume you can hear me. You're standing on a building that feeds two hundred thousand people."
+ },
+ {
+  "id": "mid7_1",
+  "mission": "m1",
+  "spk": "VOSS",
+  "text": "Customers are not a charity. They're a portfolio. I'm simply managing it."
+ },
+ {
+  "id": "mid7_2",
+  "mission": "m1",
+  "spk": "MARR",
+  "text": "Don't answer him. He wants you thinking about him instead of the stairwell."
+ },
+ {
+  "id": "brief_0",
+  "mission": "m2",
+  "spk": "HALE",
+  "text": "Ostrowski gave us a location. Kingsway: a Cold War bunker under Castellan's Ottawa campus. Their strategic planning group works down there."
+ },
+ {
+  "id": "brief_1",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "Every Castellan business unit reports to Kingsway. Groceries, pharmacy, data, logistics. They plan the whole portfolio from one room."
+ },
+ {
+  "id": "brief_2",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "Meridian is new, growing fast, and losing money. It can't pay for itself. Somebody else in the portfolio is feeding it."
+ },
+ {
+  "id": "brief_3",
+  "mission": "m2",
+  "spk": "HALE",
+  "text": "Find the treasury servers that move that money and destroy them. Then get out before the bunker seals."
+ },
+ {
+  "id": "brief_4",
+  "mission": "m2",
+  "spk": "RUIZ",
+  "text": "Underground, no comms, sealed doors. My favourite kind of evening."
+ },
+ {
+  "id": "db_0",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "They'll reroute the money, but it'll take weeks. Weeks we didn't have before."
+ },
+ {
+  "id": "db_1",
+  "mission": "m2",
+  "spk": "RUIZ",
+  "text": "Kessler knew our names. All of them."
+ },
+ {
+  "id": "db_2",
+  "mission": "m2",
+  "spk": "HALE",
+  "text": "Nothing leaves this team. Halifax is next. Meridian's first shipments go out through the port."
+ },
+ {
+  "id": "r0_0",
+  "mission": "m2",
+  "spk": "RUIZ",
+  "text": "Tunnel's old. Concrete's original, cameras are new."
+ },
+ {
+  "id": "r0_1",
+  "mission": "m2",
+  "spk": "HALE",
+  "text": "Comms will degrade as you go deeper. Marr will stay with you as long as she can."
+ },
+ {
+  "id": "r0_2",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "Every strategy at Castellan starts in the same document. Find their mission statement."
+ },
+ {
+  "id": "p0_0",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "Two mission statements on the planning wall. The old one and the new one. Compare them."
+ },
+ {
+  "id": "i0_0",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "The planning manual. Four steps. Meridian went through every one of them. Planning Cycle FY31. Strategic planning. Strategic planning is the process of developing and maintaining a strategic fit between the organization's goals and capabilities and its changing marketing opportunities. It sets the stage for the rest of planning in the firm. Companies usually prepare annual plans, long-range plans and strategic plans. Four steps. 1. Define a market-oriented mission (corporate level). 2. Set company objectives and goals (corporate level). 3. Design the business portfolio (corporate level). 4. Plan marketing and other functional strategies (business unit, product and market level). Marketing plays a key role: it provides a guiding philosophy, the marketing concept, and inputs that help planners identify attractive market opportunities."
+ },
+ {
+  "id": "i0_1",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "2009 is the one I believed in. Look what they turned it into. Mission Statements: Then and Now. The mission statement. A mission statement is a statement of the organization's purpose: what it wants to accomplish in the larger environment. A clear mission statement acts as an 'invisible hand' that guides people in the organization. Mission statements should be market-oriented and defined in terms of satisfying basic customer needs. Products and technologies eventually become outdated, but basic market needs may last forever. They should be meaningful and specific yet motivating; emphasize the company's strengths; and not be stated as making more sales or profits. Profits are only a reward for creating value for customers. 2009, market-oriented: 'We help Canadian families eat well and stay healthy, wherever they live.' 2031, product-oriented: 'Castellan sells groceries, pharmaceuticals and data services at scale.'"
+ },
+ {
+  "id": "r1_0",
+  "mission": "m2",
+  "spk": "HALE",
+  "text": "Objectives wing. CSS has a rapid-response team on this level."
+ },
+ {
+  "id": "r1_1",
+  "mission": "m2",
+  "spk": "RUIZ",
+  "text": "Contact. Two at the end of the hall."
+ },
+ {
+  "id": "r1_2",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "The mission gets turned into objectives here. Castellan sets them like a staircase: one goal supports the next."
+ },
+ {
+  "id": "p1_0",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "Their objectives hierarchy is pinned up in the director's office. And next to it, the portfolio map. That's the one."
+ },
+ {
+  "id": "i1_0",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "Their whiteboard. Notice how 'profitable relationships' turns into 'extract value' two rows down. Objectives Hierarchy. Setting company objectives and goals. The company's mission needs to be turned into detailed supporting objectives for each level of management. Each manager should have objectives and be responsible for reaching them. Objectives form a hierarchy. A broad mission leads to business objectives, which lead to marketing objectives, which lead to marketing strategies and programs. Example: build profitable customer relationships → increase market share → more effective sales force and promotion → specific marketing strategies. Mission and objectives should be practical and measurable, so the company can track progress."
+ },
+ {
+  "id": "i1_1",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "Section three of the board pack. This is how they decide which divisions live. Portfolio Review. Designing the business portfolio. The business portfolio is the collection of businesses and products that make up the company. The best portfolio is the one that best fits the company's strengths and weaknesses to opportunities in the environment. Business portfolio planning involves two steps: analyzing the current business portfolio and deciding which businesses should receive more, less or no investment; and shaping the future portfolio by developing strategies for growth and downsizing. Portfolio analysis is the major activity in strategic planning: management evaluates the products and businesses that make up the company. A strategic business unit (SBU) is a unit of the company that has a separate mission and objectives and that can be planned independently. It can be a division, a product line within a division, or a single product or brand. Most standard portfolio methods evaluate SBUs on two dimensions: the attractiveness of the SBU's market or industry, and the strength of the SBU's position in that market."
+ },
+ {
+  "id": "r2_0",
+  "mission": "m2",
+  "spk": "RUIZ",
+  "text": "Another CSS range. They really like their pop-ups."
+ },
+ {
+  "id": "r2_1",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "I've loaded the strategy doctrine. The four Ps, then the growth grid."
+ },
+ {
+  "id": "r2_2",
+  "mission": "m2",
+  "spk": "HALE",
+  "text": "Clock's running. Make it clean."
+ },
+ {
+  "id": "rc2_0",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "Strategic planning steps, in order. Go."
+ },
+ {
+  "id": "rc2_1",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "The four Ps of the marketing mix. Any order. Decoys stay standing."
+ },
+ {
+  "id": "r3_0",
+  "mission": "m2",
+  "spk": "HALE",
+  "text": "This is the treasury vault. Five server stacks, one per business unit. Each screen shows market growth and relative market share."
+ },
+ {
+  "id": "r3_1",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "In the BCG matrix, cash cows are the businesses that generate cash and fund everything else. Meridian is living off the cows."
+ },
+ {
+  "id": "r3_2",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "Classify each stack. Plant charges on the cash cows only. Hit a star and we tip them off for nothing."
+ },
+ {
+  "id": "p3_0",
+  "mission": "m2",
+  "spk": "RUIZ",
+  "text": "Charges set. Both cows."
+ },
+ {
+  "id": "p3_1",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "Their portfolio memo is open on the vault terminal. Grab it before we light this place up."
+ },
+ {
+  "id": "i3_0",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "There. In writing. The two cash cows are paying for Meridian. BCG Review: Meridian Funding. The Boston Consulting Group approach. The growth-share matrix evaluates SBUs in terms of market growth rate and relative market share. Stars: high-growth, high-share businesses or products. They often need heavy investment to finance rapid growth. Eventually their growth slows and they turn into cash cows. Cash cows: low-growth, high-share businesses or products. These established, successful SBUs need less investment to hold their share. They produce a lot of cash that the company uses to pay its bills and support other SBUs. Question marks: low-share business units in high-growth markets. They require a lot of cash to hold their share, let alone increase it. Management must decide which to build into stars and which to phase out. Dogs: low-growth, low-share businesses and products. They may generate enough cash to maintain themselves but do not promise to be large sources of cash. For each SBU, the company decides whether to build, hold, harvest or divest. Problems with matrix approaches. Matrix approaches can be difficult, time-consuming and costly to implement. They focus on classifying current businesses but provide little advice for future planning. Many companies now use more customized approaches and place responsibility for strategic planning in the hands of cross-functional teams close to their markets. TREASURY NOTE: Grocery and Rx cash flows reallocated to MERIDIAN (question mark) until build target met."
+ },
+ {
+  "id": "r4_0",
+  "mission": "m2",
+  "spk": "HALE",
+  "text": "Charges are armed on a remote. Don't trigger them until you're clear of the core."
+ },
+ {
+  "id": "r4_1",
+  "mission": "m2",
+  "spk": "RUIZ",
+  "text": "Growth lab. Whiteboards everywhere. Somebody likes arrows."
+ },
+ {
+  "id": "r4_2",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "This is where they plan expansion. Meridian is one of the arrows."
+ },
+ {
+  "id": "p4_0",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "The growth grid is on the main board. Meridian is in one quadrant. Read it and tell me which."
+ },
+ {
+  "id": "i4_0",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "Their growth board. Read the board note at the bottom. Growth Options FY31. Developing strategies for growth and downsizing. The product/market expansion grid is a portfolio-planning tool for identifying company growth opportunities through market penetration, market development, product development or diversification. Market penetration: growth by increasing sales of current products to current market segments without changing the product. Market development: growth by identifying and developing new market segments for current company products. Product development: growth by offering modified or new products to current market segments. Diversification: growth through starting up or acquiring businesses outside the company's current products and markets. Downsizing. Downsizing is reducing the business portfolio by eliminating products or business units that are not profitable or that no longer fit the company's overall strategy. Firms may downsize because they grew too fast, entered areas where they lacked experience, or because a market environment changed. Board note: MERIDIAN = acquire upstream suppliers in Phase 1 towns (outside current businesses)."
+ },
+ {
+  "id": "r5_0",
+  "mission": "m2",
+  "spk": "HALE",
+  "text": "CSS is regrouping in the long hall. They know where you're going."
+ },
+ {
+  "id": "r5_1",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "This hall connects every department. Castellan calls it the value chain, because that's literally what it is."
+ },
+ {
+  "id": "r5_2",
+  "mission": "m2",
+  "spk": "RUIZ",
+  "text": "Moving up the left. Cover me."
+ },
+ {
+  "id": "p5_0",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "The partner manual's on the logistics desk. Then the strategy brief in the marketing office. Both matter."
+ },
+ {
+  "id": "i5_0",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "The partner manual. Meridian works because Castellan controls the whole network, not just the shelves. Partner Manual. Partnering with other company departments. The value chain is the series of internal departments that carry out value-creating activities to design, produce, market, deliver and support a firm's products. Each department is a link in the chain. Success depends not only on how well each department performs its work but also on how well the activities of the various departments are coordinated. Departments tend to maximize their own interests; marketers must get all departments to think like the customer. Partnering with others in the marketing system. The value delivery network is made up of the company, suppliers, distributors and, ultimately, customers who partner with each other to improve the performance of the entire system. Increasingly, competition no longer takes place between individual competitors. Rather, it takes place between the entire value delivery networks created by those competitors."
+ },
+ {
+  "id": "i5_1",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "The strategy brief. If you only remember one document from tonight, make it this one. Customer Strategy Brief. Marketing strategy and the marketing mix. Marketing strategy is the marketing logic by which the company hopes to create customer value and achieve profitable customer relationships. The company decides which customers it will serve (segmentation and targeting) and how (differentiation and positioning). Market segmentation: dividing a market into distinct groups of buyers who have different needs, characteristics or behaviours, and who might require separate marketing strategies or mixes. A market segment is a group of consumers who respond in a similar way to a given set of marketing efforts. Market targeting: evaluating each market segment's attractiveness and selecting one or more segments to serve. Positioning: arranging for a market offering to occupy a clear, distinctive and desirable place relative to competing products in the minds of target consumers. Differentiation: actually differentiating the market offering to create superior customer value. The marketing mix is the set of tactical marketing tools (product, price, place and promotion) that the firm blends to produce the response it wants in the target market. Product: the goods-and-services combination the company offers. Price: the amount customers must pay to obtain the product. Place: company activities that make the product available to target consumers. Promotion: activities that communicate the merits of the product and persuade target customers to buy it. The four Ps take the seller's view. From the buyer's view they might be the four As: acceptability (product), affordability (price), accessibility (place) and awareness (promotion)."
+ },
+ {
+  "id": "r6_0",
+  "mission": "m2",
+  "spk": "HALE",
+  "text": "Command ops is the last room before the exit lift. They've barricaded it."
+ },
+ {
+  "id": "r6_1",
+  "mission": "m2",
+  "spk": "KESSLER",
+  "text": "Attention LEDGER team. This is Grant Kessler, Castellan Security. You've cost Mr. Voss a division tonight. I'll be collecting."
+ },
+ {
+  "id": "r6_2",
+  "mission": "m2",
+  "spk": "RUIZ",
+  "text": "Who the hell is Kessler?"
+ },
+ {
+  "id": "r6_3",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "Head of Castellan Security Services. Ex-military. He used to escort Voss to my briefings."
+ },
+ {
+  "id": "p6_0",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "Ops runs Castellan's marketing management cycle. The marketing plan template is on the main screen. Grab it, then go."
+ },
+ {
+  "id": "i6_0",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "The ops wall. Analysis, planning, implementation, control. Castellan is good at all four. That's what makes it dangerous. Marketing Management Cycle. Managing the marketing effort. Managing the marketing process requires four functions: analysis, planning, implementation and control. Analysis: SWOT. A SWOT analysis is an overall evaluation of the company's strengths (S), weaknesses (W), opportunities (O) and threats (T). Strengths and weaknesses are internal; opportunities and threats are external. The goal is to match the company's strengths to attractive opportunities in the environment, while eliminating or overcoming the weaknesses and minimizing the threats. Planning. A marketing plan typically includes an executive summary; current marketing situation; threats and opportunities analysis; objectives and issues; marketing strategy; action programs; budgets; and controls. Implementation. Marketing implementation is turning marketing strategies and plans into marketing actions to accomplish strategic marketing objectives. Planning addresses what and why; implementation addresses who, where, when and how. Organization. Common forms: a functional organization (activities headed by functional specialists), a geographic organization (people assigned to countries, regions and districts), product management (managers for products or brands), market or customer management (managers for markets or customers), or a combination."
+ },
+ {
+  "id": "i6_1",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "The dashboard handbook. Every number on those screens tracks customers like assets. Control and Return. Marketing control. Marketing control is measuring and evaluating the results of marketing strategies and plans, and taking corrective action to ensure that the objectives are achieved. Operating control checks ongoing performance against the annual plan. Strategic control looks at whether the company's basic strategies are well matched to its opportunities. Marketing return on investment. Marketing return on investment (marketing ROI) is the net return from a marketing investment divided by the costs of the marketing investment. It measures the profits generated by investments in marketing activities. Companies can assess marketing ROI with standard marketing performance measures (brand awareness, sales, market share) and customer-centred measures (customer acquisition, retention, lifetime value, customer equity). Many assemble these into marketing dashboards to monitor strategic marketing performance."
+ },
+ {
+  "id": "r7_0",
+  "mission": "m2",
+  "spk": "HALE",
+  "text": "You're clear of the core. Blow it."
+ },
+ {
+  "id": "r7_1",
+  "mission": "m2",
+  "spk": "RUIZ",
+  "text": "Fire in the hole!"
+ },
+ {
+  "id": "r7_2",
+  "mission": "m2",
+  "spk": "MARR",
+  "text": "The bunker is sealing. Seventy-five seconds to the lift. Go!"
+ },
+ {
+  "id": "p7_0",
+  "mission": "m2",
+  "spk": "RUIZ",
+  "text": "We're in! Hit it!"
+ },
+ {
+  "id": "p7_1",
+  "mission": "m2",
+  "spk": "HALE",
+  "text": "Treasury servers are offline. Meridian just lost its funding. Voss will notice by morning."
+ },
+ {
+  "id": "brief_0",
+  "mission": "m3",
+  "spk": "HALE",
+  "text": "Meridian's first shipments are staged at the Port of Halifax. Forty containers, Phase 1 towns, scheduled to sail at dawn."
+ },
+ {
+  "id": "brief_1",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "The schedule changed twice this week, both times right after Kingsway. Castellan is reacting to us. Or to something we can't see yet."
+ },
+ {
+  "id": "brief_2",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Ports are where a company meets its whole environment at once: suppliers, intermediaries, regulators, weather. I want you to see it the way Castellan's planners do."
+ },
+ {
+  "id": "brief_3",
+  "mission": "m3",
+  "spk": "HALE",
+  "text": "Objective one: reach crane control and hold it while Marr pulls the rollout plan through their uplink. Objective two: tag the Meridian containers before they sail."
+ },
+ {
+  "id": "brief_4",
+  "mission": "m3",
+  "spk": "RUIZ",
+  "text": "And the storm?"
+ },
+ {
+  "id": "brief_5",
+  "mission": "m3",
+  "spk": "HALE",
+  "text": "The storm is why CSS won't hear you until you're on top of them. Move fast."
+ },
+ {
+  "id": "db_0",
+  "mission": "m3",
+  "spk": "RUIZ",
+  "text": "Kessler was waiting for us. Same as Kingsway. Somebody told him our route."
+ },
+ {
+  "id": "db_1",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Castellan Insight runs a data centre outside Montreal. Every message that leaves Castellan goes through it. If someone inside LEDGER is talking to them, the proof is there."
+ },
+ {
+  "id": "db_2",
+  "mission": "m3",
+  "spk": "HALE",
+  "text": "Then we go quiet. No one outside this room knows about Montreal."
+ },
+ {
+  "id": "r0_0",
+  "mission": "m3",
+  "spk": "RUIZ",
+  "text": "Gatehouse ahead. Barrier's down, two in the booth."
+ },
+ {
+  "id": "r0_1",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Everything that touches Castellan's business is in this port tonight. Castellan calls it the marketing environment."
+ },
+ {
+  "id": "r0_2",
+  "mission": "m3",
+  "spk": "HALE",
+  "text": "Clear the gate quietly if you can. Loudly if you can't."
+ },
+ {
+  "id": "p0_0",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "The port authority's environment brief is in the booth. Castellan's planners get the same document. Read it."
+ },
+ {
+  "id": "i0_0",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Castellan's environmental scan. They know every actor in this port by name. Including the suppliers they're about to own. Environment Brief. The marketing environment. A company's marketing environment consists of the actors and forces outside marketing that affect marketing management's ability to build and maintain successful relationships with target customers. The microenvironment consists of the actors close to the company that affect its ability to engage and serve its customers: the company, suppliers, marketing intermediaries, customer markets, competitors and publics. The macroenvironment consists of the larger societal forces that affect the microenvironment: demographic, economic, natural, technological, political and cultural forces. The company and its suppliers. The company: in designing marketing plans, marketing management takes other company groups into account: top management, finance, R&D, purchasing, operations, HR and accounting. All of them are part of the internal environment and must 'think consumer'. Suppliers form an important link in the company's overall customer value delivery network. They provide the resources needed to produce goods and services. Supply shortages or delays and rising supply costs can harm sales and customer satisfaction. Most marketers treat their suppliers as partners in creating and delivering customer value."
+ },
+ {
+  "id": "r1_0",
+  "mission": "m3",
+  "spk": "HALE",
+  "text": "Container stacks. CSS snipers on the crane gantries. Use the boxes."
+ },
+ {
+  "id": "r1_1",
+  "mission": "m3",
+  "spk": "RUIZ",
+  "text": "Every one of these says Castellan. Even the ones that don't."
+ },
+ {
+  "id": "r1_2",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Half these containers belong to intermediaries: freight forwarders, distributors, insurers. Castellan's network runs on them."
+ },
+ {
+  "id": "p1_0",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "There's a freight manifest clipped to the reefer unit. It lists every intermediary Meridian uses. And the competitors they're about to squeeze."
+ },
+ {
+  "id": "i1_0",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "The manifest. Read the intermediaries carefully. Every one of them is someone Castellan depends on. Freight Manifest: Meridian Phase 1. Marketing intermediaries. Marketing intermediaries are firms that help the company promote, sell and distribute its goods to final buyers. Resellers: distribution channel firms that help the company find customers or make sales to them: wholesalers and retailers that buy and resell merchandise. Physical distribution firms: help the company stock and move goods from their points of origin to their destinations. Marketing services agencies: marketing research firms, advertising agencies, media firms and marketing consulting firms that help the company target and promote its products. Financial intermediaries: banks, credit companies, insurance companies and other businesses that help finance transactions or insure against risks. Competitors. To be successful, a company must provide greater customer value and satisfaction than its competitors do. It must gain strategic advantage by positioning its offerings strongly against competitors' offerings in the minds of consumers. No single strategy is best for all companies. Customers. Five types of customer markets: consumer markets (individuals and households buying for personal consumption), business markets (buying for further processing or use in production), reseller markets (buying to resell at a profit), government markets (government agencies producing public services or transferring goods to others), and international markets (these buyers in other countries)."
+ },
+ {
+  "id": "r2_0",
+  "mission": "m3",
+  "spk": "HALE",
+  "text": "Harbour office. CSS is using it as a command post."
+ },
+ {
+  "id": "r2_1",
+  "mission": "m3",
+  "spk": "RUIZ",
+  "text": "Breaching. Three, two..."
+ },
+ {
+  "id": "r2_2",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Castellan's public relations team keeps a stakeholder map in there. It lists every group that can hurt them."
+ },
+ {
+  "id": "p2_0",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Look at the stakeholder map. Seven groups. Castellan has a plan to neutralize every single one of them."
+ },
+ {
+  "id": "i2_0",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Their stakeholder map. Seven publics, seven plans to keep them quiet. Stakeholder Map. Publics. A public is any group that has an actual or potential interest in or impact on an organization's ability to achieve its objectives. There are seven types: Financial publics: influence the company's ability to obtain funds. Banks, investment analysts and stockholders. Media publics: carry news, features, editorial opinion and other content. Television, newspapers, magazines, blogs and social media. Government publics: management must take government developments into account; marketers consult lawyers on product safety, truth in advertising and other matters. Citizen-action publics: consumer organizations, environmental groups, minority groups and others may question a company's marketing decisions. Internal publics: workers, managers, volunteers and the board of directors. When employees feel good about the company, the attitude spills over to external publics. General public: the public's image of the company affects its buying. Local publics: neighbourhood residents and community organizations. Public Affairs note: 'Meridian rollout requires neutralization plans for all seven.'"
+ },
+ {
+  "id": "r3_0",
+  "mission": "m3",
+  "spk": "RUIZ",
+  "text": "Port security range. Indoors, thank God."
+ },
+ {
+  "id": "r3_1",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Two drills. The six macro forces, then the customer markets."
+ },
+ {
+  "id": "r3_2",
+  "mission": "m3",
+  "spk": "HALE",
+  "text": "Crane control is next door. Make this count."
+ },
+ {
+  "id": "rc3_0",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "The six macroenvironment forces. Any order. Leave the micro actors standing."
+ },
+ {
+  "id": "rc3_1",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "The five types of customer markets. Any order."
+ },
+ {
+  "id": "r4_0",
+  "mission": "m3",
+  "spk": "HALE",
+  "text": "You're in crane control. Plug Marr in and hold this room."
+ },
+ {
+  "id": "r4_1",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "I'm pulling the Meridian rollout plan through their uplink. As I decrypt their planning chatter, I'll need you to call which environmental force each line is about. Keys one to three. Fast."
+ },
+ {
+  "id": "r4_2",
+  "mission": "m3",
+  "spk": "RUIZ",
+  "text": "They're coming up the gantry. Lots of them."
+ },
+ {
+  "id": "p4_0",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "I have it. The full rollout plan. They're targeting towns by age, income and how far the next competitor is."
+ },
+ {
+  "id": "p4_1",
+  "mission": "m3",
+  "spk": "HALE",
+  "text": "Then we know where they're going. Push to the customs hall and tag those containers."
+ },
+ {
+  "id": "i4_0",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Appendix A. They're targeting retirees on fixed incomes first. People who can't easily move. Rollout Plan: Demographic Targets. The demographic environment. Demography is the study of human populations in terms of size, density, location, age, gender, race, occupation and other statistics. It involves people, and people make up markets. The changing age structure. Baby boomers: the 9.4 million Canadians born during the post-war baby boom, 1946 to 1965. One of the wealthiest generations; moving into retirement. Generation X: 7.2 million people born between 1966 and 1980. Sometimes called the 'birth dearth' generation; more skeptical, family-focused; now at peak earning and spending. Millennials (Generation Y): 8.6 million children of the baby boomers, born 1981 to 1997. Comfortable with digital technology; value authenticity. Generation Z: people born after 1997; digital natives who have never known a world without smartphones. Other demographic trends. The changing Canadian family: fewer traditional households; more married couples without children, single parents, people living alone, same-sex couples and multigenerational families. Geographic shifts in population: Canadians are a mobile people, moving between provinces and toward cities and their suburbs; more people work remotely. A better-educated, more white-collar, more professional population. Increasing diversity: Canada is a highly multicultural country, with diversity in ethnicity, culture, sexual orientation and more."
+ },
+ {
+  "id": "r5_0",
+  "mission": "m3",
+  "spk": "HALE",
+  "text": "Customs hall. The Meridian containers are being cleared through here."
+ },
+ {
+  "id": "r5_1",
+  "mission": "m3",
+  "spk": "RUIZ",
+  "text": "Tagging as we go. Cover me while I plant the trackers."
+ },
+ {
+  "id": "r5_2",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Look at the cargo: staples, formula, insulin. Meridian bets that need doesn't care what the economy is doing."
+ },
+ {
+  "id": "p5_0",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Their economic forecast is on the customs supervisor's desk. And there's an environmental compliance file next to it. Both."
+ },
+ {
+  "id": "i5_0",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Their finance memo. Read the note at the end. That's Meridian's whole thesis. Economic Outlook FY31. The economic environment. The economic environment consists of economic factors that affect consumer purchasing power and spending patterns. Economic factors can have a dramatic effect on consumer spending and buying behaviour. In tough times, consumers become more frugal: they spend more carefully, seek greater value and trade down. Marketers respond with value marketing: offering the right combination of product quality and good service at a fair price. Marketers should also pay attention to income distribution, which shifts over time and shapes which customers can afford which offers. Major economic variables such as income, cost of living, interest rates, and savings and borrowing patterns have a large impact on the marketplace. Finance note: 'Inelastic categories (staples, formula, insulin) hold demand regardless of downturn.'"
+ },
+ {
+  "id": "i5_1",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Their sustainability office file. Look at the compliance note. They're buying the water. Environmental Compliance File. The natural environment. The natural environment is the physical environment and the natural resources that are needed as inputs by marketers or that are affected by marketing activities. Trends to watch: growing shortages of raw materials (air, water, forests and food must be used wisely; non-renewable resources like oil and minerals pose serious problems); increased pollution; and increased government intervention in natural resource management. Environmental sustainability means developing strategies and practices that create a world economy the planet can support indefinitely. It means meeting present needs without compromising the ability of future generations to meet their needs. Compliance note: 'Phase 1 town water licences: acquire before renewal.'"
+ },
+ {
+  "id": "r6_0",
+  "mission": "m3",
+  "spk": "HALE",
+  "text": "Server room. Wipe their port logs and pull everything on legal exposure."
+ },
+ {
+  "id": "r6_1",
+  "mission": "m3",
+  "spk": "RUIZ",
+  "text": "Contact! They're dug in behind the racks."
+ },
+ {
+  "id": "r6_2",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Castellan's lawyers already know Meridian breaks the law. Let's see how much."
+ },
+ {
+  "id": "p6_0",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "The legal exposure memo. And Voss's 'cultural readiness' brief. Read both. Then get to the pier, they're loading."
+ },
+ {
+  "id": "i6_0",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Privileged legal memo. Their own lawyers wrote it down. Price discrimination. PIPEDA. Severe. Legal Exposure: Meridian. The technological environment. The technological environment is perhaps the most dramatic force now shaping our destiny. Technology has released wonders, and horrors. New technologies create new markets and opportunities, but every new technology replaces an older one. Marketers who don't keep up will find their products outdated. The political and social environment. The political environment consists of laws, government agencies and pressure groups that influence or limit various organizations and individuals in a given society. Legislation regulating business protects companies from each other, protects consumers from unfair business practices, and protects the interests of society against unrestrained business behaviour. Key Canadian laws include the Competition Act (it forbids price discrimination, predatory pricing, misleading price advertising, resale price maintenance, and mergers that lessen competition to the public's detriment), the Consumer Packaging and Labelling Act, the Food and Drugs Act, and the Personal Information Protection and Electronic Documents Act (PIPEDA), which governs how organizations collect, use and disclose personal information. There is also increased emphasis on ethics and socially responsible actions, including cause-related marketing: linking a company's purchases or brand to a charitable cause. Counsel note: 'Meridian's household pricing likely constitutes price discrimination under s.34. PIPEDA exposure: severe.'"
+ },
+ {
+  "id": "i6_1",
+  "mission": "m3",
+  "spk": "MARR",
+  "text": "Voss wants to shape the environment, not react to it. In a normal company that's a compliment. Cultural Readiness Brief. The cultural environment. The cultural environment consists of institutions and other forces that affect a society's basic values, perceptions, preferences and behaviours. Persistence of cultural values: people hold many beliefs and values. Core beliefs and values (such as working, getting married, giving to charity, being honest) have a high degree of persistence and are passed on from parents to children. Secondary beliefs and values are more open to change. Shifts in secondary cultural values are expressed in people's views of: themselves; others; organizations; society; nature; and the universe. Responding to the marketing environment. Many companies take a reactive stance: they view the environment as uncontrollable and simply adapt. Others take a proactive stance: rather than assuming strategic options are bounded by the current environment, they take aggressive actions to affect the publics and forces in their environment. Voss: 'We will not wait for the environment. We will shape it. Starting with water.'"
+ },
+ {
+  "id": "r7_0",
+  "mission": "m3",
+  "spk": "HALE",
+  "text": "Pier 9. The Meridian ship is casting off. Tag the last containers before it clears the berth."
+ },
+ {
+  "id": "r7_1",
+  "mission": "m3",
+  "spk": "KESSLER",
+  "text": "Sergeant Wren. You're very good at reading our paperwork. Let's see how you read a firefight."
+ },
+ {
+  "id": "r7_2",
+  "mission": "m3",
+  "spk": "RUIZ",
+  "text": "That's Kessler! On the gantry!"
+ },
+ {
+  "id": "p7_0",
+  "mission": "m3",
+  "spk": "KESSLER",
+  "text": "Not tonight, Sergeant. Mr. Voss sends his regards."
+ },
+ {
+  "id": "p7_1",
+  "mission": "m3",
+  "spk": "RUIZ",
+  "text": "He's on the boat. He's gone."
+ },
+ {
+  "id": "p7_2",
+  "mission": "m3",
+  "spk": "HALE",
+  "text": "Trackers are live on every container. Let them sail. We'll follow them home."
+ },
+ {
+  "id": "brief_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Castellan Insight, Mirabel. Every email, every purchase record and every customer model Castellan owns passes through this building."
+ },
+ {
+  "id": "brief_1",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "After Halifax, I started an experiment. I gave each person on the LEDGER distribution list a slightly different version of our next move. Same plan, one detail changed per person."
+ },
+ {
+  "id": "brief_2",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "If Castellan reacted to one of those versions, the reaction is logged in there. That tells us who's talking."
+ },
+ {
+  "id": "brief_3",
+  "mission": "m4",
+  "spk": "HALE",
+  "text": "This is a stealth op. Suppressed weapons. If they raise the alarm, they'll purge the logs before you reach them."
+ },
+ {
+  "id": "brief_4",
+  "mission": "m4",
+  "spk": "RUIZ",
+  "text": "Quiet, careful, no explosions. Got it. I'll pretend that's normal for us."
+ },
+ {
+  "id": "db_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Hale is ordering us to Toronto. Castellan Commons. He says a courier is carrying Meridian's rollout keys to a handler."
+ },
+ {
+  "id": "db_1",
+  "mission": "m4",
+  "spk": "RUIZ",
+  "text": "It's a trap."
+ },
+ {
+  "id": "db_2",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Probably. But if Hale meets that handler, and we're watching, we have our proof. We go, and we watch everything."
+ },
+ {
+  "id": "r0_0",
+  "mission": "m4",
+  "spk": "HALE",
+  "text": "You're over the wall. Patrols on a loop. Stay out of their sight lines."
+ },
+ {
+  "id": "r0_1",
+  "mission": "m4",
+  "spk": "RUIZ",
+  "text": "Crouch, move slow. If you have to take one down, do it from behind."
+ },
+ {
+  "id": "r0_2",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Castellan doesn't need guards to know things about people. That's what the building is for."
+ },
+ {
+  "id": "p0_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "There's a briefing tablet in the guard hut. Castellan's own explanation of what this place does. Grab it."
+ },
+ {
+  "id": "i0_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Their visitor briefing. Note the line about insight. Castellan has more data than anyone and still needed me to understand it. What Insight Does. Marketing information and customer insights. To create value for customers, companies must first gain fresh, deep insights into what customers need and want. Customer insights are fresh marketing-information-based understandings of customers and the marketplace that become the basis for creating customer value, engagement and relationships. Big data refers to the huge and complex data sets generated by today's sophisticated information generation, collection, storage and analysis technologies. Most marketing managers are overloaded with data. The challenge is to turn it into insight. The marketing information system. A marketing information system (MIS) consists of people and procedures dedicated to assessing information needs, developing the needed information, and helping decision makers use the information to generate and validate actionable customer and market insights. A good MIS balances the information users would like to have against what they really need and what is feasible to offer. Information costs money; the value it adds must exceed its cost."
+ },
+ {
+  "id": "r1_0",
+  "mission": "m4",
+  "spk": "RUIZ",
+  "text": "Cooling plant. Loud fans. Good cover for footsteps."
+ },
+ {
+  "id": "r1_1",
+  "mission": "m4",
+  "spk": "HALE",
+  "text": "Three on patrol. One on the catwalk. Take your time."
+ },
+ {
+  "id": "r1_2",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Castellan's data comes from three places. Two of them are in the next rooms."
+ },
+ {
+  "id": "p1_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "The plant supervisor's terminal has their intelligence guidelines. Read them. They break most of their own rules."
+ },
+ {
+  "id": "i1_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Internal databases. Castellan's loyalty cards alone feed eleven million households into this building. Internal Data Policy. Internal data. Internal databases are collections of consumer and market information obtained from data sources within the company network. Marketing managers can readily access and work with information in the database to identify consumer and marketing opportunities, plan programs and evaluate performance. Accounting, operations, sales, marketing and customer service departments all feed it. Internal data can usually be accessed more quickly and cheaply than other information sources, but it may be incomplete or in the wrong form for making marketing decisions. Keeping it current takes effort."
+ },
+ {
+  "id": "i1_1",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Their own guidelines say legal and ethical sources only. Then look at the unit note. Intelligence Guidelines. Competitive marketing intelligence. Competitive marketing intelligence is the systematic monitoring, collection and analysis of publicly available information about consumers, competitors and developments in the marketing environment. Its goal is to improve strategic decision making by understanding the consumer environment, assessing and tracking competitors' actions, and providing early warnings of opportunities and threats. Sources include company employees, competitors' annual reports and public filings, trade shows, websites and social media, and buying and analyzing competitors' products. Most intelligence can be gathered legally from public sources. Companies should take advantage of publicly available information but avoid illegal or unethical practices. Unit note: 'Phase 1 rival grocers: obtain supplier contracts by any means.'"
+ },
+ {
+  "id": "r2_0",
+  "mission": "m4",
+  "spk": "HALE",
+  "text": "Archive level. The research division keeps its old studies down here."
+ },
+ {
+  "id": "r2_1",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Castellan's research process is textbook. Literally. They taught it from mine."
+ },
+ {
+  "id": "r2_2",
+  "mission": "m4",
+  "spk": "RUIZ",
+  "text": "Two guards by the stacks. Waiting for them to split up."
+ },
+ {
+  "id": "p2_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "The research handbook is open on the archivist's desk. Read it. You'll need every step of it in about twenty minutes."
+ },
+ {
+  "id": "i2_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Chapter one of their research handbook. Learn the three objective types. We're about to use all of them. Research Handbook. Marketing research. Marketing research is the systematic design, collection, analysis and reporting of data relevant to a specific marketing situation facing an organization. The marketing research process has four steps: defining the problem and research objectives; developing the research plan for collecting information; implementing the research plan (collecting and analyzing the data); and interpreting and reporting the findings. Defining the problem and research objectives. Defining the problem and research objectives is often the hardest step. A project might have one of three types of objectives: Exploratory research: to gather preliminary information that will help define problems and suggest hypotheses. Descriptive research: to describe things, such as the market potential for a product or the demographics and attitudes of consumers who buy it. Causal research: to test hypotheses about cause-and-effect relationships. Managers often start with exploratory research and later follow with descriptive or causal research."
+ },
+ {
+  "id": "r3_0",
+  "mission": "m4",
+  "spk": "RUIZ",
+  "text": "A firing range in a data centre. Of course there is."
+ },
+ {
+  "id": "r3_1",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "It's a security simulation deck. I've loaded research drills. Quietly, please. It's soundproofed, but only just."
+ },
+ {
+  "id": "r3_2",
+  "mission": "m4",
+  "spk": "HALE",
+  "text": "Two drills, then the research lab."
+ },
+ {
+  "id": "rc3_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "The four steps of the research process. In order."
+ },
+ {
+  "id": "rc3_1",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Probability samples only. Leave the nonprobability samples standing."
+ },
+ {
+  "id": "r4_0",
+  "mission": "m4",
+  "spk": "HALE",
+  "text": "Research lab. They've spotted something. Weapons free, but keep it fast."
+ },
+ {
+  "id": "r4_1",
+  "mission": "m4",
+  "spk": "RUIZ",
+  "text": "Contact! Going loud."
+ },
+ {
+  "id": "r4_2",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "The lab ran Meridian's household study. Everything about how they collected it is in there."
+ },
+ {
+  "id": "p4_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Their research plan for Meridian is on the lead analyst's screen. Secondary data, primary data, approaches. It's all there."
+ },
+ {
+  "id": "i4_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Read the project note. They sent researchers into people's homes under a loyalty program. Meridian Household Study: Plan. Developing the research plan. The research plan outlines sources of existing data and spells out the specific research approaches, contact methods, sampling plans and instruments researchers will use to gather new data. Secondary data consist of information that already exists somewhere, having been collected for another purpose. Researchers usually start here; it can be obtained more quickly and at lower cost. But it must be relevant, accurate, current and impartial, and it may not exist for the problem at hand. Primary data consist of information collected for the specific purpose at hand. Research approaches. Observational research: gathering primary data by observing relevant people, actions and situations. Best suited to exploratory research. Ethnographic research: a form of observational research that sends trained observers to watch and interact with consumers in their 'natural environments'. Survey research: gathering primary data by asking people questions about their knowledge, attitudes, preferences and buying behaviour. Best suited to descriptive information. It is flexible, but people may be unable or unwilling to answer accurately. Experimental research: gathering primary data by selecting matched groups of subjects, giving them different treatments, controlling related factors, and checking for differences in group responses. Best suited to causal information. Project note: 'Ethnographic team embedded in 40 Phase 1 households under the cover of a loyalty program.'"
+ },
+ {
+  "id": "r5_0",
+  "mission": "m4",
+  "spk": "HALE",
+  "text": "Contact centre. Rows of desks. They'll use them for cover."
+ },
+ {
+  "id": "r5_1",
+  "mission": "m4",
+  "spk": "RUIZ",
+  "text": "Hundreds of headsets. Who do they even call?"
+ },
+ {
+  "id": "r5_2",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Everyone. Surveys, focus groups, online panels. They sample this country like a population."
+ },
+ {
+  "id": "p5_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Their methods guide is pinned at the supervisor station. Contact methods, sampling, instruments. Read it fast. Then the analytics floor."
+ },
+ {
+  "id": "i5_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Their methods guide. Contact methods, sampling, instruments. Every question I'm about to ask you lives on this page. Methods Guide. Contact methods. Information can be collected by mail, telephone, personal interview, or online. Personal interviewing takes two forms: individual and group. Focus group interviewing brings six to ten people together with a trained moderator to talk about a product, service or organization. It is one of the major qualitative tools, but small samples make it hard to generalize, and moderators must avoid bias. Online marketing research collects primary data through internet and mobile surveys, online focus groups, consumer tracking, experiments, and online panels and brand communities. Online focus groups gather a small group of people online with a trained moderator. Behavioural targeting uses online consumer tracking data and analytics to target advertisements and marketing offers to specific consumers. Sampling plan. A sample is a segment of the population selected for marketing research to represent the population as a whole. Designing it takes three decisions: who is to be studied (the sampling unit), how many (sample size), and how they are chosen (sampling procedure). Probability samples: simple random (every member has a known and equal chance), stratified random (population divided into mutually exclusive groups such as age, random samples from each), cluster or area (population divided into groups such as blocks; a sample of groups is interviewed). Nonprobability samples: convenience (easiest to reach), judgment (researcher picks good prospects for accurate information), quota (a prescribed number from each of several categories). Research instruments. Two main instruments: the questionnaire (most common; administered in person, by phone or online; closed-end or open-end questions) and mechanical instruments (people meters, checkout scanners, eye cameras, brain-activity monitors)."
+ },
+ {
+  "id": "r6_0",
+  "mission": "m4",
+  "spk": "HALE",
+  "text": "Analytics floor. The logs you want are on the central terminal."
+ },
+ {
+  "id": "r6_1",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Clear the floor and get me on that terminal. Then we run this properly. Like a research project."
+ },
+ {
+  "id": "r6_2",
+  "mission": "m4",
+  "spk": "RUIZ",
+  "text": "Five suspects, one leak. Let's go find out who."
+ },
+ {
+  "id": "p6_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "...It's Hale. Wren, it's Hale."
+ },
+ {
+  "id": "p6_1",
+  "mission": "m4",
+  "spk": "RUIZ",
+  "text": "No. No, the major pulled me out of Kandahar. It's not Hale."
+ },
+ {
+  "id": "p6_2",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Ruiz, I'm sorry. The data's the data."
+ },
+ {
+  "id": "p6_3",
+  "mission": "m4",
+  "spk": "HALE",
+  "text": "Wren, Ruiz, status? Your feed dropped for a minute."
+ },
+ {
+  "id": "p6_4",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Say nothing. Not yet. Copy the analytics files and get out."
+ },
+ {
+  "id": "i6_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "The analytics charter. Everything Castellan knows about you started at a touch point. Analytics Charter. Implementing, interpreting and reporting. Implementing the plan means collecting, processing and analyzing the information. The data collection phase is generally the most expensive and the most subject to error. The researcher must then interpret the findings, draw conclusions and report them to management, presenting important findings and insights useful for major decisions. Interpretation should not be left only to researchers: managers know the problem and the decisions that must be made. Analyzing and using marketing information. Customer relationship management (CRM) here means managing detailed information about individual customers and carefully managing customer touch points in order to maximize customer loyalty. A touch point is every contact between a customer and the company: purchases, sales contacts, service calls, website and social media visits, surveys. Marketing analytics consists of the analysis tools, technologies and processes by which marketers dig out meaningful patterns in big data to gain customer insights and gauge marketing performance. Artificial intelligence (AI) is technology by which machines think and learn in a way that looks and feels human, but with much more analytical capacity. Marketing information has no value until it is used to make better decisions; it must be distributed to the right people at the right time."
+ },
+ {
+  "id": "i6_1",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "The ethics committee objected. Voss overruled them. It's in the minutes. Research Ethics Review (Rejected). Other marketing information considerations. Small businesses and not-for-profits can obtain good marketing insights through observation and informal surveys at low cost, using secondary data from government and associations. International marketing research follows the same steps but faces extra problems: finding good secondary data, the cost of collecting primary data, language and cultural differences, and different response patterns. Public policy and ethics. Two major concerns: intrusions on consumer privacy (consumers may resent research and data collection they see as intrusive, or worry about how their information is used), and the misuse of research findings (research studies can be used as powerful persuasion tools, designed or interpreted to support a sponsor's preferred conclusion). Committee minute: 'Objection to household ethnography under loyalty-program cover. Overruled by CEO.'"
+ },
+ {
+  "id": "ev6_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Right. We start by exploring. Who had access, when, and what leaked."
+ },
+ {
+  "id": "ev6_1",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Secondary data. The logs show Okafor never had access to the Halifax plan. She's clear."
+ },
+ {
+  "id": "ev6_2",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Primary data, collected for the purpose at hand. Reyes's version of the plan never reached Castellan. He's clear."
+ },
+ {
+  "id": "ev6_3",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "An experiment: matched groups, different treatments, controlled factors. Desjardins's version shows no reaction either."
+ },
+ {
+  "id": "ev6_4",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "A judgment sample, nonprobability. And yes, I tested myself. My version was never touched."
+ },
+ {
+  "id": "ev6_5",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Hale's. Only Hale was told about the Pier 9 gate code. Kessler was waiting at that exact gate."
+ },
+ {
+  "id": "r7_0",
+  "mission": "m4",
+  "spk": "HALE",
+  "text": "Alarm's tripped. Every guard in the building is converging on you. Move!"
+ },
+ {
+  "id": "r7_1",
+  "mission": "m4",
+  "spk": "RUIZ",
+  "text": "Back the way we came? Wren, talk to me."
+ },
+ {
+  "id": "r7_2",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "The loading bay. Straight through. I've got a van at the north gate."
+ },
+ {
+  "id": "p7_0",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "You're out. I have everything."
+ },
+ {
+  "id": "p7_1",
+  "mission": "m4",
+  "spk": "RUIZ",
+  "text": "...What do we do about the major?"
+ },
+ {
+  "id": "p7_2",
+  "mission": "m4",
+  "spk": "MARR",
+  "text": "Nothing. Not until we can prove it to someone above him."
+ },
+ {
+  "id": "brief_0",
+  "mission": "m5",
+  "spk": "HALE",
+  "text": "Castellan Commons. Flagship mall, closed for the night. A CSS courier is carrying Meridian's rollout keys to a handler somewhere inside."
+ },
+ {
+  "id": "brief_1",
+  "mission": "m5",
+  "spk": "HALE",
+  "text": "Tail the courier. Don't engage until he makes the handoff. We want the handler."
+ },
+ {
+  "id": "brief_2",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "The Commons is also Castellan's consumer behaviour lab. They study shoppers the way you'd study an enemy: what goes into the black box, what comes out."
+ },
+ {
+  "id": "brief_3",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "And Wren, keep your eyes open. All of them."
+ },
+ {
+  "id": "brief_4",
+  "mission": "m5",
+  "spk": "RUIZ",
+  "text": "Stay frosty. Copy."
+ },
+ {
+  "id": "db_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Ruiz is alive. They moved him to Northgate, Castellan's targeting campus outside Calgary."
+ },
+ {
+  "id": "db_1",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Hale has frozen LEDGER. Officially, we don't exist anymore. Unofficially, it's you and me."
+ },
+ {
+  "id": "db_2",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "We're getting him back, Wren. And then we're finishing this."
+ },
+ {
+  "id": "r0_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "That's him. Grey jacket, crossing the atrium. Keep at least ten metres back and don't let him see you."
+ },
+ {
+  "id": "r0_1",
+  "mission": "m5",
+  "spk": "RUIZ",
+  "text": "I'll take the upper level. You stay on the ground."
+ },
+ {
+  "id": "r0_2",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Everything in this mall is a stimulus. Lights, displays, music. Castellan measures what comes out the other side."
+ },
+ {
+  "id": "p0_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "He went through a staff door. There's a lab placard on the kiosk next to it. Castellan's model of the buyer. Read it while he's out of sight."
+ },
+ {
+  "id": "i0_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "The lab placard. The black box is how Castellan thinks about you. Stimulus in, response out. Commons Lab: The Black Box. Model of buyer behaviour. Consumer buyer behaviour refers to the buying behaviour of final consumers: individuals and households that buy goods and services for personal consumption. All of them combined make up the consumer market. Marketing stimuli (the four Ps) and other stimuli (economic, technological, social, cultural) enter the consumer's black box and produce responses: buying attitudes and preferences, purchase behaviour (what, when, where, how much), and brand and company relationship behaviour. Marketers want to understand how stimuli are changed into responses inside the black box. Two parts: the buyer's characteristics, and the buyer's decision process. Cultural factors. Culture is the set of basic values, perceptions, wants and behaviours learned by a member of society from family and other important institutions. It is the most basic cause of a person's wants and behaviour. A subculture is a group of people with shared value systems based on common life experiences and situations. Important Canadian subcultures include regional (East coast, West coast, Northern), francophone, Indigenous, ethnic (such as Chinese and South Asian Canadians) and mature consumers. A total market strategy integrates ethnic themes and cross-cultural perspectives within a brand's mainstream marketing, appealing to consumer similarities across subcultural segments rather than differences. Social class refers to relatively permanent and ordered divisions in a society whose members share similar values, interests and behaviours. It is measured by a combination of occupation, income, education, wealth and other variables."
+ },
+ {
+  "id": "pr0_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Search gallery. He's following the journey. Get ahead of him."
+ },
+ {
+  "id": "r1_0",
+  "mission": "m5",
+  "spk": "RUIZ",
+  "text": "Got eyes on him. He's slowing down at every display."
+ },
+ {
+  "id": "r1_1",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "The search gallery. Castellan studies who people listen to before they buy. Friends, influencers, family."
+ },
+ {
+  "id": "r1_2",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Stay out of his line of sight. If he turns around, break line of sight. Don't freeze in the open."
+ },
+ {
+  "id": "p1_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "The gallery's research boards are behind the glass. Social influence. Read them while he's in the evaluation lab."
+ },
+ {
+  "id": "i1_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Gallery research boards. Who you listen to is worth more to Castellan than what you earn. Social Influence Boards. Groups and social networks. Groups to which a person belongs and that have a direct influence are membership groups. A reference group serves as a direct or indirect point of comparison or reference in forming a person's attitudes or behaviour. People are often influenced by reference groups they do not belong to, such as aspirational groups: groups to which the individual wishes to belong. Word-of-mouth influence: the personal words and recommendations of trusted friends, family, associates and other consumers tend to be more credible than those from commercial sources such as ads and salespeople. An opinion leader is a person within a reference group who, because of special skills, knowledge, personality or other characteristics, exerts social influence on others. Influencer marketing involves enlisting established influencers or creating new influencers to spread the word about a company's brands. Online social networks are online communities where people socialize or exchange information and opinions: blogs, social media sites, brand communities. Family, roles and status. Family members can strongly influence buyer behaviour; the family is the most important consumer buying organization in society. A person's position in each group is defined by roles and status. A role consists of the activities people are expected to perform; each role carries a status reflecting the general esteem society gives it."
+ },
+ {
+  "id": "pr1_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Evaluation lab. Cut through the side corridor and you'll be there first."
+ },
+ {
+  "id": "r2_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Evaluation lab. They profile test shoppers here. Age, job, money, lifestyle, personality. The whole person."
+ },
+ {
+  "id": "r2_1",
+  "mission": "m5",
+  "spk": "RUIZ",
+  "text": "He's talking to someone on his earpiece. Can't make it out."
+ },
+ {
+  "id": "r2_2",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Get closer. Carefully. I want that voice."
+ },
+ {
+  "id": "p2_0",
+  "mission": "m5",
+  "spk": "COURIER",
+  "text": "...Understood, sir. Loading bay in ten. They're behind me, like you said."
+ },
+ {
+  "id": "p2_1",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "'Like you said.' He knows we're here. Someone told him we'd be here."
+ },
+ {
+  "id": "p2_2",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Read the lab's profile cards before you move. Then follow him. Carefully."
+ },
+ {
+  "id": "i2_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Profile cards. Notice how much of a person fits in five boxes. Test Shopper Profile Cards. Personal factors. Age and life-cycle stage: people change the goods and services they buy over their lifetimes; tastes in food, clothes and recreation are often age-related. Life-stage changes (marriage, children, retirement) shift buying. Occupation affects the goods and services bought. Economic situation affects store and product choices; marketers watch spending, savings and interest rates. Lifestyle is a person's pattern of living as expressed in his or her psychographics. It involves measuring consumers' major AIO dimensions: activities (work, hobbies, shopping, sports, social events), interests (food, fashion, family, recreation) and opinions (about themselves, social issues, business, products). Personality refers to the unique psychological characteristics that distinguish a person or group. Self-concept: people's possessions contribute to and reflect their identities: 'we are what we consume'. A brand personality is the specific mix of human traits that may be attributed to a particular brand. Five traits: sincerity (down-to-earth, honest, wholesome, cheerful), excitement (daring, spirited, imaginative, up-to-date), competence (reliable, intelligent, successful), sophistication (glamorous, upper class, charming) and ruggedness (outdoorsy and tough)."
+ },
+ {
+  "id": "pr2_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "The purchase desk. That's where the handoff happens. Get into position."
+ },
+ {
+  "id": "r3_0",
+  "mission": "m5",
+  "spk": "RUIZ",
+  "text": "He's heading for the loading bay. We've got a minute. There's a lab range here, stimulus testing."
+ },
+ {
+  "id": "r3_1",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Two drills while he walks. Maslow, then the decision process."
+ },
+ {
+  "id": "r3_2",
+  "mission": "m5",
+  "spk": "HALE",
+  "text": "Wren, what's your status? You've gone quiet."
+ },
+ {
+  "id": "rc3_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Maslow's hierarchy, from the bottom up. In order."
+ },
+ {
+  "id": "rc3_1",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "The five stages of the buyer decision process. In order."
+ },
+ {
+  "id": "r4_0",
+  "mission": "m5",
+  "spk": "RUIZ",
+  "text": "Contact! They were waiting in the psych lab!"
+ },
+ {
+  "id": "r4_1",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "They knew the route. Hale knew the route."
+ },
+ {
+  "id": "r4_2",
+  "mission": "m5",
+  "spk": "HALE",
+  "text": "Wren, report. Is the courier in sight?"
+ },
+ {
+  "id": "p4_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Their motivation research files are here. Read them. Whatever happens next, I want you to understand what this building does to people."
+ },
+ {
+  "id": "i4_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "The psych division's file. Maslow at the bottom of the pyramid. Physiological needs. Food. Medicine. That's where Meridian aims. Motivation Research File. Motivation. A motive (or drive) is a need that is sufficiently pressing to direct the person to seek satisfaction of the need. Freud assumed that people are largely unconscious about the real psychological forces shaping their behaviour; buying decisions are affected by subconscious motives. Motivation research uses in-depth, qualitative research to probe consumers' hidden, subconscious motivations. Maslow arranged human needs in a hierarchy, from most pressing at the bottom to least pressing at the top: physiological needs (hunger, thirst), safety needs (security, protection), social needs (belonging, love), esteem needs (self-esteem, recognition, status) and self-actualization needs (self-development and realization). A person tries to satisfy the most important need first. Perception. Perception is the process by which people select, organize and interpret information to form a meaningful picture of the world. People form different perceptions of the same stimulus because of three perceptual processes: Selective attention: the tendency for people to screen out most of the information to which they are exposed. Selective distortion: the tendency to interpret information in a way that will support what people already believe. Selective retention: people forget much of what they learn but tend to retain information that supports their attitudes and beliefs. Learning, beliefs and attitudes. Learning describes changes in an individual's behaviour arising from experience. It occurs through the interplay of drives, stimuli, cues, responses and reinforcement. A belief is a descriptive thought that a person holds about something. An attitude is a person's consistently favourable or unfavourable evaluations, feelings and tendencies toward an object or idea. Attitudes are difficult to change."
+ },
+ {
+  "id": "r5_0",
+  "mission": "m5",
+  "spk": "HALE",
+  "text": "Wren, the courier is moving to the loading bay. Pursue. That's an order."
+ },
+ {
+  "id": "r5_1",
+  "mission": "m5",
+  "spk": "RUIZ",
+  "text": "He wants us in the loading bay. Why does he want us in the loading bay?"
+ },
+ {
+  "id": "r5_2",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Keep going. We need to see who's waiting there. Carefully."
+ },
+ {
+  "id": "p5_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "The decision lab's journey wall. Read it on the way through. Postpurchase. New products. Who adopts first. It's how Castellan plans Meridian's rollout."
+ },
+ {
+  "id": "i5_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "The journey wall. Note the adoption curve. They're going to launch Meridian as a 'new service' to early adopters first. Journey Wall. The buyer decision process. Need recognition: the buyer recognizes a problem or need, triggered by internal or external stimuli. Information search: sources include personal (family, friends, neighbours), commercial (advertising, salespeople, websites, packaging, displays), public (mass media, rating organizations, social media, online reviews) and experiential (handling, examining, using the product). Evaluation of alternatives: how the consumer processes information to choose among brands. Purchase decision: generally the most preferred brand, but two factors can come between purchase intention and decision: the attitudes of others and unexpected situational factors. Postpurchase behaviour: the relationship between the consumer's expectations and the product's perceived performance. Cognitive dissonance is buyer discomfort caused by postpurchase conflict. New products. A new product is a good, service or idea perceived by some potential customers as new. The adoption process is the mental process through which an individual passes from first hearing about an innovation to final adoption: awareness, interest, evaluation, trial, adoption. Individual differences in innovativeness: innovators (2.5%), early adopters (13.5%), early mainstream (34%), late mainstream (34%) and lagging adopters (16%). Five product characteristics affect the rate of adoption: relative advantage (appears superior to existing products), compatibility (fits values and experiences), complexity (difficult to understand or use), divisibility (can be tried on a limited basis) and communicability (results can be observed or described to others)."
+ },
+ {
+  "id": "r6_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "The business exchange. This is where Castellan sells to other companies: hospitals, restaurants, pharmacies."
+ },
+ {
+  "id": "r6_1",
+  "mission": "m5",
+  "spk": "RUIZ",
+  "text": "Courier's through the next door. He's not even running."
+ },
+ {
+  "id": "r6_2",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Read the procurement board while you clear the room. Meridian is a business-to-business play too."
+ },
+ {
+  "id": "p6_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Their supplier playbook is on the procurement desk. Read it. Then the loading bay. Whoever is waiting there, we need to see their face."
+ },
+ {
+  "id": "i6_0",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Hospital procurement. Castellan already supplies a third of Ontario's hospitals. Meridian applies to them too. Procurement Board. Business markets. Business buyer behaviour is the buying behaviour of organizations that buy goods and services for use in the production of other products and services, or to resell or rent them at a profit. Compared with consumer markets, business markets have fewer but larger buyers; demand is derived demand (business demand that ultimately comes from the demand for consumer goods); buying involves more decision participants and more professional purchasing effort; decisions are more complex and the process more formalized; and buyer and seller work closely together and build long-term relationships. Major types of buying situations. Straight rebuy: the buyer routinely reorders something without modifications. Modified rebuy: the buyer wants to modify product specifications, prices, terms or suppliers. New task: the buyer purchases a product or service for the first time. Systems selling (solutions selling) is buying a packaged solution to a problem from a single seller, avoiding all the separate decisions involved in a complex buying situation. Participants and influences. The buying centre is all the individuals and units that play a role in the purchase decision-making process: the actual users, those who influence the decision, those who do the actual buying, those who make the decision, and gatekeepers who control buying information. Business buyers are subject to environmental, organizational, interpersonal and individual influences. They respond to both economic and personal factors."
+ },
+ {
+  "id": "i6_1",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "The supplier playbook. Eight stages. Hospitals going through every one of them while Castellan quietly owns the alternatives. Supplier Playbook. The business buyer decision process. Eight stages, all of them in a new task situation: problem recognition, general need description, product specification, supplier search, proposal solicitation, supplier selection, order-routine specification, and performance review. Modified and straight rebuys may skip stages. Supplier development is the systematic development of networks of supplier-partners to ensure an appropriate and dependable supply of products and materials. Engaging business buyers digitally. E-procurement is purchasing through electronic connections between buyers and sellers, usually online. It gives buyers access to new suppliers, lowers purchasing costs, and hastens order processing and delivery. B-to-B marketers also use digital and social media marketing (websites, blogs, mobile apps, online video, social networks) to engage business customers and manage relationships anytime, anywhere."
+ },
+ {
+  "id": "r7_0",
+  "mission": "m5",
+  "spk": "COURIER",
+  "text": "Here they are, sir."
+ },
+ {
+  "id": "r7_1",
+  "mission": "m5",
+  "spk": "HALE",
+  "text": "Hello, Wren. Lower your weapon."
+ },
+ {
+  "id": "r7_2",
+  "mission": "m5",
+  "spk": "RUIZ",
+  "text": "Major? What the hell is this?"
+ },
+ {
+  "id": "r7_3",
+  "mission": "m5",
+  "spk": "HALE",
+  "text": "Castellan employs a hundred and forty thousand people. You pull this thread, and the whole economy goes with it. I'm protecting this country from you."
+ },
+ {
+  "id": "r7_4",
+  "mission": "m5",
+  "spk": "KESSLER",
+  "text": "Take them."
+ },
+ {
+  "id": "p7_0",
+  "mission": "m5",
+  "spk": "RUIZ",
+  "text": "Wren! They've got me! Go! GO!"
+ },
+ {
+  "id": "p7_1",
+  "mission": "m5",
+  "spk": "MARR",
+  "text": "Wren, get out of there. North stairwell, now. You can't help him dead."
+ },
+ {
+  "id": "p7_2",
+  "mission": "m5",
+  "spk": "HALE",
+  "text": "Let the sergeant run. We have what we need."
+ },
+ {
+  "id": "brief_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Northgate. Castellan's targeting campus. This is where Meridian decides which towns, which streets, which households."
+ },
+ {
+  "id": "brief_1",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Ruiz is in the holding block. Kessler's people have had him for thirty hours."
+ },
+ {
+  "id": "brief_2",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Hale has locked me out of every LEDGER system, but he forgot Castellan's. I still know the passwords I wrote."
+ },
+ {
+  "id": "brief_3",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Get Ruiz out. Then help me break the targeting array, so Meridian can't decide who to hurt first."
+ },
+ {
+  "id": "brief_4",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "You're on your own until you reach him, Wren. I'm sorry. Be fast."
+ },
+ {
+  "id": "db_0",
+  "mission": "m6",
+  "spk": "RUIZ",
+  "text": "Forty-eight hours. Castellan Tower. Hale."
+ },
+ {
+  "id": "db_1",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "We go in with everything we have. I've sent the evidence to a journalist and a judge. If we die, it goes public anyway."
+ },
+ {
+  "id": "db_2",
+  "mission": "m6",
+  "spk": "RUIZ",
+  "text": "Cheerful. Let's not die."
+ },
+ {
+  "id": "r0_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "You're inside the wall. CSS patrols are heavier than Mirabel. They expect you."
+ },
+ {
+  "id": "r0_1",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Northgate runs one idea: every market can be divided. People, places, habits. Everyone fits in a segment."
+ },
+ {
+  "id": "r0_2",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Clear the yard. Quietly if you can."
+ },
+ {
+  "id": "p0_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "The perimeter office has their segmentation primer. Read it. It starts with where people live."
+ },
+ {
+  "id": "i0_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Their primer. Four steps. Two to choose who, two to choose how. Meridian does the first two very well. Segmentation Primer. Designing a customer-driven strategy. Four steps. Segmentation: dividing a market into smaller segments of buyers with distinct needs, characteristics or behaviours that might require separate strategies or mixes. Targeting: evaluating each segment's attractiveness and selecting one or more to enter. Differentiation: differentiating the market offering to create superior customer value. Positioning: arranging for an offering to occupy a clear, distinctive and desirable place relative to competing products in the minds of target consumers. The first two decide which customers to serve; the last two decide the value proposition: how to create value for them. Segmenting consumer markets. There is no single way to segment a market. Major variables are geographic, demographic, psychographic and behavioural. Geographic segmentation divides the market into different geographical units such as nations, regions, provinces, cities or even neighbourhoods. Many companies localize products, advertising and promotion to fit the needs of individual regions, cities and neighbourhoods."
+ },
+ {
+  "id": "r1_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "The segmentation floor. Wall screens show every Meridian household cluster."
+ },
+ {
+  "id": "r1_1",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Age. Income. Lifestyle. How often they buy. Whether they ever leave."
+ },
+ {
+  "id": "r1_2",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Contacts ahead. Take them."
+ },
+ {
+  "id": "p1_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "The floor manager left the full variable table open. Read it. Then the holding block is through the east door."
+ },
+ {
+  "id": "i1_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "The full variable table. Read 'usage rate'. Meridian's first target is heavy users of things they can't stop buying. Variable Table. Demographic segmentation. Demographic segmentation divides the market into segments based on variables such as age, life-cycle stage, gender, income, occupation, education, religion, ethnicity and generation. Demographic factors are the most popular bases for segmenting customer groups, partly because they're easier to measure. Age and life-cycle segmentation: offering different products or using different marketing approaches for different age and life-cycle groups. Gender segmentation: different products and marketing approaches for men and women. Income segmentation: different products or marketing programs for affluent, middle-income and low-income consumers. Psychographic segmentation. Psychographic segmentation divides buyers into segments based on lifestyle or personality characteristics. People in the same demographic group can have very different psychographic characteristics. Behavioural segmentation. Behavioural segmentation divides buyers based on their knowledge, attitudes, uses or responses to a product. Many marketers believe it is the best starting point. Occasion segmentation: according to occasions when buyers get the idea to buy, make the purchase or use it. Benefit segmentation: according to the different benefits consumers seek from the product. User status: non-users, ex-users, potential users, first-time users and regular users. Usage rate: light, medium and heavy users. Loyalty status: completely loyal, somewhat loyal, or no loyalty to a brand. Using multiple bases: marketers rarely limit themselves to one or a few variables; they combine several to identify smaller, better-defined target groups."
+ },
+ {
+  "id": "r2_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Holding block. Ruiz is in cell four. Six guards between you and him."
+ },
+ {
+  "id": "r2_1",
+  "mission": "m6",
+  "spk": "KESSLER",
+  "text": "All units, the sergeant is inside the wall. Nobody touches the prisoner until I arrive."
+ },
+ {
+  "id": "r2_2",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Kessler's coming. You don't have long."
+ },
+ {
+  "id": "p2_0",
+  "mission": "m6",
+  "spk": "RUIZ",
+  "text": "...Wren? Took you long enough. They kept asking about Marr."
+ },
+ {
+  "id": "p2_1",
+  "mission": "m6",
+  "spk": "RUIZ",
+  "text": "Give me a sidearm. I can walk. Mostly."
+ },
+ {
+  "id": "p2_2",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Ruiz. Thank God. Both of you, get to the array. There's a primer on the warden's desk about business and international segments. Grab it on the way."
+ },
+ {
+  "id": "i2_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Primer part three. Five tests for a segment. Meridian's towns pass all five. That's what scares me. Business and Global Segments. Segmenting business markets. Consumer and business marketers use many of the same variables. Business marketers also use customer operating characteristics, purchasing approaches, situational factors and personal characteristics. Many companies set up separate systems for dealing with larger or multiple-location customers. Segmenting international markets. Companies can segment international markets by geographic location, economic factors, political and legal factors, and cultural factors. Intermarket (cross-market) segmentation forms segments of consumers who have similar needs and buying behaviours even though they are located in different countries. Requirements for effective segmentation. To be useful, market segments must be: Measurable: size, purchasing power and profiles can be measured. Accessible: the segments can be effectively reached and served. Substantial: large or profitable enough to serve. Differentiable: conceptually distinguishable and respond differently to different marketing mix elements. Actionable: effective programs can be designed for attracting and serving them."
+ },
+ {
+  "id": "r3_0",
+  "mission": "m6",
+  "spk": "RUIZ",
+  "text": "They made me shoot on this range, you know. Blindfolded. As a joke."
+ },
+ {
+  "id": "r3_1",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Then let's make it count. Segmentation bases, then the targeting strategies, broad to narrow."
+ },
+ {
+  "id": "r3_2",
+  "mission": "m6",
+  "spk": "RUIZ",
+  "text": "Wren shoots. I supervise. Ribs are broken."
+ },
+ {
+  "id": "rc3_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "The four major consumer segmentation variables. Any order."
+ },
+ {
+  "id": "rc3_1",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Targeting strategies, from broadest to narrowest. In order."
+ },
+ {
+  "id": "r4_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "You're at the array. I need ninety seconds of uptime to corrupt the targeting model. Ruiz, Wren, hold the room."
+ },
+ {
+  "id": "r4_1",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "As the array runs Castellan's campaigns, I'll read you each one. Call the targeting strategy. Keys one to three."
+ },
+ {
+  "id": "r4_2",
+  "mission": "m6",
+  "spk": "KESSLER",
+  "text": "Every unit to the array. Now."
+ },
+ {
+  "id": "p4_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Model's corrupted. Meridian just lost its target list. They'll need weeks to rebuild it."
+ },
+ {
+  "id": "p4_1",
+  "mission": "m6",
+  "spk": "RUIZ",
+  "text": "Nice work, Doctor. Can we leave now?"
+ },
+ {
+  "id": "p4_2",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Through the positioning wing. And Wren, grab everything. Their launch is closer than we thought."
+ },
+ {
+  "id": "i4_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Their targeting doctrine. Read the last paragraph. Then remember who Meridian targets. Targeting Doctrine. Evaluating market segments. A firm looks at three factors: segment size and growth; segment structural attractiveness (competitors, substitute products, the relative power of buyers and of suppliers); and company objectives and resources. Selecting target market segments. A target market is a set of buyers who share common needs or characteristics that a company decides to serve. Strategies run from very broad to very narrow: Undifferentiated (mass) marketing: ignore segment differences and go after the whole market with one offer. Differentiated (segmented) marketing: target several segments and design separate offers for each. Concentrated (niche) marketing: go after a large share of one or a few smaller segments or niches. Micromarketing: tailor products and programs to the tastes of specific individuals and local customer segments. It includes local marketing (tailoring to cities, neighbourhoods, even specific stores) and individual marketing (tailoring to the needs and preferences of individual customers; also called one-to-one marketing, mass customization and markets-of-one). Socially responsible target marketing. Target marketing sometimes generates controversy. The biggest issues usually involve targeting vulnerable or disadvantaged consumers with controversial or potentially harmful products. The issue is not who is targeted, but how and for what. Socially responsible marketing calls for segmentation and targeting that serve not just the company's interests, but also the interests of those targeted."
+ },
+ {
+  "id": "r5_0",
+  "mission": "m6",
+  "spk": "RUIZ",
+  "text": "Kessler's people are falling back to the positioning wing."
+ },
+ {
+  "id": "r5_1",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Positioning: how Castellan wants Meridian to look in people's heads. Not a price hike. A 'guarantee'."
+ },
+ {
+  "id": "r5_2",
+  "mission": "m6",
+  "spk": "RUIZ",
+  "text": "Contact left!"
+ },
+ {
+  "id": "p5_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "The positioning playbook is on the strategist's desk. Read it. This is how they plan to sell Meridian to the public."
+ },
+ {
+  "id": "i5_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Their positioning playbook. They want Meridian positioned as security. Peace of mind. Positioning Playbook. Product position. A product position is the way a product is defined by consumers on important attributes: the place it occupies in consumers' minds relative to competing products. Consumers position products with or without the help of marketers. Perceptual positioning maps show consumer perceptions of a brand versus competing products on important buying dimensions. Choosing a differentiation and positioning strategy. Three steps: identify a set of differentiating competitive advantages; choose the right competitive advantages; select an overall positioning strategy. A competitive advantage is an advantage over competitors gained by offering greater customer value, either by having lower prices or providing more benefits that justify higher prices. Firms can differentiate along the lines of product (features, performance, style and design), services (speedy, convenient or careful delivery), channels (coverage, expertise, performance), people (hiring and training better people) or image (brand image conveying distinctive benefits and positioning). Choosing the right competitive advantages. A difference is worth establishing if it is important (delivers a highly valued benefit), distinctive (competitors don't offer it, or it's offered more distinctively), superior (better than other ways to get the benefit), communicable (visible to buyers), pre-emptive (competitors can't easily copy it), affordable (buyers can pay for it) and profitable (the company can introduce it profitably). Some marketers recommend a unique selling proposition (USP): pick one attribute and tout yourself as 'number one' on it. Others think companies should position on more than one differentiator."
+ },
+ {
+  "id": "r6_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "The launch hall. They've built a stage. Castellan Assure. That's Meridian's public name."
+ },
+ {
+  "id": "r6_1",
+  "mission": "m6",
+  "spk": "RUIZ",
+  "text": "'Assure.' They're going to sell the shortage as insurance against the shortage."
+ },
+ {
+  "id": "r6_2",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Kessler's guarding the far end. Push through."
+ },
+ {
+  "id": "p6_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "The launch script is on the podium. Read the positioning statement. Then the roof: the extraction truck is waiting in the yard."
+ },
+ {
+  "id": "i6_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Their launch script. The positioning statement is perfect. The textbook form, word for word. For a product designed to cause the problem it solves. Castellan Assure: Launch Script. Selecting an overall positioning strategy. A value proposition is the full positioning of a brand: the full mix of benefits on which it is positioned. Five winning value propositions: More for more: the most upscale product or service at a higher price to cover the higher costs. More for the same: attacking a competitor's more-for-more positioning by introducing a brand that offers comparable quality at a lower price. The same for less: a powerful value proposition; everyone likes a good deal. Less for much less: offering products that meet consumers' lower performance or quality requirements at a much lower price. More for less: the winning proposition in theory, but difficult to sustain in the long run. Losing propositions, such as less for more or the same for more, invite competitors to steal the brand's customers. Developing a positioning statement. A company's positioning should be summed up in a positioning statement, which follows the form: To (target segment and need), our (brand) is (concept) that (point of difference). Communicating and delivering the chosen position. Once a position is chosen, the company must take strong steps to deliver and communicate it to target consumers. All of the marketing mix efforts must support the positioning strategy. Positions should evolve with changing needs and competitors. Draft statement: 'To households worried about rising shortages, Castellan Assure is the supply guarantee that keeps essentials on your shelf when no one else can.'"
+ },
+ {
+  "id": "r7_0",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Wren, you're on the roof. Ruiz is going for the truck across the yard. He can't run, and he can't shoot straight."
+ },
+ {
+  "id": "r7_1",
+  "mission": "m6",
+  "spk": "RUIZ",
+  "text": "Thanks, Doc. Wren, keep them off me. Every one of them."
+ },
+ {
+  "id": "r7_2",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Rifle's on the ledge. High-power scope. Take your time between shots, and don't let them reach him."
+ },
+ {
+  "id": "p7_0",
+  "mission": "m6",
+  "spk": "RUIZ",
+  "text": "I'm in! Get down here!"
+ },
+ {
+  "id": "p7_1",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "Truck's moving. Both of you are clear."
+ },
+ {
+  "id": "p7_2",
+  "mission": "m6",
+  "spk": "MARR",
+  "text": "I pulled one more thing from the array before it died. Castellan Assure launches in forty-eight hours. From Castellan Tower. Voss and Hale will both be there."
+ },
+ {
+  "id": "brief_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Castellan Tower. Sixty floors. Tonight Voss launches Castellan Assure from the top of it, live, to the whole country."
+ },
+ {
+  "id": "brief_1",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "To the public, Assure is a product: a monthly subscription that guarantees your essentials. In reality it's Meridian with a logo."
+ },
+ {
+  "id": "brief_2",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "The brand vault on floor forty-two holds the master files: every contract, every price model, every town. If we upload them before the launch, Assure dies on stage."
+ },
+ {
+  "id": "brief_3",
+  "mission": "m7",
+  "spk": "RUIZ",
+  "text": "And Kessler?"
+ },
+ {
+  "id": "brief_4",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Kessler will be between you and that vault. Hale will be upstairs with Voss."
+ },
+ {
+  "id": "brief_5",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Go in through the lobby. Loud. Every second counts now."
+ },
+ {
+  "id": "r0_0",
+  "mission": "m7",
+  "spk": "RUIZ",
+  "text": "Big lobby. Big logo. Lots of guards."
+ },
+ {
+  "id": "r0_1",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Look at the display wall. Castellan's whole product philosophy, cast in steel."
+ },
+ {
+  "id": "r0_2",
+  "mission": "m7",
+  "spk": "RUIZ",
+  "text": "Breaching!"
+ },
+ {
+  "id": "p0_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "The product manual in the reception kiosk. Castellan's definition of what it sells. Grab it."
+ },
+ {
+  "id": "i0_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Chapter one of their product manual. Assure's core customer value is supposed to be peace of mind. It's built to create the anxiety it sells. Product Manual: Foundations. Products, services and experiences. A product is anything that can be offered to a market for attention, acquisition, use or consumption that might satisfy a want or need. Products include physical objects, services, events, persons, places, organizations, ideas, or mixes of these. A service is an activity, benefit or satisfaction offered for sale that is essentially intangible and does not result in the ownership of anything. A company's market offering often includes both tangible goods and services, ranging from pure tangible goods to pure services. Many firms now create and manage customer experiences with their products or company. Levels of product and services. Core customer value: what is the buyer really buying? The core, problem-solving benefits consumers seek. Actual product: product and service features, design, a quality level, a brand name and packaging. Augmented product: additional consumer services and benefits built around the core and actual products, such as warranties, delivery, after-sale service and support. Consumers see products as complex bundles of benefits that satisfy their needs."
+ },
+ {
+  "id": "r1_0",
+  "mission": "m7",
+  "spk": "HALE",
+  "text": "Wren. I know you're in the building. Walk out now and I'll make sure Ruiz is charged with nothing."
+ },
+ {
+  "id": "r1_1",
+  "mission": "m7",
+  "spk": "RUIZ",
+  "text": "Charged? You handed me to Kessler, Major."
+ },
+ {
+  "id": "r1_2",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Ignore him. The showroom displays every Castellan product category. Keep moving."
+ },
+ {
+  "id": "p1_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "The classification guide is on the showroom floor manager's tablet. Read it. Every product here has a type."
+ },
+ {
+  "id": "i1_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Classification guide. Look at where they put Assure. 'Unsought product.' They know nobody wants it until they're afraid. Classification Guide. Consumer products. Consumer products are products and services bought by final consumers for personal consumption. Classified by how consumers buy them: Convenience products: bought frequently, immediately, with minimal comparison and buying effort. Low price, widespread distribution. (Laundry detergent, candy, fast food.) Shopping products: less frequently purchased; customers carefully compare suitability, quality, price and style. Selective distribution, fewer outlets. (Furniture, clothing, major appliances.) Specialty products: unique characteristics or brand identification for which a significant group of buyers is willing to make a special purchase effort. (Luxury cars, high-end watches, specialized medical services.) Unsought products: products the consumer either does not know about or knows about but does not normally think of buying. (Life insurance, preplanned funeral services, blood donations.) They require a lot of advertising and personal selling. Industrial products. Industrial products are bought by individuals and organizations for further processing or for use in conducting a business. Three groups: materials and parts (raw materials and manufactured materials and parts), capital items (installations and accessory equipment) and supplies and services (operating supplies, maintenance and repair items, business advisory services). Organizations, persons, places and ideas. Marketers also market organizations (corporate image marketing), persons, places and ideas. Social marketing is the use of traditional business marketing concepts and tools to encourage behaviours that will create individual and societal well-being."
+ },
+ {
+  "id": "r2_0",
+  "mission": "m7",
+  "spk": "RUIZ",
+  "text": "Design studio. Packaging mock-ups everywhere."
+ },
+ {
+  "id": "r2_1",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Every Assure box, label and app screen was designed in this room."
+ },
+ {
+  "id": "r2_2",
+  "mission": "m7",
+  "spk": "KESSLER",
+  "text": "LEDGER team on floor twelve. Hold them at the studio."
+ },
+ {
+  "id": "p2_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "The design brief is pinned on the main board. Product attributes, packaging, labelling. Read it."
+ },
+ {
+  "id": "i2_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "The design brief. Note the label copy: 'Guaranteed supply.' Their lawyers flagged it as misleading. Marketing overruled. Assure Design Brief. Individual product and service decisions. Five decisions: product attributes, branding, packaging, labelling and logos, and product support services. Product attributes. Product quality is the characteristics of a product or service that bear on its ability to satisfy stated or implied customer needs. It has two dimensions: quality level (performance quality: the product's ability to perform its functions) and quality consistency (conformance quality: freedom from defects and consistency in delivering a targeted level of performance). Features are a competitive tool for differentiating the company's product from competitors' products. Style describes the appearance of a product; design goes to the very heart of a product, contributing to usefulness as well as looks. Packaging, labelling and support. Packaging involves designing and producing the container or wrapper for a product. Its primary function is to hold and protect, but it has become an important marketing tool too. Labels and logos identify the product or brand, describe several things about the product, and help promote the brand. In Canada, labelling is regulated by acts such as the Consumer Packaging and Labelling Act, which governs what must appear on labels (such as bilingual product information) and prohibits misleading labelling. Product support services augment actual products. Companies should design support services to meet target customers' needs profitably."
+ },
+ {
+  "id": "r3_0",
+  "mission": "m7",
+  "spk": "RUIZ",
+  "text": "Executive firing range on floor thirty. Of course."
+ },
+ {
+  "id": "r3_1",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Two drills. The service characteristics, then the consumer product types."
+ },
+ {
+  "id": "r3_2",
+  "mission": "m7",
+  "spk": "RUIZ",
+  "text": "Twelve floors to the vault. Make it fast, Wren."
+ },
+ {
+  "id": "rc3_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "The four service characteristics. Any order."
+ },
+ {
+  "id": "rc3_1",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Levels of product, from the inside out. In order."
+ },
+ {
+  "id": "r4_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Product line office. Assure isn't one product, it's a whole line. Basic, Family, Premium."
+ },
+ {
+  "id": "r4_1",
+  "mission": "m7",
+  "spk": "RUIZ",
+  "text": "They've got heavies up here. Armoured."
+ },
+ {
+  "id": "r4_2",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Aim for the head on the heavies. Everything else just slows them down."
+ },
+ {
+  "id": "p4_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "The line strategy deck is on the conference screen. Read it. Then up the service stairs to the service centre."
+ },
+ {
+  "id": "i4_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Line strategy. Note the plan: stretch Assure downward into a cheap tier once people are scared enough. Line Strategy Deck. Product line decisions. A product line is a group of products that are closely related because they function in a similar manner, are sold to the same customer groups, are marketed through the same types of outlets, or fall within given price ranges. The major line decision involves product line length: the number of items in the line. A line is too short if adding items increases profits, too long if dropping items increases profits. A company can lengthen its line by product line filling (adding more items within the present range of the line: for extra profits, to satisfy dealers, to use excess capacity, to be the leading full-line company, or to plug holes against competitors) or by product line stretching (lengthening the line beyond its current range: downward, upward, or both ways). Product mix decisions. The product mix (or product portfolio) consists of all the product lines and items that a particular seller offers for sale. It has four important dimensions: Width: the number of different product lines the company carries. Length: the total number of items the company carries within its product lines. Depth: the number of versions offered of each product in the line. Consistency: how closely related the various product lines are in end use, production requirements, distribution channels or other ways."
+ },
+ {
+  "id": "r5_0",
+  "mission": "m7",
+  "spk": "RUIZ",
+  "text": "Service centre. A thousand empty headsets. Somebody's going to answer a lot of angry calls next week."
+ },
+ {
+  "id": "r5_1",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Assure is a service before it's a product. Services are harder. You can't store them, and you can't separate them from the people delivering them."
+ },
+ {
+  "id": "r5_2",
+  "mission": "m7",
+  "spk": "KESSLER",
+  "text": "Forty-two is sealed. Come and get it, Sergeant."
+ },
+ {
+  "id": "p5_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "The service operations manual is on the floor supervisor's desk. Read it. Then the vault. Kessler's waiting."
+ },
+ {
+  "id": "i5_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Their service ops manual. The profit chain starts with happy employees. Half of Assure's call centre staff signed an NDA instead. Service Operations Manual. Four service characteristics. Service intangibility: services cannot be seen, tasted, felt, heard or smelled before they are bought. Buyers look for signals of quality. Service inseparability: services are produced and consumed at the same time and cannot be separated from their providers, whether people or machines. Service variability: the quality of services depends on who provides them as well as when, where and how they are provided. Service perishability: services cannot be stored for later sale or use. Marketing strategies for service firms. The service profit chain links service firm profits with employee and customer satisfaction: internal service quality → satisfied and productive service employees → greater service value → satisfied and loyal customers → healthy service profits and growth. Service marketing requires more than the four Ps. Internal marketing means orienting and motivating customer-contact employees and supporting service people to work as a team to provide customer satisfaction. Interactive marketing means service quality depends heavily on the quality of the buyer-seller interaction during the service encounter. Service firms must manage service differentiation (offer, delivery, image), service quality (consistently meeting or exceeding expectations; good service recovery can turn angry customers into loyal ones), and service productivity (training, more efficient processes, technology), without taking quality out of the service."
+ },
+ {
+  "id": "r6_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "You're in the vault. Plug in the uplink. I need the master files out of here before the launch broadcast starts."
+ },
+ {
+  "id": "r6_1",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Their brand strategy files are flagged by type. As they come through, call each one. Keys one to three."
+ },
+ {
+  "id": "r6_2",
+  "mission": "m7",
+  "spk": "RUIZ",
+  "text": "Here they come!"
+ },
+ {
+  "id": "p6_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Upload complete. Every file. I've already sent it to the judge and the press."
+ },
+ {
+  "id": "p6_1",
+  "mission": "m7",
+  "spk": "RUIZ",
+  "text": "Then why are the lights going red?"
+ },
+ {
+  "id": "p6_2",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Because Kessler just locked down the executive floor. And he's between you and the stairs."
+ },
+ {
+  "id": "i6_0",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "The master file. Every brand decision for Assure, in one place. Upload it. Brand Vault Master File. Brand equity and brand value. A brand is a name, term, sign, symbol or design, or a combination of these, that identifies the products or services of one seller and differentiates them from competitors'. Brand equity is the differential effect that knowing the brand name has on customer response to the product or its marketing. Brand value is the total financial value of a brand. Young & Rubicam's BrandAsset Valuator measures brand strength on four dimensions: differentiation, relevance, knowledge and esteem. Building strong brands. Brand positioning: at three levels: product attributes (the lowest level), desirable benefits, and strong beliefs and values (the strongest). Brand name selection: suggests benefits and qualities; easy to say, recognize and remember; distinctive; extendable; translatable; capable of registration and legal protection. Brand sponsorship: a manufacturer's (national) brand; a store (private) brand created and owned by a reseller; licensing (using names or symbols created by other companies for a fee); or co-branding (using the established brand names of two different companies on the same product). Brand development: line extensions (existing brand name, new forms, colours, sizes, ingredients or flavours of an existing category), brand extensions (extending a current brand name to new or modified products in a new category), multibrands (additional brands in the same category) and new brands. Managing brands. Companies must manage their brands carefully: communicate the positioning continuously, engage customers with the brand at every touch point, and periodically audit their brands' strengths and weaknesses."
+ },
+ {
+  "id": "r7_0",
+  "mission": "m7",
+  "spk": "KESSLER",
+  "text": "You read our files, Sergeant. All of them. Did you find what you were looking for?"
+ },
+ {
+  "id": "r7_1",
+  "mission": "m7",
+  "spk": "RUIZ",
+  "text": "He's in full plate. That's not a vest, that's a vault door."
+ },
+ {
+  "id": "r7_2",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Juggernaut armour. Explosives and the joints. Put him down, Wren."
+ },
+ {
+  "id": "p7_0",
+  "mission": "m7",
+  "spk": "KESSLER",
+  "text": "...He promised the money would be clean."
+ },
+ {
+  "id": "p7_1",
+  "mission": "m7",
+  "spk": "RUIZ",
+  "text": "Kessler's down."
+ },
+ {
+  "id": "p7_2",
+  "mission": "m7",
+  "spk": "MARR",
+  "text": "Voss and Hale are on the top floor. The board is voting to launch early. Before the press can read what we sent."
+ },
+ {
+  "id": "brief_0",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "The board is meeting on the sixtieth floor. Voss wants a vote to launch Assure tonight, before the press reads what we sent them."
+ },
+ {
+  "id": "brief_1",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "If Voss gets that vote, Assure is live in four hundred towns by morning. Lawyers will take years to unwind it."
+ },
+ {
+  "id": "brief_2",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "Each floor has a board terminal. They're locked with Castellan's own training questions, from every chapter of the playbook. I can only crack them with your answers."
+ },
+ {
+  "id": "brief_3",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "Anything you got wrong before is coming back. Castellan's system logs it. So did I."
+ },
+ {
+  "id": "brief_4",
+  "mission": "m8",
+  "spk": "RUIZ",
+  "text": "Every chapter. No notes. Great."
+ },
+ {
+  "id": "brief_5",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "You know this, Wren. You've been living it for a week."
+ },
+ {
+  "id": "r0_0",
+  "mission": "m8",
+  "spk": "RUIZ",
+  "text": "Sky lobby. Floor fifty-five. Glass all round."
+ },
+ {
+  "id": "r0_1",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "Clear it and get me on the board terminal. Customer value questions first. Where all of this started."
+ },
+ {
+  "id": "r0_2",
+  "mission": "m8",
+  "spk": "HALE",
+  "text": "Wren. It's not too late to walk away."
+ },
+ {
+  "id": "p0_0",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "Terminal's open. Answer straight. No intel to lean on now."
+ },
+ {
+  "id": "r1_0",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "Strategy floor. These are Voss's own planning rooms."
+ },
+ {
+  "id": "r1_1",
+  "mission": "m8",
+  "spk": "RUIZ",
+  "text": "Heavies on the left. Taking cover."
+ },
+ {
+  "id": "r1_2",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "The terminal will pull whatever you've struggled with. Breathe."
+ },
+ {
+  "id": "p1_0",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "Terminal two. Go."
+ },
+ {
+  "id": "r2_0",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "The research floor. Everything Castellan ever learned about Canadians, on one floor."
+ },
+ {
+  "id": "r2_1",
+  "mission": "m8",
+  "spk": "HALE",
+  "text": "Every one of those people works for a company you're about to burn down, Wren."
+ },
+ {
+  "id": "r2_2",
+  "mission": "m8",
+  "spk": "RUIZ",
+  "text": "Says the man who sold us out."
+ },
+ {
+  "id": "p2_0",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "Terminal three. Research and buyers."
+ },
+ {
+  "id": "r3_0",
+  "mission": "m8",
+  "spk": "RUIZ",
+  "text": "Two floors left."
+ },
+ {
+  "id": "r3_1",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "Segmentation, targeting, positioning. And products. The board's last line of defence."
+ },
+ {
+  "id": "r3_2",
+  "mission": "m8",
+  "spk": "RUIZ",
+  "text": "They're throwing everything at us."
+ },
+ {
+  "id": "p3_0",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "Terminal four. Then the boardroom."
+ },
+ {
+  "id": "r4_0",
+  "mission": "m8",
+  "spk": "RUIZ",
+  "text": "There's a range on the board level. Who are these people?"
+ },
+ {
+  "id": "r4_1",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "Final drills. Everything at once. Then the boardroom."
+ },
+ {
+  "id": "r4_2",
+  "mission": "m8",
+  "spk": "RUIZ",
+  "text": "Make it count, Wren."
+ },
+ {
+  "id": "rc4_0",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "The marketing process, start to finish. In order."
+ },
+ {
+  "id": "rc4_1",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "The four steps of customer-driven marketing strategy. In order."
+ },
+ {
+  "id": "r5_0",
+  "mission": "m8",
+  "spk": "VOSS",
+  "text": "Sergeant Wren. Come in. The board was just voting."
+ },
+ {
+  "id": "r5_1",
+  "mission": "m8",
+  "spk": "HALE",
+  "text": "Stand down, Wren. It's over. The vote passes in four minutes."
+ },
+ {
+  "id": "r5_2",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "The board terminals can still cancel the vote. Three of them. Each one needs a correct answer. Hale is between you and every one."
+ },
+ {
+  "id": "p5_0",
+  "mission": "m8",
+  "spk": "HALE",
+  "text": "...Do you know what happens to this country now?"
+ },
+ {
+  "id": "p5_1",
+  "mission": "m8",
+  "spk": "RUIZ",
+  "text": "Yeah. It gets told the truth."
+ },
+ {
+  "id": "p5_2",
+  "mission": "m8",
+  "spk": "VOSS",
+  "text": "You think customers will thank you? They'll be back in my stores by Friday."
+ },
+ {
+  "id": "p5_3",
+  "mission": "m8",
+  "spk": "MARR",
+  "text": "Maybe. But this time they'll know what they're buying."
+ },
+ {
+  "id": "g_right_0",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "That's right."
+ },
+ {
+  "id": "g_right_1",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Correct. Keep going."
+ },
+ {
+  "id": "g_right_2",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Good. That's exactly how they think."
+ },
+ {
+  "id": "g_right_3",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Right call."
+ },
+ {
+  "id": "g_wrong_0",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "No. Look at the correct answer, and remember why."
+ },
+ {
+  "id": "g_wrong_1",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Not quite. Read the explanation. It'll come back."
+ },
+ {
+  "id": "g_wrong_2",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "That's wrong. I'll ask you again later."
+ },
+ {
+  "id": "g_recall",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "This one's from earlier. Let's see if it stuck."
+ },
+ {
+  "id": "g_recall_missed",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "You missed this one before. Take your time."
+ },
+ {
+  "id": "g_alarm",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Wrong call. That tripped their alarm. Reinforcements are coming."
+ },
+ {
+  "id": "g_bonus",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Good read. I'm marking every hostile in the next sector for you."
+ },
+ {
+  "id": "g_wrongtarget",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Wrong target. Think about the doctrine."
+ },
+ {
+  "id": "g_gold",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Gold. Clean shooting, clean thinking."
+ },
+ {
+  "id": "g_silver",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Silver. Solid."
+ },
+ {
+  "id": "g_bronze",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Bronze. You got there. Review those concepts."
+ },
+ {
+  "id": "g_rangeclear",
+  "mission": "common",
+  "spk": "RUIZ",
+  "text": "Range done. Door's open."
+ },
+ {
+  "id": "g_clear",
+  "mission": "common",
+  "spk": "RUIZ",
+  "text": "Room's clear."
+ },
+ {
+  "id": "g_intelleft",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "There's still intel in this sector. Find it before you hit the terminal."
+ },
+ {
+  "id": "g_terminal",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Terminal's ready. Get me in."
+ },
+ {
+  "id": "g_detected",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "They've seen you. It's going loud."
+ },
+ {
+  "id": "g_spotted_warn",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Careful. Someone's looking your way."
+ },
+ {
+  "id": "g_takedown",
+  "mission": "common",
+  "spk": "RUIZ",
+  "text": "Nice. Quiet."
+ },
+ {
+  "id": "g_tail_close",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Too close. Back off or he'll make you."
+ },
+ {
+  "id": "g_tail_far",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "You're losing him. Close the distance."
+ },
+ {
+  "id": "g_tail_lost",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "We've lost him. Back to the last checkpoint."
+ },
+ {
+  "id": "g_tail_seen",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "He saw you. Abort. Back to the last checkpoint."
+ },
+ {
+  "id": "g_plant_wrong",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "That's not a cash cow. Look at the numbers again."
+ },
+ {
+  "id": "g_plant_ok",
+  "mission": "common",
+  "spk": "RUIZ",
+  "text": "Charge set."
+ },
+ {
+  "id": "g_hvt_wrong",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "That's not him. Listen to how he talks about customers."
+ },
+ {
+  "id": "g_hvt_ok",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "That's him. That's Ostrowski. Move!"
+ },
+ {
+  "id": "g_sniper_hurt",
+  "mission": "common",
+  "spk": "RUIZ",
+  "text": "I'm taking fire! Wren!"
+ },
+ {
+  "id": "g_sniper_fail",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Ruiz is down. Again. From the top."
+ },
+ {
+  "id": "g_escape_fail",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "The doors sealed. We go again."
+ },
+ {
+  "id": "g_defend_lost",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "They've taken the room. We go again."
+ },
+ {
+  "id": "g_death_0",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Wren? Wren!"
+ },
+ {
+  "id": "g_death_1",
+  "mission": "common",
+  "spk": "RUIZ",
+  "text": "Wren's down! Wren!"
+ },
+ {
+  "id": "g_checkpoint",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Checkpoint. I've got your position."
+ },
+ {
+  "id": "g_intercept_ok",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "Yes."
+ },
+ {
+  "id": "g_intercept_bad",
+  "mission": "common",
+  "spk": "MARR",
+  "text": "No. Uplink's slipping."
+ },
+ {
+  "id": "g_heavy",
+  "mission": "common",
+  "spk": "RUIZ",
+  "text": "Heavy! Aim for the head!"
+ },
+ {
+  "id": "g_grenade_warn",
+  "mission": "common",
+  "spk": "RUIZ",
+  "text": "Grenade! Move!"
+ },
+ {
+  "id": "RUIZ_contact",
+  "mission": "barks",
+  "spk": "RUIZ",
+  "text": "Contact front!"
+ },
+ {
+  "id": "RUIZ_contact2",
+  "mission": "barks",
+  "spk": "RUIZ",
+  "text": "Hostiles, moving!"
+ },
+ {
+  "id": "RUIZ_reload",
+  "mission": "barks",
+  "spk": "RUIZ",
+  "text": "Reloading!"
+ },
+ {
+  "id": "RUIZ_moving",
+  "mission": "barks",
+  "spk": "RUIZ",
+  "text": "Moving up!"
+ },
+ {
+  "id": "RUIZ_clear",
+  "mission": "barks",
+  "spk": "RUIZ",
+  "text": "Clear!"
+ },
+ {
+  "id": "RUIZ_gotone",
+  "mission": "barks",
+  "spk": "RUIZ",
+  "text": "Got one!"
+ },
+ {
+  "id": "RUIZ_six",
+  "mission": "barks",
+  "spk": "RUIZ",
+  "text": "Watch your six!"
+ },
+ {
+  "id": "RUIZ_cover",
+  "mission": "barks",
+  "spk": "RUIZ",
+  "text": "Covering you!"
+ },
+ {
+  "id": "RUIZ_flank",
+  "mission": "barks",
+  "spk": "RUIZ",
+  "text": "They're flanking left!"
+ },
+ {
+  "id": "RUIZ_nice",
+  "mission": "barks",
+  "spk": "RUIZ",
+  "text": "Good shot."
+ },
+ {
+  "id": "RUIZ_down",
+  "mission": "barks",
+  "spk": "RUIZ",
+  "text": "He's down."
+ },
+ {
+  "id": "RUIZ_last",
+  "mission": "barks",
+  "spk": "RUIZ",
+  "text": "That's the last of them."
+ },
+ {
+  "id": "RUIZ_follow",
+  "mission": "barks",
+  "spk": "RUIZ",
+  "text": "On you, Wren."
+ },
+ {
+  "id": "CSS1_contact",
+  "mission": "barks",
+  "spk": "CSS1",
+  "text": "Contact! Intruders!"
+ },
+ {
+  "id": "CSS1_flank",
+  "mission": "barks",
+  "spk": "CSS1",
+  "text": "Flank them!"
+ },
+ {
+  "id": "CSS1_taking",
+  "mission": "barks",
+  "spk": "CSS1",
+  "text": "Taking fire!"
+ },
+ {
+  "id": "CSS1_mandown",
+  "mission": "barks",
+  "spk": "CSS1",
+  "text": "Man down!"
+ },
+ {
+  "id": "CSS1_push",
+  "mission": "barks",
+  "spk": "CSS1",
+  "text": "Push up!"
+ },
+ {
+  "id": "CSS1_there",
+  "mission": "barks",
+  "spk": "CSS1",
+  "text": "There! Movement!"
+ },
+ {
+  "id": "CSS1_check",
+  "mission": "barks",
+  "spk": "CSS1",
+  "text": "Check that corner."
+ },
+ {
+  "id": "CSS1_heard",
+  "mission": "barks",
+  "spk": "CSS1",
+  "text": "Thought I heard something."
+ },
+ {
+  "id": "CSS1_allclear",
+  "mission": "barks",
+  "spk": "CSS1",
+  "text": "All clear here."
+ },
+ {
+  "id": "CSS1_suppress",
+  "mission": "barks",
+  "spk": "CSS1",
+  "text": "Suppressing!"
+ },
+ {
+  "id": "CSS1_reload",
+  "mission": "barks",
+  "spk": "CSS1",
+  "text": "Reloading!"
+ },
+ {
+  "id": "CSS1_grenade",
+  "mission": "barks",
+  "spk": "CSS1",
+  "text": "Grenade out!"
+ },
+ {
+  "id": "CSS2_contact",
+  "mission": "barks",
+  "spk": "CSS2",
+  "text": "Contact! Intruders!"
+ },
+ {
+  "id": "CSS2_flank",
+  "mission": "barks",
+  "spk": "CSS2",
+  "text": "Flank them!"
+ },
+ {
+  "id": "CSS2_taking",
+  "mission": "barks",
+  "spk": "CSS2",
+  "text": "Taking fire!"
+ },
+ {
+  "id": "CSS2_mandown",
+  "mission": "barks",
+  "spk": "CSS2",
+  "text": "Man down!"
+ },
+ {
+  "id": "CSS2_push",
+  "mission": "barks",
+  "spk": "CSS2",
+  "text": "Push up!"
+ },
+ {
+  "id": "CSS2_there",
+  "mission": "barks",
+  "spk": "CSS2",
+  "text": "There! Movement!"
+ },
+ {
+  "id": "CSS2_check",
+  "mission": "barks",
+  "spk": "CSS2",
+  "text": "Check that corner."
+ },
+ {
+  "id": "CSS2_heard",
+  "mission": "barks",
+  "spk": "CSS2",
+  "text": "Thought I heard something."
+ },
+ {
+  "id": "CSS2_allclear",
+  "mission": "barks",
+  "spk": "CSS2",
+  "text": "All clear here."
+ },
+ {
+  "id": "CSS2_suppress",
+  "mission": "barks",
+  "spk": "CSS2",
+  "text": "Suppressing!"
+ },
+ {
+  "id": "CSS2_reload",
+  "mission": "barks",
+  "spk": "CSS2",
+  "text": "Reloading!"
+ },
+ {
+  "id": "CSS2_grenade",
+  "mission": "barks",
+  "spk": "CSS2",
+  "text": "Grenade out!"
+ },
+ {
+  "id": "CSS3_contact",
+  "mission": "barks",
+  "spk": "CSS3",
+  "text": "Contact! Intruders!"
+ },
+ {
+  "id": "CSS3_flank",
+  "mission": "barks",
+  "spk": "CSS3",
+  "text": "Flank them!"
+ },
+ {
+  "id": "CSS3_taking",
+  "mission": "barks",
+  "spk": "CSS3",
+  "text": "Taking fire!"
+ },
+ {
+  "id": "CSS3_mandown",
+  "mission": "barks",
+  "spk": "CSS3",
+  "text": "Man down!"
+ },
+ {
+  "id": "CSS3_push",
+  "mission": "barks",
+  "spk": "CSS3",
+  "text": "Push up!"
+ },
+ {
+  "id": "CSS3_there",
+  "mission": "barks",
+  "spk": "CSS3",
+  "text": "There! Movement!"
+ },
+ {
+  "id": "CSS3_check",
+  "mission": "barks",
+  "spk": "CSS3",
+  "text": "Check that corner."
+ },
+ {
+  "id": "CSS3_heard",
+  "mission": "barks",
+  "spk": "CSS3",
+  "text": "Thought I heard something."
+ },
+ {
+  "id": "CSS3_allclear",
+  "mission": "barks",
+  "spk": "CSS3",
+  "text": "All clear here."
+ },
+ {
+  "id": "CSS3_suppress",
+  "mission": "barks",
+  "spk": "CSS3",
+  "text": "Suppressing!"
+ },
+ {
+  "id": "CSS3_reload",
+  "mission": "barks",
+  "spk": "CSS3",
+  "text": "Reloading!"
+ },
+ {
+  "id": "CSS3_grenade",
+  "mission": "barks",
+  "spk": "CSS3",
+  "text": "Grenade out!"
+ },
+ {
+  "id": "CSS4_contact",
+  "mission": "barks",
+  "spk": "CSS4",
+  "text": "Contact! Intruders!"
+ },
+ {
+  "id": "CSS4_flank",
+  "mission": "barks",
+  "spk": "CSS4",
+  "text": "Flank them!"
+ },
+ {
+  "id": "CSS4_taking",
+  "mission": "barks",
+  "spk": "CSS4",
+  "text": "Taking fire!"
+ },
+ {
+  "id": "CSS4_mandown",
+  "mission": "barks",
+  "spk": "CSS4",
+  "text": "Man down!"
+ },
+ {
+  "id": "CSS4_push",
+  "mission": "barks",
+  "spk": "CSS4",
+  "text": "Push up!"
+ },
+ {
+  "id": "CSS4_there",
+  "mission": "barks",
+  "spk": "CSS4",
+  "text": "There! Movement!"
+ },
+ {
+  "id": "CSS4_check",
+  "mission": "barks",
+  "spk": "CSS4",
+  "text": "Check that corner."
+ },
+ {
+  "id": "CSS4_heard",
+  "mission": "barks",
+  "spk": "CSS4",
+  "text": "Thought I heard something."
+ },
+ {
+  "id": "CSS4_allclear",
+  "mission": "barks",
+  "spk": "CSS4",
+  "text": "All clear here."
+ },
+ {
+  "id": "CSS4_suppress",
+  "mission": "barks",
+  "spk": "CSS4",
+  "text": "Suppressing!"
+ },
+ {
+  "id": "CSS4_reload",
+  "mission": "barks",
+  "spk": "CSS4",
+  "text": "Reloading!"
+ },
+ {
+  "id": "CSS4_grenade",
+  "mission": "barks",
+  "spk": "CSS4",
+  "text": "Grenade out!"
+ },
+ {
+  "id": "m1_intro_0",
+  "mission": "cuts",
+  "spk": "RUIZ",
+  "text": "Hamilton. Two in the morning. In the rain. You take me to the nicest places, Wren."
+ },
+ {
+  "id": "m1_intro_1",
+  "mission": "cuts",
+  "spk": "HALE",
+  "text": "Cut the chatter. CSS patrol, north fence, ninety seconds."
+ },
+ {
+  "id": "m1_intro_2",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "Once you're through that fence, there's no quiet way out. Make it count."
+ },
+ {
+  "id": "m1_outro_0",
+  "mission": "cuts",
+  "spk": "OSTROWSKI",
+  "text": "You don't understand what you're doing. Meridian is efficient. It's just marketing."
+ },
+ {
+  "id": "m1_outro_1",
+  "mission": "cuts",
+  "spk": "RUIZ",
+  "text": "Funny. Your own handbook says otherwise."
+ },
+ {
+  "id": "m1_outro_2",
+  "mission": "cuts",
+  "spk": "VOSS",
+  "text": "Major Hale. Your people took something of mine tonight."
+ },
+ {
+  "id": "m1_outro_3",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "...How does Voss know Hale's name?"
+ },
+ {
+  "id": "m2_intro_0",
+  "mission": "cuts",
+  "spk": "RUIZ",
+  "text": "Kingsway. Built to survive a nuclear war."
+ },
+ {
+  "id": "m2_intro_1",
+  "mission": "cuts",
+  "spk": "HALE",
+  "text": "Then it'll survive you two. Go."
+ },
+ {
+  "id": "m2_outro_0",
+  "mission": "cuts",
+  "spk": "RUIZ",
+  "text": "That was loud."
+ },
+ {
+  "id": "m2_outro_1",
+  "mission": "cuts",
+  "spk": "KESSLER",
+  "text": "Major. Your team was very thorough tonight. As promised."
+ },
+ {
+  "id": "m2_outro_2",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "Wren, did you hear that? Who was Kessler talking to?"
+ },
+ {
+  "id": "m3_intro_0",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "Wind's ninety kilometres an hour. Their snipers can't hit a container in this. Neither can you. Get close."
+ },
+ {
+  "id": "m3_intro_1",
+  "mission": "cuts",
+  "spk": "RUIZ",
+  "text": "Swimming wasn't in the job description."
+ },
+ {
+  "id": "m3_outro_0",
+  "mission": "cuts",
+  "spk": "KESSLER",
+  "text": "Tell your major I said thank you."
+ },
+ {
+  "id": "m3_outro_1",
+  "mission": "cuts",
+  "spk": "RUIZ",
+  "text": "Your major? What's that supposed to mean?"
+ },
+ {
+  "id": "m4_intro_0",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "Fog's on our side. Cameras run on thermal, so stay behind cover and keep moving."
+ },
+ {
+  "id": "m4_intro_1",
+  "mission": "cuts",
+  "spk": "RUIZ",
+  "text": "Whoever this is, Wren... I want to be the one who tells the major."
+ },
+ {
+  "id": "m4_outro_0",
+  "mission": "cuts",
+  "spk": "RUIZ",
+  "text": "He pulled me out of Kandahar. Carried me two kilometres."
+ },
+ {
+  "id": "m4_outro_1",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "People change, Ruiz. Or they were always this, and we just didn't have the data."
+ },
+ {
+  "id": "m4_outro_2",
+  "mission": "cuts",
+  "spk": "HALE",
+  "text": "Team, report in. Toronto is a go."
+ },
+ {
+  "id": "m5_intro_0",
+  "mission": "cuts",
+  "spk": "RUIZ",
+  "text": "Empty mall at midnight. Every horror movie I've ever seen starts like this."
+ },
+ {
+  "id": "m5_intro_1",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "Courier's entering the atrium now. Grey jacket. Don't lose him."
+ },
+ {
+  "id": "m5_outro_0",
+  "mission": "cuts",
+  "spk": "HALE",
+  "text": "I'm sorry, Sergeant. Truly."
+ },
+ {
+  "id": "m5_outro_1",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "Wren, run. Run!"
+ },
+ {
+  "id": "m6_intro_0",
+  "mission": "cuts",
+  "spk": "KESSLER",
+  "text": "Your friend the doctor. Where is she?"
+ },
+ {
+  "id": "m6_intro_1",
+  "mission": "cuts",
+  "spk": "RUIZ",
+  "text": "Ask your marketing department."
+ },
+ {
+  "id": "m6_intro_2",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "Wren. I'm in your ear. Let's go get him."
+ },
+ {
+  "id": "m6_outro_0",
+  "mission": "cuts",
+  "spk": "RUIZ",
+  "text": "For the record, I'd have been fine."
+ },
+ {
+  "id": "m6_outro_1",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "Of course you would. Forty-eight hours. Castellan Tower."
+ },
+ {
+  "id": "m7_intro_0",
+  "mission": "cuts",
+  "spk": "VOSS",
+  "text": "Canada. Tonight we introduce Castellan Assure. Because you deserve to know that what you need will always be there."
+ },
+ {
+  "id": "m7_intro_1",
+  "mission": "cuts",
+  "spk": "RUIZ",
+  "text": "He's good. I'll give him that."
+ },
+ {
+  "id": "m7_intro_2",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "He should be. I wrote that speech three years ago, for something else."
+ },
+ {
+  "id": "m7_outro_0",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "Sixty floors. The board's waiting. Wren, Ruiz: finish it."
+ },
+ {
+  "id": "m8_intro_0",
+  "mission": "cuts",
+  "spk": "VOSS",
+  "text": "Marketing is the art of knowing what people need before they do. I'm simply better at it than anyone else."
+ },
+ {
+  "id": "m8_intro_1",
+  "mission": "cuts",
+  "spk": "HALE",
+  "text": "They're here."
+ },
+ {
+  "id": "m8_intro_2",
+  "mission": "cuts",
+  "spk": "VOSS",
+  "text": "Then let them watch the vote."
+ },
+ {
+  "id": "m8_outro_0",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "The board voted against the launch. Eleven to one. Voss is under arrest. Hale too."
+ },
+ {
+  "id": "m8_outro_1",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "Meridian's contracts are frozen. The towns keep their suppliers."
+ },
+ {
+  "id": "m8_outro_2",
+  "mission": "cuts",
+  "spk": "RUIZ",
+  "text": "So what now?"
+ },
+ {
+  "id": "m8_outro_3",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "Now? Castellan has to do what it should have done all along. Create value for customers. Then earn something back."
+ },
+ {
+  "id": "m8_outro_4",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "That's all marketing ever was, Wren. A trade. Value for value."
+ },
+ {
+  "id": "m8_outro_5",
+  "mission": "cuts",
+  "spk": "MARR",
+  "text": "Thank you. Both of you."
+ }
+]
