@@ -190,6 +190,7 @@ func build_room(ri: int, data: Dictionary, z0: float) -> Room:
 		_set_piece(r, geo)
 		_cover(r, geo)
 	if not r.kind in ["range", "sniper", "escape"]: _terminal(r, geo)
+	_blk = _blockers(r, geo)
 	_intel(r)
 	_spawn_points(r)
 	return r
@@ -329,14 +330,33 @@ func _terminal(r: Room, geo: Node3D) -> void:
 	r.terminal = t
 	omni(r, Vector3(tx - 1.0, 1.4, tz), Color(0.3, 1.0, 0.5), 0.5, 3.0)
 
+## Footprints (XZ) of everything already standing in the room, so pickups and spawns land in open floor.
+var _blk: Array = []
+func _blockers(r: Room, geo: Node3D) -> Array:
+	var out: Array = []
+	for n in geo.find_children("*", "MeshInstance3D", true, false) + r.find_children("Terminal*", "Node3D", false, false):
+		var a: AABB
+		if n is MeshInstance3D: a = (n as MeshInstance3D).global_transform * (n as MeshInstance3D).get_aabb()
+		else: a = AABB((n as Node3D).global_position - Vector3(0.6, 0, 0.8), Vector3(1.6, 1.4, 1.6))
+		if a.size.x > r.W * 0.7 or a.size.z > r.D * 0.7: continue      # floor, walls, ceiling, rails
+		if a.end.y < 0.2 or a.position.y > 2.4: continue                # decals, puddles, lights, pipes
+		out.append(Rect2(a.position.x, a.position.z, a.size.x, a.size.z))
+	return out
+
+func _free(p: Vector3, half: Vector2) -> bool:
+	var me := Rect2(p.x - half.x, p.z - half.y, half.x * 2.0, half.y * 2.0)
+	for b in _blk:
+		if (b as Rect2).intersects(me): return false
+	return true
+
 func _intel(r: Room) -> void:
 	var docs: Array = r.data.get("intel", [])
 	var hw := r.W * 0.5
 	for k in docs.size():
 		var p := Vector3.ZERO
-		for t in 60:
+		for t in 120:
 			p = Vector3(rng.randf_range(-hw + 2.5, hw - 2.5), 0, rng.randf_range(r.z1 + 4, r.z0 - 5))
-			if absf(p.x) > 2.0: break
+			if absf(p.x) > 2.0 and _free(p, Vector2(1.4, 1.1)): break
 		var n := Node3D.new(); n.name = "Intel%d" % k; r.add_child(n); n.position = p
 		var desk := box(n, Vector3(1.4, 0.9, 0.8), Vector3(0, 0.45, 0), Mats.pbr("gunmetal", 1.0))
 		var folder := box(n, Vector3(0.36, 0.03, 0.26), Vector3(0, 0.92, 0), Mats.flat(Color(0.75, 0.62, 0.35), 0.8), false)
@@ -345,12 +365,16 @@ func _intel(r: Room) -> void:
 		var gl := omni(n, Vector3(0, 1.3, 0), Color(1.0, 0.8, 0.45), 0.9, 2.6)
 		n.set_meta("doc", docs[k]); n.set_meta("k", k); n.set_meta("glow", gl); n.set_meta("tab", tab)
 		r.intel.append(n)
+		_blk.append(Rect2(p.x - 0.8, p.z - 0.5, 1.6, 1.0))
 
 func _spawn_points(r: Room) -> void:
 	var hw := r.W * 0.5
-	for i in 24:
+	var tries := 0
+	while r.spawn_points.size() < 24 and tries < 400:
+		tries += 1
 		var p := Vector3(rng.randf_range(-hw + 2, hw - 2), 0, rng.randf_range(r.z1 + 2.5, r.z1 + r.D * 0.6))
-		r.spawn_points.append(p)
+		if _free(p, Vector2(0.55, 0.55)): r.spawn_points.append(p)
+	if r.spawn_points.is_empty(): r.spawn_points.append(Vector3(0, 0, r.z1 + 3.0))
 
 # ---------------------------------------------------------------- cover props
 func _cover(r: Room, geo: Node3D) -> void:

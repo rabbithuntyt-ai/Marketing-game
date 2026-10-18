@@ -247,8 +247,9 @@ func waypoint():
 	if r.terminal and r.mode.uses_terminal() and not r.calls_done and r.mode.terminal_ready(): return r.terminal.global_position
 	for it2 in r.mode.interactables():
 		return it2["pos"]
-	if r.done or r.cleared or (r.calls_done or not r.mode.has_calls()):
-		if r.done: return Vector3(0, 0, r.z1 - 1.0)
+	var last := r.ri == rooms.size() - 1
+	if r.kind == "escape": return Vector3(0, 0, r.cz1 + 1.0)
+	if r.done and not last: return Vector3(0, 0, r.z1 - 1.0)
 	return null
 
 # ---------------------------------------------------------------- interaction
@@ -270,7 +271,7 @@ func _interactions() -> void:
 		if d3 < it2.get("radius", 2.0) and d3 < bd: bd = d3; best = it2
 	_near = best if best != null else {}
 	main.hud.set_prompt(_near.get("prompt", ""), _near.has("cb"))
-	if _near.has("cb") and Input.is_action_just_pressed("interact") and player.input_enabled:
+	if _near.has("cb") and Input.is_action_just_pressed("interact") and player.input_enabled and not main.input_cooldown():
 		(_near["cb"] as Callable).call()
 
 func _terminal_prompt() -> Dictionary:

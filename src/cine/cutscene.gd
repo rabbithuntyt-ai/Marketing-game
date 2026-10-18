@@ -155,7 +155,7 @@ func _spawn_actors() -> void:
 		h.collision_layer = 0
 		h.global_position = a * (d[1] as Vector3)
 		h.rotation.y = a.basis.get_euler().y + deg_to_rad(float(d[2]))
-		if String(d[0]) in ["director", "civilian"]: h.hide_weapon()
+		if String(d[0]) in ["director", "civilian"] or not String(d[3]).begins_with("soldier_"): h.hide_weapon()
 		h.forced_anim = String(d[3])
 		h.play(String(d[3]))
 		actors[k] = h

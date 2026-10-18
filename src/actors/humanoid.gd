@@ -40,6 +40,7 @@ var _hit_flash := 0.0
 var gravity := 18.0
 var forced_anim := ""       # cutscene override
 var laser: MeshInstance3D
+var rifle_node: Node3D
 
 static func load_shared() -> void:
 	if _model_scene: return
@@ -95,6 +96,7 @@ func setup(v: String, r: Room = null) -> void:
 	max_hp *= Game.diff()["hp"] if team == "css" else 1.0
 	hp = max_hp
 	play("soldier_idle")
+	_align_rifle()
 
 func _tint_for(v: String, base: Color, surf: int) -> Color:
 	match v:
@@ -111,20 +113,40 @@ func _attach_rifle() -> void:
 	var ba := BoneAttachment3D.new(); ba.bone_name = "RightHand"; skel.add_child(ba)
 	if _rifle:
 		var rf: Node3D = _rifle.instantiate(); ba.add_child(rf)
-		rf.scale = Vector3.ONE * (1.0 / _model_scale) * 0.95
-		rf.rotation = Vector3(deg_to_rad(-90), deg_to_rad(90), 0)
-		rf.position = Vector3(0.0, 0.0, 0.0) / _model_scale
+		rf.scale = Vector3.ONE * (1.0 / _model_scale)
+		rf.name = "Rifle"
+		rifle_node = rf
 		for mi in rf.find_children("*", "MeshInstance3D", true, false):
 			(mi as MeshInstance3D).cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
 			for s in (mi as MeshInstance3D).mesh.get_surface_count():
 				var mat := (mi as MeshInstance3D).get_active_material(s)
 				if mat is BaseMaterial3D:
 					var d: BaseMaterial3D = mat.duplicate(); d.albedo_color = Color(0.32, 0.32, 0.34); (mi as MeshInstance3D).set_surface_override_material(s, d)
-		muzzle = Node3D.new(); rf.add_child(muzzle); muzzle.position = Vector3(0, 0.05, 0.62)
+		muzzle = Node3D.new(); rf.add_child(muzzle); muzzle.position = Vector3(0, 0.075, 0.47)
 	else:
 		muzzle = Node3D.new(); ba.add_child(muzzle)
 	flash = Fx.make_flash_sprite(0.45); muzzle.add_child(flash); flash.visible = false
 	var fl := OmniLight3D.new(); fl.light_color = Color(1.0, 0.7, 0.35); fl.omni_range = 5.0; fl.light_energy = 0.0; fl.name = "FlashLight"; muzzle.add_child(fl)
+
+## Seat the rifle in the hands: barrel runs from the right (grip) hand through the left (support) hand
+## in the idle pose. Computed from the skeleton, so it holds for any rig orientation.
+func _align_rifle() -> void:
+	if rifle_node == null or skel == null: return
+	anim.advance(0.0)
+	var rh := skel.find_bone("RightHand"); var lh := skel.find_bone("LeftHand")
+	if rh < 0 or lh < 0: return
+	var rp := skel.get_bone_global_pose(rh)
+	var lp := skel.get_bone_global_pose(lh)
+	var dir := lp.origin - rp.origin
+	if dir.length() < 0.05 / _model_scale: dir = Vector3(0, 0, 1)
+	dir = dir.normalized()
+	var up := Vector3.UP - dir * dir.dot(Vector3.UP)
+	if up.length() < 0.01: up = Vector3.BACK
+	up = up.normalized()
+	var x := up.cross(dir).normalized()
+	var basis := Basis(x, up, dir).scaled(Vector3.ONE / _model_scale)
+	var origin := rp.origin + up * (0.045 / _model_scale) - dir * (0.02 / _model_scale)
+	rifle_node.transform = rp.affine_inverse() * Transform3D(basis, origin)
 
 func _hitboxes() -> void:
 	for spec in [["Head", "head", SphereShape3D, 0.15, Vector3(0, 0.08, 0)], ["Chest", "body", CapsuleShape3D, 0.26, Vector3(0, 0.0, 0)], ["Hips", "legs", CapsuleShape3D, 0.22, Vector3(0, -0.35, 0)]]:

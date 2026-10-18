@@ -23,6 +23,7 @@ var _letterbox := 0.0
 var _letterbox_t := 0.0
 var _pending_complete := false
 var _closed_frame := -10
+var _closed_ms := -1000
 var _autotest: Autotest
 
 func _ready() -> void:
@@ -175,8 +176,9 @@ func _build_mission(mi: int, from_room: int) -> void:
 	Game.stats["room"] = from_room
 	mission.build(self, mi, from_room)
 	hud.bind(mission)
-	var cid: String = mission.M.get("intro_cut", "")
-	mission.cut_active = from_room == 0 and cid != "" and Game.cuts.has(cid) and not Game.skip_cuts()
+	# hold the mission still (no room entry, no input) until the player actually has control
+	mission.cut_active = true
+	mission.player.input_enabled = false
 
 func _begin_mission(from_room: int) -> void:
 	var cid: String = mission.M.get("intro_cut", "")
@@ -188,6 +190,7 @@ func _begin_mission(from_room: int) -> void:
 func _enter_play(fade_in: bool) -> void:
 	state = "play"
 	hud_layer.visible = true
+	mission.cut_active = false
 	mission.player.input_enabled = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if fade_in: fade(0.0, 0.8)
@@ -210,7 +213,7 @@ func pause_game() -> void:
 	var p := PauseUI.new(); p.main = self; overlay = p; ui_layer.add_child(p)
 
 func resume_game() -> void:
-	_closed_frame = Engine.get_process_frames()
+	_closed_frame = Engine.get_process_frames(); _closed_ms = Time.get_ticks_msec()
 	if overlay and is_instance_valid(overlay): overlay.queue_free()
 	overlay = null
 	get_tree().paused = false
@@ -230,7 +233,13 @@ func _open_overlay(o: Control) -> void:
 	hud.set_prompt("", false)
 	ui_layer.add_child(o)
 
+## True for a few frames after an overlay closes, so the key or click that closed it isn't also
+## read by the game (re-opening the uplink, firing a shot).
+func input_cooldown() -> bool:
+	return Engine.get_process_frames() - _closed_frame <= 3 or Time.get_ticks_msec() - _closed_ms < 200
+
 func close_overlay() -> void:
+	_closed_ms = Time.get_ticks_msec()
 	_closed_frame = Engine.get_process_frames()
 	if overlay and is_instance_valid(overlay): overlay.queue_free()
 	overlay = null

@@ -25,7 +25,7 @@ func setup() -> void:
 		var l := b.omni(node, Vector3(0, 2.0, 0), Color(1.0, 0.8, 0.4), 1.2, 4.0)
 		nodes.append({"node": node, "done": false, "light": l})
 
-func uses_terminal() -> bool: return false
+func uses_terminal() -> bool: return r.done and has_calls() and not r.calls_done
 
 func enter() -> void:
 	started = true
@@ -35,7 +35,8 @@ func enter() -> void:
 func music() -> String: return "boss" if started and not r.done else ""
 
 func objective() -> String:
-	if r.done: return "Advance"
+	if r.done and has_calls() and not r.calls_done: return "Send Marr your last read at the uplink"
+	if r.done: return "Extract"
 	var parts: Array = []
 	if not nodes.is_empty() and nodes_done < nodes.size(): parts.append("Answer the board terminals  (%d/%d)" % [nodes_done, nodes.size()])
 	if is_instance_valid(boss) and not boss.dead and not escaped: parts.append("Bring down %s" % String(r.data.get("boss", "")).capitalize())
@@ -81,7 +82,10 @@ func tick(dt: float) -> void:
 		r.done = true
 		m.main.hud.boss_show("", false)
 		say_post()
-		m.main.mission_complete_after_dialogue()
+		if not has_calls(): m.main.mission_complete_after_dialogue()
+
+func on_calls_done() -> void:
+	m.main.mission_complete_after_dialogue()
 
 func on_kill(e) -> void:
 	if e == boss:

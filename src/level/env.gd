@@ -13,6 +13,7 @@ var _lightning_t := 6.0
 var _flash := 0.0
 var outdoor_now := false
 var base_moon := 0.25
+var base_amb := 0.6
 var theme := ""
 
 const LOOKS := {
@@ -35,7 +36,7 @@ func setup(mission: Dictionary) -> void:
 	sm.sky_top_color = L["sky_top"]; sm.sky_horizon_color = L["sky_hor"]; sm.ground_horizon_color = L["sky_hor"]; sm.ground_bottom_color = Color(0.01, 0.01, 0.015)
 	sm.sun_angle_max = 0.0; sm.sky_energy_multiplier = 1.0
 	sky.sky_material = sm; env.sky = sky; env.background_mode = Environment.BG_SKY
-	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR; env.ambient_light_color = L["amb"]; env.ambient_light_energy = L["amb_e"] * 2.0
+	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR; env.ambient_light_color = L["amb"]; env.ambient_light_energy = L["amb_e"] * 2.0; base_amb = env.ambient_light_energy
 	env.reflected_light_source = Environment.REFLECTION_SOURCE_SKY
 	env.tonemap_mode = Environment.TONE_MAPPER_AGX; env.tonemap_exposure = L["exp"] * 1.15; env.tonemap_white = 6.0
 	env.glow_enabled = true; env.glow_intensity = 0.55; env.glow_strength = 0.9; env.glow_bloom = 0.04; env.glow_hdr_threshold = 1.1; env.glow_blend_mode = Environment.GLOW_BLEND_MODE_SOFTLIGHT
@@ -113,4 +114,4 @@ func update(dt: float, cam: Vector3, outdoor: bool, room_weather: String) -> voi
 	_flash = maxf(0.0, _flash - dt * 2.6)
 	var flick := _flash * (0.6 + 0.4 * sin(_flash * 60.0))
 	moon.light_energy = (base_moon if outdoor else base_moon * 0.4) + flick * 4.0
-	env.ambient_light_energy = LOOKS.get(theme, LOOKS["compound"])["amb_e"] + flick * 0.8
+	env.ambient_light_energy = base_amb + flick * 0.8

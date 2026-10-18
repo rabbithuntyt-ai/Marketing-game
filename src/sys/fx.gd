@@ -38,7 +38,7 @@ func setup(r: Node3D) -> void:
 func _process(dt: float) -> void:
 	cam_shake = maxf(0.0, cam_shake - dt * 1.6)
 	for tr in _tracers:
-		if tr["t"] > 0.0:
+		if tr["t"] > 0.0 and is_instance_valid(tr["n"]):
 			tr["t"] -= dt
 			(tr["n"].material_override as StandardMaterial3D).albedo_color.a = clampf(tr["t"] / tr["max"], 0.0, 1.0) * 0.8
 			if tr["t"] <= 0.0: tr["n"].visible = false
@@ -121,7 +121,7 @@ func _take(kind: String) -> GPUParticles3D:
 	return p2
 
 func emit(kind: String, pos: Vector3, normal := Vector3.UP, count_scale := 1.0) -> void:
-	if root == null: return
+	if root == null or not is_instance_valid(root): return
 	var p := _take(kind)
 	p.global_position = pos
 	if normal.length() > 0.1:
@@ -132,7 +132,7 @@ func emit(kind: String, pos: Vector3, normal := Vector3.UP, count_scale := 1.0) 
 
 # ---------------------------------------------------------------- high level
 func tracer(a: Vector3, b: Vector3, col := Color(1.0, 0.85, 0.55), life := 0.05) -> void:
-	if _tracers.is_empty(): return
+	if _tracers.is_empty() or root == null or not is_instance_valid(root): return
 	var tr: Dictionary = _tracers[_tr_i % _tracers.size()]; _tr_i += 1
 	var n: MeshInstance3D = tr["n"]; var d := b - a; var L := d.length()
 	if L < 0.1: return
@@ -153,6 +153,7 @@ func blood(pos: Vector3, dir: Vector3) -> void:
 
 static var _hole_tex: Texture2D = null
 func bullet_hole(pos: Vector3, normal: Vector3) -> void:
+	if root == null or not is_instance_valid(root): return
 	if _hole_tex == null:
 		var img := Image.create(64, 64, false, Image.FORMAT_RGBA8)
 		for y in 64:
@@ -170,6 +171,7 @@ func bullet_hole(pos: Vector3, normal: Vector3) -> void:
 	if _decals.size() > 90: (_decals.pop_front() as Node).queue_free()
 
 func explosion(pos: Vector3, big := false) -> void:
+	if root == null or not is_instance_valid(root): return
 	emit("fire", pos + Vector3(0, 0.4, 0)); emit("smoke", pos + Vector3(0, 0.6, 0)); emit("debris", pos + Vector3(0, 0.2, 0)); emit("ring", pos + Vector3(0, 0.3, 0))
 	for i in 2: emit("sparks", pos + Vector3(0, 0.5, 0), Vector3.UP)
 	var l := OmniLight3D.new(); l.light_color = Color(1.0, 0.6, 0.3); l.omni_range = 14.0; l.light_energy = 9.0; l.shadow_enabled = false

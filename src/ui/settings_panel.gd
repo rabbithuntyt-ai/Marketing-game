@@ -41,7 +41,7 @@ func show_tab(t: String) -> void:
 		"video":
 			_choice("Display", ["Fullscreen", "Windowed"], 0 if s["fullscreen"] else 1, func(i): _apply("fullscreen", i == 0))
 			_toggle("V-Sync", bool(s["vsync"]), func(v): _apply("vsync", v))
-			_choice("Graphics quality", QUALITY, int(s["quality"]), func(i): _apply("quality", i), "High adds volumetric fog. Ultra adds indirect lighting and screen-space reflections. Applies on the next sector load.")
+			_choice("Graphics quality", QUALITY, int(s["quality"]), func(i): _apply("quality", i), "High adds volumetric fog. Ultra adds indirect lighting and screen-space reflections. Takes full effect the next time a mission or checkpoint loads.")
 			_slider("Render scale", 0.5, 1.0, 0.05, float(s["render_scale"]), func(v): _apply("render_scale", v), "%d%%", 100.0)
 			_toggle("AMD FSR 2 upscaling", bool(s["fsr"]), func(v): _apply("fsr", v))
 		"audio":

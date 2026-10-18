@@ -191,8 +191,8 @@ func _unhandled_input(e: InputEvent) -> void:
 	if not (e is InputEventKey) or not e.pressed or e.echo: return
 	var k := (e as InputEventKey).keycode
 	if not answered:
-		if k >= KEY_1 and k <= KEY_4:
-			var i := int(k - KEY_1)
+		if (k >= KEY_1 and k <= KEY_4) or (k >= KEY_KP_1 and k <= KEY_KP_4):
+			var i := int(k - KEY_1) if k <= KEY_4 else int(k - KEY_KP_1)
 			if i < buttons.size(): _pick(i)
 			get_viewport().set_input_as_handled()
 		elif k == KEY_ESCAPE:

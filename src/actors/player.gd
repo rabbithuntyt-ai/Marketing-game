@@ -147,8 +147,9 @@ func _physics_process(dt: float) -> void:
 	else:
 		velocity.y -= G * dt
 	var was_air := not is_on_floor()
+	var vy := velocity.y
 	move_and_slide()
-	if was_air and is_on_floor() and velocity.y < -3.0: Audio.play2d("kenney_land", -10.0, 0.05)
+	if was_air and is_on_floor() and vy < -3.0: Audio.play2d("kenney_land", -10.0, 0.05)
 	if locked and perch_bounds.size != Vector2.ZERO:
 		global_position.x = clampf(global_position.x, perch_bounds.position.x, perch_bounds.end.x)
 		global_position.z = clampf(global_position.z, perch_bounds.position.y, perch_bounds.end.y)
@@ -186,7 +187,8 @@ func _weapon(dt: float) -> void:
 		reload_t -= dt
 		if reload_t <= 0.0: ammo = mag
 	if input_enabled and Input.is_action_just_pressed("reload"): start_reload()
-	if input_enabled and Input.is_action_pressed("fire") and fire_cd <= 0.0 and reload_t <= 0.0 and equip > 0.6 and not sprint:
+	var blocked: bool = mission != null and mission.main != null and mission.main.input_cooldown()
+	if input_enabled and not blocked and Input.is_action_pressed("fire") and fire_cd <= 0.0 and reload_t <= 0.0 and equip > 0.6 and not sprint:
 		if ammo > 0: fire()
 		else: start_reload()
 	if input_enabled and Input.is_action_just_pressed("grenade"): throw_grenade()

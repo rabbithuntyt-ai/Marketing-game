@@ -12,7 +12,7 @@ func setup() -> void:
 	var n := maxi(2, int(r.data.get("e", 4)) + int(Game.diff()["cnt"]))
 	m.spawn_room_enemies(r, n)
 
-func uses_terminal() -> bool: return false
+func uses_terminal() -> bool: return r.done and has_calls() and not r.calls_done
 func requires_clear() -> bool: return false
 
 func enter() -> void:
@@ -23,6 +23,7 @@ func enter() -> void:
 func music() -> String: return "combat" if started and not r.done else ""
 
 func objective() -> String:
+	if r.done and has_calls() and not r.calls_done: return "Send Marr your last read at the uplink"
 	if r.done: return "Board the helicopter"
 	return "Hold the landing zone"
 
@@ -44,4 +45,7 @@ func tick(dt: float) -> void:
 		m.main.hud.timer_show(false)
 		for e in r.alive_enemies(): e.passive = true
 		say_post()
-		m.main.mission_complete_after_dialogue()
+		if not has_calls(): m.main.mission_complete_after_dialogue()
+
+func on_calls_done() -> void:
+	m.main.mission_complete_after_dialogue()

@@ -183,6 +183,27 @@ func _do(spec: String) -> void:
 			(main.screen as CaseBoard)._close(); await _wait(3.0)
 			print("[autotest] boardflow after close state=", main.state)
 			Audio.clear_dialogue()
+		"rifle":
+			main.show_menu(); await _wait(1.0)
+			var bgm: MenuBG = main.menu_bg
+			if main.screen: main.screen.visible = false
+			var extra := Humanoid.new(); extra.team = "neutral"; bgm.add_child(extra); extra.setup("css"); extra.set_physics_process(false)
+			extra.position = Vector3(-0.6, 0, -0.6); extra.rotation.y = deg_to_rad(150); extra.play("soldier_forward")
+			bgm.set_process(false)
+			for ang in [0.0, 1.2, -1.2, 2.6]:
+				bgm.cam.position = Vector3(0.2, 1.5, -1.0) + Vector3(sin(ang), 0, cos(ang)) * 2.6
+				bgm.cam.look_at(Vector3(0.3, 1.1, -1.0))
+				await _wait(0.6); await shot("rifle_%d" % int(ang * 10))
+		"bot":
+			await _bot(int(arg))
+		"resume":
+			main.start_mission(int(arg), 2)
+			for i in 30:
+				await _wait(1.0)
+				if main.state == "play": break
+			main.mission.player.global_position = Vector3(0, 0.1, main.mission.rooms[2].z0 - 2.0)
+			await _wait(2.0)
+			print("[autotest] resume state=", main.state, " cut_active=", main.mission.cut_active, " room2 entered=", main.mission.rooms[2].entered, " input=", main.mission.player.input_enabled)
 		"combat":
 			await _build(int(arg))
 			var mc: Mission = main.mission
@@ -209,6 +230,7 @@ func _build(mi: int, from := 0) -> void:
 	main.set_screen(null)
 	main._build_mission(mi, from)
 	main.state = "play"; main.hud_layer.visible = true
+	main.mission.cut_active = false
 	main.mission.player.input_enabled = false
 	await _wait(1.0)
 
@@ -293,3 +315,47 @@ func _key(k: Key) -> void:
 	await tree.process_frame
 	var e2 := InputEventKey.new(); e2.keycode = k; e2.physical_keycode = k; e2.pressed = false
 	Input.parse_input_event(e2)
+
+
+# ---------------------------------------------------------------- aiming bot: actually shoots its way through
+func _aim_at(pl: Player, target: Vector3) -> void:
+	var to := target - pl.cam.global_position
+	pl.yaw = atan2(-to.x, -to.z)
+	pl.pitch = atan2(to.y, Vector2(to.x, to.z).length())
+
+func _bot(mi: int) -> void:
+	await _build(mi)
+	var mis: Mission = main.mission
+	var pl := mis.player
+	pl.input_enabled = true
+	for r in mis.rooms.slice(0, 3):
+		pl.global_position = Vector3(0, 0.1, r.z0 - 2.0)
+		await _wait(0.5)
+		var t0 := Time.get_ticks_msec()
+		var shots0: int = Game.stats["shots"]
+		var frames := 0
+		while r.alive_enemies().size() > 0 and frames < 1500:
+			frames += 1
+			pl.hp = 100.0
+			var best = null; var bd := 1e9
+			for e in r.alive_enemies():
+				var d: float = (e.global_position - pl.global_position).length()
+				if d < bd: bd = d; best = e
+			if best == null: break
+			if bd > 14.0:
+				pl.global_position = pl.global_position.move_toward(best.global_position, 0.25)
+			_aim_at(pl, best.global_position + Vector3(0, 1.3 * best.scale.y, 0))
+			Input.action_press("fire")
+			await tree.physics_frame
+			await tree.process_frame
+		Input.action_release("fire")
+		print("[autotest] bot room ", r.ri, " cleared=", r.alive_enemies().is_empty(), " frames=", frames, " shots=", int(Game.stats["shots"]) - shots0, " hits=", Game.stats["hits"], " kills=", Game.stats["kills"])
+		await shot("bot%d_r%d" % [mi, r.ri])
+		_kill_all(mis, r)
+		for it in r.intel.duplicate():
+			if is_instance_valid(it):
+				mis._read_intel(it); await _resolve_overlay()
+		if r.terminal and not r.calls_done:
+			mis._open_terminal(); await _resolve_overlay()
+		await _wait(0.5)
+		if not r.done: r.mode.complete()
