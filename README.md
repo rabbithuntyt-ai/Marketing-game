@@ -17,6 +17,34 @@ You play Sgt. Wren of LEDGER, a joint task force taking apart Project Meridian, 
 
 Between missions, a **case board** pieces the story together: string each piece of evidence to the concept that explains it, sort the chapter's framework, and unlock Dr. Marr's case notes, which are the chapter summary, read aloud. Every board can be replayed from **Intel archive → Case boards**.
 
+## Screenshots
+
+![Loading Docks, Mission 1, in game](docs/screens/ingame-loading-docks.jpg)
+
+All 62 sectors are laid out by hand: every wall, prop, light, guard route and pickup is placed in a level script. Nothing is randomly generated.
+
+<table>
+<tr>
+<td width="50%"><img src="docs/screens/m1-sorting-hall.jpg" alt="Sorting Hall"><br><b>Sorting Hall</b> · Mission 1. Conveyor lines split the hall into bays, a gantry crosses the middle, and the sort-control room holds the answer consoles.</td>
+<td width="50%"><img src="docs/screens/m3-container-stacks.jpg" alt="Container Stacks"><br><b>Container Stacks</b> · Mission 3. A container maze under two gantry cranes, with marksmen on the crane walkways.</td>
+</tr>
+<tr>
+<td><img src="docs/screens/m3-container-stacks-ground.jpg" alt="Container Stacks at ground level"><br>The same yard at ground level, in the storm.</td>
+<td><img src="docs/screens/m5-mall-atrium-ground.jpg" alt="Mall Atrium at ground level"><br><b>Atrium</b> · Mission 5. You tail the courier past the shops and the fountain without being made.</td>
+</tr>
+<tr>
+<td><img src="docs/screens/m5-mall-atrium.jpg" alt="Mall Atrium"><br>The atrium from above: six storefronts, a skylight, and a security mezzanine on the east wall.</td>
+<td><img src="docs/screens/m6-value-proposition-hall.jpg" alt="Value Proposition Hall"><br><b>Value Proposition Hall</b> · Mission 6. A launch auditorium with rows of seats, a stage, and guards on the press risers.</td>
+</tr>
+<tr>
+<td><img src="docs/screens/m7-tower-lobby.jpg" alt="Tower Lobby"><br><b>Tower Lobby</b> · Mission 7. A three-storey glass lobby with security gates and a glass bridge 6 m up.</td>
+<td><img src="docs/screens/m4-perimeter-yard-blueprint.jpg" alt="Perimeter Yard blueprint"><br><b>Level blueprint</b> · Mission 4, Perimeter Yard. Each sector has an overhead plan showing guard routes and sight cones, the searchlight sweep, shadow zones, cover, intel and the uplink. This yard has three ways through: an unlit car park, a floodlit apron, and a generator compound.</td>
+</tr>
+</table>
+
+![Cast](docs/screens/cast.jpg)
+*The cast. Top left: Kessler, Hale and Ruiz in their unit colours. The other panels show the Mission 1 directors, Adrian Voss, the courier and civilians.*
+
 ## Playing
 
 Download **`OperationValueChain-win64.zip`** from the [latest release](../../releases/latest), unzip it, and run `OperationValueChain\OperationValueChain.exe`. (The same build is also in [`download/`](download/) as seven 7-Zip parts under 30 MB each.) It's a native Godot 4 executable (no installer, no browser runtime). Requires a GPU with Vulkan support (any card from roughly 2016 onward). If it fails to start on an older machine, run it with `--rendering-driver d3d12`.
