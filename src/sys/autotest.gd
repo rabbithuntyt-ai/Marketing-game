@@ -61,6 +61,11 @@ func _do(spec: String) -> void:
 				for h in hs: (h as Humanoid).play("Idle")
 				await _wait(0.8); await shot("chars_face%d" % g)
 			root.queue_free(); bg.queue_free()
+		"mem":
+			for mi in [0, 1, 2, 3, 0, 1]:
+				await _build(mi); await _wait(1.0)
+			main.clear_world(); for i in 4: await tree.process_frame
+			print("[autotest] mem end rss=", _rss())
 		"bg":
 			var bg := MenuBG.new(); main.world.add_child(bg)
 			for i in 10:
@@ -286,8 +291,17 @@ func _do(spec: String) -> void:
 			await _wait(3.0); await shot("play%s_a" % arg)
 			await _wait(3.0); await shot("play%s_b" % arg)
 
+func _rss() -> String:
+	var f := FileAccess.open("/proc/self/status", FileAccess.READ)
+	if f == null: return "?"
+	for l in f.get_as_text().split("\n"):
+		if l.begins_with("VmRSS"): return l.replace("VmRSS:", "").strip_edges()
+	return "?"
+
 func _build(mi: int, from := 0) -> void:
 	main.clear_world()
+	for i in 4: await tree.process_frame
+	print("[autotest] mem before m%d: rss=%s static=%.0fMB vram=%.0fMB objects=%d nodes=%d" % [mi, _rss(), Performance.get_monitor(Performance.MEMORY_STATIC) / 1e6, Performance.get_monitor(Performance.RENDER_VIDEO_MEM_USED) / 1e6, Performance.get_monitor(Performance.OBJECT_COUNT), Performance.get_monitor(Performance.OBJECT_NODE_COUNT)])
 	Game.stats = Game.new_stats()
 	main.set_screen(null)
 	main._build_mission(mi, from)

@@ -168,8 +168,15 @@ func _load_mission(mi: int, from_room: int) -> void:
 			set_screen(null)
 			_begin_mission(from_room)))
 
+var _built_mi := -1
 func _build_mission(mi: int, from_room: int) -> void:
 	_completing = false
+	if mi != _built_mi and _built_mi >= 0:
+		# a new mission: drop the previous mission's cached meshes, textures and materials so video
+		# memory holds one mission's assets at a time
+		Kit._scenes.clear(); Kit._bounds.clear(); Kit._shapes.clear()
+		Mats._cache.clear(); Humanoid._chars.clear()
+	_built_mi = mi
 	mission = Mission.new(); mission.name = "Mission"
 	world.add_child(mission)
 	if Game.stats.is_empty(): Game.stats = Game.new_stats()
