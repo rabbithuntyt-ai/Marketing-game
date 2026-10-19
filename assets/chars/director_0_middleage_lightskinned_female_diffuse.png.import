@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw2e1dgtt2y87"
-path="res://.godot/imported/director_0_middleage_lightskinned_female_diffuse.png-a493e5e538b9cce55ee48fd056e70ebf.ctex"
+path.s3tc="res://.godot/imported/director_0_middleage_lightskinned_female_diffuse.png-a493e5e538b9cce55ee48fd056e70ebf.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "667a1c4fc4478d768c3e4fca644a2321"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/chars/director_0_middleage_lightskinned_female_diffuse.png"
-dest_files=["res://.godot/imported/director_0_middleage_lightskinned_female_diffuse.png-a493e5e538b9cce55ee48fd056e70ebf.ctex"]
+dest_files=["res://.godot/imported/director_0_middleage_lightskinned_female_diffuse.png-a493e5e538b9cce55ee48fd056e70ebf.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

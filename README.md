@@ -36,7 +36,7 @@ All third-party assets are used under their licences. See the in-game Credits sc
 - Engine: Godot Engine 4.5 (MIT)
 - Voices: Kokoro-82M by hexgrad (Apache 2.0), via sherpa-onnx (Apache 2.0)
 - Music: Tanner Helland (CC BY 4.0); Omri Lahav / 0 A.D., Wildfire Games (CC BY-SA 3.0); Xonotic team (GPLv2+); Christian Fernando Perucchi / Godot TPS demo (CC BY 3.0)
-- Sound effects: CC-Sounds pack contributors via freesound.org (CC0 / CC BY / CC BY-SA, per-file list in `assets/audio/CREDITS.txt`), Godot TPS demo (CC BY 3.0), Kenney (CC0), gunshots from The Free Firearm Sound Library (CC0)
-- Models and textures: Godot TPS demo by Juan Linietsky and Fernando Miguel Calabró (CC BY 3.0); soldier and rifle from Dive by Mugen87 (MIT); Universal Animation Library 1 & 2, Downtown City MegaKit by Quaternius (CC0); Lee Perry-Smith head scan by Infinite-Realities (CC BY 3.0); first-person arms from the FPS Arms Rig on OpenGameArt (CC0)
+- Sound effects: The Free Firearm Sound Library (CC0); CC-Sounds pack contributors via freesound.org (CC0 / CC BY / CC BY-SA, per-file list in `assets/audio/CREDITS.txt`), Godot TPS demo (CC BY 3.0), Kenney (CC0), gunshots from The Free Firearm Sound Library (CC0)
+- Models and textures: Quaternius Modular Sci-Fi MegaKit (CC0); Poly Haven models (CC0); cast built from MakeHuman system assets via MPFB2 (CC0); FPS Arms Rig (CC0); Godot TPS demo by Juan Linietsky and Fernando Miguel Calabró (CC BY 3.0); soldier and rifle from Dive by Mugen87 (MIT); Universal Animation Library 1 & 2, Downtown City MegaKit by Quaternius (CC0); Lee Perry-Smith head scan by Infinite-Realities (CC BY 3.0); first-person arms from the FPS Arms Rig on OpenGameArt (CC0)
 - Fonts: Rajdhani, Barlow, IBM Plex Mono (SIL Open Font License)
 - Course content follows the textbook named above; definitions are paraphrased or quoted for study purposes.

@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjdgr2otokaj6"
-path="res://.godot/imported/courier_young_lightskinned_male_diffuse3.png-9a545393e1606b119e680109c27d71b6.ctex"
+path.s3tc="res://.godot/imported/courier_young_lightskinned_male_diffuse3.png-9a545393e1606b119e680109c27d71b6.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "4a8e262eea0a95f93ffc7edb9f35feb8"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/chars/courier_young_lightskinned_male_diffuse3.png"
-dest_files=["res://.godot/imported/courier_young_lightskinned_male_diffuse3.png-9a545393e1606b119e680109c27d71b6.ctex"]
+dest_files=["res://.godot/imported/courier_young_lightskinned_male_diffuse3.png-9a545393e1606b119e680109c27d71b6.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

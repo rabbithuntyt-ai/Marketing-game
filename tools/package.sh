@@ -29,7 +29,7 @@ Full credits are in the game (Main menu > Credits) and in CREDITS-audio.txt.
 Engine: Godot 4.5 (MIT). Voices: Kokoro-82M (Apache 2.0).
 Music: Tanner Helland (CC BY 4.0), Omri Lahav / 0 A.D. (CC BY-SA 3.0),
 Xonotic team (GPLv2+), Godot TPS demo (CC BY 3.0).
-Models: Godot TPS demo (CC BY 3.0), Dive by Mugen87 (MIT), Quaternius (CC0),
+Models: Quaternius MegaKit, Poly Haven, MakeHuman cast (all CC0), Godot TPS demo (CC BY 3.0), Dive by Mugen87 (MIT), Quaternius (CC0),
 Lee Perry-Smith head by Infinite-Realities (CC BY 3.0). Fonts: SIL OFL.
 TXT
 cd build/pkg
