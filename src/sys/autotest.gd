@@ -143,6 +143,10 @@ func _do(spec: String) -> void:
 					var ep: Vector3 = e.global_position
 					if absf(ep.x) > rw.W * 0.5 or ep.z > rw.z0 or ep.z < rw.z1: bad += 1
 				print("[autotest] wrong m%s r%d spawned=%d outside=%d" % [arg, ri, rw.enemies.size() - before, bad])
+		"bp":
+			var pb := arg.split("/")
+			await _build(int(pb[0]))
+			await _blueprints(int(pb[0]), pb.slice(1))
 		"look":
 			var parts2 := arg.split("/")
 			await _build(int(parts2[0]))
@@ -317,7 +321,18 @@ func _sim(mi: int) -> void:
 					(it2["cb"] as Callable).call()
 					await _wait(0.3)
 					await _resolve_overlay()
-			if r.mode.uses_terminal() and r.terminal and not r.calls_done and r.mode.terminal_ready():
+			if r.panels and not r.calls_done:
+				_kill_all(mis, r)
+				for q in 12:
+					await _wait(0.2)
+					var opts: Array = r.panels.interactables()
+					if r.calls_done: break
+					if opts.is_empty(): continue
+					var right := (r.panels.order as Array).find(0)
+					mis.player.global_position = Vector3(opts[right]["pos"].x, 0.1, opts[right]["pos"].z)
+					(opts[right]["cb"] as Callable).call()
+					await _wait(6.0)
+			elif r.mode.uses_terminal() and r.terminal and not r.calls_done and r.mode.terminal_ready():
 				_kill_all(mis, r)
 				mis._open_terminal()
 				await _resolve_overlay()
@@ -386,3 +401,59 @@ func _bot(mi: int) -> void:
 			mis._open_terminal(); await _resolve_overlay()
 		await _wait(0.5)
 		if not r.done: r.mode.complete()
+
+## Level-design review renders: overhead plan with gameplay overlay, cutaway 3/4 view, entry view.
+func _blueprints(mi: int, rooms_s: Array) -> void:
+	var ms: Mission = main.mission
+	main.hud_layer.visible = false
+	ms.player.visible = false
+	if ms.ally: ms.ally.visible = false; ms.ally.process_mode = Node.PROCESS_MODE_DISABLED
+	for rr in ms.rooms:
+		for e in rr.enemies:
+			if is_instance_valid(e): e.set_physics_process(false)
+	ms.player.set_physics_process(false); ms.player.hp = 1e9
+	var we: WorldEnvironment = null
+	for n in ms.env.find_children("*", "WorldEnvironment", true, false): we = n
+	var cam := Camera3D.new(); ms.add_child(cam)
+	var sun := DirectionalLight3D.new(); ms.add_child(sun); sun.light_energy = 0.0
+	var layer := CanvasLayer.new(); layer.layer = 50; main.add_child(layer)
+	var bp := Blueprint.new(); layer.add_child(bp)
+	bp.size = main.get_viewport().get_visible_rect().size
+	for rs in rooms_s:
+		var r: Room = ms.rooms[int(rs)]
+		for o in ms.rooms: o.visible = o == r
+		var ceil_nodes := r.get_tree().get_nodes_in_group("ceiling").filter(func(n): return r.is_ancestor_of(n))
+		var vs := main.get_viewport().get_visible_rect().size
+		for n in ceil_nodes: n.visible = false
+		var fog_was := false
+		if we: fog_was = we.environment.volumetric_fog_enabled; we.environment.volumetric_fog_enabled = false; we.environment.fog_enabled = false
+		sun.light_energy = 0.9; sun.rotation = Vector3(-1.2, 0.4, 0)
+		cam.projection = Camera3D.PROJECTION_ORTHOGONAL
+		cam.size = maxf(r.D + 10.0, (r.W + 14.0) * vs.y / vs.x)
+		cam.near = 0.5; cam.far = 200.0
+		var c := r.center()
+		cam.position = Vector3(c.x, r.H + 40.0 if not r.outdoor else 60.0, c.z)
+		cam.look_at(c, Vector3(0, 0, -1))
+		cam.current = true
+		bp.cam = cam; bp.room = r
+		bp.title = "M%d · SECTOR %d · %s   (%s, %dx%d m)%s" % [mi + 1, r.ri + 1, String(r.data.get("n", "")).to_upper(), r.kind, int(r.W), int(r.D), "   hand-built" if r.authored else "   procedural"]
+		bp.visible = true; bp.queue_redraw()
+		await _wait(0.6)
+		await shot("bp_m%d_r%d_plan" % [mi, r.ri])
+		bp.visible = false
+		cam.projection = Camera3D.PROJECTION_PERSPECTIVE; cam.fov = 50.0
+		cam.position = Vector3(r.W * 0.75, r.H + 16.0, r.z0 + 10.0)
+		cam.look_at(c + Vector3(0, 0, 2.0))
+		sun.light_energy = 0.35
+		await _wait(0.5)
+		await shot("bp_m%d_r%d_cutaway" % [mi, r.ri])
+		for n in ceil_nodes: n.visible = true
+		if we: we.environment.volumetric_fog_enabled = fog_was; we.environment.fog_enabled = true
+		sun.light_energy = 0.0
+		cam.fov = 70.0
+		cam.position = Vector3(0, 1.65, r.z0 - 1.0); cam.look_at(Vector3(0, 1.4, r.z0 - 12.0))
+		await _wait(0.6)
+		await shot("bp_m%d_r%d_entry" % [mi, r.ri])
+		cam.position = Vector3(r.W * 0.3, 1.65, r.z1 + 2.0); cam.look_at(Vector3(-r.W * 0.1, 1.2, r.z0 - 4.0))
+		await _wait(0.5)
+		await shot("bp_m%d_r%d_back" % [mi, r.ri])

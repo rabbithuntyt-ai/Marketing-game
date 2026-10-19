@@ -120,6 +120,8 @@ func build_all() -> Array:
 func build_room(ri: int, data: Dictionary, z0: float) -> Room:
 	var r := Room.new(); r.name = "Room%d" % ri
 	r.ri = ri; r.data = data; r.kind = data.get("kind", "combat"); r.outdoor = data.get("outdoor", false)
+	var lp := "res://levels/%s/s%d.gd" % [M["id"], ri]
+	if ResourceLoader.exists(lp): return _build_authored(r, ri, z0, load(lp))
 	var d := dims(r.kind, r.outdoor)
 	r.W = d.x; r.H = d.y; r.D = d.z; r.z0 = z0; r.z1 = z0 - r.D
 	level.add_child(r)
@@ -134,7 +136,7 @@ func build_room(ri: int, data: Dictionary, z0: float) -> Room:
 	box(geo, Vector3(r.W + WT * 2, 0.4, r.D + WT * 2), Vector3(0, -0.2, cz), mF)
 	# ceiling
 	if not r.outdoor:
-		box(geo, Vector3(r.W + WT * 2, 0.3, r.D + WT * 2), Vector3(0, r.H + 0.15, cz), mC, false, false)
+		box(geo, Vector3(r.W + WT * 2, 0.3, r.D + WT * 2), Vector3(0, r.H + 0.15, cz), mC, false, false).add_to_group("ceiling")
 	# side walls
 	var LB := 2.8
 	var side_m := mat(th.get("out_wall", "gunmetal")) if r.outdoor else mW
@@ -158,6 +160,47 @@ func build_room(ri: int, data: Dictionary, z0: float) -> Room:
 		for sx in [-1, 1]: box(geo, Vector3(0.35, GH, 0.8), Vector3(sx * (GAP * 0.5 + 0.17), GH * 0.5, zc), mP)
 		box(geo, Vector3(GAP + 0.7, 0.35, 0.8), Vector3(0, GH + 0.17, zc), mP)
 		box(geo, Vector3(GAP + 0.6, 0.06, 0.08), Vector3(0, GH + 0.4, zc + (0.42 if not e[1] else -0.42)), Mats.glow(accent, 3.0), false, false)
+	_exit_and_corridor(r, geo)
+	# room dressing
+	if r.outdoor: _outdoor(r, geo)
+	else: _interior(r, geo)
+	_wall_display(r, geo)
+	_sector_sign(r)
+	if r.kind == "range": _range_layout(r, geo)
+	elif r.kind == "sniper": _sniper_layout(r, geo)
+	else:
+		_set_piece(r, geo)
+		_cover(r, geo)
+	if not r.kind in ["range", "sniper", "escape"]: _terminal(r, geo)
+	_blk = _blockers(r, geo)
+	_intel(r)
+	_spawn_points(r)
+	return r
+
+## Hand-built sector: the layout script places everything; the builder adds the shared exit door,
+## the corridor to the next sector and the sector sign so all sectors chain the same way.
+func _build_authored(r: Room, ri: int, z0: float, script: GDScript) -> Room:
+	var sec: Sector = script.new()
+	var d := sec.dims()
+	r.W = d.x; r.H = d.y; r.D = d.z; r.z0 = z0; r.z1 = z0 - r.D
+	r.outdoor = sec.outdoor() or r.outdoor
+	r.authored = true; r.sector = sec
+	level.add_child(r)
+	var nav := NavigationRegion3D.new(); nav.name = "Nav"; r.add_child(nav); r.nav = nav
+	var geo := Node3D.new(); geo.name = "Geo"; nav.add_child(geo)
+	sec.setup(self, r, geo)
+	rng.seed = hash(M["id"] + str(ri))
+	sec.build()
+	if ri == 0:   # first sector: nothing behind the player
+		var blk := box(geo, Vector3(r.W + 4.0, 8.0, 0.4), Vector3(0, 4.0, r.z0 + 0.9), Mats.flat(Color.BLACK), true, false); blk.visible = false
+	if not sec.placed_wall: _wall_display(r, geo)
+	_exit_and_corridor(r, geo)
+	_sector_sign(r)
+	if r.spawn_points.is_empty(): _blk = _blockers(r, geo); _spawn_points(r)
+	return r
+
+func _exit_and_corridor(r: Room, geo: Node3D) -> void:
+	var mC := mat(th["ceil"]); var mW := mat(th["wall"])
 	# exit door
 	var door := box(r, Vector3(GAP, GH, 0.3), Vector3(0, GH * 0.5, r.z1 - WT * 0.5), Mats.pbr("cont3", 2.0), false)
 	r.door = door; r.door_closed_y = GH * 0.5
@@ -179,21 +222,6 @@ func build_room(ri: int, data: Dictionary, z0: float) -> Room:
 		box(geo, Vector3(1.2, 0.05, 0.4), Vector3(0, 3.78, zz2), Mats.glow(Color(0.92, 0.95, 1.0), 3.0), false, false)
 	omni(r, Vector3(0, 3.2, ccz), th["light"], 0.9, 9.0)
 	cyl(geo, 0.1, CORR, Vector3(-1.9, 3.4, ccz), mat("steel", 1.0), Vector3(PI * 0.5, 0, 0))
-	# room dressing
-	if r.outdoor: _outdoor(r, geo)
-	else: _interior(r, geo)
-	_wall_display(r, geo)
-	_sector_sign(r)
-	if r.kind == "range": _range_layout(r, geo)
-	elif r.kind == "sniper": _sniper_layout(r, geo)
-	else:
-		_set_piece(r, geo)
-		_cover(r, geo)
-	if not r.kind in ["range", "sniper", "escape"]: _terminal(r, geo)
-	_blk = _blockers(r, geo)
-	_intel(r)
-	_spawn_points(r)
-	return r
 
 func _window_wall(geo: Node3D, r: Room, s: int) -> void:
 	# floor-to-ceiling glass with mullions; city beyond
@@ -305,21 +333,26 @@ func _poster(r: Room, geo: Node3D, s: int, z: float) -> void:
 		label(r, "VALUE FOR VALUE", Vector3(x, 1.6, z) + off * 1.4, rot + rng.randf_range(-0.1, 0.1), 46, Color(0.9, 0.2, 0.18), "BarlowCondensed-Bold", 0, HORIZONTAL_ALIGNMENT_CENTER)
 
 func _wall_display(r: Room, geo: Node3D) -> void:
-	var lines: Array = r.data.get("wall", [])
-	if lines.is_empty(): return
 	var hw := r.W * 0.5; var cz := (r.z0 + r.z1) * 0.5
 	var x := -hw + 0.08; var z := cz + 2.0
 	if r.outdoor: x = -hw + 0.4
-	var pw := 6.4; var ph := 3.4; var y := 3.2 if not r.outdoor else 2.6
-	box(geo, Vector3(0.1, ph + 0.2, pw + 0.2), Vector3(x, y, z), Mats.pbr("gunmetal", 1.0), false)
-	box(geo, Vector3(0.04, ph, pw), Vector3(x + 0.06, y, z), Mats.flat(Color(0.02, 0.025, 0.03), 0.25, 0.0), false, false)
-	box(geo, Vector3(0.05, 0.07, pw), Vector3(x + 0.08, y + ph * 0.5 - 0.1, z), Mats.glow(accent, 3.0), false, false)
-	var rot := PI * 0.5; var lx := x + 0.1
-	label(r, "CASTELLAN · STRATEGY WALL", Vector3(lx, y + ph * 0.5 - 0.35, z + pw * 0.5 - 0.25), rot, 30, accent, "IBMPlexMono-Medium")
-	label(r, String(lines[0]), Vector3(lx, y + ph * 0.5 - 0.85, z + pw * 0.5 - 0.25), rot, 96, Color(0.96, 0.96, 0.96), "Rajdhani-Bold", 1500)
+	strategy_wall(r, geo, Vector3(x, 3.2 if not r.outdoor else 2.6, z), PI * 0.5)
+
+## The chapter's key ideas on a lit display. pos = centre of the panel face, rot_y = facing (radians).
+func strategy_wall(r: Room, geo: Node3D, pos: Vector3, rot_y: float) -> void:
+	var lines: Array = r.data.get("wall", [])
+	if lines.is_empty(): return
+	var root := Node3D.new(); root.name = "StrategyWall"; r.add_child(root); root.position = pos; root.rotation.y = rot_y - PI * 0.5
+	var pw := 6.4; var ph := 3.4
+	box(root, Vector3(0.1, ph + 0.2, pw + 0.2), Vector3.ZERO, Mats.pbr("gunmetal", 1.0), false)
+	box(root, Vector3(0.04, ph, pw), Vector3(0.06, 0, 0), Mats.flat(Color(0.02, 0.025, 0.03), 0.25, 0.0), false, false)
+	box(root, Vector3(0.05, 0.07, pw), Vector3(0.08, ph * 0.5 - 0.1, 0), Mats.glow(accent, 3.0), false, false)
+	var rot := PI * 0.5; var lx := 0.1
+	label(root, "CASTELLAN · STRATEGY WALL", Vector3(lx, ph * 0.5 - 0.35, pw * 0.5 - 0.25), rot, 30, accent, "IBMPlexMono-Medium")
+	label(root, String(lines[0]), Vector3(lx, ph * 0.5 - 0.85, pw * 0.5 - 0.25), rot, 96, Color(0.96, 0.96, 0.96), "Rajdhani-Bold", 1500)
 	for i in range(1, lines.size()):
-		label(r, String(lines[i]), Vector3(lx, y + ph * 0.5 - 1.2 - i * 0.42, z + pw * 0.5 - 0.25), rot, 50, Color(0.8, 0.84, 0.86), "Barlow-Medium", 1500)
-	omni(r, Vector3(x + 1.2, y, z), accent.lerp(Color.WHITE, 0.5), 0.6, 5.0)
+		label(root, String(lines[i]), Vector3(lx, ph * 0.5 - 1.2 - i * 0.42, pw * 0.5 - 0.25), rot, 50, Color(0.8, 0.84, 0.86), "Barlow-Medium", 1500)
+	omni(root, Vector3(1.2, 0, 0), accent.lerp(Color.WHITE, 0.5), 0.6, 5.0)
 
 func _sector_sign(r: Room) -> void:
 	var t := "SECTOR %d · %s" % [r.ri + 1, String(r.data["n"]).to_upper()]

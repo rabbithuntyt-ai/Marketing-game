@@ -18,7 +18,7 @@ func enter() -> void:
 	started = true
 	var py: float = r.get_meta("perch_y", 7.0)
 	var p := m.player
-	p.global_position = Vector3(0, py + 0.2, r.z0 - 3.0)
+	p.global_position = anchor("perch", Vector3(0, py + 0.2, r.z0 - 3.0))
 	p.sniper = true; p.mag = 5; p.ammo = 5; p.locked = false
 	p.perch_bounds = Rect2(Vector2(-r.W * 0.45, r.z0 - 5.6), Vector2(r.W * 0.9, 4.6))
 	p.locked = true
@@ -27,7 +27,7 @@ func enter() -> void:
 	a.scripted = true; a.escort_hp = 100.0
 	a.global_position = Vector3(-6, 0, r.z0 - 8.0)
 	var truck: Vector3 = r.get_meta("truck", Vector3(4, 0, r.z1 + 8))
-	a.escort_path = [Vector3(-8, 0, r.z0 - 18), Vector3(6, 0, r.z0 - 30), Vector3(-5, 0, r.z0 - 44), Vector3(7, 0, r.z0 - 56), truck + Vector3(-2.5, 0, 2.0)]
+	a.escort_path = anchor("escort", []) if not anchor("escort", []).is_empty() else [Vector3(-8, 0, r.z0 - 18), Vector3(6, 0, r.z0 - 30), Vector3(-5, 0, r.z0 - 44), Vector3(7, 0, r.z0 - 56), truck + Vector3(-2.5, 0, 2.0)]
 	a.escort_i = 0
 	m.main.hud.progress_show(true, "RUIZ")
 	m.main.hud.toast("OVERWATCH", "Hold [RMB] to scope · protect Ruiz", Color(1.0, 0.75, 0.4))

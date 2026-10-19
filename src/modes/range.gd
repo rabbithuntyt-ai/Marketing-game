@@ -80,14 +80,19 @@ func _spawn() -> void:
 	labels.shuffle()
 	var spots: Array = []
 	var hw := r.W * 0.5
+	var slots: Array = (r.get_meta("target_slots") as Array).duplicate() if r.has_meta("target_slots") else []
+	slots.shuffle()
 	for k in labels.size():
 		var p := Vector3.ZERO
-		for tries in 40:
-			p = Vector3(randf_range(-hw + 2, hw - 2), 0, randf_range(r.z1 + 3, r.z0 - 12))
-			var ok := true
-			for s in spots:
-				if (s - p).length() < 2.4: ok = false
-			if ok: break
+		if k < slots.size():
+			p = slots[k]
+		else:
+			for tries in 40:
+				p = Vector3(randf_range(-hw + 2, hw - 2), 0, randf_range(r.z1 + 3, r.z0 - 12))
+				var ok := true
+				for s in spots:
+					if (s - p).length() < 2.4: ok = false
+				if ok: break
 		spots.append(p)
 		var node := Node3D.new(); r.add_child(node); node.position = p
 		var pole := MeshInstance3D.new(); var cm := CylinderMesh.new(); cm.top_radius = 0.04; cm.bottom_radius = 0.04; cm.height = 1.1; pole.mesh = cm; pole.material_override = Mats.pbr("steel", 1.0); pole.position.y = 0.55; node.add_child(pole)

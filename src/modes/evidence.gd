@@ -6,7 +6,7 @@ var board: Node3D
 
 func setup() -> void:
 	var n := maxi(3, int(r.data.get("e", 5)) + int(Game.diff()["cnt"]))
-	m.spawn_room_enemies(r, n)
+	populate(n)
 	var b := Builder.new(m, m.M)
 	board = Node3D.new(); r.add_child(board); board.position = r.get_meta("board_pos", Vector3(0, 0, r.z1 + 3.0))
 	board.rotation.y = r.get_meta("board_rot", 0.0)

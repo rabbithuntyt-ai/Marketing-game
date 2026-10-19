@@ -17,7 +17,8 @@ func setup() -> void:
 	for k in ds.size():
 		var d := Humanoid.new(); m.add_child(d); d.team = "neutral"
 		d.setup("director", r)
-		d.global_position = Vector3(-6.0 + k * 3.0, 3.8, z - 0.5 + (k % 2) * 1.2)
+		var dp: Array = anchor("directors", [])
+		d.global_position = dp[k] if k < dp.size() else Vector3(-6.0 + k * 3.0, 3.8, z - 0.5 + (k % 2) * 1.2)
 		d.rotation.y = PI + randf_range(-0.4, 0.4)
 		d.forced_anim = ["Idle_Talking", "Idle_FoldArms", "Idle_Talking", "Idle_TalkingPhone", "Idle_LookAround"][k]
 		d.set_physics_process(false)
@@ -25,7 +26,7 @@ func setup() -> void:
 		d.set_meta("idx", k)
 		directors.append(d)
 	var n := maxi(3, int(r.data.get("e", 4)) + int(Game.diff()["cnt"]))
-	m.spawn_room_enemies(r, n)
+	populate(n)
 	for e in r.enemies: e.passive = true
 
 func enter() -> void:
@@ -99,7 +100,7 @@ func _release_guards(extra: bool) -> void:
 	for e in r.enemies:
 		e.passive = false; e.alert(false)
 	if extra:
-		for i in 2: m.spawn_enemy(r, Vector3(randf_range(-3, 3), 0, r.z1 + 2.0), "css", false, true)
+		for i in 2: m.spawn_enemy(r, entry_point(Vector3(randf_range(-3, 3), 0, r.z1 + 2.0)), "css", false, true)
 	m.breach()
 
 func _flee(d: Humanoid) -> void:

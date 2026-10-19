@@ -11,14 +11,16 @@ var started := false
 
 func setup() -> void:
 	var n := maxi(3, int(r.data.get("e", 5)) + int(Game.diff()["cnt"]))
-	m.spawn_room_enemies(r, n)
+	populate(n)
 	var who: String = String(r.data.get("boss", "KESSLER")).to_lower()
-	boss = m.spawn_enemy(r, Vector3(0, 0, r.z1 + 7.0), "kessler" if who == "kessler" else "hale")
+	boss = m.spawn_enemy(r, anchor("boss", Vector3(0, 0, r.z1 + 7.0)), "kessler" if who == "kessler" else "hale")
 	boss.alert_delay = 1.6
 	var k := int(r.data.get("recall_nodes", 0))
 	var b := Builder.new(m, m.M)
 	for i in k:
 		var p := Vector3([-r.W * 0.35, r.W * 0.35, 0.0][i], 0, [(r.z0 + r.z1) * 0.5 + 4, (r.z0 + r.z1) * 0.5 + 4, r.z1 + 3.5][i])
+		var np: Array = anchor("nodes", [])
+		if i < np.size(): p = np[i]
 		var node := Node3D.new(); r.add_child(node); node.position = p
 		b.box(node, Vector3(1.0, 1.2, 1.0), Vector3(0, 0.6, 0), Mats.pbr("gunmetal", 1.0))
 		b.box(node, Vector3(0.8, 0.5, 0.05), Vector3(0, 1.45, 0.4), Mats.glow(Color(1.0, 0.85, 0.5), 1.4), false, false)
@@ -75,7 +77,7 @@ func tick(dt: float) -> void:
 	spawn_t -= dt
 	if spawn_t <= 0.0 and is_instance_valid(boss) and not boss.dead and r.alive_enemies().size() < 4:
 		spawn_t = 20.0
-		for i in 2: m.spawn_enemy(r, Vector3(randf_range(-3, 3), 0, r.z1 + 2), "", false, true)
+		for i in 2: m.spawn_enemy(r, entry_point(Vector3(randf_range(-3, 3), 0, r.z1 + 2)), "", false, true)
 		m.main.hud.toast("REINFORCEMENTS", "", Color(1, 0.35, 0.3))
 	var boss_done: bool = escaped or not is_instance_valid(boss) or boss.dead
 	if boss_done and r.alive_enemies().is_empty() and nodes_done >= nodes.size():

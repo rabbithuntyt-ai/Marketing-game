@@ -18,7 +18,7 @@ func setup() -> void:
 	icpts = r.data.get("intercepts", []).duplicate()
 	icpts.shuffle()
 	var b := Builder.new(m, m.M)
-	console = Node3D.new(); r.add_child(console); console.position = Vector3(0, 0, (r.z0 + r.z1) * 0.5 + 3.0)
+	console = Node3D.new(); r.add_child(console); console.position = anchor("console", Vector3(0, 0, (r.z0 + r.z1) * 0.5 + 3.0))
 	b.box(console, Vector3(2.2, 1.1, 1.2), Vector3(0, 0.55, 0), Mats.pbr("gunmetal", 1.0))
 	b.box(console, Vector3(1.8, 0.9, 0.06), Vector3(0, 1.6, 0.0), Mats.glow(Color(0.3, 0.9, 1.0), 1.2), false, false)
 	b.label(console, "LEDGER UPLINK", Vector3(0, 1.62, 0.05), 0, 40, Color(0.02, 0.06, 0.08), "IBMPlexMono-Medium", 0, HORIZONTAL_ALIGNMENT_CENTER, true)
@@ -53,7 +53,7 @@ func tick(dt: float) -> void:
 			wave_t = randf_range(6.0, 9.0)
 			var n := 2 + randi() % 2 + int(Game.diff()["cnt"])
 			for i in n:
-				var p := Vector3(randf_range(-r.W * 0.4, r.W * 0.4), 0, r.z1 + randf_range(1.5, 4.0))
+				var p := entry_point(Vector3(randf_range(-r.W * 0.4, r.W * 0.4), 0, r.z1 + randf_range(1.5, 4.0)))
 				var e := m.spawn_enemy(r, p, "", false, true)
 				e.alert_delay = 0.0
 			if randf() < 0.5: Audio.bark("RUIZ", "contact2")

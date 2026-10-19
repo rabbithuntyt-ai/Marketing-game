@@ -6,7 +6,7 @@ var detected := false
 
 func setup() -> void:
 	if r.authored and not r.guards.is_empty():
-		_authored_guards(); return
+		spawn_guards(true); return
 	var n := maxi(3, int(r.data.get("e", 4)) + int(Game.diff()["cnt"]))
 	var hw := r.W * 0.5
 	for i in n:
@@ -18,23 +18,12 @@ func setup() -> void:
 		e.patrol = pts; e.state = "patrol"; e.stealth_room = true
 
 ## Hand-placed guards: fixed posts and routes, so the sector can be read and planned.
-func _authored_guards() -> void:
-	var vet := int(Game.settings["difficulty"]) >= 2
-	for g in r.guards:
-		if g["veteran"] and not vet: continue
-		var e := m.spawn_enemy(r, g["pos"], g["variant"], true)
-		e.rotation.y = -deg_to_rad(float(g["yaw"]))
-		e.stealth_room = true
-		if (g["patrol"] as Array).is_empty():
-			e.post_yaw = g["yaw"]; e.state = "idle"
-		else:
-			e.patrol = g["patrol"]; e.patrol_waits = g["waits"]; e.patrol_looks = g["looks"]; e.state = "patrol"
-
 func enter() -> void:
 	m.loud = false
 	m.main.hud.toast("STAY QUIET", "Crouch [C] · takedown from behind [F]", Color(0.75, 0.7, 1.0))
 
 func requires_clear() -> bool: return detected
+func is_loud() -> bool: return detected
 
 func music() -> String: return "stealth" if not detected else ""
 

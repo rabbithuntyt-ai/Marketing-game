@@ -38,7 +38,7 @@ func tick(dt: float) -> void:
 		wave_t = randf_range(7.0, 10.0)
 		for i in 2 + randi() % 2 + int(Game.diff()["cnt"]):
 			var s := -1.0 if randf() < 0.5 else 1.0
-			var e := m.spawn_enemy(r, Vector3(s * (r.W * 0.5 - 2.0), 0, r.z1 + randf_range(2, 8)), "", false, true)
+			var e := m.spawn_enemy(r, entry_point(Vector3(s * (r.W * 0.5 - 2.0), 0, r.z1 + randf_range(2, 8))), "", false, true)
 			e.alert_delay = 0.0
 	if t >= hold:
 		r.done = true

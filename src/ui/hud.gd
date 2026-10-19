@@ -66,6 +66,11 @@ var boss_box: VBoxContainer
 var boss_name: Label
 var boss_fill: ColorRect
 var scope: Control
+var call_box: PanelContainer
+var call_head: Label
+var call_q: Label
+var call_opts: VBoxContainer
+var call_why: RichTextLabel
 var nade_warn: Control
 var nade_ref = null
 var player: Player
@@ -171,6 +176,13 @@ func _build() -> void:
 	var pbg := ColorRect.new(); pbg.color = Color(1, 1, 1, 0.15); pbg.custom_minimum_size = Vector2(420, 8); prog_box.add_child(pbg)
 	prog_fill = ColorRect.new(); prog_fill.color = accent; prog_fill.size = Vector2(0, 8); pbg.add_child(prog_fill)
 	# intercept panel
+	# routing consoles (in-world analysis calls)
+	call_box = UIKit.panel(Color(0.03, 0.04, 0.05, 0.88), Color(0.5, 0.82, 1.0)); add_child(call_box); call_box.visible = false
+	var cv := UIKit.vbox(6); call_box.add_child(cv); call_box.custom_minimum_size = Vector2(520, 0)
+	call_head = _lbl("", UIKit.mono(14), Color(0.5, 0.82, 1.0)); cv.add_child(call_head)
+	call_q = _lbl("", UIKit.body(21)); call_q.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; call_q.custom_minimum_size = Vector2(500, 0); cv.add_child(call_q)
+	call_opts = UIKit.vbox(3); cv.add_child(call_opts)
+	call_why = UIKit.rich("", 17); call_why.custom_minimum_size = Vector2(500, 0); call_why.fit_content = true; cv.add_child(call_why)
 	icpt_box = UIKit.panel(Color(0.03, 0.04, 0.05, 0.9), Color(0.4, 0.9, 1.0)); add_child(icpt_box)
 	var iv := UIKit.vbox(6); icpt_box.add_child(iv)
 	iv.add_child(_lbl("INTERCEPT  ·  CALL IT  [1] [2] [3]", UIKit.mono(14), Color(0.4, 0.9, 1.0)))
@@ -211,6 +223,7 @@ func _layout() -> void:
 	focus_box.reset_size(); focus_box.position = Vector2(vs.x * 0.5 - focus_box.size.x * 0.5, vs.y * 0.5 + 40)
 	prog_box.reset_size(); prog_box.position = Vector2(vs.x * 0.5 - 210, 76)
 	icpt_box.reset_size(); icpt_box.position = Vector2(42, vs.y * 0.5 - icpt_box.size.y * 0.5)
+	call_box.reset_size(); call_box.position = Vector2(vs.x - call_box.size.x - 40, vs.y * 0.5 - call_box.size.y * 0.5 + 40)
 	det_box.position = Vector2(vs.x * 0.5 - 60, vs.y * 0.5 - 60)
 	tail_box.reset_size(); tail_box.position = Vector2(vs.x * 0.5 - 110, 76)
 	timer_lbl.reset_size(); timer_lbl.position = Vector2(vs.x * 0.5 - timer_lbl.size.x * 0.5, 70)
@@ -491,6 +504,18 @@ func drill_set(title: String, sub: String, d: Dictionary, done_n: int) -> void:
 	if not d["ordered"]:
 		for c in drill_chips.get_children(): c.queue_free()
 		drill_chips.add_child(_lbl("%d of %d found" % [done_n, items.size()], UIKit.mono(15), UIKit.GREEN))
+
+## In-world analysis call: question + lettered answers; after a pick, the verdict and Marr's reasoning.
+func call_show(head: String, q: String, opts: Array) -> void:
+	call_box.visible = true; call_head.text = head; call_q.text = q; call_why.text = ""
+	for c in call_opts.get_children(): c.queue_free()
+	for i in opts.size():
+		var row := UIKit.hbox(10); row.add_child(UIKit.kbd("ABCD"[i])); var l := _lbl(opts[i], UIKit.body(18)); l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; l.custom_minimum_size = Vector2(440, 0); row.add_child(l); call_opts.add_child(row)
+
+func call_result(ok: bool, why: String) -> void:
+	call_why.text = ("[color=#7dff9a][b]RIGHT CALL[/b][/color]  " if ok else "[color=#ff7a6e][b]WRONG CALL[/b][/color]  ") + why
+
+func call_hide() -> void: call_box.visible = false
 
 func focus_label(n: String, hint: String) -> void:
 	focus_box.visible = n != ""; focus_name.text = n; focus_hint.text = hint

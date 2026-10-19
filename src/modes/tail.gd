@@ -16,11 +16,17 @@ var grace := 3.0
 
 func setup() -> void:
 	var hw := r.W * 0.5
-	path = [Vector3(0, 0, r.z0 - 10), Vector3(-hw * 0.4, 0, r.z0 - r.D * 0.3), Vector3(hw * 0.35, 0, r.z0 - r.D * 0.55), Vector3(-hw * 0.2, 0, r.z1 + 7), Vector3(0, 0, r.z1 + 3.5), Vector3(0, 0, r.z1 - 3.0), Vector3(0, 0, r.cz1 + 1.0)]
+	var ap: Array = anchor("path", [])
+	if not ap.is_empty(): ap = ap + [Vector3(0, 0, r.z1 + 3.5), Vector3(0, 0, r.z1 - 3.0), Vector3(0, 0, r.cz1 + 1.0)]
+	path = ap if not ap.is_empty() else [Vector3(0, 0, r.z0 - 10), Vector3(-hw * 0.4, 0, r.z0 - r.D * 0.3), Vector3(hw * 0.35, 0, r.z0 - r.D * 0.55), Vector3(-hw * 0.2, 0, r.z1 + 7), Vector3(0, 0, r.z1 + 3.5), Vector3(0, 0, r.z1 - 3.0), Vector3(0, 0, r.cz1 + 1.0)]
 	# a few passive security staff for atmosphere
-	for i in maxi(0, int(r.data.get("e", 2))):
-		var e := m.spawn_enemy(r, Vector3(randf_range(-hw + 3, hw - 3), 0, randf_range(r.z1 + 6, r.z0 - 8)), "css", false)
-		e.passive = true
+	if r.authored and not r.guards.is_empty():
+		spawn_guards(true)
+		for e in r.enemies: e.passive = true
+	else:
+		for i in maxi(0, int(r.data.get("e", 2))):
+			var e := m.spawn_enemy(r, Vector3(randf_range(-hw + 3, hw - 3), 0, randf_range(r.z1 + 6, r.z0 - 8)), "css", false)
+			e.passive = true
 	courier = m.get_meta("courier") if m.has_meta("courier") else null
 	if courier == null:
 		courier = Humanoid.new(); m.add_child(courier); courier.team = "neutral"; courier.setup("civilian", r)

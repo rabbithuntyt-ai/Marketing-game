@@ -59,7 +59,7 @@ func _physics_process(dt: float) -> void:
 	if dead or room == null or not room.entered or room.mode == null: return
 	var m: Mission = room.mode.m
 	if m == null or m.player == null: return
-	var detected: bool = room.mode.get("detected") == true
+	var detected: bool = room.mode.is_loud()
 	if detected:
 		led_m.albedo_color = Color(1, 0.1, 0.05); return
 	t += dt

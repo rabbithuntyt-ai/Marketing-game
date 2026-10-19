@@ -17,6 +17,8 @@ func setup() -> void:
 		var x: float = -hw + 3.0 + k * ((r.W - 6.0) / maxf(1, sbus.size() - 1))
 		var z := r.z1 + 6.0
 		var node := Node3D.new(); r.add_child(node); node.position = Vector3(x, 0, z)
+		var rk: Array = anchor("racks", [])
+		if k < rk.size(): node.position = rk[k][0]; node.rotation.y = rk[k][1]
 		var rack := b.box(node, Vector3(1.6, 2.6, 1.2), Vector3(0, 1.3, 0), Mats.pbr("gunmetal", 1.0))
 		b.box(node, Vector3(1.3, 1.0, 0.05), Vector3(0, 1.7, 0.62), Mats.flat(Color(0.02, 0.03, 0.03), 0.3), false, false)
 		var t1 := b.label(node, String(s["name"]).to_upper(), Vector3(0, 2.1, 0.66), 0, 34, Color(1, 1, 1), "Rajdhani-Bold", 300, HORIZONTAL_ALIGNMENT_CENTER)
@@ -41,7 +43,7 @@ func interactables() -> Array:
 	if r.alive_enemies().size() > 0: return out
 	for st in stacks:
 		if classified.has(st["k"]): continue
-		out.append({"pos": st["node"].global_position + Vector3(0, 0, 1.2), "radius": 1.8, "prompt": "Classify  ·  %s" % st["sbu"]["name"], "cb": _classify.bind(st)})
+		out.append({"pos": st["node"].global_position + st["node"].global_basis.z * 1.2, "radius": 1.8, "prompt": "Classify  ·  %s" % st["sbu"]["name"], "cb": _classify.bind(st)})
 	return out
 
 func _classify(st: Dictionary) -> void:

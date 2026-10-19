@@ -42,6 +42,7 @@ func build(main_node: Node, mission_index: int, from_room := 0) -> void:
 	rooms = b.build_all()
 	for r in rooms:
 		_bake_nav(r)
+		if r.panels: r.panels.m = self
 	player = Player.new(); player.mission = self; add_child(player)
 	if M["rooms"].any(func(rd): return rd.get("ally", false)):
 		ally = Ally.new(); add_child(ally); ally.init_ally(self)
@@ -125,6 +126,7 @@ func _process(dt: float) -> void:
 		if r.contains(player.global_position) and r != cur_room:
 			cur_room = r; _update_visibility(); _ambience(); player.set_room_settings(r)
 			if r.kind != "range": main.hud.drill_show(false)
+			main.hud.call_hide()
 	if not cur_room.entered and pz < cur_room.z0 - 1.0:
 		_enter(cur_room)
 	cur_room.mode.tick(dt)
@@ -261,11 +263,13 @@ func _interactions() -> void:
 		var d := Vector2(it.global_position.x - pp.x, it.global_position.z - pp.z).length()
 		if d < 1.9 and d < bd:
 			bd = d; best = {"prompt": "Read intel  ·  %s" % it.get_meta("doc")["t"], "cb": _read_intel.bind(it)}
-	if cur_room.terminal and cur_room.mode.uses_terminal():
+	if cur_room.terminal and cur_room.mode.uses_terminal() and cur_room.panels == null:
 		var d2 := Vector2(cur_room.terminal.global_position.x - pp.x, cur_room.terminal.global_position.z - pp.z).length()
 		if d2 < 2.3 and d2 < bd:
 			bd = d2; best = _terminal_prompt()
-	for it2 in cur_room.mode.interactables():
+	var extra: Array = cur_room.mode.interactables() + cur_room.extra
+	if cur_room.panels: extra += cur_room.panels.interactables()
+	for it2 in extra:
 		var p2: Vector3 = it2["pos"]
 		var d3 := Vector2(p2.x - pp.x, p2.z - pp.z).length()
 		if d3 < it2.get("radius", 2.0) and d3 < bd: bd = d3; best = it2
@@ -350,8 +354,8 @@ func on_kill(a: Humanoid, head := false, takedown := false, by_ally := false) ->
 
 func on_enemy_alert(e: Enemy) -> void:
 	if e.room == null: return
-	if e.room.kind == "stealth":
-		cur_room.mode.on_detected()
+	if e.room.kind == "stealth" or (e.room.authored and e.room.mode.get("silent") == true):
+		e.room.mode.on_detected()
 	else:
 		for o in e.room.alive_enemies():
 			if o != e and (o.global_position - e.global_position).length() < 26.0: o.alert(false)
@@ -359,7 +363,7 @@ func on_enemy_alert(e: Enemy) -> void:
 func noise(pos: Vector3, radius: float) -> void:
 	for e in cur_room.alive_enemies():
 		if e.state != "alert" and (e.global_position - pos).length() < radius:
-			if cur_room.kind == "stealth":
+			if cur_room.kind == "stealth" or cur_room.mode.get("silent") == true:
 				e.awareness = minf(1.0, e.awareness + 0.6); e.last_seen = pos
 				if e.awareness >= 1.0: e.alert(true)
 			else:

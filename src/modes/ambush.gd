@@ -26,7 +26,7 @@ func _go() -> void:
 	started = true
 	for e in r.enemies: e.passive = false; e.alert(false)
 	m.main.hud.timer_show(true)
-	Fx.explosion(Vector3(0, 0.5, r.z1 + 4), true)
+	Fx.explosion(anchor("blast", Vector3(0, 0.5, r.z1 + 4)), true)
 
 func objective() -> String:
 	if not started: return "..."
@@ -41,7 +41,7 @@ func tick(dt: float) -> void:
 	if wave_t <= 0.0 and r.alive_enemies().size() < 8:
 		wave_t = randf_range(5.0, 8.0)
 		for i in 2 + randi() % 2:
-			var e := m.spawn_enemy(r, Vector3(randf_range(-r.W * 0.4, r.W * 0.4), 0, r.z1 + 2.0), "", false, true)
+			var e := m.spawn_enemy(r, entry_point(Vector3(randf_range(-r.W * 0.4, r.W * 0.4), 0, r.z1 + 2.0)), "", false, true)
 			e.alert_delay = 0.0
 	if not taken and t > hold * 0.7 and m.ally and m.ally.visible:
 		taken = true

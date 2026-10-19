@@ -125,6 +125,10 @@ func _physics_process(dt: float) -> void:
 	if input_enabled:
 		inp = Input.get_vector("move_left", "move_right", "move_back", "move_fwd")
 	var want_crouch := input_enabled and Input.is_action_pressed("crouch")
+	if not want_crouch and crouch_k > 0.3:
+		# stay down under low ceilings (vents, desks)
+		var q := PhysicsRayQueryParameters3D.create(global_position + Vector3(0, 0.5, 0), global_position + Vector3(0, 1.95, 0), Humanoid.LAYER_WORLD, [get_rid()])
+		if not get_world_3d().direct_space_state.intersect_ray(q).is_empty(): want_crouch = true
 	crouch = want_crouch
 	crouch_k = move_toward(crouch_k, 1.0 if crouch else 0.0, dt * 5.0)
 	sprint = input_enabled and Input.is_action_pressed("sprint") and inp.y > 0.2 and not crouch and ads < 0.3 and reload_t <= 0.0 and not Input.is_action_pressed("fire")

@@ -7,8 +7,8 @@ var cell := Vector3.ZERO
 
 func setup() -> void:
 	var n := maxi(3, int(r.data.get("e", 5)) + int(Game.diff()["cnt"]))
-	m.spawn_room_enemies(r, n)
-	cell = Vector3(r.W * 0.5 - 1.5, 0, r.z0 - 5 - 3 * 6)
+	populate(n, true)
+	cell = anchor("cell", Vector3(r.W * 0.5 - 1.5, 0, r.z0 - 5 - 3 * 6))
 	prisoner = Humanoid.new(); m.add_child(prisoner); prisoner.team = "neutral"; prisoner.setup("ally", r)
 	prisoner.global_position = cell; prisoner.rotation.y = PI * 0.5
 	prisoner.forced_anim = "GroundSit_Idle"; prisoner.set_physics_process(false)

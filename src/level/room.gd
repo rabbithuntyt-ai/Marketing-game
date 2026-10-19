@@ -39,6 +39,8 @@ var guards: Array = []         # {pos, yaw, patrol, waits, looks, variant, veter
 var dark_zones: Array = []     # Rect2 in world XZ
 var cams: Array = []
 var sector: RefCounted = null
+var panels: Node = null          # CallPanels: in-world answer consoles replace the uplink menu
+var extra: Array = []            # sector interactables: {pos, radius, prompt, cb}
 
 func in_dark(p: Vector3) -> bool:
 	for z in dark_zones:
