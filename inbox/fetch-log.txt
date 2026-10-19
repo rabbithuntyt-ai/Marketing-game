@@ -1,0 +1,7 @@
+Cloning into 'mpfb2'...
+ok makehuman_system_assets_cc0.zip 268M
+total 274172
+drwxr-xr-x 3 runner runner      4096 Oct 19 05:20 .
+drwxr-xr-x 3 runner runner      4096 Oct 19 05:20 ..
+-rw-r--r-- 1 runner runner 280737770 Oct 19 05:20 makehuman_system_assets_cc0.zip
+drwxr-xr-x 7 runner runner      4096 Oct 19 05:20 mpfb2
