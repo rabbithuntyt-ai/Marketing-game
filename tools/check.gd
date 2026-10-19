@@ -1,8 +1,9 @@
 extends Node
-## Loads every script under res://src so parse/compile errors for all files show up in one run.
+## Loads every script under res://src and res://levels so parse/compile errors for all files show up in one run.
 func _ready():
 	var files: Array = []
 	_scan("res://src", files)
+	if DirAccess.dir_exists_absolute("res://levels"): _scan("res://levels", files)
 	var bad := 0
 	for f in files:
 		var s = ResourceLoader.load(f, "", ResourceLoader.CACHE_MODE_IGNORE)
