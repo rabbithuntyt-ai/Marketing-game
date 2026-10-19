@@ -539,8 +539,8 @@ func storefront(x: float, d: float, yaw: float, w: float, name: String, col: Col
 	b.box(geo, Vector3(w, 0.9, 0.3), c + bs * Vector3(0, 3.25, 0), Mats.flat(Color(0.05, 0.05, 0.06), 0.4), false).basis = bs
 	var l := b.label(r, name, c + bs * Vector3(0, 3.25, 0.17), 0, 72, col, "Rajdhani-Bold", 0, HORIZONTAL_ALIGNMENT_CENTER)
 	l.basis = bs
-	for s2 in [-1.0, 1.0]: b.box(geo, Vector3(0.2, 3.7, 4.0), c + bs * Vector3(s2 * w * 0.5, 1.85, -2.0), b.mat("techc", 2.0)).basis = bs
-	b.box(geo, Vector3(w, 3.7, 0.2), c + bs * Vector3(0, 1.85, -4.0), b.mat("techc", 2.0)).basis = bs
+	for s2 in [-1.0, 1.0]: b.box(geo, Vector3(0.2, 3.7, 4.0), c + bs * Vector3(s2 * w * 0.5, 1.85, -2.0), b.mat("tech", 2.0)).basis = bs
+	b.box(geo, Vector3(w, 3.7, 0.2), c + bs * Vector3(0, 1.85, -4.0), b.mat("tech", 2.0)).basis = bs
 	b.box(geo, Vector3(w, 0.1, 4.0), c + bs * Vector3(0, 3.75, -2.0), Mats.flat(Color(0.9, 0.9, 0.9), 0.5), false).basis = bs
 	b.omni(r, c + bs * Vector3(0, 2.8, -2.0), col.lerp(Color.WHITE, 0.6), 0.9, 5.5)
 	match kind:

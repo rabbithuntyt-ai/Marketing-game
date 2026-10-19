@@ -19,11 +19,11 @@ func build() -> void:
 	for k in 5:
 		var d0 := 2.0 + k * 7.0
 		# room spans x -10..8, d d0..d0+6; corridor west at x -18..-10
-		if k == 0: partition(-10, d0, 8, d0, 3.0, b.mat("techc", 2.0), 0.2)
-		partition(-10, d0 + 6.5, -1, d0 + 6.5, 3.0, b.mat("techc", 2.0), 0.2)
-		partition(1.5, d0 + 6.5, 8, d0 + 6.5, 3.0, b.mat("techc", 2.0), 0.2)
-		partition(-10, d0, -10, d0 + 1.8, 3.0, b.mat("techc", 2.0), 0.2)
-		partition(-10, d0 + 3.6, -10, d0 + 6.5, 3.0, b.mat("techc", 2.0), 0.2)
+		if k == 0: partition(-10, d0, 8, d0, 3.0, b.mat("tech", 2.0), 0.2)
+		partition(-10, d0 + 6.5, -1, d0 + 6.5, 3.0, b.mat("tech", 2.0), 0.2)
+		partition(1.5, d0 + 6.5, 8, d0 + 6.5, 3.0, b.mat("tech", 2.0), 0.2)
+		partition(-10, d0, -10, d0 + 1.8, 3.0, b.mat("tech", 2.0), 0.2)
+		partition(-10, d0 + 3.6, -10, d0 + 6.5, 3.0, b.mat("tech", 2.0), 0.2)
 		label("%d · %s" % [k + 1, names[k]], -10.1, d0 + 4.8, 2.4, 270, 40, cols[k])
 		box(Vector3(17.5, 0.05, 0.12), -1.0, d0 + 0.3, 2.95, Mats.glow(cols[k], 2.0), false)
 		fill(-1.0, d0 + 3.0, 2.6, cols[k].lerp(Color.WHITE, 0.5), 0.7, 7.0)

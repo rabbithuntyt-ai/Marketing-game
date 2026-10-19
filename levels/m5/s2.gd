@@ -14,11 +14,11 @@ func build() -> void:
 	# interview booths west
 	for k in 4:
 		var d0 := 3.0 + k * 6.0
-		partition(-14, d0, -9, d0, 2.6, b.mat("techc", 2.0), 0.15)
+		partition(-14, d0, -9, d0, 2.6, b.mat("tech", 2.0), 0.15)
 		piece("ph:SchoolChair_01", -12.5, d0 + 2.5, 90)
 		piece("ph:SchoolChair_01", -10.5, d0 + 2.5, 270)
 		box(Vector3(1.0, 0.75, 0.8), -11.5, d0 + 2.5, 0.37, Mats.flat(Color(0.85, 0.85, 0.82), 0.5))
-	partition(-14, 27, -9, 27, 2.6, b.mat("techc", 2.0), 0.15)
+	partition(-14, 27, -9, 27, 2.6, b.mat("tech", 2.0), 0.15)
 	label("INTERVIEW 1–4", -9.0, 2.6, 2.4, 270, 36, Color(0.9, 0.9, 0.95))
 	# mock supermarket aisle
 	for x in [-3.0, 1.0]:

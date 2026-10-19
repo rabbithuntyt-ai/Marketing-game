@@ -36,7 +36,7 @@ func build() -> void:
 	pipes(17.5, 14, 17.5, 28, 0.4, 2)
 	# stair heads
 	for st in [[-15.0, 26.0], [15.0, 26.0], [8.0, 37.0]]:
-		box(Vector3(3.6, 3.0, 3.6), st[0], st[1], 1.5, b.mat("techc", 2.0))
+		box(Vector3(3.6, 3.0, 3.6), st[0], st[1], 1.5, b.mat("tech", 2.0))
 		box(Vector3(0.1, 0.3, 0.3), st[0], st[1] - 1.85, 2.6, Mats.glow(Color(1.0, 0.2, 0.1), 4.0), false)
 		spawn(st[0], st[1] - 2.8)
 	note("Stair heads: reinforcements come up here", 15, 30)

@@ -19,14 +19,14 @@ func build() -> void:
 	# testing cells west
 	for k in 5:
 		var d0 := 3.0 + k * 6.0
-		partition(-16, d0, -10, d0, 3.0, b.mat("techc", 2.0), 0.2)
-		partition(-10, d0, -10, d0 + 2.0, 3.0, b.mat("techc", 2.0), 0.2)
+		partition(-16, d0, -10, d0, 3.0, b.mat("tech", 2.0), 0.2)
+		partition(-10, d0, -10, d0 + 2.0, 3.0, b.mat("tech", 2.0), 0.2)
 		box(Vector3(0.06, 1.2, 2.0), -10.0, d0 + 3.6, 1.6, Mats.glass(), true)
-		partition(-10, d0 + 4.6, -10, d0 + 6.0, 3.0, b.mat("techc", 2.0), 0.2)
+		partition(-10, d0 + 4.6, -10, d0 + 6.0, 3.0, b.mat("tech", 2.0), 0.2)
 		piece("ph:modern_arm_chair_01", -13.5, d0 + 3.0, 270)
 		piece("ph:Television_01", -15.5, d0 + 3.0, 90, 0.8, "none")
 		label("CELL %d" % (k + 1), -9.9, d0 + 1.0, 2.6, 270, 36, Color(0.85, 0.9, 1.0))
-	partition(-16, 33, -10, 33, 3.0, b.mat("techc", 2.0), 0.2)
+	partition(-16, 33, -10, 33, 3.0, b.mat("tech", 2.0), 0.2)
 	# eye-tracking theatre NE (three tiers facing south toward a screen at d 19)
 	for t in 3:
 		var dd := 26.0 + t * 3.0; var y := 0.5 * (t + 1)

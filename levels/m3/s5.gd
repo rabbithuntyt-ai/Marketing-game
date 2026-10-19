@@ -19,8 +19,8 @@ func build() -> void:
 	wall(-18, 0, -18, 40, Vector2(0, 20), "", "WallBand", "", 5.0)
 	wall(18, 0, 18, 40, Vector2(0, 20), "", "WallBand", "", 5.0)
 	# X-ray tunnel (west)
-	box(Vector3(0.3, 3.2, 26.0), -11.0, 20.0, 1.6, b.mat("techc", 2.0))
-	box(Vector3(4.3, 0.3, 26.0), -13.0, 20.0, 3.35, b.mat("techc", 2.0))
+	box(Vector3(0.3, 3.2, 26.0), -11.0, 20.0, 1.6, b.mat("tech", 2.0))
+	box(Vector3(4.3, 0.3, 26.0), -13.0, 20.0, 3.35, b.mat("tech", 2.0))
 	conveyor(-13.0, 8.0, -13.0, 32.0, 0.6, 5)
 	for d in [12.0, 20.0, 28.0]:
 		box(Vector3(4.0, 0.08, 0.3), -13.0, d, 3.1, Mats.glow(Color(0.4, 1.0, 0.6), 2.0), false)

@@ -52,7 +52,7 @@ func build() -> void:
 	piece("ph:drawer_cabinet", -13.2, 34.8, 90, 3.0)
 	intel(0, -9.0, 33.6, 180, 3.79)
 	label("BEHAVIOURAL DATA · RESTRICTED", -8, 35.8, 5.6, 180, 48, Color(1.0, 0.4, 0.35))
-	partition(-14, 24, -2, 24, 3.0, b.mat("techc", 2.0), 0.3)            # under-mezzanine back wall
+	partition(-14, 24, -2, 24, 3.0, b.mat("tech", 2.0), 0.3)            # under-mezzanine back wall
 	for x in [-11.0, -6.0]: piece("ph:steel_frame_shelves_02", x, 25.0, 180)
 	# --- CENTRE: lab benches
 	for d in [9.0, 15.0, 21.0, 27.0]:

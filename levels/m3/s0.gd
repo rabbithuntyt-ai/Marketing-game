@@ -17,7 +17,7 @@ func build() -> void:
 	containers(16.0, 40.0, 0.0, 1, 0)
 	for k in 3: paint(0, 2.0 + k * 13.0, 0, 10.0 + k * 13.0, Color(0.95, 0.95, 0.9), 0.15)
 	# gatehouse booth + booms
-	box(Vector3(3.0, 2.6, 4.0), -3.0, 26.0, 1.3, b.mat("techc", 2.0))
+	box(Vector3(3.0, 2.6, 4.0), -3.0, 26.0, 1.3, b.mat("tech", 2.0))
 	box(Vector3(3.3, 0.15, 4.3), -3.0, 26.0, 2.68, b.mat("metal", 2.0))
 	box(Vector3(0.05, 1.1, 3.0), -1.48, 26.0, 1.55, Mats.glass(), false)
 	box(Vector3(0.6, 0.9, 2.6), -1.1, 26.0, 0.45, b.mat("gunmetal", 1.0))

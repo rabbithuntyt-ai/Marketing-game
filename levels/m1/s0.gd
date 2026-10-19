@@ -65,7 +65,7 @@ func _trailer(x: float, d: float, yaw: float) -> void:
 		r.cover_points.append(c + bs * Vector3(s2 * 2.0, 0, -2.5)); r.cover_points.append(c + bs * Vector3(s2 * 2.0, 0, 2.5))
 
 func _hut(x: float, d: float) -> void:
-	var m := b.mat("techc", 2.0)
+	var m := b.mat("tech", 2.0)
 	box(Vector3(3.6, 2.6, 3.6), x, d, 1.3, m)
 	box(Vector3(3.9, 0.15, 3.9), x, d, 2.68, b.mat("metal", 2.0))
 	box(Vector3(0.05, 1.0, 2.4), x + 1.82, d, 1.5, Mats.glass(), false)

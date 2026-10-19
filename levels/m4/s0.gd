@@ -77,7 +77,7 @@ func build() -> void:
 	fill(0, 24, 9.0, Color(0.55, 0.62, 0.8), 0.25, 40.0)
 
 func _booth(x: float, d: float) -> void:
-	var m := b.mat("techc", 2.0)
+	var m := b.mat("tech", 2.0)
 	floor_rect(x - 2, d - 2, x + 2, d + 2, "q:Platform_Simple", 0.02)
 	partition(x - 2, d - 2, x + 2, d - 2, 2.6, m, 0.15)
 	partition(x - 2, d - 2, x - 2, d - 0.6, 2.6, m, 0.15)

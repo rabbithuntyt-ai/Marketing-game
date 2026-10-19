@@ -20,7 +20,7 @@ func build() -> void:
 			piece("ph:dining_chair_02", 2.0 + s * 1.2, d0 + 3.5 + 0.9, 180, 0.0, "none")
 		piece("ph:projector_screen", 5.6, d0 + 3.5, 270, 0.0, "none")
 		label(["OBJECTIVES", "MISSION", "GOALS"][k], -2.0, d0 + 3.5, 2.6, 270, 44, Color(0.8, 0.9, 1.0))
-		partition(6.0, d0, 6.0, d0 + 7.0, 5.0, b.mat("techc", 2.0), 0.3)
+		partition(6.0, d0, 6.0, d0 + 7.0, 5.0, b.mat("tech", 2.0), 0.3)
 	# west desks
 	for d in [6.0, 12.0, 18.0, 24.0, 30.0]:
 		desk(-10.0, d, 90, "monitor" if int(d) % 12 != 0 else "laptop")
