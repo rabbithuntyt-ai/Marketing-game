@@ -35,7 +35,7 @@ const S := {
 	"m1_intro": {"anchor": "start", "light": Color(0.6, 0.7, 0.9), "actors": {"wren": ["wren", Vector3(-0.5, 0, 0.6), 0.0, "soldier_idle"], "ruiz": ["ally", Vector3(0.9, 0, 0.2), -15.0, "soldier_idle"]},
 		"pre": ["wide", Vector3(3.2, 0.5, 1.8), Vector3(0, 1.2, -4), Vector3(2.2, 0.9, 1.4)],
 		"shots": [["close", "ruiz", 1], ["wide", Vector3(-2.5, 3.6, 1.8), Vector3(0, 1.5, -12), Vector3(-1.0, 4.8, 1.5)], ["ots", "wren", Vector3(0, 1.4, -12)]]},
-	"m1_outro": {"anchor": "end", "light": Color(1.0, 0.8, 0.6), "holo": Vector3(0, 1.5, -3.2), "actors": {"ost": ["civilian", Vector3(0, 0, -1.6), 180.0, "GroundSit_Idle"], "ruiz": ["ally", Vector3(1.4, 0, -0.4), 120.0, "soldier_idle"], "wren": ["wren", Vector3(-1.2, 0, 0.4), 200.0, "soldier_idle"]},
+	"m1_outro": {"anchor": "end", "light": Color(1.0, 0.8, 0.6), "holo": Vector3(0, 1.5, -3.2), "actors": {"ost": ["director:director_2", Vector3(0, 0, -1.6), 180.0, "GroundSit_Idle"], "ruiz": ["ally", Vector3(1.4, 0, -0.4), 120.0, "soldier_idle"], "wren": ["wren", Vector3(-1.2, 0, 0.4), 200.0, "soldier_idle"]},
 		"shots": [["close", "ost", -1], ["close", "ruiz", 1], ["holo"], ["wide", Vector3(3, 2.2, 3), Vector3(0, 1.2, -1.5), Vector3(-3, 2.6, 3)]]},
 	"m2_intro": {"anchor": "start", "light": Color(0.6, 0.75, 1.0), "actors": {"wren": ["wren", Vector3(-0.6, 0, 0.5), 0.0, "soldier_idle"], "ruiz": ["ally", Vector3(0.8, 0, 0.1), -10.0, "soldier_idle"]},
 		"pre": ["wide", Vector3(0.4, 0.4, -6), Vector3(0, 1.5, 0), Vector3(0.2, 0.8, -4.5)],
@@ -62,7 +62,7 @@ const S := {
 		"shots": [["holo"], ["close", "ruiz", 1], ["ots", "wren", Vector3(0, 2.0, -4.0)]]},
 	"m7_outro": {"anchor": "end", "light": Color(0.8, 0.75, 0.6), "actors": {"ruiz": ["ally", Vector3(0.7, 0, 0), 180.0, "soldier_idle"], "wren": ["wren", Vector3(-0.7, 0, 0.3), 180.0, "soldier_idle"]},
 		"shots": [["wide", Vector3(0, 1.2, -5), Vector3(0, 1.5, 0), Vector3(0, 0.5, -3)]]},
-	"m8_intro": {"anchor": "end", "light": Color(0.9, 0.85, 0.75), "actors": {"voss": ["director", Vector3(0, 0, -1), 0.0, "Idle"], "hale": ["hale", Vector3(1.6, 0, -1.4), -30.0, "soldier_idle"]},
+	"m8_intro": {"anchor": "end", "light": Color(0.9, 0.85, 0.75), "actors": {"voss": ["director:voss", Vector3(0, 0, -1), 0.0, "Idle"], "hale": ["hale", Vector3(1.6, 0, -1.4), -30.0, "soldier_idle"]},
 		"shots": [["close", "voss", 1], ["close", "hale", -1], ["low", "voss"]]},
 	"m8_outro": {"anchor": "end", "light": Color(1.0, 0.8, 0.6), "actors": {"ruiz": ["ally", Vector3(0.8, 0, 0), 190.0, "soldier_idle"], "wren": ["wren", Vector3(-0.8, 0, 0.2), 170.0, "soldier_idle"]},
 		"shots": [["wide", Vector3(4, 1.8, 4), Vector3(0, 1.3, 0), Vector3(2.5, 1.6, 3.5)], ["ots", "ruiz", "wren"], ["close", "ruiz", 1], ["close", "wren", -1],
@@ -155,7 +155,7 @@ func _spawn_actors() -> void:
 		h.collision_layer = 0
 		h.global_position = a * (d[1] as Vector3)
 		h.rotation.y = a.basis.get_euler().y + deg_to_rad(float(d[2]))
-		if String(d[0]) in ["director", "civilian"] or not String(d[3]).begins_with("soldier_"): h.hide_weapon()
+		if String(d[0]).get_slice(":", 0) in ["director", "civilian", "courier"] or not String(d[3]).begins_with("soldier_"): h.hide_weapon()
 		h.forced_anim = String(d[3])
 		h.play(String(d[3]))
 		actors[k] = h
@@ -243,7 +243,7 @@ func _next_line() -> void:
 	for k in actors.keys():
 		var h: Humanoid = actors[k]
 		var base: String = script_d["actors"][k][3]
-		if base in ["Idle", "Idle_FoldArms"] and String(script_d["actors"][k][0]) in ["director", "civilian"]:
+		if base in ["Idle", "Idle_FoldArms"] and String(script_d["actors"][k][0]).get_slice(":", 0) in ["director", "civilian", "courier"]:
 			h.forced_anim = "Idle_Talking" if k == _actor_key(String(l["spk"]).to_lower()) else base
 	Audio.say(String(l["spk"]), String(l["text"]), String(l.get("vo", "")), "cuts", true)
 

@@ -21,13 +21,13 @@ const CITIES := {
 	"tower_top": ["CASTELLAN TOWER · FLOOR 60", 43.648, -79.381], "mirabel": ["MIRABEL ARRAY, QC", 45.68, -74.03],
 }
 const DOSSIER := {
-	"voss": ["director", "ADRIAN VOSS", "Chief Executive Officer, Castellan Group", ["Architect of Project Meridian", "Former brand strategist", "No criminal record"], "PRIMARY"],
+	"voss": ["director:voss", "ADRIAN VOSS", "Chief Executive Officer, Castellan Group", ["Architect of Project Meridian", "Former brand strategist", "No criminal record"], "PRIMARY"],
 	"kessler": ["kessler", "GRANT KESSLER", "Director, Castellan Security Services", ["Ex-JTF2, dishonourably discharged", "Commands CSS field teams", "Armed and dangerous"], "HIGH"],
 	"hale": ["hale", "MAJ. ELIAS HALE", "Commander, LEDGER Task Force", ["22 years service, 3 tours", "Recruited Wren and Ruiz", "Clearance: Top Secret"], "—"],
 	"ruiz": ["ally", "CPL. DANI RUIZ", "LEDGER · Breacher", ["Demolitions specialist", "Talks too much", "Never misses a door"], "—"],
 	"wren": ["wren", "SGT. WREN", "LEDGER · Operator (you)", ["Marksman, close-quarters", "Former analyst, Competition Bureau", "Reads the room before the map"], "—"],
-	"ostrowski": ["civilian", "PAUL OSTROWSKI", "Director, Castellan Distribution", ["Ran Meridian logistics", "Wrote the internal handbook", "Cooperative under pressure"], "LOW"],
-	"courier": ["civilian", "THE COURIER", "Castellan Security contractor", ["Carries Phase II plans on foot", "Counter-surveillance trained", "Do not engage"], "MEDIUM"],
+	"ostrowski": ["director:director_2", "PAUL OSTROWSKI", "Director, Castellan Distribution", ["Ran Meridian logistics", "Wrote the internal handbook", "Cooperative under pressure"], "LOW"],
+	"courier": ["courier", "THE COURIER", "Castellan Security contractor", ["Carries Phase II plans on foot", "Counter-surveillance trained", "Do not engage"], "MEDIUM"],
 	"squad": ["css", "CASTELLAN SECURITY SERVICES", "Private security division · 'CSS'", ["Military surplus kit", "Marksmen and heavy units", "Coordinated by radio"], "HIGH"],
 }
 const DOCS := {
@@ -67,8 +67,8 @@ func _portrait(variant: String) -> void:
 	if actor and is_instance_valid(actor): actor.queue_free()
 	actor = Humanoid.new(); actor.team = "neutral"; sv.add_child(actor); actor.setup(variant)
 	actor.set_physics_process(false)
-	if variant in ["director", "civilian"]: actor.hide_weapon()
-	actor.play("Idle" if variant in ["director", "civilian"] else "soldier_idle")
+	if actor.variant in ["director", "civilian", "courier"]: actor.hide_weapon()
+	actor.play("Idle" if actor.variant in ["director", "civilian", "courier"] else "soldier_idle")
 	actor.rotation.y = 0.0
 
 func _process(dt: float) -> void:

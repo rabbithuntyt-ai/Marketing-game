@@ -16,6 +16,7 @@ func setup() -> void:
 	var ds: Array = H.get("directors", [])
 	for k in ds.size():
 		var d := Humanoid.new(); m.add_child(d); d.team = "neutral"
+		d.char_pick = k
 		d.setup("director", r)
 		var dp: Array = anchor("directors", [])
 		d.global_position = dp[k] if k < dp.size() else Vector3(-6.0 + k * 3.0, 3.8, z - 0.5 + (k % 2) * 1.2)

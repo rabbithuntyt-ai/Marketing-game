@@ -16,6 +16,11 @@ static var _lib1: AnimationLibrary
 static var _lib2: AnimationLibrary
 static var _rifle: PackedScene
 static var _model_scale := 1.0
+static var _lib0: AnimationLibrary          # the soldier's own rifle clips, shared with character models
+static var _chars := {}                     # char id -> PackedScene (MakeHuman cast, CC0)
+## Named cast built with MakeHuman/MPFB (CC0): role -> model id (or a list, picked by char_pick / at random).
+const CHARS := {"director": ["director_0", "director_1", "director_2", "director_3", "director_4"],
+	"civilian": ["civilian_a", "civilian_b", "civilian_c"], "courier": "courier"}
 
 var variant := "css"
 var hp := 100.0
@@ -43,6 +48,10 @@ var laser: MeshInstance3D
 var rifle_node: Node3D
 var weapon_hidden := false
 var lh_ik: SkeletonIK3D     # pins the left hand to the handguard during rifle animations
+var char_id := ""           # set before setup() to force a specific cast model ("director_2")
+var char_pick := -1         # or pick the n-th model of the role's list
+var is_char := false        # true when wearing a MakeHuman cast model instead of the soldier
+var ms := 1.0               # model scale in use
 
 static func load_shared() -> void:
 	if _model_scene: return
@@ -55,6 +64,8 @@ static func load_shared() -> void:
 		var a: AABB = (mi as MeshInstance3D).get_aabb()
 		aabb = a if first else aabb.merge(a); first = false
 	_model_scale = 1.82 / maxf(0.5, aabb.size.y) if aabb.size.y > 0.5 and aabb.size.y < 5.0 else 1.0
+	var ap := probe.find_children("*", "AnimationPlayer", true, false)
+	if not ap.is_empty() and (ap[0] as AnimationPlayer).has_animation_library(""): _lib0 = (ap[0] as AnimationPlayer).get_animation_library("")
 	probe.free()
 	for lib in [_lib1, _lib2]:
 		for n in lib.get_animation_list():
@@ -64,14 +75,24 @@ static func load_shared() -> void:
 
 func setup(v: String, r: Room = null) -> void:
 	load_shared()
+	if ":" in v:                       # "role:cast_id", e.g. "director:voss"
+		char_id = v.get_slice(":", 1); v = v.get_slice(":", 0)
 	variant = v; room = r
 	collision_layer = LAYER_NPC; collision_mask = LAYER_WORLD
 	var cs := CollisionShape3D.new(); var cap := CapsuleShape3D.new(); cap.radius = 0.38; cap.height = 1.8; cs.shape = cap; cs.position.y = 0.9; add_child(cs)
-	model = _model_scene.instantiate(); add_child(model)
-	model.scale = Vector3.ONE * _model_scale
+	var cs_scene := _char_scene(v)
+	is_char = cs_scene != null
+	model = (cs_scene if is_char else _model_scene).instantiate(); add_child(model)
+	ms = 1.0 if is_char else _model_scale
+	model.scale = Vector3.ONE * ms
 	model.rotation.y = PI
 	skel = model.find_children("*", "Skeleton3D", true, false)[0]
-	anim = model.find_children("*", "AnimationPlayer", true, false)[0]
+	var aps := model.find_children("*", "AnimationPlayer", true, false)
+	if aps.is_empty():
+		anim = AnimationPlayer.new(); anim.name = "AnimationPlayer"; model.add_child(anim)
+		if _lib0: anim.add_animation_library("", _lib0)
+	else:
+		anim = aps[0]
 	anim.add_animation_library("u1", _lib1); anim.add_animation_library("u2", _lib2)
 	anim.playback_default_blend_time = 0.2
 	for mi in model.find_children("*", "MeshInstance3D", true, false):
@@ -81,7 +102,7 @@ func setup(v: String, r: Room = null) -> void:
 			var base := m.get_active_material(s)
 			if base == null: continue
 			var dup: BaseMaterial3D = base.duplicate()
-			dup.albedo_color = _tint_for(v, dup.albedo_color, s)
+			if not is_char: dup.albedo_color = _tint_for(v, dup.albedo_color, s)
 			dup.emission_enabled = true; dup.emission = Color.BLACK
 			m.set_surface_override_material(s, dup); _mats.append(dup)
 	_attach_rifle()
@@ -97,10 +118,26 @@ func setup(v: String, r: Room = null) -> void:
 		_: max_hp = 100
 	max_hp *= Game.diff()["hp"] if team == "css" else 1.0
 	hp = max_hp
-	if v in ["director", "civilian"]: hide_weapon()
+	if v in ["director", "civilian", "courier"]: hide_weapon()
 	_align_rifle()
 	_left_hand_ik()
-	play("soldier_idle")
+	play("Idle" if weapon_hidden else "soldier_idle")
+
+## The cast model for this role, if one is installed (assets/chars/<id>.glb).
+func _char_scene(v: String) -> PackedScene:
+	var id := char_id
+	if id == "" and CHARS.has(v):
+		var c = CHARS[v]
+		if c is Array:
+			var arr: Array = c
+			id = String(arr[char_pick % arr.size()] if char_pick >= 0 else arr[randi() % arr.size()])
+		else:
+			id = String(c)
+	if id == "": return null
+	if not _chars.has(id):
+		var p := "res://assets/chars/%s.glb" % id
+		_chars[id] = load(p) if ResourceLoader.exists(p) else null
+	return _chars[id]
 
 func _tint_for(v: String, base: Color, surf: int) -> Color:
 	match v:
@@ -117,7 +154,7 @@ func _attach_rifle() -> void:
 	var ba := BoneAttachment3D.new(); ba.bone_name = "RightHand"; skel.add_child(ba)
 	if _rifle:
 		var rf: Node3D = _rifle.instantiate(); ba.add_child(rf)
-		rf.scale = Vector3.ONE * (1.0 / _model_scale)
+		rf.scale = Vector3.ONE * (1.0 / ms)
 		rf.name = "Rifle"
 		rifle_node = rf
 		for mi in rf.find_children("*", "MeshInstance3D", true, false):
@@ -138,7 +175,7 @@ func _attach_rifle() -> void:
 ## stays correct in every animation, whatever axes the retargeter gave the bone.
 const RIFLE_REST := Transform3D(Vector3(0, -1, 0), Vector3(0, 0, 1), Vector3(-1, 0, 0), Vector3(-0.881576, 1.429206, 0.010983))
 func _align_rifle() -> void:
-	if rifle_node == null or skel == null: return
+	if rifle_node == null or skel == null or is_char: return
 	var rh := skel.find_bone("RightHand")
 	if rh < 0: return
 	var to_root := Transform3D.IDENTITY            # skeleton space -> model scene space
@@ -175,9 +212,9 @@ func _hitboxes() -> void:
 		var ba := BoneAttachment3D.new(); ba.bone_name = spec[0]; skel.add_child(ba)
 		var ar := Area3D.new(); ar.collision_layer = LAYER_HITBOX; ar.collision_mask = 0; ar.monitoring = false; ar.monitorable = true
 		var cs := CollisionShape3D.new(); var sh = spec[2].new()
-		if sh is SphereShape3D: sh.radius = spec[3] / _model_scale
-		else: sh.radius = spec[3] / _model_scale; sh.height = (0.75 if spec[1] == "body" else 0.95) / _model_scale
-		cs.shape = sh; cs.position = spec[4] / _model_scale; ar.add_child(cs); ba.add_child(ar)
+		if sh is SphereShape3D: sh.radius = spec[3] / ms
+		else: sh.radius = spec[3] / ms; sh.height = (0.75 if spec[1] == "body" else 0.95) / ms
+		cs.shape = sh; cs.position = spec[4] / ms; ar.add_child(cs); ba.add_child(ar)
 		ar.set_meta("actor", self); ar.set_meta("part", spec[1])
 
 func _make_laser() -> void:
@@ -210,7 +247,9 @@ func locomotion(dt: float) -> void:
 	var v := velocity; v.y = 0
 	var sp := v.length()
 	if sp < 0.3:
-		play("soldier_idle"); return
+		play("Idle" if weapon_hidden else "soldier_idle"); return
+	if weapon_hidden:
+		play("Walk" if sp < 2.2 else "Jog_Fwd", 0.2, clampf(sp / (1.4 if sp < 2.2 else 3.2), 0.7, 1.35)); return
 	var local := global_transform.basis.inverse() * v
 	var fwd := -local.z; var side := local.x
 	var n := "soldier_forward"

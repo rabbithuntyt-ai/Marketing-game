@@ -36,6 +36,31 @@ func _do(spec: String) -> void:
 	match k:
 		"noop":
 			await _wait(1.0); await shot("noop")
+		"chars":
+			# cast line-up on the menu backdrop: idle, walking, a close-up row
+			var bg := MenuBG.new(); main.world.add_child(bg)
+			await _wait(0.5)
+			var ids := ["css", "ally", "director:director_0", "director:director_1", "director:director_2", "director:director_3", "director:director_4", "director:voss", "courier", "civilian:civilian_a", "civilian:civilian_b", "civilian:civilian_c"]
+			var root := Node3D.new(); main.world.add_child(root)
+			var cam := Camera3D.new(); root.add_child(cam); cam.fov = 38
+			var hs: Array = []
+			for i in ids.size():
+				var h := Humanoid.new(); h.team = "neutral"; root.add_child(h); h.setup(ids[i])
+				h.set_physics_process(false)
+				if h.variant in ["director", "civilian", "courier"]: h.hide_weapon()
+				h.position = Vector3(-8.25 + i * 1.5, 0, -40.0); h.rotation.y = PI
+				hs.append(h)
+			var key := DirectionalLight3D.new(); root.add_child(key); key.rotation_degrees = Vector3(-35, 25, 0); key.light_energy = 1.4
+			cam.current = true
+			for pose in ["Idle", "Walk", "Sitting_Idle", "Idle_Talking"]:
+				for h in hs: (h as Humanoid).forced_anim = ""; (h as Humanoid).play(pose if (h as Humanoid).weapon_hidden or pose != "Idle" else "soldier_idle")
+				cam.position = Vector3(0, 1.3, -26.5); cam.look_at(Vector3(0, 0.95, -40.0))
+				await _wait(1.3); await shot("chars_%s" % pose)
+			for g in 3:
+				cam.position = Vector3(-5.25 + g * 6.0, 1.6, -36.2); cam.look_at(Vector3(-5.25 + g * 6.0, 1.45, -40.0))
+				for h in hs: (h as Humanoid).play("Idle")
+				await _wait(0.8); await shot("chars_face%d" % g)
+			root.queue_free(); bg.queue_free()
 		"bg":
 			var bg := MenuBG.new(); main.world.add_child(bg)
 			for i in 10:

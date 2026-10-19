@@ -29,7 +29,7 @@ func setup() -> void:
 			e.passive = true
 	courier = m.get_meta("courier") if m.has_meta("courier") else null
 	if courier == null:
-		courier = Humanoid.new(); m.add_child(courier); courier.team = "neutral"; courier.setup("civilian", r)
+		courier = Humanoid.new(); m.add_child(courier); courier.team = "neutral"; courier.setup("courier", r)
 		if courier.muzzle: courier.muzzle.get_parent().visible = false
 		m.set_meta("courier", courier)
 		courier.global_position = path[0] + Vector3(0, 0, 3.0)

@@ -1,6 +1,6 @@
 extends SceneTree
 func _init():
-	for p in ["res://assets/models/soldier.gltf","res://assets/anim/UAL1.glb"]:
+	for p in ["res://assets/models/soldier.gltf","res://assets/chars/director_2.glb"]:
 		var s=load(p)
 		if s==null: print("FAIL ",p); continue
 		var n=s.instantiate(); print("== ",p); _dump(n,0)
