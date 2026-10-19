@@ -1,0 +1,7 @@
+total 190956
+drwxr-xr-x 2 runner runner      4096 Oct 19 02:59 .
+drwxr-xr-x 5 runner runner      4096 Oct 19 02:58 ..
+-rw-r--r-- 1 runner runner         0 Oct 19 02:58 fetch-log.txt
+-rw-r--r-- 1 runner runner 193954738 Oct 19 02:59 firearm_sfx.7z
+-rw-r--r-- 1 runner runner   1406250 Oct 19 02:58 fps_arms.7z
+-rw-r--r-- 1 runner runner    162255 Oct 19 02:59 rifle_hands.zip
