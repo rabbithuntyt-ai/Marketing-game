@@ -16,7 +16,8 @@ This is a native Godot 4.5 executable. There's no installer and no browser runti
 All third-party assets are credited in-game (Main menu → Credits) and in `CREDITS-audio.txt`.
 
 ### What's new in this build
-- Soldiers now hold their rifles correctly. The rifle used to be upside down and sideways in their hands.
+- Soldiers now hold their rifles correctly. The grip offset is the exact one the soldier model's original game used, re-mapped onto the animation rig.
+- Checked layouts on 21:9 ultrawide (2560×1080).
 - Closing an intel file or the uplink with E (or a click) no longer reopens it or fires a shot.
 - The analysis questions in the final rooms (Mission 1's rooftop and the Mission 3 and Mission 7 boss rooms) can now be answered. Before, the mission ended before you could reach them.
 - Intel desks and enemy spawn points no longer end up inside crates or set pieces.

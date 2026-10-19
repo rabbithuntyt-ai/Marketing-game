@@ -128,25 +128,23 @@ func _attach_rifle() -> void:
 	flash = Fx.make_flash_sprite(0.45); muzzle.add_child(flash); flash.visible = false
 	var fl := OmniLight3D.new(); fl.light_color = Color(1.0, 0.7, 0.35); fl.omni_range = 5.0; fl.light_energy = 0.0; fl.name = "FlashLight"; muzzle.add_child(fl)
 
-## Seat the rifle in the hands: barrel runs from the right (grip) hand through the left (support) hand
-## in the idle pose. Computed from the skeleton, so it holds for any rig orientation.
+## Seat the rifle in the right hand exactly as the soldier model's original game (Dive, Mugen87) does:
+## a fixed offset from the Mixamo RightHand bone. That offset, evaluated at the model's rest pose, is
+## RIFLE_REST (in the model's own scene space). Re-expressed against the retargeted bone's rest frame it
+## stays correct in every animation, whatever axes the retargeter gave the bone.
+const RIFLE_REST := Transform3D(Vector3(0, -1, 0), Vector3(0, 0, 1), Vector3(-1, 0, 0), Vector3(-0.881576, 1.429206, 0.010983))
 func _align_rifle() -> void:
 	if rifle_node == null or skel == null: return
-	anim.advance(0.0)
-	var rh := skel.find_bone("RightHand"); var lh := skel.find_bone("LeftHand")
-	if rh < 0 or lh < 0: return
-	var rp := skel.get_bone_global_pose(rh)
-	var lp := skel.get_bone_global_pose(lh)
-	var dir := lp.origin - rp.origin
-	if dir.length() < 0.05 / _model_scale: dir = Vector3(0, 0, 1)
-	dir = dir.normalized()
-	var up := Vector3.UP - dir * dir.dot(Vector3.UP)
-	if up.length() < 0.01: up = Vector3.BACK
-	up = up.normalized()
-	var x := up.cross(dir).normalized()
-	var basis := Basis(x, up, dir).scaled(Vector3.ONE / _model_scale)
-	var origin := rp.origin + up * (0.045 / _model_scale) - dir * (0.02 / _model_scale)
-	rifle_node.transform = rp.affine_inverse() * Transform3D(basis, origin)
+	var rh := skel.find_bone("RightHand")
+	if rh < 0: return
+	var to_root := Transform3D.IDENTITY            # skeleton space -> model scene space
+	var n: Node = skel
+	while n != null and n != model:
+		if n is Node3D: to_root = (n as Node3D).transform * to_root
+		n = n.get_parent()
+	var rest := skel.get_bone_global_rest(rh)
+
+	rifle_node.transform = rest.affine_inverse() * (to_root.affine_inverse() * RIFLE_REST)
 
 func _hitboxes() -> void:
 	for spec in [["Head", "head", SphereShape3D, 0.15, Vector3(0, 0.08, 0)], ["Chest", "body", CapsuleShape3D, 0.26, Vector3(0, 0.0, 0)], ["Hips", "legs", CapsuleShape3D, 0.22, Vector3(0, -0.35, 0)]]:
