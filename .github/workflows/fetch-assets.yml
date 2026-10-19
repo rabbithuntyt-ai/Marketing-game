@@ -22,13 +22,13 @@ jobs:
         run: |
           mkdir -p inbox
           echo "${{ github.event.inputs.script }}" | base64 -d > /tmp/fetch.sh
-          bash -e /tmp/fetch.sh
+          bash /tmp/fetch.sh > inbox/fetch-log.txt 2>&1 || echo "script exit $?" >> inbox/fetch-log.txt
           find inbox -type f -size +95M -exec sh -c 'split -b 90m "$1" "$1.part-" && rm "$1"' _ {} \;
           du -sh inbox; find inbox -type f | head -200
       - name: Publish branch
         run: |
           git config user.name "asset-fetch"; git config user.email "actions@github.com"
           git switch --orphan "inbox-${{ github.run_id }}"
-          git add inbox
+          git add --sparse inbox
           git commit -qm "Fetched assets (run ${{ github.run_id }})"
           git push -q origin "inbox-${{ github.run_id }}"
