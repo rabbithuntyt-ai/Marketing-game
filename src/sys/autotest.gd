@@ -146,11 +146,17 @@ func _do(spec: String) -> void:
 			var mv: Mission = main.mission
 			_teleport(mv, mv.rooms[1])
 			mv.player.input_enabled = true
+			var tl := OmniLight3D.new(); tl.omni_range = 3.0; tl.light_energy = 1.2; mv.player.cam.add_child(tl); tl.position = Vector3(0.6, 0.4, 0.2)
 			await _wait(1.0); await shot("vm_hip")
 			Input.action_press("aim"); await _wait(0.25); await shot("vm_ads_mid"); await _wait(0.75); await shot("vm_ads"); Input.action_release("aim")
 			await _wait(0.8)
-			mv.player.ammo = 3; mv.player.start_reload(); await _wait(0.6); await shot("vm_reload")
+			mv.player.ammo = 3; mv.player.start_reload()
+			for ph in [0.3, 0.5, 0.75, 0.86]:
+				while mv.player.reload_t > 0.0 and 1.0 - mv.player.reload_t / mv.player.reload_len < ph: await tree.process_frame
+				var img := main.get_viewport().get_texture().get_image(); img.save_png("%s/vm_reload_%d.png" % [out, int(ph * 100)])
 			await _wait(1.5)
+			Input.action_press("fire"); await _wait(0.12); await shot("vm_fire"); Input.action_release("fire")
+			await _wait(0.6)
 			mv.player.cam.cull_mask = 2; mv.player.cam.fov = 40; await _wait(0.3); await shot("vm_only")
 		"wrong":
 			await _build(int(arg))

@@ -35,6 +35,17 @@ var crouch_k := 0.0
 var bob := 0.0
 var kick := 0.0
 var sway := Vector2.ZERO
+# viewmodel springs (position / rotation offsets that settle back to zero) and motion state
+var sp_pos := Vector3.ZERO
+var sp_pos_v := Vector3.ZERO
+var sp_rot := Vector3.ZERO
+var sp_rot_v := Vector3.ZERO
+var head_dip := 0.0
+var head_dip_v := 0.0
+var sprint_k := 0.0
+var reload_len := 1.6
+var _last_vel := Vector3.ZERO
+var _rl_events := 0
 var mouse_d := Vector2.ZERO
 var step_d := 0.0
 var nades := 3
@@ -143,13 +154,17 @@ func _physics_process(dt: float) -> void:
 	if is_on_floor():
 		if input_enabled and Input.is_action_just_pressed("jump") and not crouch and not locked:
 			velocity.y = JUMP; Audio.play2d("kenney_jump_a", -14.0, 0.05)
+			sp_pos_v.y -= 0.45; sp_rot_v.x -= 0.9
 		else: velocity.y = -0.5
 	else:
 		velocity.y -= G * dt
 	var was_air := not is_on_floor()
 	var vy := velocity.y
 	move_and_slide()
-	if was_air and is_on_floor() and vy < -3.0: Audio.play2d("kenney_land", -10.0, 0.05)
+	if was_air and is_on_floor() and vy < -3.0:
+		Audio.play2d("kenney_land", -10.0, 0.05)
+		var f := clampf(-vy / 9.0, 0.0, 1.0)
+		sp_pos_v.y -= 0.9 * f; sp_rot_v.x += 2.2 * f; head_dip_v -= 1.6 * f
 	if locked and perch_bounds.size != Vector2.ZERO:
 		global_position.x = clampf(global_position.x, perch_bounds.position.x, perch_bounds.end.x)
 		global_position.z = clampf(global_position.z, perch_bounds.position.y, perch_bounds.end.y)
@@ -171,7 +186,8 @@ func _physics_process(dt: float) -> void:
 func _camera(dt: float, hs: float) -> void:
 	var shake := Fx.cam_shake * 0.05
 	var bob_a := minf(1.0, hs / SPEED) * (1.0 - ads * 0.8)
-	head.position = Vector3(0, lerpf(1.62, 1.05, crouch_k) + sin(bob) * 0.035 * bob_a, 0)
+	head_dip_v += (-140.0 * head_dip - 16.0 * head_dip_v) * dt; head_dip += head_dip_v * dt
+	head.position = Vector3(0, lerpf(1.62, 1.05, crouch_k) + sin(bob) * 0.035 * bob_a + head_dip, 0)
 	head.rotation = Vector3(pitch + kick * 0.3 + randf_range(-shake, shake), yaw + randf_range(-shake, shake), sin(bob * 0.5) * 0.004 * bob_a)
 	var base_fov: float = Game.settings["fov"]
 	var tgt_fov := lerpf(base_fov, (14.0 if sniper else 34.0), ads) + (5.0 if sprint else 0.0)
@@ -193,22 +209,76 @@ func _weapon(dt: float) -> void:
 		else: start_reload()
 	if input_enabled and Input.is_action_just_pressed("grenade"): throw_grenade()
 	if input_enabled and Input.is_action_just_pressed("melee"): takedown()
-	# viewmodel pose
+	# viewmodel pose: procedural layers on top of hip/ADS — springs for kick/landing/inertia, a sprint
+	# carry that blends in and out, a figure-eight walk bob, breathing at rest and a keyed reload.
 	kick = lerpf(kick, 0.0, 1.0 - exp(-9.0 * dt))
 	sway = sway.lerp(Vector2(clampf(-mouse_d.x * 0.0012, -0.05, 0.05), clampf(-mouse_d.y * 0.0012, -0.04, 0.04)), 1.0 - exp(-10.0 * dt)); mouse_d = Vector2.ZERO
+	sprint_k = move_toward(sprint_k, 1.0 if sprint else 0.0, dt * 5.0)
+	var sk := sprint_k * sprint_k * (3.0 - 2.0 * sprint_k)
 	var hs := Vector2(velocity.x, velocity.z).length(); var bob_a := minf(1.0, hs / SPEED) * (1.0 - ads * 0.85)
-	var target := hip_pos().lerp(ads_pos(), ads)
-	var rl := sin(clampf(1.0 - reload_t / 1.6, 0.0, 1.0) * PI) if reload_t > 0.0 else 0.0
-	var eq := 1.0 - equip
 	var ak := 1.0 - ads * 0.85
-	vm_root.position = target + Vector3(cos(bob * 0.5) * 0.012 * bob_a + sway.x * 0.4 * ak, -absf(sin(bob * 0.5)) * 0.011 * bob_a - rl * 0.16 - eq * 0.4 + (-0.04 if sprint else 0.0) + sway.y * 0.3 * ak, kick * 0.35)
-	vm_root.rotation = Vector3(sway.y * ak + (-0.22 if sprint else 0.0) + eq * 0.6 + kick * 0.8 - rl * 0.5, sway.x * ak + (0.5 if sprint else 0.0), (0.15 if sprint else 0.0) + sway.x * 0.6 * ak + rl * 0.4)
+	# inertia: the rifle lags behind changes in velocity (in view space)
+	var lv := cam.global_transform.basis.inverse() * velocity
+	var acc := (lv - _last_vel) / maxf(dt, 0.001); _last_vel = lv
+	sp_pos_v += Vector3(-acc.x * 0.0009, -acc.y * 0.0006, -acc.z * 0.0007) * ak
+	for i in 2:
+		var h := dt * 0.5
+		sp_pos_v += (-240.0 * sp_pos - 19.0 * sp_pos_v) * h; sp_pos += sp_pos_v * h
+		sp_rot_v += (-200.0 * sp_rot - 17.0 * sp_rot_v) * h; sp_rot += sp_rot_v * h
+	# reload choreography
+	var rp := Vector3.ZERO; var rr := Vector3.ZERO; var lo := Vector3.ZERO; var tw := 0.0
+	if reload_t > 0.0:
+		var ph := clampf(1.0 - reload_t / reload_len, 0.0, 1.0)
+		var k := _reload_keys(ph); rp = k[0]; rr = k[1]; lo = k[2]; tw = k[3]
+		var ev := 0
+		for e in [0.42, 0.7, 0.86]:
+			if ph >= e: ev += 1
+		while _rl_events < ev:
+			_rl_events += 1
+			match _rl_events:
+				1: sp_pos_v.y -= 0.25                                       # mag out
+				2: sp_rot_v.x += 1.6; sp_pos_v.y += 0.35                   # mag seated
+				3: sp_pos_v.z += 0.5; sp_rot_v.y -= 1.2                    # charging handle
+	else:
+		_rl_events = 0
+	if arms: arms.set_left_offset(lo, tw)
+	var target := hip_pos().lerp(ads_pos(), ads)
+	var eq := 1.0 - equip
+	var breathe := sin(t * 1.6) * 0.0022 * (1.0 - minf(1.0, hs)) * ak
+	var fig := Vector3(cos(bob * 0.5) * 0.012, -absf(sin(bob * 0.5)) * 0.011, 0.0) * bob_a * (1.0 + sk * 1.6)
+	var lean := -clampf(lv.x, -6.0, 6.0) * 0.012 * ak
+	vm_root.position = target + fig + sp_pos + rp + Vector3(sway.x * 0.4 * ak + sk * 0.03, breathe - eq * 0.4 - sk * 0.05 + sway.y * 0.3 * ak, kick * 0.35 + sk * 0.02)
+	vm_root.rotation = sp_rot + rr + Vector3(sway.y * ak - sk * 0.25 + eq * 0.6 + kick * 0.8 + breathe * 2.0, sway.x * ak + sk * 0.55, sk * 0.18 + sway.x * 0.6 * ak + lean)
 	vm_root.visible = ads <= 0.85
 
 func start_reload() -> void:
 	if reload_t > 0.0 or ammo == mag: return
 	reload_t = 1.6 if not sniper else 2.2
+	reload_len = reload_t; _rl_events = 0
 	Audio.play2d("reload", -4.0)
+
+## Reload keys: [phase, rifle offset, rifle rotation, left-hand offset (rifle space), hand twist].
+## Tilt the rifle in, left hand to the magwell, strip the mag down out of view, seat a new one,
+## run the charging handle, back on the grip.
+const RELOAD_KEYS := [
+	[0.00, Vector3.ZERO, Vector3.ZERO, Vector3.ZERO, 0.0],
+	[0.16, Vector3(-0.02, -0.03, 0.02), Vector3(0.1, 0.08, 0.28), Vector3(-0.01, -0.04, -0.06), 0.0],
+	[0.30, Vector3(-0.03, -0.035, 0.03), Vector3(0.12, 0.1, 0.32), Vector3(-0.025, -0.11, -0.13), 0.4],
+	[0.42, Vector3(-0.03, -0.045, 0.03), Vector3(0.13, 0.1, 0.34), Vector3(0.06, -0.4, -0.12), 0.7],
+	[0.58, Vector3(-0.03, -0.045, 0.03), Vector3(0.13, 0.1, 0.34), Vector3(0.06, -0.4, -0.12), 0.7],
+	[0.70, Vector3(-0.03, -0.03, 0.03), Vector3(0.11, 0.09, 0.3), Vector3(-0.025, -0.11, -0.13), 0.4],
+	[0.80, Vector3(-0.01, -0.02, 0.02), Vector3(0.06, -0.12, 0.16), Vector3(-0.03, 0.06, -0.28), -0.3],
+	[0.88, Vector3(-0.01, -0.02, 0.0), Vector3(0.04, -0.16, 0.12), Vector3(-0.03, 0.06, -0.36), -0.3],
+	[1.00, Vector3.ZERO, Vector3.ZERO, Vector3.ZERO, 0.0],
+]
+func _reload_keys(ph: float) -> Array:
+	for i in RELOAD_KEYS.size() - 1:
+		var a: Array = RELOAD_KEYS[i]; var b: Array = RELOAD_KEYS[i + 1]
+		if ph <= float(b[0]):
+			var u := clampf((ph - float(a[0])) / maxf(0.001, float(b[0]) - float(a[0])), 0.0, 1.0)
+			u = u * u * (3.0 - 2.0 * u)
+			return [(a[1] as Vector3).lerp(b[1], u), (a[2] as Vector3).lerp(b[2], u), (a[3] as Vector3).lerp(b[3], u), lerpf(a[4], b[4], u)]
+	return [Vector3.ZERO, Vector3.ZERO, Vector3.ZERO, 0.0]
 
 func spread() -> float:
 	var s := lerpf(0.026, 0.0025, ads) + (0.012 if Vector2(velocity.x, velocity.z).length() > 1.0 else 0.0) * (1.0 - ads * 0.6) + heat * 0.002 * (1.0 - ads * 0.5)
@@ -276,6 +346,9 @@ func fire() -> void:
 	Fx.tracer(muzzle.global_position, end, Color(1.0, 0.85, 0.55), 0.04)
 	flash.visible = true; flash.rotation.z = randf() * TAU; flash_light.light_energy = 3.5 if not suppressed else 0.6
 	kick = minf(kick + (0.05 if not sniper else 0.25), 0.18 if not sniper else 0.35)
+	var rk := (1.0 - ads * 0.55) * (1.0 if not sniper else 2.2)
+	sp_rot_v += Vector3(2.4, randf_range(-0.7, 0.7), randf_range(-1.1, 1.1)) * rk
+	sp_pos_v.z += 0.8 * rk
 	pitch += lerpf(0.0085, 0.0045, ads) if not sniper else 0.03
 	yaw += randf_range(-0.0035, 0.0035)
 	if not suppressed and mission: mission.noise(global_position, 40.0)

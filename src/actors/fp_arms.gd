@@ -11,6 +11,9 @@ const ARMS := "res://assets/fps/arms.fbx"
 var skel: Skeleton3D
 var rifle: Node3D
 var _iks: Array = []
+var _l_ctrl := -1               # left hand control bone, its rifle-held pose and IK target (for reloads)
+var _l_base := Transform3D()
+var _l_tgt: Node3D
 
 ## Rifle-space hold. Rifle: +z forward, +y up, -x is the shooter's right side.
 ## wrist, finger direction, palm normal, curls [01, 02, 03] for index/middle/ring/pinky, thumb [01, 02, 03]
@@ -49,7 +52,20 @@ func setup(r: Node3D) -> bool:
 	position = SHOULDER_MID - mid * SCALE
 	for side in ["R", "L"]: _pose_hand(side)
 	for side in ["R", "L"]: _arm_ik(side)
+	_l_ctrl = skel.find_bone("hand.L.control")
+	if _l_ctrl >= 0: _l_base = skel.get_bone_pose(_l_ctrl)
+	_l_tgt = rifle.get_node_or_null("WristL")
 	return true
+
+## Move the left hand off the handguard by a rifle-space offset (reload: magwell, pouch, charging
+## handle) with a twist (radians) about the forearm. Zero puts it back on the grip.
+func set_left_offset(off: Vector3, twist := 0.0) -> void:
+	if _l_ctrl < 0 or _l_tgt == null: return
+	var rs := _rifle_to_skel()
+	var b := _l_base.basis
+	if absf(twist) > 0.0001: b = Basis((rs.basis * Vector3(HOLD["L"]["fwd"])).normalized(), twist) * b
+	skel.set_bone_pose(_l_ctrl, Transform3D(b, _l_base.origin + rs.basis * off))
+	_l_tgt.position = Vector3(HOLD["L"]["wrist"]) + off
 
 ## skeleton space -> this node's local space (before our own scale)
 func _skel_to_self() -> Transform3D:
