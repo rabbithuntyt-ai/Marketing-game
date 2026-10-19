@@ -107,6 +107,7 @@ func setup(v: String, r: Room = null) -> void:
 			m.set_surface_override_material(s, dup); _mats.append(dup)
 	_attach_rifle()
 	_hitboxes()
+	if not is_char: _markings(v)
 	agent = NavigationAgent3D.new(); agent.path_desired_distance = 0.6; agent.target_desired_distance = 0.8; agent.radius = 0.45; agent.avoidance_enabled = false
 	add_child(agent)
 	match v:
@@ -122,6 +123,22 @@ func setup(v: String, r: Room = null) -> void:
 	_align_rifle()
 	_left_hand_ik()
 	play("Idle" if weapon_hidden else "soldier_idle")
+
+## Named soldiers wear the same armour, so they carry identifying kit: armbands in their unit colour
+## on both upper arms (Kessler's red CSS command band, Hale's LEDGER blue, Ruiz's breacher orange).
+const MARKS := {"kessler": Color(0.75, 0.06, 0.04), "hale": Color(0.2, 0.45, 0.95), "ally": Color(1.0, 0.5, 0.1)}
+func _markings(v: String) -> void:
+	if not MARKS.has(v): return
+	var col: Color = MARKS[v]
+	var m := StandardMaterial3D.new(); m.albedo_color = col; m.roughness = 0.6
+	m.emission_enabled = true; m.emission = col; m.emission_energy_multiplier = 0.35
+	for bn in ["LeftUpperArm", "RightUpperArm"]:
+		if skel.find_bone(bn) < 0: continue
+		var ba := BoneAttachment3D.new(); ba.bone_name = bn; skel.add_child(ba)
+		var band := MeshInstance3D.new(); var cm := CylinderMesh.new()
+		cm.top_radius = 0.075 / ms; cm.bottom_radius = 0.075 / ms; cm.height = 0.07 / ms; cm.radial_segments = 12
+		band.mesh = cm; band.material_override = m; ba.add_child(band)
+		band.position = Vector3(0, 0.14 / ms, 0)
 
 ## The cast model for this role, if one is installed (assets/chars/<id>.glb).
 func _char_scene(v: String) -> PackedScene:
