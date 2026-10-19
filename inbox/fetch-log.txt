@@ -1,0 +1,19 @@
+total 49108
+drwxr-xr-x 2 runner runner     4096 Oct 19 02:56 .
+drwxr-xr-x 5 runner runner     4096 Oct 19 02:55 ..
+-rw-r--r-- 1 runner runner   121648 Oct 19 02:56 ambientcg_sample.json
+-rw-r--r-- 1 runner runner        0 Oct 19 02:55 fetch-log.txt
+-rw-r--r-- 1 runner runner    22600 Oct 19 02:55 kenney_3d.html
+-rw-r--r-- 1 runner runner    19272 Oct 19 02:55 kenney_city-kit-industrial.html
+-rw-r--r-- 1 runner runner     7441 Oct 19 02:55 kenney_conveyor-kit.html
+-rw-r--r-- 1 runner runner    19270 Oct 19 02:55 kenney_factory-kit.html
+-rw-r--r-- 1 runner runner    18646 Oct 19 02:55 kenney_modular-space-kit.html
+-rw-r--r-- 1 runner runner    17391 Oct 19 02:55 kenney_sci-fi-rts.html
+-rw-r--r-- 1 runner runner    17205 Oct 19 02:55 kenney_space-station-kit.html
+-rw-r--r-- 1 runner runner    17930 Oct 19 02:55 kenney_survival-kit.html
+-rw-r--r-- 1 runner runner       31 Oct 19 02:55 ph_files_example.json
+-rw-r--r-- 1 runner runner   549425 Oct 19 02:55 ph_models.json
+-rw-r--r-- 1 runner runner   855233 Oct 19 02:55 ph_textures.json
+-rw-r--r-- 1 runner runner    19738 Oct 19 02:56 quaternius_page.html
+-rw-r--r-- 1 runner runner      391 Oct 19 02:56 quaternius_status.txt
+-rw-r--r-- 1 runner runner 48559316 Oct 19 02:56 quaternius_store.bin
