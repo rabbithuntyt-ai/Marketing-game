@@ -213,7 +213,13 @@ func _skyline(r: Room, s: int) -> void:
 	for i in 5:
 		var z := r.z0 - rng.randf_range(-10, r.D + 10)
 		var x := s * rng.randf_range(r.W * 0.5 + 30, r.W * 0.5 + 90)
-		Props.city(names[i % 3], r, Vector3(x, base + rng.randf_range(-8, 4), z), rng.randf_range(0, TAU), rng.randf_range(2.2, 3.4))
+		var b := Props.city(names[i % 3], r, Vector3(x, base + rng.randf_range(-8, 4), z), rng.randf_range(0, TAU), rng.randf_range(1.6, 2.6))
+		if b == null: continue
+		# keep the whole footprint well clear of every room in the level (widest room is 44 m)
+		var bb: AABB = b.transform * Props._aabb(b)
+		var inner: float = bb.position.x if s > 0 else -bb.end.x
+		var clear := maxf(r.W * 0.5, 22.0) + 26.0
+		if inner < clear: b.position.x += s * (clear - inner)
 
 func _interior(r: Room, geo: Node3D) -> void:
 	var hw := r.W * 0.5

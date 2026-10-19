@@ -41,6 +41,8 @@ var gravity := 18.0
 var forced_anim := ""       # cutscene override
 var laser: MeshInstance3D
 var rifle_node: Node3D
+var weapon_hidden := false
+var lh_ik: SkeletonIK3D     # pins the left hand to the handguard during rifle animations
 
 static func load_shared() -> void:
 	if _model_scene: return
@@ -95,8 +97,10 @@ func setup(v: String, r: Room = null) -> void:
 		_: max_hp = 100
 	max_hp *= Game.diff()["hp"] if team == "css" else 1.0
 	hp = max_hp
-	play("soldier_idle")
+	if v in ["director", "civilian"]: hide_weapon()
 	_align_rifle()
+	_left_hand_ik()
+	play("soldier_idle")
 
 func _tint_for(v: String, base: Color, surf: int) -> Color:
 	match v:
@@ -146,6 +150,26 @@ func _align_rifle() -> void:
 
 	rifle_node.transform = rest.affine_inverse() * (to_root.affine_inverse() * RIFLE_REST)
 
+## Left-hand IK: the Mixamo rifle clips carry the left hand near the handguard but not on it (idle
+## drops it ~10 cm low). A two-bone FABRIK chain pulls the wrist onto a grip point fixed to the rifle.
+const LH_GRIP := Vector3(0.05, -0.03, 0.18)      # wrist position in rifle space (handguard, underside)
+func _left_hand_ik() -> void:
+	if rifle_node == null or weapon_hidden: return
+	if skel.find_bone("LeftUpperArm") < 0 or skel.find_bone("LeftHand") < 0: return
+	var tgt := Node3D.new(); tgt.name = "LHGrip"; rifle_node.add_child(tgt); tgt.position = LH_GRIP
+	lh_ik = SkeletonIK3D.new(); lh_ik.name = "LeftHandIK"
+	lh_ik.root_bone = "LeftUpperArm"; lh_ik.tip_bone = "LeftHand"
+	lh_ik.override_tip_basis = false
+	lh_ik.max_iterations = 6; lh_ik.min_distance = 0.005
+	skel.add_child(lh_ik)
+	lh_ik.target_node = lh_ik.get_path_to(tgt)
+	lh_ik.start()
+
+func _set_ik(on: bool) -> void:
+	if lh_ik == null: return
+	lh_ik.active = on
+	lh_ik.influence = 1.0 if on else 0.0
+
 func _hitboxes() -> void:
 	for spec in [["Head", "head", SphereShape3D, 0.15, Vector3(0, 0.08, 0)], ["Chest", "body", CapsuleShape3D, 0.26, Vector3(0, 0.0, 0)], ["Hips", "legs", CapsuleShape3D, 0.22, Vector3(0, -0.35, 0)]]:
 		var ba := BoneAttachment3D.new(); ba.bone_name = spec[0]; skel.add_child(ba)
@@ -170,6 +194,10 @@ func play(n: String, blend := 0.2, speed := 1.0) -> void:
 		key = "u1/" + n if anim.has_animation("u1/" + n) else ("u2/" + n if anim.has_animation("u2/" + n) else "")
 	if key == "": return
 	anim.play(key, blend); anim.speed_scale = speed; _cur_anim = n
+	# the rifle only belongs in the rifle clips; anything else (talking, jogging, sitting) puts it away
+	var armed := n.begins_with("soldier_") and not weapon_hidden
+	if rifle_node: (rifle_node.get_parent() as Node3D).visible = armed
+	_set_ik(armed and not n.begins_with("soldier_death"))
 
 func play_once(n: String, blend := 0.12) -> void:
 	_cur_anim = ""; play(n, blend)
@@ -212,6 +240,8 @@ func nav_step(dt: float, speed: float) -> void:
 	move_and_slide()
 
 func hide_weapon() -> void:
+	weapon_hidden = true
+	_set_ik(false)
 	if muzzle and muzzle.get_parent(): (muzzle.get_parent() as Node3D).visible = false
 	if laser: laser.visible = false
 

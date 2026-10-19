@@ -122,8 +122,27 @@ func _do(spec: String) -> void:
 			_teleport(mv, mv.rooms[1])
 			mv.player.input_enabled = true
 			await _wait(1.0); await shot("vm_hip")
-			Input.action_press("aim"); await _wait(1.0); await shot("vm_ads"); Input.action_release("aim")
-			await _wait(0.5)
+			Input.action_press("aim"); await _wait(0.25); await shot("vm_ads_mid"); await _wait(0.75); await shot("vm_ads"); Input.action_release("aim")
+			await _wait(0.8)
+			mv.player.ammo = 3; mv.player.start_reload(); await _wait(0.6); await shot("vm_reload")
+			await _wait(1.5)
+			mv.player.cam.cull_mask = 2; mv.player.cam.fov = 40; await _wait(0.3); await shot("vm_only")
+		"wrong":
+			await _build(int(arg))
+			var mw: Mission = main.mission
+			for ri in mw.rooms.size():
+				var rw: Room = mw.rooms[ri]
+				if rw.kind in ["range", "evidence", "tail", "escape", "sniper"]: continue
+				_teleport(mw, rw)
+				await _wait(0.8)
+				var before := rw.enemies.size()
+				mw.on_wrong_answer()
+				await _wait(0.3)
+				var bad := 0
+				for e in rw.enemies.slice(before):
+					var ep: Vector3 = e.global_position
+					if absf(ep.x) > rw.W * 0.5 or ep.z > rw.z0 or ep.z < rw.z1: bad += 1
+				print("[autotest] wrong m%s r%d spawned=%d outside=%d" % [arg, ri, rw.enemies.size() - before, bad])
 		"look":
 			var parts2 := arg.split("/")
 			await _build(int(parts2[0]))
@@ -194,6 +213,14 @@ func _do(spec: String) -> void:
 				bgm.cam.position = Vector3(0.2, 1.5, -1.0) + Vector3(sin(ang), 0, cos(ang)) * 2.6
 				bgm.cam.look_at(Vector3(0.3, 1.1, -1.0))
 				await _wait(0.6); await shot("rifle_%d" % int(ang * 10))
+			# close-ups on the hands of the extra soldier, idle and walking
+			for an in ["soldier_idle", "soldier_forward"]:
+				extra.play_once(an, 0.0)
+				for ang in [0.6, -0.9, 2.2]:
+					var c: Vector3 = extra.global_position + Vector3(0, 1.25, 0)
+					bgm.cam.position = c + Vector3(sin(ang + extra.rotation.y), 0.15, cos(ang + extra.rotation.y)) * 1.1
+					bgm.cam.look_at(c)
+					await _wait(0.4); await shot("hands_%s_%d" % [an, int(ang * 10)])
 		"bot":
 			await _bot(int(arg))
 		"resume":

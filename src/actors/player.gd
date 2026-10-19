@@ -11,6 +11,7 @@ signal hit_marker(kill: bool, head: bool)
 var cam: Camera3D
 var head: Node3D
 var vm_root: Node3D          # viewmodel root (layer 2)
+var arms: FPArms
 var rifle: Node3D
 var muzzle: Node3D
 var flash: Sprite3D
@@ -72,14 +73,9 @@ func _build_viewmodel() -> void:
 			var b := m.get_active_material(s)
 			if b is BaseMaterial3D:
 				var d: BaseMaterial3D = b.duplicate(); d.albedo_color = Color(0.5, 0.5, 0.53); d.roughness = 0.55; d.metallic = 0.35; m.set_surface_override_material(s, d)
-	# gloved hands and sleeves so the rifle isn't floating
-	var sleeve := Mats.flat(Color(0.09, 0.1, 0.085), 0.9); var glove := Mats.flat(Color(0.05, 0.05, 0.055), 0.7)
-	for spec in [[Vector3(0.02, -0.07, 0.12), Vector3(0.25, 0.0, 0.55)], [Vector3(-0.07, -0.05, -0.2), Vector3(-0.2, 0.0, 0.3)]]:
-		var hand := MeshInstance3D.new(); var hb := BoxMesh.new(); hb.size = Vector3(0.07, 0.085, 0.11); hand.mesh = hb; hand.material_override = glove; hand.layers = 2
-		hand.position = spec[0]; rifle.add_child(hand)
-		var arm := MeshInstance3D.new(); var cm := CapsuleMesh.new(); cm.radius = 0.045; cm.height = 0.42; arm.mesh = cm; arm.material_override = sleeve; arm.layers = 2
-		arm.position = spec[0] + Vector3(0, -0.06, 0.2) if spec[0].z > 0 else spec[0] + Vector3(0.02, -0.08, 0.2)
-		arm.rotation = Vector3(deg_to_rad(80), spec[1].y, spec[1].x); rifle.add_child(arm)
+	# rigged, gloved first-person arms posed on the rifle (fp_arms.gd)
+	arms = FPArms.new(); arms.name = "Arms"; rifle.add_child(arms)
+	if not arms.setup(rifle): arms.queue_free(); arms = null
 	muzzle = Node3D.new(); rifle.add_child(muzzle); muzzle.position = Vector3(0, 0.05, 0.62)
 	flash = Fx.make_flash_sprite(0.28); flash.layers = 2; muzzle.add_child(flash); flash.visible = false
 	_viewmodel_materials(vm_root)
@@ -220,9 +216,9 @@ func fire() -> void:
 	ammo -= 1; fire_cd = 0.088 if not sniper else 1.0
 	Game.stats["shots"] += 1
 	var outdoor: bool = mission.cur_room != null and mission.cur_room.outdoor
-	if sniper: Audio.play2d("sniper", 2.0, 0.03)
-	elif suppressed: Audio.play2d("pistol", -16.0, 0.08)
-	else: Audio.play2d(("rifle_out_%d" if outdoor else "rifle_in_%d") % (1 + randi() % 3), -1.0, 0.04)
+	if sniper: Audio.play2d("gun_sniper_%d" % (1 + randi() % 2), 1.0, 0.03)
+	elif suppressed: Audio.play2d("gun_supp_%d" % (1 + randi() % 2), -14.0, 0.06)
+	else: Audio.play2d(("gun_player_out_%d" if outdoor else "gun_player_in_%d") % (1 + randi() % 6), -2.0, 0.035)
 	if randf() < 0.5: get_tree().create_timer(0.35).timeout.connect(func(): Audio.play2d("brass" if randf() < 0.5 else "brass2", -20.0, 0.1))
 	var sp := spread(); heat = minf(heat + 1.0, 8.0)
 	var dir := -cam.global_basis.z
@@ -264,6 +260,10 @@ func fire() -> void:
 		elif col and col.has_meta("target"):
 			Fx.emit("dust", end, hit["normal"])
 			if mission.cur_room and mission.cur_room.mode.has_method("target_hit"): mission.cur_room.mode.target_hit(col, end)
+		elif col and col.has_meta("cam"):
+			Fx.impact(end, hit["normal"], true)
+			(col.get_meta("cam") as SecurityCam).shot()
+			hit_marker.emit(true, false)
 		elif col and col.has_meta("director"):
 			if mission.cur_room.mode.has_method("director_shot"): mission.cur_room.mode.director_shot(col)
 		else:

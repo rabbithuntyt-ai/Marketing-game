@@ -33,6 +33,17 @@ var nav: NavigationRegion3D
 var calls_done := false
 var q_queue: Array = []
 var bonus_mark := false
+# hand-built sectors (levels/<mission>/s<ri>.gd)
+var authored := false
+var guards: Array = []         # {pos, yaw, patrol, waits, looks, variant, veteran}
+var dark_zones: Array = []     # Rect2 in world XZ
+var cams: Array = []
+var sector: RefCounted = null
+
+func in_dark(p: Vector3) -> bool:
+	for z in dark_zones:
+		if (z as Rect2).has_point(Vector2(p.x, p.z)): return true
+	return false
 
 func center() -> Vector3: return Vector3(0, 0, (z0 + z1) * 0.5)
 

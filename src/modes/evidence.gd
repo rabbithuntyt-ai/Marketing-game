@@ -8,7 +8,8 @@ func setup() -> void:
 	var n := maxi(3, int(r.data.get("e", 5)) + int(Game.diff()["cnt"]))
 	m.spawn_room_enemies(r, n)
 	var b := Builder.new(m, m.M)
-	board = Node3D.new(); r.add_child(board); board.position = Vector3(0, 0, r.z1 + 3.0)
+	board = Node3D.new(); r.add_child(board); board.position = r.get_meta("board_pos", Vector3(0, 0, r.z1 + 3.0))
+	board.rotation.y = r.get_meta("board_rot", 0.0)
 	b.box(board, Vector3(6.0, 3.0, 0.1), Vector3(0, 2.2, 0), Mats.flat(Color(0.03, 0.035, 0.04), 0.35), false, false)
 	b.label(board, "CASE FILE · LEDGER LEAK", Vector3(-2.8, 3.45, 0.06), 0, 40, Color(0.75, 0.65, 1.0), "IBMPlexMono-Medium")
 	var S: Array = r.data["evidence"]["suspects"]
@@ -31,7 +32,7 @@ func objective() -> String:
 
 func interactables() -> Array:
 	if solved or r.alive_enemies().size() > 0: return []
-	return [{"pos": board.global_position + Vector3(0, 0, 1.6), "radius": 2.4, "prompt": "Open the case file", "cb": _open}]
+	return [{"pos": board.global_position + board.global_basis.z * 1.6, "radius": 2.4, "prompt": "Open the case file", "cb": _open}]
 
 func _open() -> void:
 	m.main.open_evidence(r.data["evidence"], func():

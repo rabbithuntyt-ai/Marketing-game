@@ -9,6 +9,9 @@ var alert_delay := 0.6
 var patrol: Array = []         # Vector3 waypoints
 var patrol_i := 0
 var patrol_wait := 0.0
+var patrol_waits: Array = []   # authored seconds per waypoint
+var patrol_looks: Array = []   # authored facing (deg, sector yaw convention) while waiting, or null
+var post_yaw = null            # stationary guards return to this facing
 var think_t := 0.0
 var move_t := 0.0
 var shoot_cd := 1.5
@@ -63,6 +66,7 @@ func _sees(p: Player, eye: Vector3) -> bool:
 	var dist := d.length()
 	var rng_m := 60.0 if state == "alert" else (13.0 if p.crouch else 20.0)
 	if mission.cur_room and mission.cur_room.outdoor and state != "alert": rng_m *= 0.85
+	if state != "alert" and room and room.in_dark(p.global_position): rng_m = minf(rng_m, 4.5 if p.crouch else 8.0)
 	if dist > rng_m: return false
 	if state != "alert":
 		var fwd := -global_transform.basis.z
@@ -84,6 +88,7 @@ func _unaware(dt: float, p: Player, eye: Vector3) -> void:
 	if can_see:
 		var dist := (p.global_position - global_position).length()
 		var rate := (1.4 if dist < 6.0 else (0.8 if dist < 12.0 else 0.45)) * (0.55 if p.crouch else 1.0) * (1.6 if Vector2(p.velocity.x, p.velocity.z).length() > 4.0 else 1.0)
+		if room and room.in_dark(p.global_position): rate *= 0.45
 		awareness = minf(1.0, awareness + rate * dt)
 		if state != "suspicious" and awareness > 0.35:
 			state = "suspicious"; if bark_cd <= 0: bark("heard")
@@ -95,16 +100,25 @@ func _unaware(dt: float, p: Player, eye: Vector3) -> void:
 		velocity.x = 0; velocity.z = 0; face(last_seen, dt, 3.0); move_and_slide(); return
 	if not patrol.is_empty():
 		if patrol_wait > 0.0:
-			patrol_wait -= dt; velocity.x = 0; velocity.z = 0; move_and_slide()
+			patrol_wait -= dt; velocity.x = 0; velocity.z = 0
+			var lk = patrol_looks[patrol_i - 1 if patrol_i > 0 else patrol.size() - 1] if patrol_looks.size() == patrol.size() else null
+			if lk != null: face_yaw(-deg_to_rad(float(lk)), dt, 2.5)
+			move_and_slide()
 			return
 		var wp: Vector3 = patrol[patrol_i]
 		if (wp - global_position).length() < 0.9:
-			patrol_i = (patrol_i + 1) % patrol.size(); patrol_wait = randf_range(1.5, 3.5)
+			patrol_wait = float(patrol_waits[patrol_i]) if patrol_waits.size() == patrol.size() else randf_range(1.5, 3.5)
+			patrol_i = (patrol_i + 1) % patrol.size()
 			if randf() < 0.15 and bark_cd <= 0: bark("allclear")
 		else:
 			nav_to(wp); nav_step(dt, 1.3); face(global_position + Vector3(velocity.x, 0, velocity.z), dt, 4.0)
 	else:
-		velocity.x = 0; velocity.z = 0; move_and_slide()
+		velocity.x = 0; velocity.z = 0
+		if post_yaw != null: face_yaw(-deg_to_rad(float(post_yaw)), dt, 2.0)
+		move_and_slide()
+
+func face_yaw(ry: float, dt: float, spd: float) -> void:
+	rotation.y = lerp_angle(rotation.y, ry, 1.0 - exp(-spd * dt))
 
 func alert(propagate := false) -> void:
 	if state == "alert" or dead: return
@@ -190,7 +204,7 @@ func _choose_position(tpos: Vector3, dist: float) -> Vector3:
 func _fire_at(t: Node3D, dist: float, dmg: float, acc_mult: float) -> void:
 	var from := muzzle_pos()
 	show_flash()
-	Audio.play3d(("rifle_out_%d" if (room and room.outdoor) else "rifle_in_%d") % (1 + randi() % 3) if variant != "marksman" else "sniper", from, -2.0, 0.08, 9.0)
+	Audio.play3d("gun_enemy_%d" % (1 + randi() % 8) if variant != "marksman" else "gun_sniper_%d" % (3 + randi() % 2), from, 0.0, 0.07, 10.0)
 	var acc: float = Game.diff()["acc"] * acc_mult * (1.0 - minf(dist / 60.0, 0.6))
 	var aimp := t.global_position + Vector3(0, 1.35, 0)
 	if t is Player:

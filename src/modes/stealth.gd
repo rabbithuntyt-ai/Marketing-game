@@ -5,6 +5,8 @@ extends ModeBase
 var detected := false
 
 func setup() -> void:
+	if r.authored and not r.guards.is_empty():
+		_authored_guards(); return
 	var n := maxi(3, int(r.data.get("e", 4)) + int(Game.diff()["cnt"]))
 	var hw := r.W * 0.5
 	for i in n:
@@ -14,6 +16,19 @@ func setup() -> void:
 		for k in 2 + randi() % 2:
 			pts.append(Vector3(clampf(a.x + randf_range(-9, 9), -hw + 2, hw - 2), 0, clampf(a.z + randf_range(-9, 9), r.z1 + 3, r.z0 - 8)))
 		e.patrol = pts; e.state = "patrol"; e.stealth_room = true
+
+## Hand-placed guards: fixed posts and routes, so the sector can be read and planned.
+func _authored_guards() -> void:
+	var vet := int(Game.settings["difficulty"]) >= 2
+	for g in r.guards:
+		if g["veteran"] and not vet: continue
+		var e := m.spawn_enemy(r, g["pos"], g["variant"], true)
+		e.rotation.y = -deg_to_rad(float(g["yaw"]))
+		e.stealth_room = true
+		if (g["patrol"] as Array).is_empty():
+			e.post_yaw = g["yaw"]; e.state = "idle"
+		else:
+			e.patrol = g["patrol"]; e.patrol_waits = g["waits"]; e.patrol_looks = g["looks"]; e.state = "patrol"
 
 func enter() -> void:
 	m.loud = false
@@ -29,7 +44,8 @@ func on_detected() -> void:
 	Audio.say_generic("g_detected", true)
 	Audio.play2d("alarm", -6.0)
 	for e in r.alive_enemies(): e.alert(false)
-	for i in 2: m.spawn_enemy(r, Vector3(randf_range(-2, 2), 0, r.z1 + 2.0), "css", false, true)
+	var pts: Array = r.spawn_points.duplicate() if r.authored and not r.spawn_points.is_empty() else [Vector3(-1.5, 0, r.z1 + 2.0), Vector3(1.5, 0, r.z1 + 2.0)]
+	for i in 2: m.spawn_enemy(r, pts[i % pts.size()], "css", false, true)
 	m.main.hud.toast("DETECTED", "Alarm raised", Color(1, 0.35, 0.3))
 
 func tick(_dt: float) -> void:
@@ -37,6 +53,8 @@ func tick(_dt: float) -> void:
 	var max_aw := 0.0
 	for e in r.alive_enemies():
 		if e.state != "alert": max_aw = maxf(max_aw, e.awareness)
+	for c in r.cams:
+		if not c.dead: max_aw = maxf(max_aw, c.seen)
 	m.main.hud.detection(max_aw if not detected else 0.0)
 	if detected and not r.cleared and r.alive_enemies().is_empty():
 		r.cleared = true; say_post()

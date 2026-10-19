@@ -325,8 +325,13 @@ func on_wrong_answer() -> void:
 	if r.kind in ["evidence", "range"]: return
 	Audio.play2d("alarm", -8.0)
 	var n := 2 + (1 if int(Game.settings["difficulty"]) >= 2 else 0)
+	# spawn inside the room, on free floor away from the player (the old spot was behind the locked exit)
+	var pts: Array = r.spawn_points.duplicate()
+	var pp: Vector3 = player.global_position
+	pts.sort_custom(func(a, b): return (a - pp).length() > (b - pp).length())
 	for i in n:
-		var p := Vector3(randf_range(-2, 2), 0, r.z1 - 1.5 - i * 1.2)
+		var p: Vector3 = pts[mini(i * 2, pts.size() - 1)] if not pts.is_empty() else Vector3(0, 0, r.z1 + 3.0)
+		if (p - pp).length() < 7.0: p = Vector3(clampf(-pp.x, -r.W * 0.4, r.W * 0.4), 0, r.z1 + 3.0)
 		var e := spawn_enemy(r, p, "css", false, true)
 		e.alert_delay = 0.0
 	main.hud.toast("ALARM", "Wrong call  ·  reinforcements inbound", Color(1.0, 0.3, 0.25))

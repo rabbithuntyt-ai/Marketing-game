@@ -15,13 +15,12 @@ This is a native Godot 4.5 executable. There's no installer and no browser runti
 
 All third-party assets are credited in-game (Main menu → Credits) and in `CREDITS-audio.txt`.
 
+### Your progress
+Your save lives at `%APPDATA%\Godot\app_userdata\Operation Value Chain\save.json`, outside the game folder. Unzipping a new build over the old one, or into a new folder, keeps it. If you want a backup, copy that file somewhere safe.
+
 ### What's new in this build
-- Soldiers now hold their rifles correctly. The grip offset is the exact one the soldier model's original game used, re-mapped onto the animation rig.
-- Checked layouts on 21:9 ultrawide (2560×1080).
-- Closing an intel file or the uplink with E (or a click) no longer reopens it or fires a shot.
-- The analysis questions in the final rooms (Mission 1's rooftop and the Mission 3 and Mission 7 boss rooms) can now be answered. Before, the mission ended before you could reach them.
-- Intel desks and enemy spawn points no longer end up inside crates or set pieces.
-- Indoor lighting no longer resets to its darker level every frame.
-- Enemies stay put during loading and fades, so you can't be shot before you have control.
-- Rifles are hidden in cutscene poses that don't hold a weapon.
-- Waypoints now point the right way in escape and final rooms. Numpad 1–4 answers questions. The landing sound plays again.
+- **Wrong answers no longer soft-lock a sector.** The alarm reinforcements used to spawn behind the locked exit door, where you couldn't reach them. Now they come in on the far side of the room you're in.
+- **The giant brick blocks are gone.** They were distant city buildings scaled up so far that they poked through the walls of outdoor sectors and window rooms. They're now smaller and kept well clear of every room.
+- **New first-person arms.** Rigged, gloved hands and sleeves sit on the pistol grip and handguard, replacing the old boxes. The fingers curl around the grip, and both arms follow the rifle through bob, recoil and reloads.
+- **Soldiers' left hands now hold the handguard.** An IK chain pins each soldier's support hand to the rifle in every rifle animation. Characters in non-combat poses (talking, jogging, sitting) put their rifles away.
+- **New gunfire.** The shots are real firearm recordings, layered with a low-end thump and a distance tail outdoors. There are separate sets for enemies, the marksman rifle and suppressed fire.

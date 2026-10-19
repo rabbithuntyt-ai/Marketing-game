@@ -84,7 +84,7 @@ func _pick_enemy() -> Humanoid:
 
 func _fire(t: Humanoid) -> void:
 	var from := muzzle_pos(); show_flash()
-	Audio.play3d(("rifle_out_%d" if (mission.cur_room and mission.cur_room.outdoor) else "rifle_in_%d") % (1 + randi() % 3), from, -4.0, 0.06, 8.0)
+	Audio.play3d("gun_enemy_%d" % (1 + randi() % 4), from, -3.0, 0.06, 9.0)
 	var hit := randf() < 0.38
 	var end := t.global_position + Vector3(0, 1.3, 0)
 	if not hit: end += Vector3(randf_range(-1, 1), randf_range(-0.5, 0.6), randf_range(-1, 1))
